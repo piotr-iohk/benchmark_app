@@ -56,16 +56,24 @@ module Helpers
       self.class.get(aws_url)
     end
 
-    def get_restoration_results_from_artifact(build_no, artifact_name)
-      if artifact_name == "restore-byron-mainnet.txt"
-        time_seq_key = 'restore mainnet seq'
-        time_1per_key = 'restore mainnet 1% ownership'
-        time_2per_key = 'restore mainnet 2% ownership'
-      elsif artifact_name == "restore-byron-testnet.txt"
-        time_seq_key = 'restore testnet (1097911063) seq'
-        time_1per_key = 'restore testnet (1097911063) 1% ownership'
-        time_2per_key = 'restore testnet (1097911063) 2% ownership'
+    def restoration_keys(artifact_name)
+      case artifact_name
+      when 'restore-byron-mainnet.txt'
+        ['restore mainnet seq',
+         'restore mainnet 1% ownership',
+         'restore mainnet 2% ownership']
+      when 'restore-byron-testnet.txt'
+        ['restore testnet (1097911063) seq',
+         'restore testnet (1097911063) 1% ownership',
+         'restore testnet (1097911063) 2% ownership']
+      else
+        raise "Wrong artifact name: #{artifact_name}"
       end
+    end
+
+    def get_restoration_results_from_artifact(build_no, artifact_name)
+
+      time_seq_key, time_1per_key, time_2per_key = restoration_keys(artifact_name)
 
       url = self.get_artifact_download_url(build_no, artifact_name)
       begin

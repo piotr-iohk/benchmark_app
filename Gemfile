@@ -7,8 +7,9 @@ gem 'buildkit'
 gem 'httparty'
 gem 'rake'
 
-group :development do
+group :development, :test do
   gem 'sqlite3'
+  gem 'rspec'
 end
 
 group :production do

@@ -1,8 +1,14 @@
 require "sequel/core"
+require 'rake'
+require 'rspec/core/rake_task'
 
 require_relative "env"
 require_relative "helpers/buildkite"
 require_relative "helpers/data_transfer"
+
+# Tests!
+RSpec::Core::RakeTask.new(:spec)
+task :tests  => :spec
 
 include Helpers::DataTransfer
 
@@ -18,7 +24,7 @@ namespace :db do
 end
 
 namespace :bk do
-  desc "Get results from buildkite"
+  desc "Get results from buildkite for range of builds"
   task :range, [:min_build_no, :max_build_no] do |t, args|
     bk = Helpers::Buildkite.new
     DB = Sequel.connect(DB_PATH)
@@ -31,6 +37,7 @@ namespace :bk do
     end
   end
 
+  desc "Get latest results from buildkite"
   task :latest do
     bk = Helpers::Buildkite.new
     DB = Sequel.connect(DB_PATH)
