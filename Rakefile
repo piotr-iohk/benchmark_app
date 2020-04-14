@@ -1,14 +1,8 @@
 require "sequel/core"
-require 'rake'
-require 'rspec/core/rake_task'
 
 require_relative "env"
 require_relative "helpers/buildkite"
 require_relative "helpers/data_transfer"
-
-# Tests!
-RSpec::Core::RakeTask.new(:spec)
-task :tests  => :spec
 
 include Helpers::DataTransfer
 
