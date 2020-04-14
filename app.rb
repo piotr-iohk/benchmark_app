@@ -4,13 +4,12 @@ require 'chartkick'
 
 require_relative "env"
 
-# connect to a database
-DB = Sequel.sqlite(DB_PATH)
-
 class App < Sinatra::Base
 
   set :root, File.dirname(__FILE__)
   enable :sessions
+
+  DB = Sequel.connect(DB_PATH)
 
   # helpers Sinatra::App::Helpers
   # register Sinatra::App::Routing::Main

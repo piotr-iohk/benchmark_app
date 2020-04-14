@@ -1,5 +1,4 @@
 require "sequel/core"
-require "sqlite3"
 
 require_relative "env"
 require_relative "helpers/buildkite"
@@ -12,7 +11,7 @@ namespace :db do
   task :migrate, [:version] do |t, args|
     Sequel.extension :migration
     version = args[:version].to_i if args[:version]
-    Sequel.sqlite(DB_PATH) do |db|
+    Sequel.connect(DB_PATH) do |db|
       Sequel::Migrator.run(db, "db/migrations", target: version)
     end
   end
@@ -22,7 +21,7 @@ namespace :bk do
   desc "Get results from buildkite"
   task :range, [:min_build_no, :max_build_no] do |t, args|
     bk = Helpers::Buildkite.new
-    DB = Sequel.sqlite(DB_PATH)
+    DB = Sequel.connect(DB_PATH)
     min = args[:min_build_no].to_i if args[:min_build_no]
     max = args[:max_build_no].to_i if args[:max_build_no]
     (min..max).each do |build_no|
@@ -34,7 +33,7 @@ namespace :bk do
 
   task :latest do
     bk = Helpers::Buildkite.new
-    DB = Sequel.sqlite(DB_PATH)
+    DB = Sequel.connect(DB_PATH)
     nightly_builds = DB[:nightly_builds]
     last_build_in_db = nightly_builds.all.reverse.first[:build_no] if nightly_builds.first
     last_builds_from_bk = bk.get_pipline_build_numbers
