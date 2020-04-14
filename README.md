@@ -1,0 +1,4 @@
+# benchmark app
+![Ruby](https://github.com/piotr-iohk/benchmark_app/workflows/Ruby/badge.svg)
+
+Graphs of [cardano-wallet](https://github.com/input-output-hk/cardano-wallet) benchmarks from [nightly builds](https://buildkite.com/input-output-hk/cardano-wallet-nightly).
