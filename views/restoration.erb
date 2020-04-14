@@ -1,0 +1,10 @@
+<%# dataset.all %>
+<%
+  url = request.env['PATH_INFO'].to_s
+%>
+<%= line_chart dataset.map {|i| [i[:build_no], i[:time_seq]]},
+  title: "restore " + ((url.include? "mainnet") ? "mainnet" : "testnet") + " seq" %>
+<%= line_chart dataset.map {|i| [i[:build_no], i[:time_1per]]},
+  title: "restore " + ((url.include? "mainnet") ? "mainnet" : "testnet") + " 1% ownership" %>
+<%= line_chart dataset.map {|i| [i[:build_no], i[:time_2per]]},
+  title: "restore " + ((url.include? "mainnet") ? "mainnet" : "testnet") + " 2% ownership" %>

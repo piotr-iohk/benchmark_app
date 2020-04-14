@@ -1,0 +1,76 @@
+<%
+url = request.env['PATH_INFO'].to_s
+%>
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/navbar.css" />
+
+    <!-- Chartkick JS -->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="/js/chartkick.js" type="text/javascript"></script>
+
+    <style>
+
+    </style>
+
+    <title>Benchmarks</title>
+  </head>
+  <body class="d-flex flex-column h-100">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a href="/"> <img src="/assets/icons8-marketing-64.png"> </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample04">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link <%= (url.include? "mainnet-restoration") ? "active" : "" %>"
+                href="/mainnet-restoration">Mainnet restoration</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link <%= (url.include? "testnet-restoration") ? "active" : "" %>"
+                href="/testnet-restoration">Testnet restoration</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Restoration</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown04">
+              <a class="dropdown-item" href="#">Mainnet</a>
+              <a class="dropdown-item" href="#">Testnet</a>
+              <a class="dropdown-item" href="#">Staging</a>
+            </div>
+          </li> -->
+
+        </ul>
+
+      </div>
+    </nav>
+
+
+    <!-- Begin page content -->
+    <main role="main" class="flex-shrink-">
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
+    </main>
+
+    <footer class="footer mt-auto py-3">
+      <div class="container-fluid">
+        <span class="text-muted"><a href="https://github.com/input-output-hk/cardano-wallet" target="_blank">Cardano-wallet</a> benchmarks from <a href="https://buildkite.com/input-output-hk/cardano-wallet-nightly" target="_blank">nightly builds</a>.</span>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
