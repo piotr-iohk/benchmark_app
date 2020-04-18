@@ -15,13 +15,7 @@ module Helpers
   end
 
   class RestorationTimes
-    attr_accessor :time_seq, :time_1per, :time_2per
-
-    def initialize(time_seq, time_1per, time_2per)
-      @time_seq = time_seq
-      @time_1per = time_1per
-      @time_2per = time_2per
-    end
+    attr_accessor :time_seq, :time_1per, :time_2per, :artifact_svg_url, :artifact_txt_url
   end
 
   class Buildkite
@@ -45,15 +39,22 @@ module Helpers
       @client.artifacts(@org, @pipeline, build_no)
     end
 
-    def get_artifact_download_url(build_no, filename)
+    def get_artifact_url(build_no, filename)
       self.get_artifacts(build_no).select{|a| a[:filename] == filename}.map{|a| a[:download_url]}[0]
     end
 
-    def download_artifact(url)
+    def get_aws_url(url)
       r = self.class.get(url, follow_redirects: false,
       :headers => { 'Authorization' => "Bearer #{BUILDKITE_API_TOKEN}" } )
-      aws_url = r.to_hash['url']
-      self.class.get(aws_url)
+      r.to_hash['url']
+    end
+
+    def get_artifact_download_url(build_no, filename)
+      self.get_aws_url(self.get_artifact_url(build_no, filename))
+    end
+
+    def download_artifact(url)
+      self.class.get(get_aws_url(url))
     end
 
     def restoration_keys(artifact_name)
@@ -72,10 +73,10 @@ module Helpers
     end
 
     def get_restoration_results_from_artifact(build_no, artifact_name)
-
+      results = RestorationTimes.new
       time_seq_key, time_1per_key, time_2per_key = restoration_keys(artifact_name)
 
-      url = self.get_artifact_download_url(build_no, artifact_name)
+      url = self.get_artifact_url(build_no, artifact_name)
       begin
         res = self.download_artifact(url)
       rescue
@@ -84,13 +85,13 @@ module Helpers
 
       begin
         r = YAML.load(res.body).to_hash['All results']
-        time_seq = r[time_seq_key].to_f
-        time_1per = r[time_1per_key].to_f
-        time_2per = r[time_2per_key].to_f
-        results = RestorationTimes.new(time_seq, time_1per, time_2per)
+        results.time_seq = r[time_seq_key].to_f
+        results.time_1per = r[time_1per_key].to_f
+        results.time_2per = r[time_2per_key].to_f
       rescue
         puts "No results for artifact: #{artifact_name}"
       end
+       p results
        results
     end
 
@@ -98,13 +99,17 @@ module Helpers
       build_details =  self.get_pipeline_build(build_no)
       build = Build.new(build_no, build_details[:created_at], build_details[:commit])
       mainnet_results = self.get_restoration_results_from_artifact build_no, 'restore-byron-mainnet.txt'
-      testnet_results = self.get_restoration_results_from_artifact build_no, 'restore-byron-testnet.txt'
+      mainnet_results.artifact_svg_url = self.get_artifact_download_url build_no, 'restore-byron-mainnet.svg'
+      mainnet_results.artifact_txt_url = self.get_artifact_download_url build_no, 'restore-byron-mainnet.txt'
 
-      result = { build: build,
-                 mainnet_restores: mainnet_results,
-                 testnet_restores: testnet_results
-               }
-      result
+      testnet_results = self.get_restoration_results_from_artifact build_no, 'restore-byron-testnet.txt'
+      testnet_results.artifact_svg_url = self.get_artifact_download_url build_no, 'restore-byron-testnet.svg'
+      testnet_results.artifact_txt_url = self.get_artifact_download_url build_no, 'restore-byron-testnet.txt'
+
+      { build: build,
+        mainnet_restores: mainnet_results,
+        testnet_restores: testnet_results
+      }
     end
   end
 end

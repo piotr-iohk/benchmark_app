@@ -1,22 +1,23 @@
 <%# dataset.all %>
+<!-- <h2><%= (url.include? "mainnet") ? "Mainnet" : "Testnet"%> restoration</h2> -->
 <%
   url = request.env['PATH_INFO'].to_s
-  buildkite_url = "https://buildkite.com/input-output-hk/cardano-wallet-nightly/builds/"
+  buildkite_url = "/nightbuilds/"
 %>
 <%= line_chart dataset.map {|i| ["<a href='#{buildkite_url}#{i[:build_no]}'>#{i[:build_no]}</a>",
                             i[:time_seq]]},
-  title: "restore " + ((url.include? "mainnet") ? "mainnet" : "testnet") + " seq",
+  title: "<a href='#'>restore " + ((url.include? "mainnet") ? "mainnet" : "testnet") + " seq</a>",
   ytitle: "Time (s)", xtitle: "Nightbuild no"
  %>
  <br />
 <%= line_chart dataset.map {|i| ["<a href='#{buildkite_url}#{i[:build_no]}'>#{i[:build_no]}</a>",
                             i[:time_1per]]},
-  title: "restore " + ((url.include? "mainnet") ? "mainnet" : "testnet") + " 1% ownership",
+  title: "<a href='#'>restore " + ((url.include? "mainnet") ? "mainnet" : "testnet") + " 1% ownership</a>",
   ytitle: "Time (s)", xtitle: "Nightbuild no"
 %>
  <br />
 <%= line_chart dataset.map {|i| ["<a href='#{buildkite_url}#{i[:build_no]}'>#{i[:build_no]}</a>",
                             i[:time_2per]]},
-  title: "restore " + ((url.include? "mainnet") ? "mainnet" : "testnet") + " 2% ownership",
+  title: "<a href='#'>restore " + ((url.include? "mainnet") ? "mainnet" : "testnet") + " 2% ownership</a>",
   ytitle: "Time (s)", xtitle: "Nightbuild no"
  %>

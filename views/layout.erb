@@ -32,17 +32,32 @@ url = request.env['PATH_INFO'].to_s
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExample04">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-center">
+          <li class="nav-item">
+            <a class="nav-link <%= (url.include? "builds") ? "active" : "" %>"
+                href="/nightbuilds">Nightbuilds</a>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link <%= (url.include? "mainnet-restoration") ? "active" : "" %>"
-                href="/mainnet-restoration">Restore benchmark - mainnet</a>
+                href="/mainnet-restoration">Mainnet</a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link <%= (url.include? "testnet-restoration") ? "active" : "" %>"
-                href="/testnet-restoration">Restore benchmark - testnet</a>
+                href="/testnet-restoration">Testnet</a>
           </li>
-          <!-- <li class="nav-item dropdown">
+
+          <!--<li class="nav-item">
+            <a class="nav-link <%= (url.include? "latency") ? "active" : "" %>"
+                href="/latency">Latency</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link <%= (url.include? "database") ? "active" : "" %>"
+                href="/database">Database</a>
+          </li>
+          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Restore benchmarks</a>
             <div class="dropdown-menu" aria-labelledby="dropdown04">
