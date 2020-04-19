@@ -13,14 +13,14 @@
   id = build_numbers.index(b[:build_no])
 %>
 <small><a href="/nightbuilds">all</a></small>
-<%= "| <small><a href=\"/nightbuilds/#{build_numbers[id + 1]}\"><<</a></small>" if build_numbers[id + 1]%>
-<%= "| <small><a href=\"/nightbuilds/#{build_numbers[id - 1]}\">>></a></small>" if build_numbers[id - 1]%>
+<%= "| <small><a href=\"/nightbuilds/#{build_numbers[id + 1]}\">< #{build_numbers[id + 1]} </a></small>" if build_numbers[id + 1]%>
+<%= "| <small><a href=\"/nightbuilds/#{build_numbers[id - 1]}\">#{build_numbers[id - 1]} ></a></small>" if build_numbers[id - 1]%>
 <br />
 <br />
-  <h3><%= b[:build_no] %></h3>
-  <h5>Buildkite: <%= "<a href='#{bk_url}/#{b[:build_no]}' target='_blank'>#{b[:build_no]}</a>" %></h5>
-  <h5>Revision: <%= "<a href='#{gh_url}/#{b[:rev]}' target='_blank'>#{b[:rev]}</a>" %></h5>
-  <h5>Date: <i><%= b[:datetime]%></i></h5>
+  <h4><%= b[:build_no] %></h4>
+  <h6>Buildkite: <%= "<a href='#{bk_url}/#{b[:build_no]}' target='_blank'>#{b[:build_no]}</a>" %></h6>
+  <h6>Revision: <%= "<a href='#{gh_url}/#{b[:rev]}' target='_blank'>#{b[:rev]}</a>" %></h6>
+  <h6>Date: <i><%= b[:datetime]%></i></h6>
   <br />
 <%
   if m
@@ -32,7 +32,7 @@
       </tr>
       <tr>
         <td>
-          <img src="<%= m[:artifact_svg_url] %>"/>
+          <img src="<%= svg_urls[0] %>"/>
         </td>
       </tr>
     </thead>
@@ -50,7 +50,7 @@
       </tr>
       <tr>
         <td>
-          <img src="<%= t[:artifact_svg_url] %>"/>
+          <img src="<%= svg_urls[1] %>"/>
         </td>
       </tr>
     </thead>

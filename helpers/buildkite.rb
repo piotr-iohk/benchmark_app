@@ -15,7 +15,7 @@ module Helpers
   end
 
   class RestorationTimes
-    attr_accessor :time_seq, :time_1per, :time_2per, :artifact_svg_url, :artifact_txt_url
+    attr_accessor :time_seq, :time_1per, :time_2per
   end
 
   class Buildkite
@@ -39,28 +39,30 @@ module Helpers
       @client.artifacts(@org, @pipeline, build_no)
     end
 
+    # get artifact url from buildkite build by name
     def get_artifact_url(build_no, filename)
       self.get_artifacts(build_no).select{|a| a[:filename] == filename}.map{|a| a[:download_url]}[0]
     end
 
+    # once you have artifact url, you can get the AWS direct url where the artifact is really stored
     def get_aws_url(url)
       r = self.class.get(url, follow_redirects: false,
       :headers => { 'Authorization' => "Bearer #{BUILDKITE_API_TOKEN}" } )
       r.to_hash['url']
     end
 
+    # get the final download artifact (from AWS), using build_no and filename as params
     def get_artifact_download_url(build_no, filename)
       url = self.get_artifact_url(build_no, filename)
       begin
         self.get_aws_url(url)
       rescue
-        puts "No url for artifact: #{filename}"
         nil
       end
     end
 
     def download_artifact(url)
-      self.class.get(get_aws_url(url))
+      self.class.get(url)
     end
 
     def restoration_keys(artifact_name)
@@ -82,7 +84,7 @@ module Helpers
       results = RestorationTimes.new
       time_seq_key, time_1per_key, time_2per_key = restoration_keys(artifact_name)
 
-      url = self.get_artifact_url(build_no, artifact_name)
+      url = self.get_artifact_download_url(build_no, artifact_name)
       begin
         res = self.download_artifact(url)
       rescue
@@ -104,12 +106,7 @@ module Helpers
       build_details =  self.get_pipeline_build(build_no)
       build = Build.new(build_no, build_details[:created_at], build_details[:commit])
       mainnet_results = self.get_restoration_results_from_artifact build_no, 'restore-byron-mainnet.txt'
-      mainnet_results.artifact_svg_url = self.get_artifact_download_url build_no, 'restore-byron-mainnet.svg'
-      mainnet_results.artifact_txt_url = self.get_artifact_download_url build_no, 'restore-byron-mainnet.txt'
-
       testnet_results = self.get_restoration_results_from_artifact build_no, 'restore-byron-testnet.txt'
-      testnet_results.artifact_svg_url = self.get_artifact_download_url build_no, 'restore-byron-testnet.svg'
-      testnet_results.artifact_txt_url = self.get_artifact_download_url build_no, 'restore-byron-testnet.txt'
 
       { build: build,
         mainnet_restores: mainnet_results,

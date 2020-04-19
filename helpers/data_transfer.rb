@@ -16,9 +16,7 @@ module Helpers
         db_connection[:mainnet_restores].insert(nightly_build_id: id,
                                      time_seq: m.time_seq,
                                      time_1per: m.time_1per,
-                                     time_2per: m.time_2per,
-                                     artifact_txt_url: m.artifact_txt_url,
-                                     artifact_svg_url: m.artifact_svg_url)
+                                     time_2per: m.time_2per)
       end
 
       if res[:testnet_restores]
@@ -27,9 +25,7 @@ module Helpers
         db_connection[:testnet_restores].insert(nightly_build_id: id,
                                      time_seq: t.time_seq,
                                      time_1per: t.time_1per,
-                                     time_2per: t.time_2per,
-                                     artifact_txt_url: t.artifact_txt_url,
-                                     artifact_svg_url: t.artifact_svg_url)
+                                     time_2per: t.time_2per)
       end
     end
 
