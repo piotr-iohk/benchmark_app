@@ -11,19 +11,21 @@ module Helpers
       end
 
       if res[:mainnet_restores]
+        m = res[:mainnet_restores]
         puts " Inserting mainnet_restores for build: #{build_no}"
         db_connection[:mainnet_restores].insert(nightly_build_id: id,
-                                     time_seq: res[:mainnet_restores].time_seq,
-                                     time_1per: res[:mainnet_restores].time_1per,
-                                     time_2per: res[:mainnet_restores].time_2per)
+                                     time_seq: m.time_seq,
+                                     time_1per: m.time_1per,
+                                     time_2per: m.time_2per)
       end
 
       if res[:testnet_restores]
+        t = res[:testnet_restores]
         puts " Inserting testnet_restores for build: #{build_no}"
         db_connection[:testnet_restores].insert(nightly_build_id: id,
-                                     time_seq: res[:testnet_restores].time_seq,
-                                     time_1per: res[:testnet_restores].time_1per,
-                                     time_2per: res[:testnet_restores].time_2per)
+                                     time_seq: t.time_seq,
+                                     time_1per: t.time_1per,
+                                     time_2per: t.time_2per)
       end
     end
 

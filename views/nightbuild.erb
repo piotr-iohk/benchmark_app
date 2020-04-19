@@ -1,0 +1,132 @@
+<%
+  b = builds.where(build_no: params[:id]).first
+  t = testnet.first
+  m = mainnet.first
+
+  gh_url = "https://github.com/input-output-hk/cardano-wallet/commit"
+  bk_url = "https://buildkite.com/input-output-hk/cardano-wallet-nightly/builds"
+%>
+
+<% if b %>
+<%
+  build_numbers = builds.all.map{|b| b[:build_no]}
+  id = build_numbers.index(b[:build_no])
+%>
+<small><a href="/nightbuilds">all</a></small>
+<%= "| <small><a href=\"/nightbuilds/#{build_numbers[id + 1]}\">< #{build_numbers[id + 1]} </a></small>" if build_numbers[id + 1]%>
+<%= "| <small><a href=\"/nightbuilds/#{build_numbers[id - 1]}\">#{build_numbers[id - 1]} ></a></small>" if build_numbers[id - 1]%>
+<br />
+<br />
+  <h4><%= b[:build_no] %></h4>
+  <h6>Buildkite: <%= "<a href='#{bk_url}/#{b[:build_no]}' target='_blank'>#{b[:build_no]}</a>" %></h6>
+  <h6>Revision: <%= "<a href='#{gh_url}/#{b[:rev]}' target='_blank'>#{b[:rev]}</a>" %></h6>
+  <h6>Date: <i><%= b[:datetime]%></i></h6>
+  <br />
+<%
+  if m
+%>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Mainnet restoration</th>
+      </tr>
+      <tr>
+        <td>
+          <img src="<%= svg_urls[0] %>"/>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+<% end %>
+<%
+  if t
+%>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Testnet restoration</th>
+      </tr>
+      <tr>
+        <td>
+          <img src="<%= svg_urls[1] %>"/>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+<% end %>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Measurement</th>
+        <th scope="col">Mainnet</th>
+        <th scope="col">Testnet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">restoration seq</th>
+        <td>
+          <% if m %>
+          <%= m[:time_seq] ? "#{m[:time_seq]} s" : "<i>N/A</i>"%>
+          <% else %>
+            <i>N/A</i>
+          <% end %>
+        </td>
+        <td>
+          <% if t %>
+          <%= t[:time_seq] ? "#{t[:time_seq]} s" : "<i>N/A</i>"%>
+          <% else %>
+            <i>N/A</i>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">restoration 1%</th>
+        <td>
+          <% if m %>
+          <%= m[:time_1per] ? "#{m[:time_1per]} s" : "<i>N/A</i>"%>
+          <% else %>
+            <i>N/A</i>
+          <% end %>
+        </td>
+        <td>
+          <% if t %>
+          <%= t[:time_1per] ? "#{t[:time_1per]} s" : "<i>N/A</i>"%>
+          <% else %>
+            <i>N/A</i>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">restoration 2%</th>
+        <td>
+          <% if m %>
+          <%= m[:time_2per] ? "#{m[:time_2per]} s" : "<i>N/A</i>"%>
+          <% else %>
+            <i>N/A</i>
+          <% end %>
+        </td>
+        <td>
+          <% if t %>
+          <%= t[:time_2per] ? "#{t[:time_2per]} s" : "<i>N/A</i>"%>
+          <% else %>
+            <i>N/A</i>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p> Trend charts: <%= "<i>N/A</i>" unless (m || t) %></p>
+  <ul>
+    <%= "<li><a href='/mainnet-restoration'>Mainnet restoration</a></li>" if (m && m[:time_seq]) %>
+    <%= "<li><a href='/testnet-restoration'>Testnet restoration</a></li>" if (t && t[:time_seq]) %>
+  </ul>
+<% else %>
+  <div class="alert alert-danger" role="alert">
+    <%= "No such nightly build: #{params[:id]}. Back to <a href='/nightbuilds'>nightbuilds</a>."%>
+  </div>
+<% end %>
