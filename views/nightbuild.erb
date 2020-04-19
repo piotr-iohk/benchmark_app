@@ -72,11 +72,15 @@
         <td>
           <% if m %>
           <%= m[:time_seq] ? "#{m[:time_seq]} s" : "<i>N/A</i>"%>
+          <% else %>
+            <i>N/A</i>
           <% end %>
         </td>
         <td>
           <% if t %>
           <%= t[:time_seq] ? "#{t[:time_seq]} s" : "<i>N/A</i>"%>
+          <% else %>
+            <i>N/A</i>
           <% end %>
         </td>
       </tr>
@@ -85,11 +89,15 @@
         <td>
           <% if m %>
           <%= m[:time_1per] ? "#{m[:time_1per]} s" : "<i>N/A</i>"%>
+          <% else %>
+            <i>N/A</i>
           <% end %>
         </td>
         <td>
           <% if t %>
           <%= t[:time_1per] ? "#{t[:time_1per]} s" : "<i>N/A</i>"%>
+          <% else %>
+            <i>N/A</i>
           <% end %>
         </td>
       </tr>
@@ -98,11 +106,15 @@
         <td>
           <% if m %>
           <%= m[:time_2per] ? "#{m[:time_2per]} s" : "<i>N/A</i>"%>
+          <% else %>
+            <i>N/A</i>
           <% end %>
         </td>
         <td>
           <% if t %>
           <%= t[:time_2per] ? "#{t[:time_2per]} s" : "<i>N/A</i>"%>
+          <% else %>
+            <i>N/A</i>
           <% end %>
         </td>
       </tr>
@@ -110,8 +122,8 @@
   </table>
   <p> Trend charts: <%= "<i>N/A</i>" unless (m || t) %></p>
   <ul>
-    <%= "<li><a href='/mainnet-restoration'>Mainnet restoration</a></li>" if m %>
-    <%= "<li><a href='/testnet-restoration'>Testnet restoration</a></li>" if t %>
+    <%= "<li><a href='/mainnet-restoration'>Mainnet restoration</a></li>" if (m && m[:time_seq]) %>
+    <%= "<li><a href='/testnet-restoration'>Testnet restoration</a></li>" if (t && t[:time_seq]) %>
   </ul>
 <% else %>
   <div class="alert alert-danger" role="alert">

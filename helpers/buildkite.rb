@@ -50,7 +50,13 @@ module Helpers
     end
 
     def get_artifact_download_url(build_no, filename)
-      self.get_aws_url(self.get_artifact_url(build_no, filename))
+      url = self.get_artifact_url(build_no, filename)
+      begin
+        self.get_aws_url(url)
+      rescue
+        puts "No url for artifact: #{filename}"
+        nil
+      end
     end
 
     def download_artifact(url)
@@ -91,7 +97,6 @@ module Helpers
       rescue
         puts "No results for artifact: #{artifact_name}"
       end
-       p results
        results
     end
 
