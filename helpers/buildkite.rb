@@ -60,8 +60,8 @@ module Helpers
 
     # get the final download artifact (from AWS), using build_no and filename as params
     def get_artifact_download_url(build_no, job_id, filename)
-      url = self.get_artifact_url(build_no, job_id, filename)
       begin
+        url = self.get_artifact_url(build_no, job_id, filename)
         self.get_aws_url(url)
       rescue
         nil
@@ -91,8 +91,8 @@ module Helpers
       results = RestorationTimes.new
       time_seq_key, time_1per_key, time_2per_key = restoration_keys(artifact_name)
 
-      url = self.get_artifact_download_url(build_no, artifact_name, job_id)
       begin
+        url = self.get_artifact_download_url(build_no, job_id, artifact_name)
         res = self.download_artifact(url)
       rescue
         puts "No url for artifact: #{artifact_name}"
@@ -119,7 +119,7 @@ module Helpers
                         'restore-byron-mainnet.txt'
       testnet_results = self.get_restoration_results_from_artifact build_no,
                         jobs["Restore benchmark - testnet"],
-                        "Restore benchmark - testnet"
+                        "restore-byron-testnet.txt"
 
       { build: build,
         mainnet_restores: mainnet_results,
