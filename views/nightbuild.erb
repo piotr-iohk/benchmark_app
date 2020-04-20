@@ -28,11 +28,26 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col">Mainnet restoration</th>
+        <th scope="col" colspan="2">Mainnet restoration</th>
       </tr>
       <tr>
-        <td>
-          <img src="<%= svg_urls[0] %>"/>
+        <td class="align-middle">
+          <% if svg_urls[0] %>
+          <a href="<%= svg_urls[0] %>">
+            <img width="640" height="360" src="<%= svg_urls[0] %>"/>
+          </a>
+          <% else %>
+            <i>Memory plot N/A</i>
+          <% end %>
+        </td>
+        <td class="align-middle">
+          <% if plot_urls[0] %>
+          <a href="<%= plot_urls[0] %>">
+            <img width="640" height="360" src="<%= plot_urls[0] %>"/>
+          </a>
+          <% else %>
+            <i>Block height/time plot N/A</i>
+          <% end %>
         </td>
       </tr>
     </thead>
@@ -46,11 +61,26 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col">Testnet restoration</th>
+        <th scope="col" colspan="2">Testnet restoration</th>
       </tr>
       <tr>
-        <td>
-          <img src="<%= svg_urls[1] %>"/>
+        <td class="align-middle">
+          <% if svg_urls[1] %>
+          <a href="<%= svg_urls[1] %>">
+            <img width="640" height="360" src="<%= svg_urls[1] %>"/>
+          </a>
+          <% else %>
+            <i>Memory plot N/A</i>
+          <% end %>
+        </td>
+        <td class="align-middle">
+          <% if plot_urls[1] %>
+          <a href="<%= plot_urls[1] %>">
+            <img width="640" height="360" src="<%= plot_urls[1] %>"/>
+          </a>
+          <% else %>
+            <i>Block height/time plot N/A</i>
+          <% end %>
         </td>
       </tr>
     </thead>
