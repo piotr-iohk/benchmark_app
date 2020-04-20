@@ -35,13 +35,20 @@ module Helpers
       @client.build(@org, @pipeline, build_no)
     end
 
-    def get_artifacts(build_no)
-      @client.artifacts(@org, @pipeline, build_no)
+    ##
+    # build_details <- get_pipeline_build(build_no)
+    # returns: {job_name => job_id}
+    def get_pipeline_build_jobs(build_details)
+      build_details[:jobs].map{|j| [j[:name], j[:id]]}.to_h
+    end
+
+    def get_artifacts(build_no, job_id)
+      @client.job_artifacts(@org, @pipeline, build_no, job_id)
     end
 
     # get artifact url from buildkite build by name
-    def get_artifact_url(build_no, filename)
-      self.get_artifacts(build_no).select{|a| a[:filename] == filename}.map{|a| a[:download_url]}[0]
+    def get_artifact_url(build_no, job_id, filename)
+      self.get_artifacts(build_no, job_id).select{|a| a[:filename] == filename}.map{|a| a[:download_url]}[0]
     end
 
     # once you have artifact url, you can get the AWS direct url where the artifact is really stored
@@ -52,8 +59,8 @@ module Helpers
     end
 
     # get the final download artifact (from AWS), using build_no and filename as params
-    def get_artifact_download_url(build_no, filename)
-      url = self.get_artifact_url(build_no, filename)
+    def get_artifact_download_url(build_no, job_id, filename)
+      url = self.get_artifact_url(build_no, job_id, filename)
       begin
         self.get_aws_url(url)
       rescue
@@ -80,11 +87,11 @@ module Helpers
       end
     end
 
-    def get_restoration_results_from_artifact(build_no, artifact_name)
+    def get_restoration_results_from_artifact(build_no, job_id, artifact_name)
       results = RestorationTimes.new
       time_seq_key, time_1per_key, time_2per_key = restoration_keys(artifact_name)
 
-      url = self.get_artifact_download_url(build_no, artifact_name)
+      url = self.get_artifact_download_url(build_no, artifact_name, job_id)
       begin
         res = self.download_artifact(url)
       rescue
@@ -104,9 +111,15 @@ module Helpers
 
     def get_restoration_results_hash(build_no)
       build_details =  self.get_pipeline_build(build_no)
+      jobs = self.get_pipeline_build_jobs build_details
       build = Build.new(build_no, build_details[:created_at], build_details[:commit])
-      mainnet_results = self.get_restoration_results_from_artifact build_no, 'restore-byron-mainnet.txt'
-      testnet_results = self.get_restoration_results_from_artifact build_no, 'restore-byron-testnet.txt'
+
+      mainnet_results = self.get_restoration_results_from_artifact build_no,
+                        jobs["Restore benchmark - mainnet"],
+                        'restore-byron-mainnet.txt'
+      testnet_results = self.get_restoration_results_from_artifact build_no,
+                        jobs["Restore benchmark - testnet"],
+                        "Restore benchmark - testnet"
 
       { build: build,
         mainnet_restores: mainnet_results,
@@ -115,3 +128,8 @@ module Helpers
     end
   end
 end
+
+# include Helpers
+# bk = Buildkite.new
+# build_details = bk.get_pipeline_build 477
+# p bk.get_pipeline_build_jobs build_details
