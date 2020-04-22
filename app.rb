@@ -4,9 +4,11 @@ require 'chartkick'
 
 require_relative "env"
 require_relative "helpers/buildkite"
+require_relative "helpers/readers"
 
 class App < Sinatra::Base
   include Helpers
+  include Helpers::Readers
   set :root, File.dirname(__FILE__)
   enable :sessions
 
@@ -34,7 +36,7 @@ class App < Sinatra::Base
     testnet = DB[:nightly_builds].join(:testnet_restores, nightly_build_id: :nightly_build_id).
                                   where(build_no: build_no)
     bk = Buildkite.new
-    jobs = bk.get_pipeline_build_jobs bk.get_pipeline_build(build_no)
+    jobs = Jobs.get_pipeline_build_jobs bk.get_pipeline_build(build_no)
     mainnet_svg = bk.get_artifact_download_url build_no,
                   jobs["Restore benchmark - mainnet"],
                   "restore-byron-mainnet.svg"
