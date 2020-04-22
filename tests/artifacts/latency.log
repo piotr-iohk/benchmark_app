@@ -1,0 +1,396 @@
+~~~ Running global environment hook
+[90m$[0m /nix/store/i42glba5vjzdsyfgicji807k4blchykk-buildkite-agent-hooks/environment
+~~~ Preparing build folder
+[90m$[0m mkdir -p /var/lib/buildkite-agent/builds/packet-ipxe-2-ci2-3/input-output-hk/cardano-wallet-nightly
+[90m$[0m cd /var/lib/buildkite-agent/builds/packet-ipxe-2-ci2-3/input-output-hk/cardano-wallet-nightly
+[90m$[0m git remote set-url origin https://github.com/input-output-hk/cardano-wallet.git
+[90m$[0m git clean -ffdqx
+[90m$[0m git submodule foreach --recursive git clean -ffdqx
+[90m$[0m git fetch -v origin 23c314a0bf3849fd52ca443a5127313c646b4904
+POST git-upload-pack (960 bytes)
+remote: Enumerating objects: 125, done.        
+remote: Counting objects:   0% (1/125)        remote: Counting objects:   1% (2/125)        remote: Counting objects:   2% (3/125)        remote: Counting objects:   3% (4/125)        remote: Counting objects:   4% (5/125)        remote: Counting objects:   5% (7/125)        remote: Counting objects:   6% (8/125)        remote: Counting objects:   7% (9/125)        remote: Counting objects:   8% (10/125)        remote: Counting objects:   9% (12/125)        remote: Counting objects:  10% (13/125)        remote: Counting objects:  11% (14/125)        remote: Counting objects:  12% (15/125)        remote: Counting objects:  13% (17/125)        remote: Counting objects:  14% (18/125)        remote: Counting objects:  15% (19/125)        remote: Counting objects:  16% (20/125)        remote: Counting objects:  17% (22/125)        remote: Counting objects:  18% (23/125)        remote: Counting objects:  19% (24/125)        remote: Counting objects:  20% (25/125)        remote: Counting objects:  21% (27/125)        remote: Counting objects:  22% (28/125)        remote: Counting objects:  23% (29/125)        remote: Counting objects:  24% (30/125)        remote: Counting objects:  25% (32/125)        remote: Counting objects:  26% (33/125)        remote: Counting objects:  27% (34/125)        remote: Counting objects:  28% (35/125)        remote: Counting objects:  29% (37/125)        remote: Counting objects:  30% (38/125)        remote: Counting objects:  31% (39/125)        remote: Counting objects:  32% (40/125)        remote: Counting objects:  33% (42/125)        remote: Counting objects:  34% (43/125)        remote: Counting objects:  35% (44/125)        remote: Counting objects:  36% (45/125)        remote: Counting objects:  37% (47/125)        remote: Counting objects:  38% (48/125)        remote: Counting objects:  39% (49/125)        remote: Counting objects:  40% (50/125)        remote: Counting objects:  41% (52/125)        remote: Counting objects:  42% (53/125)        remote: Counting objects:  43% (54/125)        remote: Counting objects:  44% (55/125)        remote: Counting objects:  45% (57/125)        remote: Counting objects:  46% (58/125)        remote: Counting objects:  47% (59/125)        remote: Counting objects:  48% (60/125)        remote: Counting objects:  49% (62/125)        remote: Counting objects:  50% (63/125)        remote: Counting objects:  51% (64/125)        remote: Counting objects:  52% (65/125)        remote: Counting objects:  53% (67/125)        remote: Counting objects:  54% (68/125)        remote: Counting objects:  55% (69/125)        remote: Counting objects:  56% (70/125)        remote: Counting objects:  57% (72/125)        remote: Counting objects:  58% (73/125)        remote: Counting objects:  59% (74/125)        remote: Counting objects:  60% (75/125)        remote: Counting objects:  61% (77/125)        remote: Counting objects:  62% (78/125)        remote: Counting objects:  63% (79/125)        remote: Counting objects:  64% (80/125)        remote: Counting objects:  65% (82/125)        remote: Counting objects:  66% (83/125)        remote: Counting objects:  67% (84/125)        remote: Counting objects:  68% (85/125)        remote: Counting objects:  69% (87/125)        remote: Counting objects:  70% (88/125)        remote: Counting objects:  71% (89/125)        remote: Counting objects:  72% (90/125)        remote: Counting objects:  73% (92/125)        remote: Counting objects:  74% (93/125)        remote: Counting objects:  75% (94/125)        remote: Counting objects:  76% (95/125)        remote: Counting objects:  77% (97/125)        remote: Counting objects:  78% (98/125)        remote: Counting objects:  79% (99/125)        remote: Counting objects:  80% (100/125)remote: Counting objects:  81% (102/125)        remote: Counting objects:  82% (103/125)        remote: Counting objects:  83% (104/125)        remote: Counting objects:  84% (105/125)        remote: Counting objects:  85% (107/125)        remote: Counting objects:  86% (108/125)        remote: Counting objects:  87% (109/125)        remote: Counting objects:  88% (110/125)        remote: Counting objects:  89% (112/125)        remote: Counting objects:  90% (113/125)        remote: Counting objects:  91% (114/125)        remote: Counting objects:  92% (115/125)        remote: Counting objects:  93% (117/125)        remote: Counting objects:  94% (118/125)        remote: Counting objects:  95% (119/125)        remote: Counting objects:  96% (120/125)        remote: Counting objects:  97% (122/125)        remote: Counting objects:  98% (123/125)        remote: Counting objects:  99% (124/125)        remote: Counting objects: 100% (125/125)        remote: Counting objects: 100% (125/125), done.        
+remote: Compressing objects:   2% (1/37)        remote: Compressing objects:   5% (2/37)        remote: Compressing objects:   8% (3/37)        remote: Compressing objects:  10% (4/37)        remote: Compressing objects:  13% (5/37)        remote: Compressing objects:  16% (6/37)        remote: Compressing objects:  18% (7/37)        remote: Compressing objects:  21% (8/37)        remote: Compressing objects:  24% (9/37)        remote: Compressing objects:  27% (10/37)        remote: Compressing objects:  29% (11/37)        remote: Compressing objects:  32% (12/37)        remote: Compressing objects:  35% (13/37)        remote: Compressing objects:  37% (14/37)        remote: Compressing objects:  40% (15/37)        remote: Compressing objects:  43% (16/37)        remote: Compressing objects:  45% (17/37)        remote: Compressing objects:  48% (18/37)        remote: Compressing objects:  51% (19/37)        remote: Compressing objects:  54% (20/37)        remote: Compressing objects:  56% (21/37)        remote: Compressing objects:  59% (22/37)        remote: Compressing objects:  62% (23/37)        remote: Compressing objects:  64% (24/37)        remote: Compressing objects:  67% (25/37)        remote: Compressing objects:  70% (26/37)        remote: Compressing objects:  72% (27/37)        remote: Compressing objects:  75% (28/37)        remote: Compressing objects:  78% (29/37)        remote: Compressing objects:  81% (30/37)        remote: Compressing objects:  83% (31/37)        remote: Compressing objects:  86% (32/37)        remote: Compressing objects:  89% (33/37)        remote: Compressing objects:  91% (34/37)        remote: Compressing objects:  94% (35/37)        remote: Compressing objects:  97% (36/37)        remote: Compressing objects: 100% (37/37)        remote: Compressing objects: 100% (37/37), done.        
+                                                                                Receiving objects:   0% (1/154)                                                                                Receiving objects:   1% (2/154)                                                                                Receiving objects:   2% (4/154)                                                                                Receiving objects:   3% (5/154)                                                                                Receiving objects:   4% (7/154)                                                                                Receiving objects:   5% (8/154)                                                                                Receiving objects:   6% (10/154)                                                                                Receiving objects:   7% (11/154)                                                                                Receiving objects:   8% (13/154)                                                                                Receiving objects:   9% (14/154)                                                                                Receiving objects:  10% (16/154)                                                                                Receiving objects:  11% (17/154)                                                                                Receiving objects:  12% (19/154)                                                                                Receiving objects:  13% (21/154)                                                                                Receiving objects:  14% (22/154)                                                                                Receiving objects:  15% (24/154)                                                                                Receiving objects:  16% (25/154)                                                                                Receiving objects:  17% (27/154)                                                                                Receiving objects:  18% (28/154)                                                                                Receiving objects:  19% (30/154)                                                                                Receiving objects:  20% (31/154)                                                                                Receiving objects:  21% (33/154)                                                                                Receiving objects:  22% (34/154)                                                                                Receiving objects:  23% (36/154)                                                                                Receiving objects:  24% (37/154)                                                                                Receiving objects:  25% (39/154)                                                                                Receiving objects:  26% (41/154)                                                                                Receiving objects:  27% (42/154)                                                                                Receiving objects:  28% (44/154)                                                                                Receiving objects:  29% (45/154)                                                                                Receiving objects:  30% (47/154)                                                                                Receiving objects:  31% (48/154)                                                                                Receiving objects:  32% (50/154)                                                                                Receiving objects:  33% (51/154)                                                                                Receiving objects:  34% (53/154)                                                                                Receiving objects:  35% (54/154)                                                                                Receiving objects:  36% (56/154)                                                                                Receiving objects:  37% (57/154)                                                                                Receiving objects:  38% (59/154)                                                                                Receiving objects:  39% (61/154)                                                                                Receiving objects:  40% (62/154)                                                                                Receiving objects:  41% (64/154)                                                                                Receiving objects:  42% (65/154)                                                                                Receiving objects:  43% (67/154)                                                                                Receiving objects:  44% (68/154)                                                                                Receiving objects:  45% (70/154)                                                                                Receiving objects:  46% (71/154)                                                                                Receiving objects:  47% (73/154)                                                                                Receiving objects:  48% (74/154)                                                                                Receiving objects:  49% (76/154)                                                                                Receiving objects:  50% (77/154)                                                                                Receiving objects:  51% (79/154)                                                                                Receiving objects:  52% (81/154)                                                                                Receiving objects:  53% (82/154)                                                                                Receiving objects:  54% (84/154)                                                                                Receiving objects:  55% (85/154)                                                                                Receiving objects:  56% (87/154)                                                                                Receiving objects:  57% (88/154)                                                                                Receiving objects:  58% (90/154)                                                                                Receiving objects:  59% (91/154)                                                                                Receiving objects:  60% (93/154)                                                                                Receiving objects:  61% (94/154)                                                                                Receiving objects:  62% (96/154)                                                                                Receiving objects:  63% (98/154)                                                                                Receiving objects:  64% (99/154)                                                                                Receiving objects:  65% (101/154)                                                                                Receiving objects:  66% (102/154)                                                                                Receiving objects:  67% (104/154)                                                                                Receiving objects:  68% (105/154)                                                                                Receiving objects:  69% (107/154)                                                                                Receiving objects:  70% (108/154)remote: Total 154 (delta 89), reused 113 (delta 81), pack-reused 29
+                                                                                Receiving objects:  71% (110/154)                                                                                Receiving objects:  72% (111/154)                                                                                Receiving objects:  73% (113/154)                                                                                Receiving objects:  74% (114/154)                                                                                Receiving objects:  75% (116/154)                                                                                Receiving objects:  76% (118/154)                                                                                Receiving objects:  77% (119/154)                                                                                Receiving objects:  78% (121/154)                                                                                Receiving objects:  79% (122/154)                                                                                Receiving objects:  80% (124/154)                                                                                Receiving objects:  81% (125/154)                                                                                Receiving objects:  82% (127/154)                                                                                Receiving objects:  83% (128/154)                                                                                Receiving objects:  84% (130/154)                                                                                Receiving objects:  85% (131/154)                                                                                Receiving objects:  86% (133/154)                                                                                Receiving objects:  87% (134/154)                                                                                Receiving objects:  88% (136/154)                                                                                Receiving objects:  89% (138/154)                                                                                Receiving objects:  90% (139/154)                                                                                Receiving objects:  91% (141/154)                                                                                Receiving objects:  92% (142/154)                                                                                Receiving objects:  93% (144/154)                                                                                Receiving objects:  94% (145/154)                                                                                Receiving objects:  95% (147/154)                                                                                Receiving objects:  96% (148/154)                                                                                Receiving objects:  97% (150/154)                                                                                Receiving objects:  98% (151/154)                                                                                Receiving objects:  99% (153/154)                                                                                Receiving objects: 100% (154/154)                                                                                Receiving objects: 100% (154/154), 43.63 KiB | 277.00 KiB/s, done.
+                                                                                Resolving deltas:   0% (0/93)                                                                                Resolving deltas:   6% (6/93)                                                                                Resolving deltas:   7% (7/93)                                                                                Resolving deltas:   8% (8/93)                                                                                Resolving deltas:   9% (9/93)                                                                                Resolving deltas:  12% (12/93)                                                                                Resolving deltas:  13% (13/93)                                                                                Resolving deltas:  15% (14/93)                                                                                Resolving deltas:  19% (18/93)                                                                                Resolving deltas:  24% (23/93)                                                                                Resolving deltas:  31% (29/93)                                                                                Resolving deltas:  35% (33/93)                                                                                Resolving deltas:  37% (35/93)                                                                                Resolving deltas:  39% (37/93)                                                                                Resolving deltas:  40% (38/93)                                                                                Resolving deltas:  45% (42/93)                                                                                Resolving deltas:  49% (46/93)                                                                                Resolving deltas:  52% (49/93)                                                                                Resolving deltas:  56% (53/93)                                                                                Resolving deltas:  64% (60/93)                                                                                Resolving deltas:  70% (66/93)                                                                                Resolving deltas:  72% (67/93)                                                                                Resolving deltas:  73% (68/93)                                                                                Resolving deltas:  75% (70/93)                                                                                Resolving deltas:  79% (74/93)                                                                                Resolving deltas:  80% (75/93)                                                                                Resolving deltas:  81% (76/93)                                                                                Resolving deltas:  82% (77/93)                                                                                Resolving deltas:  83% (78/93)                                                                                Resolving deltas:  84% (79/93)                                                                                Resolving deltas:  86% (80/93)                                                                                Resolving deltas:  87% (81/93)                                                                                Resolving deltas:  88% (82/93)                                                                                Resolving deltas:  89% (83/93)                                                                                Resolving deltas:  91% (85/93)                                                                                Resolving deltas:  92% (86/93)                                                                                Resolving deltas:  94% (88/93)                                                                                Resolving deltas:  95% (89/93)                                                                                Resolving deltas:  96% (90/93)                                                                                Resolving deltas:  97% (91/93)                                                                                Resolving deltas:  98% (92/93)                                                                                Resolving deltas: 100% (93/93)                                                                                Resolving deltas: 100% (93/93), completed with 32 local objects.
+From https://github.com/input-output-hk/cardano-wallet
+ * branch                23c314a0bf3849fd52ca443a5127313c646b4904 -> FETCH_HEAD
+[90m$[0m git checkout -f 23c314a0bf3849fd52ca443a5127313c646b4904
+Warning: you are leaving 2 commits behind, not connected to
+any of your branches:
+
+  a732edfd6 Try removing heap profiling
+  a953fa671 Revert "Lower node logging severity to Notice in bench"
+
+If you want to keep them by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> a732edfd6
+
+HEAD is now at 23c314a0b Merge #1582
+[90m$[0m git submodule sync --recursive
+[90m$[0m git submodule update --init --recursive --force
+[90m$[0m git submodule foreach --recursive git reset --hard
+[90m$[0m git clean -ffdqx
+[90m$[0m git submodule foreach --recursive git clean -ffdqx
+~~~ Running global pre-command hook
+[90m$[0m /nix/store/i42glba5vjzdsyfgicji807k4blchykk-buildkite-agent-hooks/pre-command
+~~~ Running command
+[90m$[0m ././.buildkite/bench-latency.sh
+--- Build
+trace: Using IOHK default nixpkgs
+trace: [alex-plan-to-nix-pkgs] cabal new-configure --with-ghc=ghc --with-ghc-pkg=ghc-pkg
+trace: [happy-plan-to-nix-pkgs] cabal new-configure --with-ghc=ghc --with-ghc-pkg=ghc-pkg
+trace: [hscolour-plan-to-nix-pkgs] cabal new-configure --with-ghc=ghc --with-ghc-pkg=ghc-pkg
+these paths will be fetched (4.25 MiB download, 28.84 MiB unpacked):
+  /nix/store/2h4iqfa63y66826rm906jqwzgb15yxsa-cardano-wallet-jormungandr-2020.4.7-bench-latency
+copying path '/nix/store/2h4iqfa63y66826rm906jqwzgb15yxsa-cardano-wallet-jormungandr-2020.4.7-bench-latency' from 'https://hydra.iohk.io'...
+/nix/store/2h4iqfa63y66826rm906jqwzgb15yxsa-cardano-wallet-jormungandr-2020.4.7-bench-latency
+trace: Using IOHK default nixpkgs
+trace: [alex-plan-to-nix-pkgs] cabal new-configure --with-ghc=ghc --with-ghc-pkg=ghc-pkg
+trace: [happy-plan-to-nix-pkgs] cabal new-configure --with-ghc=ghc --with-ghc-pkg=ghc-pkg
+trace: [hscolour-plan-to-nix-pkgs] cabal new-configure --with-ghc=ghc --with-ghc-pkg=ghc-pkg
+trace: Using IOHK default nixpkgs
+trace: gitSource.nix: /nix/store/bsxg3s82zwjidjnnfx7hpf1yzq3zhh2z-source does not seem to be a git repository,
+assuming it is a clean checkout.
+trace: WARNING: `cleanGit` called on /nix/store/bsxg3s82zwjidjnnfx7hpf1yzq3zhh2z-source without a `name`. Consider adding `name = "bsxg3s82zwjidjnnfx7hpf1yzq3zhh2z-source;"`
+trace: Using index-state: 2020-04-01T00:00:00Z for source
+trace: Using IOHK default nixpkgs
+trace: WARNING: license "GPL-2.0-or-later" not found
+/nix/store/58nn9lhssc2xh8lv914pc5yhqjag79fr-cardano-wallet-byron-2020.4.7-bench-latency
++++ Run benchmark - byron
+
+
+Random wallets
+    Latencies for 2 fixture wallets scenario
+        listWallets         - 3.1 ms
+        getWallet           - 1.4 ms
+        getUTxOsStatistics  - 1.3 ms
+        listAddresses       - 1.7 ms
+        listTransactions    - 1.8 ms
+        postTransactionFee  - 1.1 ms
+        getNetworkInfo      - 63.7 ms
+    Latencies for 10 fixture wallets scenario
+        listWallets         - 11.1 ms
+        getWallet           - 1.2 ms
+        getUTxOsStatistics  - 1.2 ms
+        listAddresses       - 2.0 ms
+        listTransactions    - 3.3 ms
+        postTransactionFee  - 1.4 ms
+        getNetworkInfo      - 0.3 ms
+    Latencies for 100 fixture wallets scenario
+        listWallets         - 185.3 ms
+        getWallet           - 1.3 ms
+        getUTxOsStatistics  - 1.3 ms
+        listAddresses       - 2.1 ms
+        listTransactions    - 2.2 ms
+        postTransactionFee  - 1.5 ms
+        getNetworkInfo      - 0.3 ms
+    Latencies for 2 fixture wallets with 10 txs scenario
+        listWallets         - 3.1 ms
+        getWallet           - 1.6 ms
+        getUTxOsStatistics  - 1.5 ms
+        listAddresses       - 3.1 ms
+        listTransactions    - 3.6 ms
+        postTransactionFee  - 1.4 ms
+        getNetworkInfo      - 0.3 ms
+    Latencies for 2 fixture wallets with 20 txs scenario
+        listWallets         - 3.3 ms
+        getWallet           - 1.9 ms
+        getUTxOsStatistics  - 1.8 ms
+        listAddresses       - 5.0 ms
+        listTransactions    - 6.2 ms
+        postTransactionFee  - 2.0 ms
+        getNetworkInfo      - 0.3 ms
+    Latencies for 2 fixture wallets with 100 txs scenario
+        listWallets         - 4.1 ms
+        getWallet           - 2.7 ms
+        getUTxOsStatistics  - 2.6 ms
+        listAddresses       - 13.2 ms
+        listTransactions    - 20.4 ms
+        postTransactionFee  - 3.2 ms
+        getNetworkInfo      - 0.4 ms
+    Latencies for 10 fixture wallets with 10 txs scenario
+        listWallets         - 12.1 ms
+        getWallet           - 1.3 ms
+        getUTxOsStatistics  - 1.3 ms
+        listAddresses       - 2.9 ms
+        listTransactions    - 4.0 ms
+        postTransactionFee  - 1.4 ms
+        getNetworkInfo      - 0.3 ms
+    Latencies for 10 fixture wallets with 20 txs scenario
+        listWallets         - 12.6 ms
+        getWallet           - 1.7 ms
+        getUTxOsStatistics  - 1.7 ms
+        listAddresses       - 4.3 ms
+        listTransactions    - 5.7 ms
+        postTransactionFee  - 1.9 ms
+        getNetworkInfo      - 0.3 ms
+    Latencies for 10 fixture wallets with 100 txs scenario
+        listWallets         - 13.5 ms
+        getWallet           - 2.7 ms
+        getUTxOsStatistics  - 2.6 ms
+        listAddresses       - 12.9 ms
+        listTransactions    - 20.9 ms
+        postTransactionFee  - 3.2 ms
+        getNetworkInfo      - 0.4 ms
+    Latencies for 2 fixture wallets with 100 utxos scenario
+        listWallets         - 5.1 ms
+        getWallet           - 2.8 ms
+        getUTxOsStatistics  - 2.5 ms
+        listAddresses       - 9.2 ms
+        listTransactions    - 17.5 ms
+        postTransactionFee  - 11.2 ms
+        getNetworkInfo      - 0.4 ms
+    Latencies for 2 fixture wallets with 200 utxos scenario
+        listWallets         - 6.5 ms
+        getWallet           - 3.9 ms
+        getUTxOsStatistics  - 3.9 ms
+        listAddresses       - 16.6 ms
+        listTransactions    - 34.6 ms
+        postTransactionFee  - 22.7 ms
+        getNetworkInfo      - 0.4 ms
+    Latencies for 2 fixture wallets with 500 utxos scenario
+        listWallets         - 11.3 ms
+        getWallet           - 9.0 ms
+        getUTxOsStatistics  - 8.8 ms
+        listAddresses       - 42.8 ms
+        listTransactions    - 108.0 ms
+        postTransactionFee  - 97.8 ms
+        getNetworkInfo      - 0.4 ms
+    Latencies for 2 fixture wallets with 1000 utxos scenario
+        listWallets         - 21.4 ms
+        getWallet           - 17.2 ms
+        getUTxOsStatistics  - 16.9 ms
+        listAddresses       - 119.6 ms
+        listTransactions    - 192.6 ms
+        postTransactionFee  - 380.8 ms
+        getNetworkInfo      - 3.2 ms
+
+
+Icarus wallets
+    Latencies for 2 fixture wallets scenario
+        listWallets         - 4.0 ms
+        getWallet           - 2.4 ms
+        getUTxOsStatistics  - 2.4 ms
+        listAddresses       - 26.9 ms
+        listTransactions    - 2.7 ms
+        postTransactionFee  - 2.2 ms
+        getNetworkInfo      - 0.3 ms
+    Latencies for 10 fixture wallets scenario
+        listWallets         - 21.2 ms
+        getWallet           - 2.6 ms
+        getUTxOsStatistics  - 2.5 ms
+        listAddresses       - 31.4 ms
+        listTransactions    - 3.2 ms
+        postTransactionFee  - 2.8 ms
+        getNetworkInfo      - 0.4 ms
+    Latencies for 100 fixture wallets scenario
+        listWallets         - 575.5 ms
+        getWallet           - 10.7 ms
+        getUTxOsStatistics  - 10.6 ms
+        listAddresses       - 35.5 ms
+        listTransactions    - 11.6 ms
+        postTransactionFee  - 11.5 ms
+        getNetworkInfo      - 10.0 ms
+    Latencies for 2 fixture wallets with 10 txs scenario
+        listWallets         - 4.4 ms
+        getWallet           - 2.3 ms
+        getUTxOsStatistics  - 2.3 ms
+        listAddresses       - 23.6 ms
+        listTransactions    - 4.6 ms
+        postTransactionFee  - 2.5 ms
+        getNetworkInfo      - 0.3 ms
+    Latencies for 2 fixture wallets with 20 txs scenario
+        listWallets         - 4.7 ms
+        getWallet           - 2.6 ms
+        getUTxOsStatistics  - 2.5 ms
+        listAddresses       - 24.7 ms
+        listTransactions    - 6.4 ms
+        postTransactionFee  - 2.8 ms
+        getNetworkInfo      - 0.3 ms
+    Latencies for 2 fixture wallets with 100 txs scenario
+        listWallets         - 6.0 ms
+        getWallet           - 4.0 ms
+        getUTxOsStatistics  - 3.9 ms
+        listAddresses       - 32.5 ms
+        listTransactions    - 20.9 ms
+        postTransactionFee  - 4.6 ms
+        getNetworkInfo      - 0.5 ms
+    Latencies for 10 fixture wallets with 10 txs scenario
+        listWallets         - 23.5 ms
+        getWallet           - 3.4 ms
+        getUTxOsStatistics  - 3.5 ms
+        listAddresses       - 25.6 ms
+        listTransactions    - 5.5 ms
+        postTransactionFee  - 3.3 ms
+        getNetworkInfo      - 0.4 ms
+    Latencies for 10 fixture wallets with 20 txs scenario
+        listWallets         - 22.7 ms
+        getWallet           - 3.1 ms
+        getUTxOsStatistics  - 3.0 ms
+        listAddresses       - 25.3 ms
+        listTransactions    - 6.9 ms
+        postTransactionFee  - 3.2 ms
+        getNetworkInfo      - 0.4 ms
+    Latencies for 10 fixture wallets with 100 txs scenario
+        listWallets         - 26.1 ms
+        getWallet           - 4.8 ms
+        getUTxOsStatistics  - 5.0 ms
+        listAddresses       - 33.9 ms
+        listTransactions    - 22.7 ms
+        postTransactionFee  - 5.3 ms
+        getNetworkInfo      - 0.4 ms
+    Latencies for 2 fixture wallets with 100 utxos scenario
+        listWallets         - 8.3 ms
+        getWallet           - 4.1 ms
+        getUTxOsStatistics  - 4.0 ms
+        listAddresses       - 13.4 ms
+        listTransactions    - 16.0 ms
+        postTransactionFee  - 13.3 ms
+        getNetworkInfo      - 0.4 ms
+    Latencies for 2 fixture wallets with 200 utxos scenario
+        listWallets         - 11.0 ms
+        getWallet           - 5.7 ms
+        getUTxOsStatistics  - 6.7 ms
+        listAddresses       - 18.6 ms
+        listTransactions    - 36.0 ms
+        postTransactionFee  - 28.5 ms
+        getNetworkInfo      - 0.4 ms
+    Latencies for 2 fixture wallets with 500 utxos scenario
+        listWallets         - 17.1 ms
+        getWallet           - 10.5 ms
+        getUTxOsStatistics  - 18.7 ms
+        listAddresses       - 36.5 ms
+        listTransactions    - 70.3 ms
+        postTransactionFee  - 112.3 ms
+        getNetworkInfo      - 0.3 ms
+    Latencies for 2 fixture wallets with 1000 utxos scenario
+        listWallets         - 24.6 ms
+        getWallet           - 29.6 ms
+        getUTxOsStatistics  - 18.7 ms
+        listAddresses       - 71.8 ms
+        listTransactions    - 154.1 ms
+        postTransactionFee  - 401.2 ms
+        getNetworkInfo      - 0.4 ms
++++ Run benchmark - jormungandr
+Latencies for 2 fixture wallets scenario
+   listWallets         - 24.8 ms
+   getWallet           - 13.7 ms
+   getUTxOsStatistics  - 2.3 ms
+   listAddresses       - 9.3 ms
+   listTransactions    - 2.9 ms
+   postTransactionFee  - 2.6 ms
+   listStakePools      - 339.4 ms
+   getNetworkInfo      - 0.4 ms
+Latencies for 10 fixture wallets scenario
+   listWallets         - 116.7 ms
+   getWallet           - 11.3 ms
+   getUTxOsStatistics  - 2.3 ms
+   listAddresses       - 7.3 ms
+   listTransactions    - 3.0 ms
+   postTransactionFee  - 2.5 ms
+   listStakePools      - 69.1 ms
+   getNetworkInfo      - 0.4 ms
+Latencies for 100 fixture wallets scenario
+   listWallets         - 2053.6 ms
+   getWallet           - 11.5 ms
+   getUTxOsStatistics  - 2.4 ms
+   listAddresses       - 7.6 ms
+   listTransactions    - 3.0 ms
+   postTransactionFee  - 2.6 ms
+   listStakePools      - 640.4 ms
+   getNetworkInfo      - 15.5 ms
+Latencies for 2 fixture wallets with 10 txs scenario
+   listWallets         - 25.4 ms
+   getWallet           - 12.7 ms
+   getUTxOsStatistics  - 2.6 ms
+   listAddresses       - 8.7 ms
+   listTransactions    - 5.2 ms
+   postTransactionFee  - 3.0 ms
+   listStakePools      - 256.7 ms
+   getNetworkInfo      - 0.5 ms
+Latencies for 2 fixture wallets with 20 txs scenario
+   listWallets         - 23.8 ms
+   getWallet           - 12.1 ms
+   getUTxOsStatistics  - 2.6 ms
+   listAddresses       - 9.0 ms
+   listTransactions    - 6.9 ms
+   postTransactionFee  - 2.7 ms
+   listStakePools      - 243.6 ms
+   getNetworkInfo      - 0.4 ms
+Latencies for 2 fixture wallets with 100 txs scenario
+   listWallets         - 27.4 ms
+   getWallet           - 14.4 ms
+   getUTxOsStatistics  - 3.7 ms
+   listAddresses       - 16.3 ms
+   listTransactions    - 23.1 ms
+   postTransactionFee  - 4.4 ms
+   listStakePools      - 336.8 ms
+   getNetworkInfo      - 0.4 ms
+Latencies for 10 fixture wallets with 10 txs scenario
+   listWallets         - 116.0 ms
+   getWallet           - 13.0 ms
+   getUTxOsStatistics  - 3.0 ms
+   listAddresses       - 11.8 ms
+   listTransactions    - 4.9 ms
+   postTransactionFee  - 3.3 ms
+   listStakePools      - 237.7 ms
+   getNetworkInfo      - 0.4 ms
+Latencies for 10 fixture wallets with 20 txs scenario
+   listWallets         - 116.1 ms
+   getWallet           - 12.5 ms
+   getUTxOsStatistics  - 3.3 ms
+   listAddresses       - 9.4 ms
+   listTransactions    - 7.5 ms
+   postTransactionFee  - 3.0 ms
+   listStakePools      - 182.3 ms
+   getNetworkInfo      - 0.7 ms
+Latencies for 10 fixture wallets with 100 txs scenario
+   listWallets         - 116.1 ms
+   getWallet           - 14.5 ms
+   getUTxOsStatistics  - 3.7 ms
+   listAddresses       - 23.6 ms
+   listTransactions    - 29.9 ms
+   postTransactionFee  - 4.7 ms
+   listStakePools      - 664.1 ms
+   getNetworkInfo      - 0.5 ms
+Latencies for 2 fixture wallets with 100 utxos scenario
+   listWallets         - 25.7 ms
+   getWallet           - 14.5 ms
+   getUTxOsStatistics  - 3.7 ms
+   listAddresses       - 12.4 ms
+   listTransactions    - 19.6 ms
+   postTransactionFee  - 4.5 ms
+   listStakePools      - 613.1 ms
+   getNetworkInfo      - 0.4 ms
+Latencies for 2 fixture wallets with 200 utxos scenario
+   listWallets         - 32.6 ms
+   getWallet           - 18.4 ms
+   getUTxOsStatistics  - 5.5 ms
+   listAddresses       - 18.0 ms
+   listTransactions    - 34.7 ms
+   postTransactionFee  - 8.8 ms
+   listStakePools      - 500.9 ms
+   getNetworkInfo      - 0.4 ms
+Latencies for 2 fixture wallets with 500 utxos scenario
+   listWallets         - 39.1 ms
+   getWallet           - 30.1 ms
+   getUTxOsStatistics  - 10.3 ms
+   listAddresses       - 35.2 ms
+   listTransactions    - 86.9 ms
+   postTransactionFee  - 20.4 ms
+   listStakePools      - 520.2 ms
+   getNetworkInfo      - 0.4 ms
+Latencies for 2 fixture wallets with 1000 utxos scenario
+   listWallets         - 56.4 ms
+   getWallet           - 67.3 ms
+   getUTxOsStatistics  - 18.4 ms
+   listAddresses       - 65.3 ms
+   listTransactions    - 187.6 ms
+   postTransactionFee  - 19.6 ms
+   listStakePools      - 651.8 ms
+   getNetworkInfo      - 14.6 ms
+~~~ Running global pre-exit hook
+[90m$[0m /nix/store/i42glba5vjzdsyfgicji807k4blchykk-buildkite-agent-hooks/pre-exit

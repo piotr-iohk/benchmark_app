@@ -4,7 +4,7 @@ require_relative "env"
 require_relative "helpers/buildkite"
 require_relative "helpers/data_transfer"
 
-include Helpers::DataTransfer
+include Helpers
 
 namespace :db do
   desc "Run DB migrations"
@@ -27,7 +27,7 @@ namespace :bk do
     (min..max).each do |build_no|
       puts "Build: #{build_no}"
       res = bk.get_restoration_results_hash(build_no)
-      Helpers::DataTransfer::insert_into_db(res, DB)
+      Helpers::DataTransfer.insert_into_db(res, DB)
     end
   end
 
@@ -38,14 +38,14 @@ namespace :bk do
     nightly_builds = DB[:nightly_builds]
     last_build_in_db = nightly_builds.all.reverse.first[:build_no] if nightly_builds.first
     last_builds_from_bk = bk.get_pipline_build_numbers
-    builds = Helpers::DataTransfer::find_builds_to_transfer(last_build_in_db, last_builds_from_bk).reverse
+    builds = Helpers::DataTransfer.find_builds_to_transfer(last_build_in_db, last_builds_from_bk).reverse
     if builds.empty?
       puts "No new build..."
     else
       builds.each do |build_no|
         puts "Build: #{build_no}"
         res = bk.get_restoration_results_hash(build_no)
-        Helpers::DataTransfer::insert_into_db(res, DB)
+        Helpers::DataTransfer.insert_into_db(res, DB)
       end
     end
   end

@@ -2,24 +2,12 @@ require "buildkit"
 require "httparty"
 
 require_relative "../env"
+require_relative "readers"
 
 module Helpers
-  class Build
-    attr_accessor :number, :revision, :created_at
-
-    def initialize(number, created_at, revision)
-      @number = number
-      @revision = revision
-      @created_at = created_at
-    end
-  end
-
-  class RestorationTimes
-    attr_accessor :time_seq, :time_1per, :time_2per
-  end
-
   class Buildkite
     include HTTParty
+    include Helpers::Readers
 
     def initialize
       @org = 'input-output-hk'
@@ -33,13 +21,6 @@ module Helpers
 
     def get_pipeline_build(build_no)
       @client.build(@org, @pipeline, build_no)
-    end
-
-    ##
-    # build_details <- get_pipeline_build(build_no)
-    # returns: {job_name => job_id}
-    def get_pipeline_build_jobs(build_details)
-      build_details[:jobs].map{|j| [j[:name], j[:id]]}.to_h
     end
 
     def get_artifacts(build_no, job_id)
@@ -72,34 +53,17 @@ module Helpers
       self.class.get(url)
     end
 
-    def restoration_keys(artifact_name)
-      case artifact_name
-      when 'restore-byron-mainnet.txt'
-        ['restore mainnet seq',
-         'restore mainnet 1% ownership',
-         'restore mainnet 2% ownership']
-      when 'restore-byron-testnet.txt'
-        ['restore testnet (1097911063) seq',
-         'restore testnet (1097911063) 1% ownership',
-         'restore testnet (1097911063) 2% ownership']
-      else
-        raise "Wrong artifact name: #{artifact_name}"
-      end
-    end
-
     def get_restoration_results_from_artifact(build_no, job_id, artifact_name)
-      results = RestorationTimes.new
-      time_seq_key, time_1per_key, time_2per_key = restoration_keys(artifact_name)
-
       begin
         url = self.get_artifact_download_url(build_no, job_id, artifact_name)
         res = self.download_artifact(url)
       rescue
         puts "No url for artifact: #{artifact_name}"
       end
-
+      results = Restorations::Row.new
+      time_seq_key, time_1per_key, time_2per_key = Restorations.restoration_keys(artifact_name)
       begin
-        r = YAML.load(res.body).to_hash['All results']
+        r = Restorations.read_to_hash(res.body)
         results.time_seq = r[time_seq_key].to_f
         results.time_1per = r[time_1per_key].to_f
         results.time_2per = r[time_2per_key].to_f
@@ -111,8 +75,8 @@ module Helpers
 
     def get_restoration_results_hash(build_no)
       build_details =  self.get_pipeline_build(build_no)
-      jobs = self.get_pipeline_build_jobs build_details
-      build = Build.new(build_no, build_details[:created_at], build_details[:commit])
+      jobs = Jobs.get_pipeline_build_jobs build_details
+      build = Builds::Row.new(build_no, build_details[:created_at], build_details[:commit])
 
       mainnet_results = self.get_restoration_results_from_artifact build_no,
                         jobs["Restore benchmark - mainnet"],

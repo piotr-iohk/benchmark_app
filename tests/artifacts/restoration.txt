@@ -1,0 +1,4 @@
+All results:
+  restore mainnet seq: 1064.5 s
+  restore mainnet 1% ownership: 3566 s
+  restore mainnet 2% ownership: 6493.12 s

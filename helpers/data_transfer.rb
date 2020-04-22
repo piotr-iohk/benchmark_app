@@ -1,3 +1,5 @@
+##
+# helper module for puting serialized data from buildkite into DB
 module Helpers
   module DataTransfer
     def insert_into_db(buildkite_data_hash, db_connection)
@@ -36,5 +38,8 @@ module Helpers
           list_to_return << id
         end
     end
+
+    module_function :insert_into_db, :find_builds_to_transfer
+
   end
 end
