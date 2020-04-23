@@ -26,7 +26,7 @@ namespace :bk do
     max = args[:max_build_no].to_i if args[:max_build_no]
     (min..max).each do |build_no|
       puts "Build: #{build_no}"
-      res = bk.get_restoration_results_hash(build_no)
+      res = bk.get_benchmark_results_hash(build_no)
       Helpers::DataTransfer.insert_into_db(res, DB)
     end
   end
@@ -44,7 +44,7 @@ namespace :bk do
     else
       builds.each do |build_no|
         puts "Build: #{build_no}"
-        res = bk.get_restoration_results_hash(build_no)
+        res = bk.get_benchmark_results_hash(build_no)
         Helpers::DataTransfer.insert_into_db(res, DB)
       end
     end
