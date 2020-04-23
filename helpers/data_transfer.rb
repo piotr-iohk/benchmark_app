@@ -7,7 +7,7 @@ module Helpers
       if res[:build]
         build_no = res[:build].number
         puts " Build OK, inserting..."
-        id = db_connection[:nightly_builds].insert(datetime: res[:build].created_at,
+        nightly_build_id = db_connection[:nightly_builds].insert(datetime: res[:build].created_at,
                                         build_no: res[:build].number,
                                         rev: res[:build].revision)
       end
@@ -15,7 +15,7 @@ module Helpers
       if res[:mainnet_restores]
         m = res[:mainnet_restores]
         puts " Inserting mainnet_restores for build: #{build_no}"
-        db_connection[:mainnet_restores].insert(nightly_build_id: id,
+        db_connection[:mainnet_restores].insert(nightly_build_id: nightly_build_id,
                                      time_seq: m.time_seq,
                                      time_1per: m.time_1per,
                                      time_2per: m.time_2per)
@@ -24,10 +24,55 @@ module Helpers
       if res[:testnet_restores]
         t = res[:testnet_restores]
         puts " Inserting testnet_restores for build: #{build_no}"
-        db_connection[:testnet_restores].insert(nightly_build_id: id,
+        db_connection[:testnet_restores].insert(nightly_build_id: nightly_build_id,
                                      time_seq: t.time_seq,
                                      time_1per: t.time_1per,
                                      time_2per: t.time_2per)
+      end
+
+      if res[:latency_results]
+        res[:latency_results].each_pair do |latency_category, latency_benchmarks|
+          # insert latency_wallet_type if exists or use existing
+          l_wal_type = db_connection[:latency_categories].
+               select(:latency_category_id).
+               where(name: latency_category).first
+          if l_wal_type
+            puts " Using existing #{latency_category}..."
+            latency_category_id = l_wal_type[:latency_category_id]
+          else
+            puts " Inserting new #{latency_category}..."
+            latency_category_id = db_connection[:latency_categories].
+                                     insert(name: latency_category)
+          end
+
+          latency_benchmarks.each_pair do |latency_benchmark, m|
+            # insert latency_benchmark if exists or use existing
+            l_meas_type = db_connection[:latency_benchmarks].
+                             select(:latency_benchmark_id).
+                             where(name: latency_benchmark).first
+            if l_meas_type
+              puts "  Using exisitng #{latency_benchmark}..."
+              latency_benchmark_id = l_meas_type[:latency_benchmark_id]
+            else
+              puts "  Inserting new #{latency_benchmark}..."
+              latency_benchmark_id = db_connection[:latency_benchmarks].
+                                        insert(name: latency_benchmark)
+            end
+
+            puts "    Inserting measurements..."
+            db_connection[:latency_measurements].
+               insert(nightly_build_id: nightly_build_id,
+                      latency_category_id: latency_category_id,
+                      latency_benchmark_id: latency_benchmark_id,
+                      listWallets: m['listWallets'],
+                      getWallet: m['getWallet'],
+                      getUTxOsStatistics: m['getUTxOsStatistics'],
+                      listAddresses: m['listAddresses'],
+                      listTransactions: m['listTransactions'],
+                      postTransactionFee: m['postTransactionFee'],
+                      getNetworkInfo: m['getNetworkInfo'] )
+          end
+        end
       end
     end
 

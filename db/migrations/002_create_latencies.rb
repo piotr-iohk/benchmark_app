@@ -3,8 +3,8 @@ Sequel.migration do
     create_table :latency_measurements do
       primary_key :latency_measurement_id
       foreign_key :nightly_build_id, :nightly_builds, :null => false
-      foreign_key :latency_measurement_type_id, :latency_measurement_types, :null => false
-      foreign_key :latency_wallet_type_id, :latency_wallet_types, :null => false
+      foreign_key :latency_benchmark_id, :latency_benchmarks, :null => false
+      foreign_key :latency_category_id, :latency_categories, :null => false
       Float :listWallets
       Float :getWallet
       Float :getUTxOsStatistics
@@ -14,9 +14,9 @@ Sequel.migration do
       Float :getNetworkInfo
     end
 
-    create_table :latency_measurement_types do
-      primary_key :latency_measurement_type_id
-      String :type
+    create_table :latency_benchmarks do
+      primary_key :latency_benchmark_id
+      String :name
     end
     # from(:latency_measurement_types).insert(type: "Latencies for 2 fixture wallets scenario")
     # from(:latency_measurement_types).insert(type: "Latencies for 10 fixture wallets scenario")
@@ -32,9 +32,9 @@ Sequel.migration do
     # from(:latency_measurement_types).insert(type: "Latencies for 2 fixture wallets with 500 utxos scenario")
     # from(:latency_measurement_types).insert(type: "Latencies for 2 fixture wallets with 1000 utxos scenario")
 
-    create_table :latency_wallet_types do
-      primary_key :latency_wallet_type_id
-      String :type
+    create_table :latency_categories do
+      primary_key :latency_category_id
+      String :name
     end
     # from(:latency_wallet_types).insert(type: "Random wallets")
     # from(:latency_wallet_types).insert(type: "Icaurs wallets")
