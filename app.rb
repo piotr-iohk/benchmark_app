@@ -3,6 +3,7 @@ require 'sequel'
 require 'chartkick'
 
 require_relative "env"
+require_relative "helpers/app"
 require_relative "helpers/buildkite"
 require_relative "helpers/readers"
 
@@ -11,15 +12,13 @@ class App < Sinatra::Base
   include Helpers::Readers
   set :root, File.dirname(__FILE__)
   enable :sessions
+  helpers Helpers::App
 
   DB = Sequel.connect(DB_PATH)
 
-  # helpers Helpers::Buildkite
   # register Sinatra::App::Routing::Main
 
   get "/" do
-    # size = DB[:nightly_builds].all.size
-    # erb :index, { :locals => { :size => size } }
     redirect "/nightbuilds"
   end
 
@@ -59,13 +58,40 @@ class App < Sinatra::Base
   get "/mainnet-restoration" do
     dataset = DB[:mainnet_restores].join_table(:inner, DB[:nightly_builds], [:nightly_build_id]).
                                     exclude(time_seq: nil, time_1per: nil, time_2per: nil)
-    erb :restoration, { :locals => { :dataset => dataset } }
+    erb :restoration_graphs, { :locals => { :dataset => dataset } }
   end
 
   get "/testnet-restoration" do
     dataset = DB[:testnet_restores].join_table(:inner, DB[:nightly_builds], [:nightly_build_id]).
                                     exclude(time_seq: nil, time_1per: nil, time_2per: nil)
-    erb :restoration, { :locals => { :dataset => dataset } }
+    erb :restoration_graphs, { :locals => { :dataset => dataset } }
+  end
+
+  get "/latency" do
+    redirect "/latency/all"
+  end
+
+  get "/latency/:benchmark_id" do
+    sql = %{
+      select build_no, c.name as category, b.name as benchmark, listWallets, getWallet,
+	   getUTxOsStatistics, listAddresses, listTransactions, postTransactionFee, getNetworkInfo
+        from latency_measurements as m
+        join nightly_builds as n on m.nightly_build_id = n.nightly_build_id
+        join latency_benchmarks as b on m.latency_benchmark_id = b.latency_benchmark_id
+        join latency_categories as c on m.latency_category_id = c.latency_category_id
+    }
+    dataset = DB[sql]
+    benchmark_id = params[:benchmark_id]
+    case benchmark_id
+    when "all"
+      latency_benchmarks = DB[:latency_benchmarks]
+    else
+      latency_benchmarks = DB[:latency_benchmarks].where(latency_benchmark_id: benchmark_id)
+    end
+
+    erb :latency_graphs, { :locals => { :dataset => dataset,
+                                        :latency_benchmarks => latency_benchmarks } }
+
   end
 
 end

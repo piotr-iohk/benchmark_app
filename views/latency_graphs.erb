@@ -1,0 +1,37 @@
+<div class="row row-cols-2">
+  <div class="col">
+    <h2>Random wallets</h2>
+    <%
+    latency_benchmarks.each do | benchmark |
+      b = dataset.all.
+          select{|i| i if (i[:category] == "Random wallets") &&
+          i[:benchmark] == benchmark[:name] }
+      data = latency_graphs_per_benchmark_data b
+    %>
+
+    <%= line_chart data,
+        title: benchmark[:name],
+        ytitle: "Time (ms)", xtitle: "Nightbuild no"
+     %>
+    <br/>
+    <% end %>
+  </div>
+
+  <div class="col">
+    <h2>Icarus wallets</h2>
+    <%
+    latency_benchmarks.each do | benchmark |
+      b = dataset.all.
+          select{|i| i if (i[:category] == "Icarus wallets") &&
+          i[:benchmark] == benchmark[:name] }
+      data = latency_graphs_per_benchmark_data b
+    %>
+
+    <%= line_chart data,
+        title: benchmark[:name],
+        ytitle: "Time (ms)", xtitle: "Nightbuild no"
+     %>
+    <br/>
+    <% end %>
+  </div>
+</div>
