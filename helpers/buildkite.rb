@@ -20,7 +20,11 @@ module Helpers
     end
 
     def get_job_log(build_no, job_id)
-      @client.job_log(@org, @pipeline, build_no, job_id).content
+      begin
+        @client.job_log(@org, @pipeline, build_no, job_id).content
+      rescue
+        ""
+      end
     end
 
     def get_pipeline_build(build_no)

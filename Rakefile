@@ -49,4 +49,17 @@ namespace :bk do
       end
     end
   end
+
+  desc "Latencies for existing builds"
+  task :latencies do
+    bk = Helpers::Buildkite.new
+    DB = Sequel.connect(DB_PATH)
+    builds = DB[:nightly_builds].all.map { |b| b[:build_no]}
+    builds.each do |build_no|
+      puts "Build: #{build_no}"
+      res = bk.get_benchmark_results_hash(build_no)
+      Helpers::DataTransfer.insert_into_db(res, DB, {skip_mainnet: true, skip_testnet: true})
+    end
+  end
+
 end
