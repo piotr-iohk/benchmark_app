@@ -1,5 +1,15 @@
 Sequel.migration do
   change do
+    create_table :latency_categories do
+      primary_key :latency_category_id
+      String :name
+    end
+
+    create_table :latency_benchmarks do
+      primary_key :latency_benchmark_id
+      String :name
+    end
+
     create_table :latency_measurements do
       primary_key :latency_measurement_id
       foreign_key :nightly_build_id, :nightly_builds, :null => false
@@ -13,15 +23,5 @@ Sequel.migration do
       Float :postTransactionFee
       Float :getNetworkInfo
     end
-
-    create_table :latency_benchmarks do
-      primary_key :latency_benchmark_id
-      String :name
-    end
-
-    create_table :latency_categories do
-      primary_key :latency_category_id
-      String :name
-    end
-	 end
+	end
 end

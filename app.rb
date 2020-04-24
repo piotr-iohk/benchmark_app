@@ -90,7 +90,8 @@ class App < Sinatra::Base
     end
 
     erb :latency_graphs, { :locals => { :dataset => dataset,
-                                        :latency_benchmarks => latency_benchmarks } }
+                                        :latency_benchmarks => latency_benchmarks,
+                                        :benchmark_id => benchmark_id } }
 
   end
 
