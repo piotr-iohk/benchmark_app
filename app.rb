@@ -68,10 +68,10 @@ class App < Sinatra::Base
   end
 
   get "/latency" do
-    redirect "/latency/all"
-  end
+    latency_category = params[:latency_category]
+    latency_benchmark = params[:latency_benchmark]
+    latency_measurement = params[:latency_measurement]
 
-  get "/latency/:benchmark_id" do
     sql = %{
       select build_no, c.name as category, b.name as benchmark, "listWallets", "getWallet",
 	   "getUTxOsStatistics", "listAddresses", "listTransactions", "postTransactionFee", "getNetworkInfo"
@@ -81,17 +81,22 @@ class App < Sinatra::Base
         join latency_categories as c on m.latency_category_id = c.latency_category_id
     }
     dataset = DB[sql]
-    benchmark_id = params[:benchmark_id]
-    case benchmark_id
-    when "all"
-      latency_benchmarks = DB[:latency_benchmarks]
-    else
-      latency_benchmarks = DB[:latency_benchmarks].where(latency_benchmark_id: benchmark_id)
-    end
+    latency_categories = DB[:latency_categories]
+    latency_benchmarks = DB[:latency_benchmarks]
+    latency_measurements = [ "all",
+                             "listWallets",
+                             "getWallet",
+                             "getUTxOsStatistics",
+                             "listAddresses",
+                             "listTransactions",
+                             "postTransactionFee",
+                             "getNetworkInfo" ]
 
     erb :latency_graphs, { :locals => { :dataset => dataset,
+                                        :latency_categories => latency_categories,
                                         :latency_benchmarks => latency_benchmarks,
-                                        :benchmark_id => benchmark_id } }
+                                        :latency_measurements => latency_measurements
+                                         }}
 
   end
 
