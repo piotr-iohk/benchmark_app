@@ -61,4 +61,15 @@ describe Helpers::Readers::Latencies do
     v8 = h['Icarus wallets']['Latencies for 10 fixture wallets with 10 txs scenario']['listWallets']
     expect(v8).to eq 23.5
   end
+
+  it "read_to_hash empty" do
+    h = Latencies.read_to_hash ""
+    expect(h).to be_empty
+  end
+
+  it "read_to_hash wrong format" do
+    res = File.read("#{Dir.pwd}/tests/artifacts/restoration.txt")
+    h = Latencies.read_to_hash res
+    expect(h).to be_empty
+  end
 end

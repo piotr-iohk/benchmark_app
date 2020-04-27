@@ -45,7 +45,6 @@ module Helpers
     end # Restoration
 
     module Latencies
-      LATENCIES = [ ]
       def read_to_hash(str)
         lines = []
         str.split(/\r?\n|\r/).map{|l| l.strip}.each do |l|

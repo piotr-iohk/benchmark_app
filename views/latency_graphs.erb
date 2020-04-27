@@ -1,0 +1,86 @@
+<%
+params[:latency_category] ||= "random_icarus"
+params[:latency_benchmark] ||= "all"
+params[:latency_measurement] ||= "all"
+
+data_filter = [params[:latency_measurement]]
+%>
+
+<form action="/latency" method="GET">
+  <div class="row">
+    <div class="col">
+      <select class="custom-select" name="latency_category">
+        <option <%= (params[:latency_category] == "random_icarus") ? "selected" : "" %> value="random_icarus" >Random vs. Icarus</option>
+      <% latency_categories.all.reverse.each do |c|%>
+        <option <%= (params[:latency_category] == c[:latency_category_id].to_s) ? "selected" : "" %> value="<%= c[:latency_category_id] %>"><%= c[:name]%></option>
+      <% end %>
+      </select>
+      <small class="form-text text-muted">Wallet type</small>
+    </div>
+    <div class="col">
+      <select class="custom-select" name="latency_benchmark">
+        <option <%= (params[:latency_benchmark] == "all") ? "selected" : "" %> value="all" >
+          All
+        </option>
+      <% latency_benchmarks.all.reverse.each do |c|%>
+        <option <%= (params[:latency_benchmark] == c[:latency_benchmark_id].to_s) ? "selected" : "" %> value="<%= c[:latency_benchmark_id] %>">
+          <%= c[:name]%>
+        </option>
+      <% end %>
+      </select>
+      <small class="form-text text-muted">Benchmark type</small>
+    </div>
+    <div class="col">
+      <select class="custom-select" name="latency_measurement">
+      <% latency_measurements.each do |c| %>
+        <option <%= (params[:latency_measurement] == c) ? "selected" : "" %> value="<%= c %>">
+          <%= c == "all" ? c.capitalize : c %>
+        </option>
+      <% end %>
+      </select>
+      <small class="form-text text-muted">Measurement type</small>
+
+    </div>
+    <div class="col">
+      <button type="submit" class="btn btn-success">Draw</button>
+    </div>
+  </div>
+</form>
+<br/>
+<%
+latencies = latency_benchmarks.
+    where(latency_benchmark_id: params['latency_benchmark'].to_i)
+latencies = latency_benchmarks if latencies.all.empty?
+
+case params['latency_category']
+when "random_icarus"
+%>
+  <div class="row row-cols-2">
+    <div class="col">
+      <h2>Random wallets</h2>
+      <%= latency_graphs_per_benchmark_render "Random wallets", latencies, dataset, data_filter%>
+    </div>
+
+    <div class="col">
+      <h2>Icarus wallets</h2>
+      <%= latency_graphs_per_benchmark_render "Icarus wallets", latencies, dataset, data_filter %>
+    </div>
+  </div>
+<%
+  else
+    begin
+      cat_name = latency_categories.
+          where(latency_category_id: params['latency_category'].to_i).
+          first[:name]
+    rescue
+      cat_name = latency_categories.all.reverse.first[:name]
+    end
+%>
+
+  <div class="row">
+    <div class="col">
+      <h2><%= cat_name %></h2>
+      <%= latency_graphs_per_benchmark_render cat_name, latencies, dataset, data_filter %>
+    </div>
+  </div>
+<% end %>

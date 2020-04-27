@@ -19,6 +19,14 @@ module Helpers
       @client.pipeline_builds(@org, @pipeline, options).map{|b| b[:number]}
     end
 
+    def get_job_log(build_no, job_id)
+      begin
+        @client.job_log(@org, @pipeline, build_no, job_id).content
+      rescue
+        ""
+      end
+    end
+
     def get_pipeline_build(build_no)
       @client.build(@org, @pipeline, build_no)
     end
@@ -73,7 +81,7 @@ module Helpers
        results
     end
 
-    def get_restoration_results_hash(build_no)
+    def get_benchmark_results_hash(build_no)
       build_details =  self.get_pipeline_build(build_no)
       jobs = Jobs.get_pipeline_build_jobs build_details
       build = Builds::Row.new(build_no, build_details[:created_at], build_details[:commit])
@@ -84,16 +92,24 @@ module Helpers
       testnet_results = self.get_restoration_results_from_artifact build_no,
                         jobs["Restore benchmark - testnet"],
                         "restore-byron-testnet.txt"
+      latency_job_log = self.get_job_log build_no, jobs['Latency benchmark']
+      latency_results = Latencies.read_to_hash latency_job_log
 
       { build: build,
         mainnet_restores: mainnet_results,
-        testnet_restores: testnet_results
+        testnet_restores: testnet_results,
+        latency_results: latency_results
       }
     end
   end
 end
 
 # include Helpers
+# include Helpers::Readers
+#
+# build_no = 480
 # bk = Buildkite.new
-# build_details = bk.get_pipeline_build 477
-# p bk.get_pipeline_build_jobs build_details
+# build_details = bk.get_pipeline_build build_no
+# jobs = Jobs.get_pipeline_build_jobs build_details
+# job_log = (bk.get_job_log build_no, jobs['Latency benchmark']).content
+# pp Latencies.read_to_hash job_log
