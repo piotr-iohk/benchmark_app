@@ -1,32 +1,25 @@
 <%
   size = dataset.size
   gh_url = "https://github.com/input-output-hk/cardano-wallet/commit/"
-  l = dataset[0]
+  head, *tail = dataset
 %>
-<!-- <p>
-  Welcome! I have <%= size %>
-  <a href="https://buildkite.com/input-output-hk/cardano-wallet-nightly" target="_blank">nightly builds</a>
-  in my database. Drill down into individual build's details or go directly to charts.
-</p>
-<ul>
-  <li><a href="/nightbuilds">Nightbuilds</a></li>
-  <li><a href="/mainnet-restoration">Mainnet restoration</a></li>
-  <li><a href="/testnet-restoration">Testnet restoration</a></li>
-</ul> -->
+
 <h4>Total: <%= size%></h4>
 <h4>
-  Latest: <a href ="/nightbuilds/<%= l[:build_no]%>"><%= l[:build_no]%></a>
+  Latest: <a href ="/nightbuilds/<%= head[:build_no]%>"><%= head[:build_no]%></a>
   <small>
-    (<%= l[:datetime]%>, <%= "<a href='#{gh_url}/#{l[:rev]}' target='_blank'>#{l[:rev][0..7]}</a>" %>)
+    (<%= head[:datetime]%>,
+     <%= "<a href='#{gh_url}/#{head[:rev]}' target='_blank'>#{head[:rev][0..7]}</a>" %>)
   </small>
 
 </h4>
 
 <p>
+  ...
 <%
-  dataset.each_with_index do |nb, id|
+  tail.each_with_index do |nb, id|
 %>
-  <a href ="/nightbuilds/<%= nb[:build_no]%>"><%= nb[:build_no]%></a><%= id == (size - 1) ? "." : ", " %>
+  <a href ="/nightbuilds/<%= nb[:build_no]%>"><%= nb[:build_no]%></a><%= id == (size - 2) ? "." : ", " %>
 <%
   end
 %>
