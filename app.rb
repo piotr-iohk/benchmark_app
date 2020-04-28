@@ -7,7 +7,7 @@ require_relative "helpers/app"
 require_relative "helpers/buildkite"
 require_relative "helpers/readers"
 
-class App < Sinatra::Base
+class BenchmarkApp < Sinatra::Base
   include Helpers
   include Helpers::Readers
   set :root, File.dirname(__FILE__)
