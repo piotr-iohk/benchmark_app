@@ -25,6 +25,7 @@ jobs:
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
-        export BENCH_DB_PATH=sqlite:/tmp/data/db
+        export BENCH_DB_PATH=sqlite:/tmp/data.db
         export BUILDKITE_API_TOKEN=fake_api_token
+        rake db:migrate
         rspec tests

@@ -25,6 +25,8 @@ GEM
     rack (2.2.2)
     rack-protection (2.0.8.1)
       rack
+    rack-test (1.1.0)
+      rack (>= 1.0, < 3)
     rake (13.0.1)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
@@ -64,7 +66,7 @@ DEPENDENCIES
   chartkick
   httparty
   pg
-  rack
+  rack-test
   rake
   rspec
   sequel

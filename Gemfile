@@ -10,6 +10,7 @@ gem 'rake'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec'
+  gem 'rack-test'
   gem 'simplecov', require: false
 end
 
