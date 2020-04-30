@@ -1,0 +1,4 @@
+All results:
+  restore testnet (1097911063) seq: 225 s
+  restore testnet (1097911063) 1% ownership: 250 s
+  restore testnet (1097911063) 2% ownership: 255.7 s

@@ -68,13 +68,9 @@ module Helpers
       rescue
         puts "No url for artifact: #{artifact_name}"
       end
-      results = Restorations::Row.new
-      time_seq_key, time_1per_key, time_2per_key = Restorations.restoration_keys(artifact_name)
+
       begin
-        r = Restorations.read_to_hash(res.body)
-        results.time_seq = r[time_seq_key].to_f
-        results.time_1per = r[time_1per_key].to_f
-        results.time_2per = r[time_2per_key].to_f
+        results = Restorations.read_to_hash(res.body, artifact_name)
       rescue
         puts "No results for artifact: #{artifact_name}"
       end
@@ -84,7 +80,10 @@ module Helpers
     def get_benchmark_results_hash(build_no)
       build_details =  self.get_pipeline_build(build_no)
       jobs = Jobs.get_pipeline_build_jobs build_details
-      build = Builds::Row.new(build_no, build_details[:created_at], build_details[:commit])
+      build = { build_no: build_no,
+                datetime: build_details[:created_at],
+                rev: build_details[:commit]
+              }
 
       mainnet_results = self.get_restoration_results_from_artifact build_no,
                         jobs["Restore benchmark - mainnet"],
@@ -103,13 +102,3 @@ module Helpers
     end
   end
 end
-
-# include Helpers
-# include Helpers::Readers
-#
-# build_no = 480
-# bk = Buildkite.new
-# build_details = bk.get_pipeline_build build_no
-# jobs = Jobs.get_pipeline_build_jobs build_details
-# job_log = (bk.get_job_log build_no, jobs['Latency benchmark']).content
-# pp Latencies.read_to_hash job_log

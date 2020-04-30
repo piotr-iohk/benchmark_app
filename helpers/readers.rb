@@ -4,35 +4,23 @@ require 'yaml'
 # helper module for serializing data from buildkite
 module Helpers
   module Readers
-
-    module Builds
-      class Row
-        attr_accessor :number, :revision, :created_at
-
-        def initialize(number, created_at, revision)
-          @number = number
-          @revision = revision
-          @created_at = created_at
-        end
-      end
-    end
-
     module Restorations
-      class Row
-        attr_accessor :time_seq, :time_1per, :time_2per
-      end
-
-      def read_to_hash(benchmark_string)
-        YAML.load(benchmark_string).to_hash['All results'].map { |k,v| [k, v.to_f] }.to_h
+      def read_to_hash(benchmark_string, mainnet_or_testnet)
+        r = YAML.load(benchmark_string).to_hash['All results'].map { |k,v| [k, v.to_f] }.to_h
+        time_seq_key, time_1per_key, time_2per_key = restoration_keys(mainnet_or_testnet)
+        { time_seq: r[time_seq_key].to_f,
+          time_1per: r[time_1per_key].to_f,
+          time_2per: r[time_2per_key].to_f
+        }
       end
 
       def restoration_keys(artifact_name)
         case artifact_name
-        when 'restore-byron-mainnet.txt'
+        when 'restore-byron-mainnet.txt', 'mainnet'
           ['restore mainnet seq',
            'restore mainnet 1% ownership',
            'restore mainnet 2% ownership']
-        when 'restore-byron-testnet.txt'
+        when 'restore-byron-testnet.txt', 'testnet'
           ['restore testnet (1097911063) seq',
            'restore testnet (1097911063) 1% ownership',
            'restore testnet (1097911063) 2% ownership']
