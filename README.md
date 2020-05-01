@@ -2,6 +2,10 @@
   <img src="https://github.com/piotr-iohk/benchmark_app/workflows/Tests/badge.svg" />
 </a>
 
+<a href="https://codecov.io/gh/piotr-iohk/benchmark_app">
+  <img src="https://codecov.io/gh/piotr-iohk/benchmark_app/branch/master/graph/badge.svg" />
+</a>
+
 # benchmark app
 
 Graphs of [cardano-wallet](https://github.com/input-output-hk/cardano-wallet) benchmarks from [nightly builds](https://buildkite.com/input-output-hk/cardano-wallet-nightly).

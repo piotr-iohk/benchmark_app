@@ -28,7 +28,7 @@ class BenchmarkApp < Sinatra::Base
   end
 
   get "/nightbuilds/:id" do
-    build_no = params[:id]
+    build_no = params[:id].to_i
     builds = DB[:nightly_builds]
     mainnet = DB[:nightly_builds].join(:mainnet_restores, nightly_build_id: :nightly_build_id).
                                   where(build_no: build_no)

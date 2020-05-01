@@ -1,5 +1,5 @@
 <%
-  b = builds.where(build_no: params[:id]).first
+  b = builds.where(build_no: params[:id].to_i).first
   t = testnet.first
   m = mainnet.first
 

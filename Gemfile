@@ -13,6 +13,7 @@ group :development, :test do
   gem 'rack-test'
   gem 'capybara'
   gem 'simplecov', require: false
+  gem 'codecov', require: false
 end
 
 group :production do
