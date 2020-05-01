@@ -11,6 +11,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec'
   gem 'rack-test'
+  gem 'capybara'
   gem 'simplecov', require: false
 end
 
