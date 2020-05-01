@@ -1,3 +1,4 @@
+
 <a href="https://github.com/piotr-iohk/benchmark_app/actions?query=workflow%3ATests">
   <img src="https://github.com/piotr-iohk/benchmark_app/workflows/Tests/badge.svg" />
 </a>
@@ -10,8 +11,30 @@
 
 Graphs of [cardano-wallet](https://github.com/input-output-hk/cardano-wallet) benchmarks from [nightly builds](https://buildkite.com/input-output-hk/cardano-wallet-nightly).
 
-Visit -> https://cardano-wallet-benchmarks.herokuapp.com
+<br/>
+
+:tada: https://cardano-wallet-benchmarks.herokuapp.com :tada:
+
+<br/>
 
 <img src="https://github.com/piotr-iohk/benchmark_app/blob/master/.github/1.png" />
-<img src="https://github.com/piotr-iohk/benchmark_app/blob/master/.github/2.png" />
-<img src="https://github.com/piotr-iohk/benchmark_app/blob/master/.github/3.png" />
+
+## Test
+
+```bash
+# Install
+git clone https://github.com/piotr-iohk/benchmark_app.git
+cd benchmark_app
+bundle install
+
+# Configure
+export BENCH_DB_PATH=sqlite:/tmp/test.db
+export BUILDKITE_API_TOKEN=fake_token
+rake db:migrate
+
+# Run all tests
+rspec tests
+
+# Open code coverage report
+xdg-open coverage/index.html
+```
