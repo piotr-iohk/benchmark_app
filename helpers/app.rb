@@ -22,7 +22,7 @@ module Helpers
       end
     end
 
-    def latency_graphs_per_benchmark_render (category_name, latencies, dataset, data_filter = [])
+    def latency_graphs_per_benchmark_render(category_name, latencies, dataset, data_filter = [])
       charts = ""
       latencies = latencies.order(Sequel.desc(:latency_benchmark_id))
       latencies.each do | benchmark |

@@ -81,6 +81,7 @@ url = request.env['PATH_INFO'].to_s
     <main role="main" class="flex-shrink-0">
       <div class="container">
         <!-- <div class="row"> -->
+            <%= erb :error %>
             <%= yield %>
         <!-- </div> -->
       </div>

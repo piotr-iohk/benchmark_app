@@ -1,4 +1,4 @@
-require_relative '../helpers/readers'
+require_relative 'spec_helper'
 
 include Helpers::Readers
 
@@ -24,12 +24,20 @@ describe Helpers::Readers::Restorations do
     end
   end
 
-  it "read_to_hash" do
-    res = File.read("#{Dir.pwd}/tests/artifacts/restoration.txt")
-    h = Restorations.read_to_hash res
-    expect(h).to eq({'restore mainnet seq' => 1064.5,
-                     'restore mainnet 1% ownership' => 3566,
-                     'restore mainnet 2% ownership' => 6493.12})
+  it "read_to_hash - mainnet" do
+    res = File.read("#{Dir.pwd}/tests/artifacts/restoration-mainnet.txt")
+    h = Restorations.read_to_hash res, "mainnet"
+    expect(h).to eq({time_seq: 1064.5,
+                     time_1per: 3566,
+                     time_2per: 6493.12})
+  end
+
+  it "read_to_hash - testnet" do
+    res = File.read("#{Dir.pwd}/tests/artifacts/restoration-testnet.txt")
+    h = Restorations.read_to_hash res, "testnet"
+    expect(h).to eq({time_seq: 225,
+                     time_1per: 250,
+                     time_2per: 255.7})
   end
 end
 
@@ -68,7 +76,7 @@ describe Helpers::Readers::Latencies do
   end
 
   it "read_to_hash wrong format" do
-    res = File.read("#{Dir.pwd}/tests/artifacts/restoration.txt")
+    res = File.read("#{Dir.pwd}/tests/artifacts/restoration-mainnet.txt")
     h = Latencies.read_to_hash res
     expect(h).to be_empty
   end

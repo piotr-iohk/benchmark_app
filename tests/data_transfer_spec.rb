@@ -1,4 +1,4 @@
-require_relative '../helpers/data_transfer'
+require_relative 'spec_helper'
 
 include Helpers
 

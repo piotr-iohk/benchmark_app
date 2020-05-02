@@ -5,9 +5,9 @@ module Helpers
     def insert_into_db(buildkite_data_hash, db_connection, options = {})
       res = buildkite_data_hash
       if res[:build]
-        build_no = res[:build].number
-        datetime = res[:build].created_at
-        rev = res[:build].revision
+        build_no = res[:build][:build_no]
+        datetime = res[:build][:datetime]
+        rev = res[:build][:rev]
         nb = db_connection[:nightly_builds].where(build_no: build_no).first
         if nb
           puts " Using build #{build_no}..."
@@ -27,9 +27,9 @@ module Helpers
           m = res[:mainnet_restores]
           puts " Inserting mainnet_restores for build: #{build_no}"
           db_connection[:mainnet_restores].insert(nightly_build_id: nightly_build_id,
-            time_seq: m.time_seq,
-            time_1per: m.time_1per,
-            time_2per: m.time_2per)
+            time_seq: m[:time_seq],
+            time_1per: m[:time_1per],
+            time_2per: m[:time_2per])
         end
       end
 
@@ -40,9 +40,9 @@ module Helpers
           t = res[:testnet_restores]
           puts " Inserting testnet_restores for build: #{build_no}"
           db_connection[:testnet_restores].insert(nightly_build_id: nightly_build_id,
-                                       time_seq: t.time_seq,
-                                       time_1per: t.time_1per,
-                                       time_2per: t.time_2per)
+                                       time_seq: t[:time_seq],
+                                       time_1per: t[:time_1per],
+                                       time_2per: t[:time_2per])
         end
       end
 

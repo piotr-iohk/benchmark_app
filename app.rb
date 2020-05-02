@@ -7,7 +7,7 @@ require_relative "helpers/app"
 require_relative "helpers/buildkite"
 require_relative "helpers/readers"
 
-class App < Sinatra::Base
+class BenchmarkApp < Sinatra::Base
   include Helpers
   include Helpers::Readers
   set :root, File.dirname(__FILE__)
@@ -28,26 +28,31 @@ class App < Sinatra::Base
   end
 
   get "/nightbuilds/:id" do
-    build_no = params[:id]
+    build_no = params[:id].to_i
     builds = DB[:nightly_builds]
     mainnet = DB[:nightly_builds].join(:mainnet_restores, nightly_build_id: :nightly_build_id).
                                   where(build_no: build_no)
     testnet = DB[:nightly_builds].join(:testnet_restores, nightly_build_id: :nightly_build_id).
                                   where(build_no: build_no)
     bk = Buildkite.new
-    jobs = Jobs.get_pipeline_build_jobs bk.get_pipeline_build(build_no)
-    mainnet_svg = bk.get_artifact_download_url build_no,
-                  jobs["Restore benchmark - mainnet"],
-                  "restore-byron-mainnet.svg"
-    testnet_svg = bk.get_artifact_download_url build_no,
-                  jobs["Restore benchmark - testnet"],
-                  "restore-byron-testnet.svg"
-    mainnet_plot = bk.get_artifact_download_url build_no,
-                  jobs["Restore benchmark - mainnet"],
-                  "plot.svg"
-    testnet_plot = bk.get_artifact_download_url build_no,
-                  jobs["Restore benchmark - testnet"],
-                  "plot.svg"
+    begin
+      jobs = Jobs.get_pipeline_build_jobs bk.get_pipeline_build(build_no)
+      mainnet_svg = bk.get_artifact_download_url build_no,
+                    jobs["Restore benchmark - mainnet"],
+                    "restore-byron-mainnet.svg"
+      testnet_svg = bk.get_artifact_download_url build_no,
+                    jobs["Restore benchmark - testnet"],
+                    "restore-byron-testnet.svg"
+      mainnet_plot = bk.get_artifact_download_url build_no,
+                    jobs["Restore benchmark - mainnet"],
+                    "plot.svg"
+      testnet_plot = bk.get_artifact_download_url build_no,
+                    jobs["Restore benchmark - testnet"],
+                    "plot.svg"
+    rescue
+      mainnet_svg, testnet_svg, mainnet_plot, testnet_plot = nil
+      session[:error] = "Buildkite connection failed..."
+    end
     erb :nightbuild, { :locals => { :builds => builds,
                                     :testnet => testnet,
                                     :mainnet => mainnet,
@@ -68,10 +73,6 @@ class App < Sinatra::Base
   end
 
   get "/latency" do
-    latency_category = params[:latency_category]
-    latency_benchmark = params[:latency_benchmark]
-    latency_measurement = params[:latency_measurement]
-
     sql = %{
       select build_no, c.name as category, b.name as benchmark, "listWallets", "getWallet",
 	   "getUTxOsStatistics", "listAddresses", "listTransactions", "postTransactionFee", "getNetworkInfo"
