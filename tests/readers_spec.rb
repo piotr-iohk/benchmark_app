@@ -80,4 +80,17 @@ describe Helpers::Readers::Latencies do
     h = Latencies.read_to_hash res
     expect(h).to be_empty
   end
+
+  it "read_to_hash wrong format 2" do
+    res = File.read("#{Dir.pwd}/tests/artifacts/latency-bad.log")
+    h = Latencies.read_to_hash res
+
+    v = h['+++ Run benchmark - jormungandr']['Latencies for 2 fixture wallets scenario']['listTransactions']
+    expect(v).to eq 2.5
+
+    v = h['+++ Run benchmark - jormungandr']['error, called at test/bench/Latency.hs:434:27 in main:Main']
+    expect(v).to eq nil
+
+  end
+
 end

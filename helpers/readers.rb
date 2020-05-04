@@ -46,7 +46,21 @@ module Helpers
         h_top = {}
         h_main = {}
         h_latencies = {}
-        key = "t"
+        latency_benchmarks =
+            [ "Latencies for 2 fixture wallets with 1000 utxos scenario",
+              "Latencies for 2 fixture wallets with 500 utxos scenario",
+              "Latencies for 2 fixture wallets with 200 utxos scenario",
+              "Latencies for 2 fixture wallets with 100 utxos scenario",
+              "Latencies for 10 fixture wallets with 100 txs scenario",
+              "Latencies for 10 fixture wallets with 20 txs scenario",
+              "Latencies for 10 fixture wallets with 10 txs scenario",
+              "Latencies for 2 fixture wallets with 100 txs scenario",
+              "Latencies for 2 fixture wallets with 20 txs scenario",
+              "Latencies for 2 fixture wallets with 10 txs scenario",
+              "Latencies for 100 fixture wallets scenario",
+              "Latencies for 10 fixture wallets scenario",
+              "Latencies for 2 fixture wallets scenario"
+            ]
         lines.reverse.each_with_index do |l, i|
           if l.size == 2
             h_latencies[l[0]] = l[1].to_f
@@ -54,7 +68,7 @@ module Helpers
               h_main[key] = h_latencies
             end
           else
-            if (l[0] != key)
+            if (latency_benchmarks.include? l[0])
               key = l[0]
               unless h_latencies.empty?
                 h_main[key] = h_latencies
