@@ -45,29 +45,39 @@ describe Helpers::Readers::Latencies do
   it "read_to_hash" do
     res = File.read("#{Dir.pwd}/tests/artifacts/latency.log")
     h = Latencies.read_to_hash res
-    v1 = h['Random wallets']['Latencies for 10 fixture wallets scenario']['getUTxOsStatistics']
-    expect(v1).to eq 1.2
 
-    v2 = h['Icarus wallets']['Latencies for 100 fixture wallets scenario']['listWallets']
-    expect(v2).to eq 575.5
+    v = h['Random wallets']['Non-cached run']['getNetworkInfo']
+    expect(v).to eq 1.4
 
-    v3 = h['Icarus wallets']['Latencies for 100 fixture wallets scenario']['getNetworkInfo']
-    expect(v3).to eq 10.0
+    v = h['Icarus wallets']['Non-cached run']['getNetworkInfo']
+    expect(v).to eq 1.3
 
-    v4 = h['+++ Run benchmark - jormungandr']['Latencies for 2 fixture wallets scenario']['listTransactions']
-    expect(v4).to eq 2.9
+    v = h['+++ Run benchmark - jormungandr']['Non-cached run']['getNetworkInfo']
+    expect(v).to eq 1.1
 
-    v5 = h['Random wallets']['Latencies for 2 fixture wallets with 100 utxos scenario']['postTransactionFee']
-    expect(v5).to eq 11.2
+    v = h['Random wallets']['Latencies for 10 fixture wallets scenario']['getUTxOsStatistics']
+    expect(v).to eq 0.7
 
-    v6 = h['Icarus wallets']['Latencies for 2 fixture wallets with 1000 utxos scenario']['getNetworkInfo']
-    expect(v6).to eq 0.4
+    v = h['Icarus wallets']['Latencies for 100 fixture wallets scenario']['listWallets']
+    expect(v).to eq 216.2
 
-    v7 = h['Icarus wallets']['Latencies for 2 fixture wallets with 100 utxos scenario']['listAddresses']
-    expect(v7).to eq 13.4
+    v = h['Icarus wallets']['Latencies for 100 fixture wallets scenario']['getNetworkInfo']
+    expect(v).to eq 0.1
 
-    v8 = h['Icarus wallets']['Latencies for 10 fixture wallets with 10 txs scenario']['listWallets']
-    expect(v8).to eq 23.5
+    v = h['+++ Run benchmark - jormungandr']['Latencies for 2 fixture wallets scenario']['listTransactions']
+    expect(v).to eq 1.7
+
+    v = h['Random wallets']['Latencies for 2 fixture wallets with 100 utxos scenario']['postTransactionFee']
+    expect(v).to eq 5.7
+
+    v = h['Icarus wallets']['Latencies for 2 fixture wallets with 1000 utxos scenario']['getNetworkInfo']
+    expect(v).to eq 0.0
+
+    v = h['Icarus wallets']['Latencies for 2 fixture wallets with 100 utxos scenario']['listAddresses']
+    expect(v).to eq 7.4
+
+    v = h['Icarus wallets']['Latencies for 10 fixture wallets with 10 txs scenario']['listWallets']
+    expect(v).to eq 12.5
   end
 
   it "read_to_hash empty" do
