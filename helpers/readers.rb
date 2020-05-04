@@ -36,7 +36,9 @@ module Helpers
       def read_to_hash(str)
         lines = []
         str.split(/\r?\n|\r/).map{|l| l.strip}.each do |l|
-          if (l.include? "-") && (not (l.include? "+++ Run benchmark - jormungandr"))
+          if (l.include? "-") &&
+             (not (l.include? "+++ Run benchmark - jormungandr")) &&
+             (not (l.include? "Non-cached run"))
             lines << l.split("-").map{|l| l.strip}
           else
             lines << [l]
@@ -59,7 +61,8 @@ module Helpers
               "Latencies for 2 fixture wallets with 10 txs scenario",
               "Latencies for 100 fixture wallets scenario",
               "Latencies for 10 fixture wallets scenario",
-              "Latencies for 2 fixture wallets scenario"
+              "Latencies for 2 fixture wallets scenario",
+              "Non-cached run"
             ]
         lines.reverse.each_with_index do |l, i|
           if l.size == 2
