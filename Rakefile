@@ -44,8 +44,13 @@ namespace :bk do
     else
       builds.each do |build_no|
         puts "Build: #{build_no}"
-        res = bk.get_benchmark_results_hash(build_no)
-        Helpers::DataTransfer.insert_into_db(res, DB)
+        state = bk.get_pipeline_build(build_no)[:state]
+        if ["passed", "failed"].include? state
+          res = bk.get_benchmark_results_hash(build_no)
+          Helpers::DataTransfer.insert_into_db(res, DB)
+        else
+          puts "  Skipping, build state = #{state}."
+        end
       end
     end
   end
@@ -57,8 +62,13 @@ namespace :bk do
     builds = DB[:nightly_builds].all.map { |b| b[:build_no]}
     builds.each do |build_no|
       puts "Build: #{build_no}"
-      res = bk.get_benchmark_results_hash(build_no)
-      Helpers::DataTransfer.insert_into_db(res, DB, {skip_mainnet: true, skip_testnet: true})
+      state = bk.get_pipeline_build(build_no)[:state]
+      if ["passed", "failed"].include? state
+        res = bk.get_benchmark_results_hash(build_no)
+        Helpers::DataTransfer.insert_into_db(res, DB, {skip_mainnet: true, skip_testnet: true})
+      else
+        puts "  Skipping, build state = #{state}."
+      end
     end
   end
 

@@ -29,6 +29,6 @@ jobs:
         rspec tests
       env:
         CI: true
-        CODECOV_TOKEN: 86fc5424-1ecb-4201-a8c5-7a7c44387272
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         BENCH_DB_PATH: sqlite:/tmp/data.db
         BUILDKITE_API_TOKEN: fake_api_token

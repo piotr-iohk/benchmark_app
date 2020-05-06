@@ -102,3 +102,7 @@ module Helpers
     end
   end
 end
+
+# include Helpers
+# bk = Buildkite.new
+# pp bk.get_pipeline_build(507)[:state]
