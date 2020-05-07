@@ -1,5 +1,18 @@
 module Helpers
   module App
+    GH_URL = "https://github.com/input-output-hk/cardano-wallet/commit"
+    BK_URL = "https://buildkite.com/input-output-hk/cardano-wallet-nightly/builds"
+
+    def build_status(status)
+      case status
+      when "failed" then cl = "bg-danger"
+      when "canceled" then cl = "bg-warning"
+      when "passed" then cl = "bg-success"
+      else cl = "bg-warning"
+      end
+      "<a href='#{BK_URL}/#{status}' class=\"d-inline p-2 #{cl} text-white\">#{status}</a>"
+    end
+
     def link_to_nb id
       "<a href='/nightbuilds/#{id.to_s}'>#{id.to_s}</a>"
     end

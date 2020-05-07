@@ -6,6 +6,7 @@ module Helpers
       res = buildkite_data_hash
       if res[:build]
         build_no = res[:build][:build_no]
+        build_status = res[:build][:build_status]
         datetime = res[:build][:datetime]
         rev = res[:build][:rev]
         nb = db_connection[:nightly_builds].where(build_no: build_no).first
@@ -16,7 +17,8 @@ module Helpers
           puts " Inserting new build..."
           nightly_build_id = db_connection[:nightly_builds].insert(datetime: datetime,
             build_no: build_no,
-            rev: rev)
+            rev: rev,
+            build_status: build_status)
         end
       end
 

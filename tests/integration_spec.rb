@@ -20,8 +20,9 @@ describe 'On the Benchmark App', type: :feature do
     latency = File.read("#{Dir.pwd}/tests/artifacts/latency.log")
 
     @build = { build_no: 111,
-              datetime: Time.now,
-              rev: "2e258c3e5852dd758a7a81dc8be35bd729c58241"
+               datetime: Time.now,
+               rev: "2e258c3e5852dd758a7a81dc8be35bd729c58241",
+               build_status: "passed"
             }
     @mainnet_results = Readers::Restorations.read_to_hash mainnet, "mainnet"
     @testnet_results = Readers::Restorations.read_to_hash testnet, "testnet"
@@ -104,10 +105,15 @@ describe 'On the Benchmark App', type: :feature do
 
   it "Proper nightbuild shows nice details" do
     visit '/'
+    expect(page).to have_link(@build[:build_no].to_s)
+    expect(page).to have_link(@build[:rev][0..7].to_s)
+    expect(page).to have_text(@build[:datetime].to_s)
+    expect(page).to have_link(@build[:build_status].to_s)
     click_link @build[:build_no].to_s
     expect(page).to have_link(@build[:build_no].to_s)
     expect(page).to have_link(@build[:rev].to_s)
     expect(page).to have_text(@build[:datetime].to_s)
+    expect(page).to have_link(@build[:build_status].to_s)
   end
 
   it "Mainnet restoration graphs" do
