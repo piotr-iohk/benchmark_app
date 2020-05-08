@@ -16,7 +16,7 @@
 <br />
   <h4><%= b[:build_no]%></h4>
   <h6>
-    Buildkite: <%= build_status b[:build_status] %>
+    Buildkite: <%= build_status b[:build_status], b[:build_no] %>
   </h6>
   <h6>
     Revision: <%= "<a href='#{GH_URL}/#{b[:rev]}' target='_blank'>#{b[:rev]}</a>" %>

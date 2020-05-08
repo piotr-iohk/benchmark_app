@@ -7,7 +7,7 @@
 <h4>
   Latest: <a href ="/nightbuilds/<%= head[:build_no]%>"><%= head[:build_no]%></a>
   <small>
-    ( <%= build_status head[:build_status] %>,
+    ( <%= build_status head[:build_status], head[:build_no] %>,
       <%= "<a href='#{GH_URL}/#{head[:rev]}' target='_blank'>#{head[:rev][0..7]}</a>" %>,
       <%= head[:datetime]%>
     )
