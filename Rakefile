@@ -72,4 +72,17 @@ namespace :bk do
     end
   end
 
+  desc "Update build statuses"
+  task :update_build_statuses do
+    bk = Helpers::Buildkite.new
+    DB = Sequel.connect(DB_PATH)
+    builds = DB[:nightly_builds].all.map { |b| b[:build_no]}
+    builds.each do |build_no|
+      state = bk.get_pipeline_build(build_no)[:state]
+      puts "Build: #{build_no} => #{state}"
+      DB[:nightly_builds].where(build_no: build_no).
+                          update(build_status: state)
+    end
+  end
+
 end

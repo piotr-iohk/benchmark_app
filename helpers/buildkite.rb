@@ -82,7 +82,8 @@ module Helpers
       jobs = Jobs.get_pipeline_build_jobs build_details
       build = { build_no: build_no,
                 datetime: build_details[:created_at],
-                rev: build_details[:commit]
+                rev: build_details[:commit],
+                build_status: build_details[:state]
               }
 
       mainnet_results = self.get_restoration_results_from_artifact build_no,
