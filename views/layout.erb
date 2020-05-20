@@ -53,15 +53,16 @@ url = request.env['PATH_INFO'].to_s
                 href="/latency">Latency</a>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link <%= (url.include? "database") ? "active" : "" %>"
+                href="/database">Database</a>
+          </li>
+
           <!--<li class="nav-item">
             <a class="nav-link <%= (url.include? "latency") ? "active" : "" %>"
                 href="/latency">Latency</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link <%= (url.include? "database") ? "active" : "" %>"
-                href="/database">Database</a>
-          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Restore benchmarks</a>

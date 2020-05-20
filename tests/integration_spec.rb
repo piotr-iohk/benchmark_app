@@ -127,4 +127,16 @@ describe 'On the Benchmark App', type: :feature do
     click_link "Testnet"
     expect(page).to have_xpath(is_active "/testnet-restoration")
   end
+
+  it "Database graphs" do
+    visit '/'
+    click_link "Database"
+    expect(page).to have_link(@build[:build_no])
+  end
+
+  it "Database graphs - fake NB id" do
+    visit '/database/fake'
+    expect(page).to have_text("Buildkite connection failed for build_no: fake.")
+  end
+
 end
