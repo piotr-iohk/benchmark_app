@@ -1,0 +1,27 @@
+<%
+  id = build_numbers.index(build_no)
+  if id
+%>
+<center>
+<%= "  <small><a href=\"/database/#{build_numbers[id + 1]}\">< #{build_numbers[id + 1]} </a></small> | " if build_numbers[id + 1]%>
+<%= "  <small><b>#{build_numbers[id]}</b></small> " %>
+<%= "| <small><a href=\"/database/#{build_numbers[id - 1]}\">#{build_numbers[id - 1]} ></a></small>" if build_numbers[id - 1]%>
+</center>
+
+  <% if db_chart_link %>
+    <div class="embed-responsive embed-responsive-1by1">
+      <iframe class="embed-responsive-item" src="<%= db_chart_link %>" allowfullscreen></iframe>
+    </div>
+  <% else %>
+    <center>
+      <i> Database chart N/A </i>
+    </center>
+  <% end %>
+
+<% else %>
+
+<div class="alert alert-danger" role="alert">
+  That seems to be a valid build on Buildkite, but I don't have it in my database...
+</div>
+
+<% end %>

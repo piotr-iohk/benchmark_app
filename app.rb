@@ -22,6 +22,30 @@ class BenchmarkApp < Sinatra::Base
     redirect "/nightbuilds"
   end
 
+  get "/database" do
+    last_build = DB[:nightly_builds].all.reverse.first[:build_no]
+    redirect "/database/#{last_build}"
+  end
+
+  get "/database/:id" do
+    build_numbers = DB[:nightly_builds].all.map{ |b| b[:build_no]}
+    build_no = params[:id].to_i
+    bk = Buildkite.new
+
+    begin
+      jobs = Jobs.get_pipeline_build_jobs bk.get_pipeline_build(build_no)
+      db_chart_link = bk.get_artifact_download_url build_no,
+                    jobs["Database benchmark"],
+                    "bench-db.html"
+    rescue
+      db_chart_link = nil
+      session[:error] = "Buildkite connection failed for build_no: #{params[:id]}."
+    end
+    erb :database, { :locals => { :build_numbers => build_numbers,
+                                  :build_no => build_no,
+                                  :db_chart_link => db_chart_link } }
+  end
+
   get "/nightbuilds" do
     dataset = DB[:nightly_builds].all.reverse
     erb :nightbuilds, { :locals => { :dataset => dataset } }
