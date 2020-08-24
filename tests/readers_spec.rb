@@ -5,17 +5,19 @@ include Helpers::Readers
 describe Helpers::Readers::Restorations do
   describe "restoration_keys" do
     it "mainnet" do
-      k1, k2, k3 = Restorations.restoration_keys 'restore-byron-mainnet.txt'
+      k1, k2, k3, k4 = Restorations.restoration_keys 'mainnet'
       expect(k1).to eq 'restore mainnet seq'
-      expect(k2).to eq 'restore mainnet 1% ownership'
-      expect(k3).to eq 'restore mainnet 2% ownership'
+      expect(k2).to eq 'restore mainnet rnd'
+      expect(k3).to eq 'restore mainnet 1% ownership'
+      expect(k4).to eq 'restore mainnet 2% ownership'
     end
 
     it "testnet" do
-      k1, k2, k3 = Restorations.restoration_keys 'restore-byron-testnet.txt'
+      k1, k2, k3, k4 = Restorations.restoration_keys 'testnet'
       expect(k1).to eq 'restore testnet (1097911063) seq'
-      expect(k2).to eq 'restore testnet (1097911063) 1% ownership'
-      expect(k3).to eq 'restore testnet (1097911063) 2% ownership'
+      expect(k2).to eq 'restore testnet (1097911063) rnd'
+      expect(k3).to eq 'restore testnet (1097911063) 1% ownership'
+      expect(k4).to eq 'restore testnet (1097911063) 2% ownership'
     end
 
     it "wrong artifact name" do
@@ -28,6 +30,7 @@ describe Helpers::Readers::Restorations do
     res = File.read("#{Dir.pwd}/tests/artifacts/restoration-mainnet.txt")
     h = Restorations.read_to_hash res, "mainnet"
     expect(h).to eq({time_seq: 1064.5,
+                     time_rnd: 503.1,
                      time_1per: 3566,
                      time_2per: 6493.12})
   end
@@ -36,6 +39,7 @@ describe Helpers::Readers::Restorations do
     res = File.read("#{Dir.pwd}/tests/artifacts/restoration-testnet.txt")
     h = Restorations.read_to_hash res, "testnet"
     expect(h).to eq({time_seq: 225,
+                     time_rnd: 106,
                      time_1per: 250,
                      time_2per: 255.7})
   end

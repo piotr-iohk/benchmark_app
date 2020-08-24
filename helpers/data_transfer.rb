@@ -30,6 +30,7 @@ module Helpers
           puts " Inserting mainnet_restores for build: #{build_no}"
           db_connection[:mainnet_restores].insert(nightly_build_id: nightly_build_id,
             time_seq: m[:time_seq],
+            time_rnd: m[:time_rnd],
             time_1per: m[:time_1per],
             time_2per: m[:time_2per])
         end
@@ -43,6 +44,7 @@ module Helpers
           puts " Inserting testnet_restores for build: #{build_no}"
           db_connection[:testnet_restores].insert(nightly_build_id: nightly_build_id,
                                        time_seq: t[:time_seq],
+                                       time_rnd: t[:time_rnd],
                                        time_1per: t[:time_1per],
                                        time_2per: t[:time_2per])
         end

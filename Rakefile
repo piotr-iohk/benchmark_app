@@ -18,16 +18,23 @@ namespace :db do
 end
 
 namespace :bk do
+
   desc "Get results from buildkite for range of builds"
-  task :range, [:min_build_no, :max_build_no] do |t, args|
+  task :range, [:min_build_no, :max_build_no, :skip] do |t, args|
     bk = Helpers::Buildkite.new
     DB = Sequel.connect(DB_PATH)
     min = args[:min_build_no].to_i if args[:min_build_no]
     max = args[:max_build_no].to_i if args[:max_build_no]
+    case args[:skip]
+    when "skip_latency"
+      skip = {skip_latency: true}
+    else
+      skip = {}
+    end
     (min..max).each do |build_no|
       puts "Build: #{build_no}"
       res = bk.get_benchmark_results_hash(build_no)
-      Helpers::DataTransfer.insert_into_db(res, DB)
+      Helpers::DataTransfer.insert_into_db(res, DB, skip)
     end
   end
 
