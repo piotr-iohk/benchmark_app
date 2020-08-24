@@ -1,4 +1,6 @@
 All results:
   restore mainnet seq: 1064.5 s
+  restore mainnet rnd: 503.1 s
   restore mainnet 1% ownership: 3566 s
   restore mainnet 2% ownership: 6493.12 s
+[bench-restore:Notice:14] [2020-08-24 08:19:55.81 UTC] [cardano-node.129854] Terminating child process

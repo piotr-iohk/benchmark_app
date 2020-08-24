@@ -116,6 +116,23 @@
         </td>
       </tr>
       <tr>
+        <th scope="row">restoration rnd</th>
+        <td>
+          <% if m %>
+          <%= m[:time_rnd] ? "#{m[:time_rnd]} s" : "<i>N/A</i>"%>
+          <% else %>
+            <i>N/A</i>
+          <% end %>
+        </td>
+        <td>
+          <% if t %>
+          <%= t[:time_rnd] ? "#{t[:time_rnd]} s" : "<i>N/A</i>"%>
+          <% else %>
+            <i>N/A</i>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
         <th scope="row">restoration 1%</th>
         <td>
           <% if m %>

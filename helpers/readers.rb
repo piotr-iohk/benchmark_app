@@ -1,4 +1,5 @@
 require 'yaml'
+require_relative "../env"
 
 ##
 # helper module for serializing data from buildkite
@@ -6,9 +7,17 @@ module Helpers
   module Readers
     module Restorations
       def read_to_hash(benchmark_string, mainnet_or_testnet)
-        r = YAML.load(benchmark_string).to_hash['All results'].map { |k,v| [k, v.to_f] }.to_h
-        time_seq_key, time_1per_key, time_2per_key = restoration_keys(mainnet_or_testnet)
+        # remove last line if it includes log entry "Terminating child process"
+        str = benchmark_string.strip.split("\n")
+        if str.last.include? "Terminating child process"
+          str = str - [str.pop]
+        end
+        str = str.join("\n")
+
+        r = YAML.load(str).to_hash['All results'].map { |k,v| [k, v.to_f] }.to_h
+        time_seq_key, time_rnd_key, time_1per_key, time_2per_key = restoration_keys(mainnet_or_testnet)
         { time_seq: r[time_seq_key].to_f,
+          time_rnd: r[time_rnd_key].to_f,
           time_1per: r[time_1per_key].to_f,
           time_2per: r[time_2per_key].to_f
         }
@@ -16,12 +25,14 @@ module Helpers
 
       def restoration_keys(artifact_name)
         case artifact_name
-        when 'restore-byron-mainnet.txt', 'mainnet'
+        when MAINNET_RESTORE_FILE, 'mainnet'
           ['restore mainnet seq',
+           'restore mainnet rnd',
            'restore mainnet 1% ownership',
            'restore mainnet 2% ownership']
-        when 'restore-byron-testnet.txt', 'testnet'
+        when TESTNET_RESTORE_FILE, 'testnet'
           ['restore testnet (1097911063) seq',
+           'restore testnet (1097911063) rnd',
            'restore testnet (1097911063) 1% ownership',
            'restore testnet (1097911063) 2% ownership']
         else

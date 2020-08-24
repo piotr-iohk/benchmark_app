@@ -68,6 +68,9 @@ module Helpers
       rescue
         puts "No url for artifact: #{artifact_name}"
       end
+      puts "============="
+      puts res.body if res
+      puts "============="
 
       begin
         results = Restorations.read_to_hash(res.body, artifact_name)
@@ -87,11 +90,11 @@ module Helpers
               }
 
       mainnet_results = self.get_restoration_results_from_artifact build_no,
-                        jobs["Restore benchmark - mainnet"],
-                        'restore-byron-mainnet.txt'
+                        jobs[MAINNET_RESTORE_JOB],
+                        MAINNET_RESTORE_FILE
       testnet_results = self.get_restoration_results_from_artifact build_no,
-                        jobs["Restore benchmark - testnet"],
-                        "restore-byron-testnet.txt"
+                        jobs[TESTNET_RESTORE_JOB],
+                        TESTNET_RESTORE_FILE
       latency_job_log = self.get_job_log build_no, jobs['Latency benchmark']
       latency_results = Latencies.read_to_hash latency_job_log
 

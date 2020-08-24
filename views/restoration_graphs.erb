@@ -8,6 +8,11 @@
     ytitle: "Time (s)", xtitle: "Nightbuild no"
  %>
  <br/>
+<%= line_chart dataset.map {|i| [link_to_nb(i[:build_no]), i[:time_rnd]]},
+   title: "<a href='#'>restore " + ((url.include? "mainnet") ? "mainnet" : "testnet") + " rnd</a>",
+   ytitle: "Time (s)", xtitle: "Nightbuild no"
+%>
+ <br/>
 <%= line_chart dataset.map {|i| [link_to_nb(i[:build_no]), i[:time_1per]]},
     title: "<a href='#'>restore " + ((url.include? "mainnet") ? "mainnet" : "testnet") + " 1% ownership</a>",
     ytitle: "Time (s)", xtitle: "Nightbuild no"

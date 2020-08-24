@@ -62,16 +62,16 @@ class BenchmarkApp < Sinatra::Base
     begin
       jobs = Jobs.get_pipeline_build_jobs bk.get_pipeline_build(build_no)
       mainnet_svg = bk.get_artifact_download_url build_no,
-                    jobs["Restore benchmark - mainnet"],
-                    "restore-byron-mainnet.svg"
+                    jobs[MAINNET_RESTORE_JOB],
+                    "restore-mainnet.svg"
       testnet_svg = bk.get_artifact_download_url build_no,
-                    jobs["Restore benchmark - testnet"],
-                    "restore-byron-testnet.svg"
+                    jobs[TESTNET_RESTORE_JOB],
+                    "restore-testnet.svg"
       mainnet_plot = bk.get_artifact_download_url build_no,
-                    jobs["Restore benchmark - mainnet"],
+                    jobs[MAINNET_RESTORE_JOB],
                     "plot.svg"
       testnet_plot = bk.get_artifact_download_url build_no,
-                    jobs["Restore benchmark - testnet"],
+                    jobs[TESTNET_RESTORE_JOB],
                     "plot.svg"
     rescue
       mainnet_svg, testnet_svg, mainnet_plot, testnet_plot = nil
