@@ -94,6 +94,7 @@ module Helpers
                 listAddresses: m['listAddresses'],
                 listTransactions: m['listTransactions'],
                 postTransactionFee: m['postTransactionFee'],
+                listStakePools: m['listStakePools'],
                 getNetworkInfo: m['getNetworkInfo'] )
             end
           end

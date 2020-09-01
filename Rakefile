@@ -28,6 +28,8 @@ namespace :bk do
     case args[:skip]
     when "skip_latency"
       skip = {skip_latency: true}
+    when "skip_restorations"
+      skip = {skip_mainnet: true, skip_testnet: true}
     else
       skip = {}
     end

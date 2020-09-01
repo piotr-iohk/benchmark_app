@@ -78,8 +78,8 @@ describe 'On the Benchmark App', type: :feature do
     click_link "Latency"
     expect(page).to have_xpath("//form")
     wal_types_inserted = @latency_results.keys
-    bench_types_inserted = @latency_results['Icarus wallets'].keys
-    meas_types_inserted = @latency_results['Icarus wallets']['Latencies for 2 fixture wallets scenario'].keys
+    bench_types_inserted = @latency_results['+++ Run benchmark - shelley'].keys
+    meas_types_inserted = @latency_results['+++ Run benchmark - shelley']['Latencies for 2 fixture wallets scenario'].keys
 
     wal_types_on_page = all(:xpath, "//select[@name='latency_category']/option").map{|e| e.text}
     bench_types_on_page = all(:xpath, "//select[@name='latency_benchmark']/option").map{|e| e.text}

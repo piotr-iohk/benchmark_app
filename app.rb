@@ -99,14 +99,17 @@ class BenchmarkApp < Sinatra::Base
   get "/latency" do
     sql = %{
       select build_no, c.name as category, b.name as benchmark, "listWallets", "getWallet",
-	   "getUTxOsStatistics", "listAddresses", "listTransactions", "postTransactionFee", "getNetworkInfo"
+	   "getUTxOsStatistics", "listAddresses", "listTransactions", "postTransactionFee",
+     "getNetworkInfo", "listStakePools"
         from latency_measurements as m
         join nightly_builds as n on m.nightly_build_id = n.nightly_build_id
         join latency_benchmarks as b on m.latency_benchmark_id = b.latency_benchmark_id
         join latency_categories as c on m.latency_category_id = c.latency_category_id
     }
     dataset = DB[sql]
-    latency_categories = DB[:latency_categories]
+    latency_categories = DB[:latency_categories].
+                              where(name: LATENCY_CATEGORIES[0]).
+                              or(name: LATENCY_CATEGORIES[1])
     latency_benchmarks = DB[:latency_benchmarks]
     latency_measurements = [ "all",
                              "listWallets",
@@ -115,8 +118,9 @@ class BenchmarkApp < Sinatra::Base
                              "listAddresses",
                              "listTransactions",
                              "postTransactionFee",
-                             "getNetworkInfo" ]
-
+                             "getNetworkInfo",
+                             "listStakePools" ]
+    puts dataset                     
     erb :latency_graphs, { :locals => { :dataset => dataset,
                                         :latency_categories => latency_categories,
                                         :latency_benchmarks => latency_benchmarks,
