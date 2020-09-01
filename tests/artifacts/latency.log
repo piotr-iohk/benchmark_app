@@ -1,34 +1,16 @@
 ~~~ Running global environment hook
 [90m$[0m /nix/store/i42glba5vjzdsyfgicji807k4blchykk-buildkite-agent-hooks/environment
 ~~~ Preparing build folder
-[90m$[0m mkdir -p /var/lib/buildkite-agent/builds/packet-ipxe-2-ci2-3/input-output-hk/cardano-wallet-nightly
-[90m$[0m cd /var/lib/buildkite-agent/builds/packet-ipxe-2-ci2-3/input-output-hk/cardano-wallet-nightly
+[90m$[0m mkdir -p /var/lib/buildkite-agent/builds/packet-ipxe-4-ci4-bench/input-output-hk/cardano-wallet-nightly
+[90m$[0m cd /var/lib/buildkite-agent/builds/packet-ipxe-4-ci4-bench/input-output-hk/cardano-wallet-nightly
 [90m$[0m git remote set-url origin https://github.com/input-output-hk/cardano-wallet.git
 [90m$[0m git clean -ffdqx
 [90m$[0m git submodule foreach --recursive git clean -ffdqx
-[90m$[0m git fetch -v origin 23c314a0bf3849fd52ca443a5127313c646b4904
-POST git-upload-pack (960 bytes)
-remote: Enumerating objects: 125, done.
-remote: Counting objects:   0% (1/125)remote: Counting objects:   1% (2/125)         Counting objects:   2% (3/125)remote:g objects:   3% (4/125)         Countins:   4% (5/125)        remote:g object(7/125)        remote: Countins:   6%        remote: Counting object(9/125) remote: Counting objects:   8% (10/125)         Counting objects:   9% (12/125)        remote:g objects:  10% (13/125)remote: Countins:  11% (14/125)         Counting object(15/125)        remote:g objects:  13%         remote: Countins:  14% (18/125)remote: Counting objec(19/125)         Counting objects:  16% (20/125)        remote:g objects:  17% (22/125)        remote: Countins:  18% (23/125) remote: Counting object(24/125)        Counting objects:  20%         remote:  objects:  21% (27/125)remote: Counting:  22% (28/125)         Counting object29/125)        remote:g objects:  24% (30/125)        remote: Countins:  25% (32/125)        remote: Counting object(33/125)  emote: Counting objects:  27%         rounting objects:  28% (35/125)remote: Cobjects:  29% (37/125)         Counting   30% (38/125)        remote:g objects9/125)        remote: Countins:  32% (40/125)        remote: Counting object(42/125)        remote: Counting objects:  34%    mote: Counting objects:  35% (44/125)reunting objects:  36% (45/125)         Cobjects:  37% (47/125)        remote:g o 38% (48/125)        remote: Countins:/125)        remote: Counting object(50/125)        remote: Counting objects:  41%         remote: Counting objects:  42% (53/ote: Counting objects:  43% (54/125)    nting objects:  44% (55/125)        remjects:  45% (57/125)        remote: Cou46% (58/125)        remote: Counting o125)        remote: Counting objects:  48%         remote: Counting objects:  49% (62/125)remote: Counting objects:  50% (63/1    Counting objects:  51% (64/125)     te:g objects:  52% (65/125)        remotins:  53% (67/125)        remote: Counect(68/125)        remote: Counting ob5%         remote: Counting objects:  56% (70/125)remote: Counting objects:  57% (72/125)         Counting objects:  58% (73/12  remote:g objects:  59% (74/125)      e: Countins:  60% (75/125)        remoting object(77/125)        remote: Countcts:  62%         remote: Counting obj% (79/125)remote: Counting objects:  64% (80/125)         Counting objects:  65% (82/125)        remote:g objects:  66% (83/125 remote: Countins:  67% (84/125)       : Counting object(85/125)        remoteng objects:  69%         remote: Countits:  70% (88/125)remote: Counting obje (89/125)         Counting objects:  72% (90/125)        remote:g objects:  73% (92/125)        remote: Countins:  74% (93/125)remote: Counting object(94/125)         Counting objects:  76%         remote:g objects:  77% (97/125)remote: Countins:  78% (98/125)         Counting objec(99/125)        remote:g objects:  80% (100/125)remote: Counting objec (102/125)        remote: Counting objects:  8225)      e: Counting objects:  83% (104/    remoting objects:  84% (105/125)   mote: Coujects:  85% (107/125)        rounting o 86% (108/125)        remote:  objects09/125)        remote: Countins:  88% (110/125)        remote: Counting objec (112/125)        remote: Counting objects:  9025 remote: Counting objects:  91% (114/    remote: Counting objects:  92% )   mote: Counting objects:  93% (117/125 remote: Counting objects:  94% (118/125)   : Counting objects:  95% (119/125)        reunting objects:  96% (120/125)        rebjects:  97% (122/125)        remote: Co 98% (123/125)        remote: Counting o4/125)        remote: Counting objects:       remote: Counting objects: 100% (12     
-remote: Compressing objects:   2% (1/37)remote: Compressing objects:   5% (2/37)         Compressing objects:   8% (3/37)remote:sing objects:  10% (4/37)         Compresects:  13% (5/37)        remote:sing obj6% (6/37)        remote: Compresects:  1)        remote: Compressing obj1% (8/37 remote: Compressing objects:  24% (9/3)       : Compressing objects:  27% (10/37)        remotessing objects:  29% (11/37 remote: Comprbjects:  32% (12/37)       : Compressing o 35% (13/37)        remotessing objects: /37)        remote: Comprejects:  40% (15    remote: Compressing ob43% (16/37)    ote: Compressing objects:  45% 37)        rempressing objects:  48% (18/37)        remote: Com objects:  51% (19/37) remote: Compressing:  54% (20/37)        Compressing objects21/37)        remote: ing objects:  59% (      remote: Compresscts:  62% (23/37)  emote: Compressing obje% (24/37)        rompressing objects:  67% )        remote: Cng objects:  70% (26/37)        remote: Compressits:  72% (27/37)     te: Compressing objec (28/37)        remoressing objects:  78%        remote: Compobjects:  81% (30/37)remote: Compressing   83% (31/37)         Compressing objects:2/37)        remote:sing objects:  89% (3     remote: Compresects:  91% (34/37)        remote: Compressing obj4% (35/37)        remote: Compressing objects:  97)        rempressing objects: 100% (37/3  remote: Cog objects: 100% (37/37), done 
-Receiving objects:   0% (1/154)Receiving objects:   2% (4/154)                                                                                                                                                    Receiving o                       Receiving objects:   7% (11/154)                                                                                           10% (16/154)                                                                 ng objects:                Receiving objects:  12% (19/15    Receiving objects:  14% (22/154)                              54)                                                                                Receiving objects:  16% (25/1                                                                           Receiving objects:  19%                                                    2% (34/154)                                                                                Rece                              Receiving objects:  24% (37/154)                                   Receiving objects:  26% (41/154)               cts:  27% (42/154)                                                                                                                                                 Receiving objects:  31% (48/154)                         (50/154)  eceiving objects:  34% (53/154)                                                                                                                   Receiving objects:  36% (56/154)                                   Receiving objects:  38% (59/154)Receiving object                                                                                                                                          Receiving objects:  43% (67/154)           objects:  44% (68/154)                                          ing objects:  46% (71/154)                                                                                               Receiving objects:  48% (7        Receiving objects:                Receiving objects:  51% (79/154)                                                                                                                                                                                         Receiving objects:  55% (eceiving objects:  56% (87/154)             jects:  58% (90/154)                                                                                                                   Receiving ob                      Rece                              Receiving objects:  63% (98/154)                                                                                                                                                        Receiving ob                       Receiving objects:  68% (105/154)                   :  70% (108/154)remote: Total 154 (d
-Receiving objects:  71% (110/154)Receiving objects:  73% (113/154)                                                                                                                                                        Receivi                            Receiving objects:  78% (121/154)                                                                                        ts:  81% (125/154)                                                            ng objec                    Receiving objects:  83% (128/154)Receiving objects:  85% (131/154)                         (133/154)                                                                                Receiving objects:  87%                                                                                    Receiving objects:  90%                        4)                            4/154)                                                                                                                    Receiving objects:  95% (147/154)                                    Receiving objects:  97% (150/154)    eiving objects:  98% (151/154)                                                                    Rec277.00 KiB/s, done.
-Resolving deltas:   0% (0/93)Resolving deltas:   7% (7/93)                                                                                                                                                 Resolving delt                  Resolving deltas:  15% (14/93)                                                                                              93)                                                                          eltas:  35% (33/     Resolving deltas:  37% (35/93   Resolving deltas:  40% (38/93)                                                                                                                 Resolving deltas:  49% (46/93                                    Resolvin                        Resolving deltas:  64% (60/93)                                                    (68/93)                                                                                Resolving deltas:  75%          Resolving delta                 Resolving deltas:  81% (76/93)                                                                                                                 Resolving delta                                                  Res                             Resol)                                                      1% (85/93)                                                                                Resolving deltas:               Resolving deltas:  94% (88/93)                                 Resolving deltas:  96% (90/93)                                                                                                                                      
+[90m$[0m git fetch -v origin e80033ff6e9aae3004d245f1d62314a75be176b6
 From https://github.com/input-output-hk/cardano-wallet
- * branch                23c314a0bf3849fd52ca443a5127313c646b4904 -> FETCH_HEAD
-[90m$[0m git checkout -f 23c314a0bf3849fd52ca443a5127313c646b4904
-Warning: you are leaving 2 commits behind, not connected to
-any of your branches:
-
-  a732edfd6 Try removing heap profiling
-  a953fa671 Revert "Lower node logging severity to Notice in bench"
-
-If you want to keep them by creating a new branch, this may be a good time
-to do so with:
-
- git branch <new-branch-name> a732edfd6
-
-HEAD is now at 23c314a0b Merge #1582
+ * branch                  e80033ff6e9aae3004d245f1d62314a75be176b6 -> FETCH_HEAD
+[90m$[0m git checkout -f e80033ff6e9aae3004d245f1d62314a75be176b6
+HEAD is now at e80033ff6e Merge #2080
 [90m$[0m git submodule sync --recursive
 [90m$[0m git submodule update --init --recursive --force
 [90m$[0m git submodule foreach --recursive git reset --hard
@@ -40,363 +22,517 @@ HEAD is now at 23c314a0b Merge #1582
 [90m$[0m ././.buildkite/bench-latency.sh
 --- Build
 trace: Using IOHK default nixpkgs
-trace: [alex-plan-to-nix-pkgs] cabal new-configure --with-ghc=ghc --with-ghc-pkg=ghc-pkg
-trace: [happy-plan-to-nix-pkgs] cabal new-configure --with-ghc=ghc --with-ghc-pkg=ghc-pkg
-trace: [hscolour-plan-to-nix-pkgs] cabal new-configure --with-ghc=ghc --with-ghc-pkg=ghc-pkg
-these paths will be fetched (4.25 MiB download, 28.84 MiB unpacked):
-  /nix/store/2h4iqfa63y66826rm906jqwzgb15yxsa-cardano-wallet-jormungandr-2020.4.7-bench-latency
-copying path '/nix/store/2h4iqfa63y66826rm906jqwzgb15yxsa-cardano-wallet-jormungandr-2020.4.7-bench-latency' from 'https://hydra.iohk.io'...
-/nix/store/2h4iqfa63y66826rm906jqwzgb15yxsa-cardano-wallet-jormungandr-2020.4.7-bench-latency
-trace: Using IOHK default nixpkgs
-trace: [alex-plan-to-nix-pkgs] cabal new-configure --with-ghc=ghc --with-ghc-pkg=ghc-pkg
-trace: [happy-plan-to-nix-pkgs] cabal new-configure --with-ghc=ghc --with-ghc-pkg=ghc-pkg
-trace: [hscolour-plan-to-nix-pkgs] cabal new-configure --with-ghc=ghc --with-ghc-pkg=ghc-pkg
-trace: Using IOHK default nixpkgs
-trace: gitSource.nix: /nix/store/bsxg3s82zwjidjnnfx7hpf1yzq3zhh2z-source does not seem to be a git repository,
+trace: gitSource.nix: /nix/store/r92nzn7mj4qdsbzhi6a4gipsvpjqv9hn-cardano-node-src does not seem to be a git repository,
 assuming it is a clean checkout.
-trace: WARNING: `cleanGit` called on /nix/store/bsxg3s82zwjidjnnfx7hpf1yzq3zhh2z-source without a `name`. Consider adding `name = "bsxg3s82zwjidjnnfx7hpf1yzq3zhh2z-source;"`
-trace: Using index-state: 2020-04-01T00:00:00Z for source
-trace: Using IOHK default nixpkgs
-trace: WARNING: license "GPL-2.0-or-later" not found
-/nix/store/58nn9lhssc2xh8lv914pc5yhqjag79fr-cardano-wallet-byron-2020.4.7-bench-latency
-+++ Run benchmark - byron
-
-
-Random wallets
+trace: Using index-state: 2020-07-15T00:00:00Z for cardano-node-src
+trace: Using index-state: 2020-07-15T00:00:00Z for cardano-node-src
+trace: Cleaning component source not supported for hpack package: cardano-addresses-1.0.0
+these paths will be fetched (6.23 MiB download, 44.80 MiB unpacked):
+  /nix/store/zb4gbqw3id6mlqy2jk7k2sjw48qy8kjd-cardano-wallet-bench-latency-2020.8.3
+copying path '/nix/store/zb4gbqw3id6mlqy2jk7k2sjw48qy8kjd-cardano-wallet-bench-latency-2020.8.3' from 'https://hydra.iohk.io'...
+/nix/store/zb4gbqw3id6mlqy2jk7k2sjw48qy8kjd-cardano-wallet-bench-latency-2020.8.3
+trace: Cleaning component source not supported for hpack package: cardano-addresses-1.0.0
+/nix/store/d3zhilfc9rld76ys29j2q36hawj7nayg-cardano-wallet-jormungandr-bench-latency-2020.8.3
++++ Run benchmark - shelley
+cardano-cli shelley transaction build-raw --tx-in e6f53fa3a753f637c62ee198421bbaef604faee230fe4262340eedf13a8d0bba#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vx0d0kyppx3qls8laq5jvpq0qa52d0gahm8tsyj2jpg0lpg4ue9lt+100000000000 --tx-out addr1vxvy2tutkjmrs7gyehmgeq6qnzhjjys98kweanhp3c69r2cvjckyc+100000000000 --tx-out addr1vy39m0dz3pg0l6unlpmn6pwt3tagp0qkfl0kxlq5wk8h76q38geqq+100000000000 --tx-out addr1v9l9xu3h6q692glfmlfz76rrkj63y33qv0xs0kfsdkl4x8qjrh0jp+100000000000 --tx-out addr1v9fvyz26pnc7jftnezn784my73y8r8ylmhunl6j8mypdddgtqhp4x+100000000000 --tx-out addr1v8rxnpusswn2a7cttx3ht806yvzkfssw2k9velc3u8h04msue3l6k+100000000000 --tx-out addr1vxzwvstyg9kgfznwf0xep2av6xxu7wcup5zw2ns38tfvrscap9jwd+100000000000 --tx-out addr1v80xhnwzha9y6kd5vqahn6kg353alqy00zgf6pm9583587c529hua+100000000000 --tx-out addr1vxzp2lxgefddh06jpptelku228wwyss0s9vg33p4zvwa27ssjlvzs+100000000000 --tx-out addr1vx5uvz4zahuspt7y0383meq4qjj9usdujn2vds5j49s8xwgtpty20+100000000000 --tx-out addr1vxp3x9665kjgphuvvnwmlte837fqlnd2kk2xk8hh5uqa2jsnzjcfg+100000000000 --tx-out addr1vynqjzugg70yykhp9zrpn7wlaeanj8e63k5g4auc733gx3s94kaeg+100000000000 --tx-out addr1v9r2yvg9yn90am5cscw05wr5jhrk84wyauefncd3ua0wayqh4sd90+100000000000 --tx-out addr1vxtlefx3dd5ga5d3cqcfycxsc5tv20txpx7qlmlt2kwnfds2mywcr+100000000000 --tx-out addr1v85vkq3rutxqz5xwt82eqe7g5aj24pwj7petuvjd5ltvm9cckl6dg+100000000000 --tx-out addr1vy9s0dhznwdktrv8w8ynw7fps8vlxs7hjxhsmcv4c7jup2c4206ak+100000000000 --tx-out addr1v950j3p8jlw0ysdc2r4rfx54pmxrvj0ls877hd0z05jd6uc0c07y3+100000000000 --tx-out addr1v973p82jjglsw7r4hnkuptjxcdft9c7cgwnzrwqfertpc7qtq9nrw+100000000000 --tx-out addr1v9gyj9lyqqv70a5z44xp7k79eqmqk56kjdst2ew7n8wlrjsme4704+100000000000 --tx-out addr1v9ctmh762m5n3fnrl8fw8kkm8cn4eh5ew6kt8cwekgf85cg6s85uh+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet1.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 4e26a828df9572c53f995a1aa1de16ca95f85c11fcda97bb8c29498da2181cc6#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9nnmvlv97gc756pyp290wcgexs3260x3hqg8ggdc0aeakqjjw5n4+100000000000 --tx-out addr1vyr4zcqdagxsjr8fdurueawqyc7v8hp22m5dn09ut4gj8jqxdd7h2+100000000000 --tx-out addr1v9h8p6zqn47xuw8v476apqaewgvlstz9y0z2yxwxs3jc4hqwth4hq+100000000000 --tx-out addr1vyhepkf29wexnmeqf40j282njuhzj4ms22mc32vrx3qekzcsl52ty+100000000000 --tx-out addr1v83xa8z5a93lgtk0amkmcme6xe5zjlypa0n5sy5am6t4mugw8xfds+100000000000 --tx-out addr1v9j0eughhy9p5sa4az3nn693pcem98rmpnpac95kahw4rqsgrspg8+100000000000 --tx-out addr1vxxlql2k9kuplkee2e2rfepcvdj2sn66mh09ztmx6qhvjhgk7gwlz+100000000000 --tx-out addr1v9c89t2guaz8c63866lyqxupmel7egj5gkd9ajfsvmanwrsc2wky2+100000000000 --tx-out addr1v8z66a5s6h8z2taght262pn7elj98up72v3nnjsh2a6r0zqkmgaxy+100000000000 --tx-out addr1vyf832n8stnzcgd7ll4tqmre2lxhulv0jrvuxxrf2mqqeesxefk70+100000000000 --tx-out addr1vyckxam5yesd5uq45jf9hyl6plq3ttz40j7h5t9a6cdlqhcew67eh+100000000000 --tx-out addr1vy37x4uw6xkwe8fvu32ex2s7m5gq597wkkxerszw0vl2v9gtvtscj+100000000000 --tx-out addr1v8x5pwz2y5k3q2v9wd2ah74jmzq8af47l0n286fvj8jqglcq27w97+100000000000 --tx-out addr1vx2jnat80f623atpeplk3w73az8pahzq8q9qfzn7qpk3v3cf5vfle+100000000000 --tx-out addr1v88pdsz00yytg26ygsus95farx0h9u0de69exgets0z5ptc50e5dp+100000000000 --tx-out addr1v9peyhgptgpz545jwm3jzv4w7nwtv0vvkjegjrjnche5rlq9z3wsk+100000000000 --tx-out addr1vyagga8jr2300adjduxu7lj7fywxqev876x2rzsfaytf8yg0rm2kf+100000000000 --tx-out addr1v9839vchdyc4wvw3yu3nxdv7kzjkcvd8pd65kfwvqa7y6yq2rscmn+100000000000 --tx-out addr1v8uekpsk45sz8j40neppcqjlzmjyqe5mw05m69lscyx3eqsjetakf+100000000000 --tx-out addr1v9yeh6749zfna8n822yuu98grp938vsfh9jrz42ksy9q2gscmprwa+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet2.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 97df0a8ff2a449e8bed3e960e164c26d1b2e1281d46c035742bac25cd150a817#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v94fxjfvv6nsg4nds90wtyqh5qwqlpjh0emd03z2yx4ey9stn505a+100000000000 --tx-out addr1vxfvn8vygwcnma7v96dgc57ymt9au6cd6rssh88qvh7peqsf6dgne+100000000000 --tx-out addr1v9z6zquu8m7x9f5rq9j3ypf550dmadrcz9qwjywwnyu293gn73zpr+100000000000 --tx-out addr1vxqrul3djdzczxqsre4upelj6u4nagcrhlw8z4fhkdmfgnsqy3xyt+100000000000 --tx-out addr1vx9su43audajyk90c5w5tfkxf6wdxpw2vmjm00etxsdd6acfrg83r+100000000000 --tx-out addr1vx9750rm5zjmtq8lcalf56rvtnx0cdy38m8p32qknczye8cjn4fea+100000000000 --tx-out addr1v8xk8ydxzm5j3jpea8x2qwt2mfhvvnrs9q4z6jeqeyfyc0shfp8j6+100000000000 --tx-out addr1vxgcvz9hjt5txzjd38d5jnxvhmjvzyp3lqy7c0xh2pjtmeg50a8al+100000000000 --tx-out addr1v9mzx8vl562g7rcyz4javdqvagsed4tjgxx7k6dp0quhw0q632f9g+100000000000 --tx-out addr1v86qz5wq3fv3n6g062wgnhqr0lw4334qepqwdvexpw8406cjg8lyv+100000000000 --tx-out addr1vymvqxtflp8rnnrusnvmh0axk782zt2ckegu48frjzymfkgpu2mcz+100000000000 --tx-out addr1vxlvfumspmdpwqemdajqthz2408mx0r37w9szzraw70tfqqfyxmsa+100000000000 --tx-out addr1vy9am5yqsy6m5323e6kkkz0lqhzpce9cge4zs4940m7lx8sv3kams+100000000000 --tx-out addr1v8w7ux5fg9c90h7nsmdm0jqe7eguesx22kztqgld5sppxtqn4uzq9+100000000000 --tx-out addr1vy6feq679668j7xqd8npmw5hncss20nqrxt3fj084h2x8eqef9qrn+100000000000 --tx-out addr1v8vpn6khvcvj82r7nksw2ll7r4k0rtf2wj4whq8q27rpr5qyqvpjl+100000000000 --tx-out addr1v8vjcvrgd2kja5nhem6th7fyvu680k8mg55wl8c2k5grlwgt7y0jx+100000000000 --tx-out addr1vyjmpw8esluu927gt3ufndygemptyqyys46mn74zhy5k7ss82nqqv+100000000000 --tx-out addr1v8yj6xetcss6669ujl6ynj2ahtegqypsc4vn3vcrjf3ax5sxgkhgx+100000000000 --tx-out addr1v9rx8cck6ng7g6pru3l6924dj9c83fnn5n29kk9y79a5n2cetq549+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet3.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in d455ac406b345cd897530ccabb1605c25046990b28ff25fb0ce34679b6e4be9e#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9clv7y538tx8ap2azmdk4a459e3vh8cf74mqf5222v9shgw7q3ft+100000000000 --tx-out addr1vxzsjkma5uh3e0gnlja9fx63e9uwrkrerrqyjzp9jdxgfucsnrmq6+100000000000 --tx-out addr1vxkv9gksz4cdyr93y4l7zml0htdtcveqru48as4jagwtzns54wpdj+100000000000 --tx-out addr1v8mawzvru023q8h6umhuwfk3md3vd6pvx2ht3p0hr6jkjgcmlk63j+100000000000 --tx-out addr1v82z67v4t8ydptd85lqza7v3upvrhw2gqdgp7ng0ulntsysfu9env+100000000000 --tx-out addr1v88ux3fulk07urgce7msnux79cekqhntejwgm2yulr9l64gfpkajw+100000000000 --tx-out addr1vxt3d4s8u8l7dzehh377cvxkp6v7gwjnyv7276gl0vwt4tqqle44n+100000000000 --tx-out addr1vxcwu5tln5yn08sj6fyzqwnq2ef2l424s8gxrat4y6y3snq0mk9du+100000000000 --tx-out addr1v9egnu9utjptmus3cxdkj5c7mh24kh97uqcf3csfa7zqyfgj6409j+100000000000 --tx-out addr1v86eaf45qpy66ruqlv25jfm3n223h65jjew0880y5syc37szdjt8q+100000000000 --tx-out addr1v8t9um7a7aw3t3v5kz2yuvvcec5d730xh06rc4ldgdukujgcgwmar+100000000000 --tx-out addr1vyhlukpfcpajhf9smxhddedmzptfmvuyl0suvtnzpyuvkwczasz9y+100000000000 --tx-out addr1vxeyjwp8tefx2u4plafcgdcsv546n9xukqwtckak8khrg6gy0njg9+100000000000 --tx-out addr1v8x9yz7l3pu8fcekmwmstlrl2026fuwamkrkdkqv4mwayugy36mta+100000000000 --tx-out addr1vxygjd3yc7h964aqmggxm5u88s4zfk6qu5jf6u4hd5z3ewg0wywqw+100000000000 --tx-out addr1v8w38m5e2zg3xncycxf5hj0cqj9u5he09de5cuam6w6kt6qd67mza+100000000000 --tx-out addr1vy2fk3mxchaak6xd3p84qtfhlz5g50nq2l5uk95m6g3uahq3kyfut+100000000000 --tx-out addr1vxkrckwc3qc4cnxmcyr8p3mv7u895zd000eq6y7v3f4jr6sjeqpdk+100000000000 --tx-out addr1vyr5l4a2j692xyxcw78dpcsfuqymwq7sgs9zj2ngwnapups6jcndz+100000000000 --tx-out addr1v8jlfz62p250e7u8r6w408h8en068k5v86s2avyq99tmatscg6sl6+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet4.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in bd19990e17d924d3101e2e093bc7c31c7692400a085d56067f77754716023721#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v8txpc0v8cl9hc4pnqrfxfwntw6xsl8e5llvcs3kly86gucz0sx5w+100000000000 --tx-out addr1v8vnmdr46hewuslxkepraxukyj35sqa3cs42e9wk97wfamgacudcn+100000000000 --tx-out addr1vxhv4wvkykcy2a0pa7xk3nau4gpmpyfyca7efqm4vqxprjsl9ayhp+100000000000 --tx-out addr1vxsrlykeyfx928zfl2qed60hnae026q3fnplkvzddgrxghqrncfe6+100000000000 --tx-out addr1v90g8ymcett8weutdrmazzxdl0lc2svtat88kptqksmd2qc4gv4gd+100000000000 --tx-out addr1v9wrltpej9hlszny3md6t26lryehnpkm7m9e7y6ltrstjpqtrklkc+100000000000 --tx-out addr1vy2x7n305unjndtcklc4yt4zqyksp06tsc02yd8u4tj4n7c0ngur3+100000000000 --tx-out addr1vxpjvfwagnlzn9fge292rqpf0rnn2y2mcqtj3cw42pha5vstrk6nn+100000000000 --tx-out addr1vy6g53dsuljvf6pcrftgah2xjyrg2vpuztr5em2zfzzt65craahkh+100000000000 --tx-out addr1v8xh997jxv0aekq9xm0ygepctsm96v2r6z80gpxry640kxcpegfr0+100000000000 --tx-out addr1vxx9yyfk480t9xqylwkfazfavdrey75snyflryvdm9h922gylylt8+100000000000 --tx-out addr1vxw9hs7drd3jyyntgvyvgsn0sznmwhwjkmzf2ta7ggufw8cyyfyeu+100000000000 --tx-out addr1v9t25u0ug3hflzypyeztsj40chfmcqy3yqfpcu9hp3ltz9gdjazl3+100000000000 --tx-out addr1v89cz0z8tw04rk4lgnu059dktkj2wk35ydtx9yqwengw80c9q4sjw+100000000000 --tx-out addr1v9lllns4pa4qmxcsml35y7jc8gxygy3d9ny0tyq7x0qhfsqtmcefs+100000000000 --tx-out addr1v8qsj872uqpry78pj6atcs7gptxz494pdfd6npp56wx5x7qh3tqt8+100000000000 --tx-out addr1v92tjx8qj6640nxv3e4sedz0nmhglxelwqdx0c8f6duud9cvgmmr5+100000000000 --tx-out addr1vyndrfkf073xvt0738kzu93d3jv7nmkg2as6q6cg7edrtmsl5qsqs+100000000000 --tx-out addr1vy9z6qf892332xav75ddgxpnduudqeadnrm3h66ww4xlqpqu0tap3+100000000000 --tx-out addr1vxh0c2mt6vea93r64l7wja0dm5hcq9xchkddhg7vtzd3l5sd3d760+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet5.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 13a995df5572e49d4a97026e32efe1ef09f9f50177125e6f8c21f7583277cb91#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vxuxkmkpqsgcyu44p0aleu99wfsrksvkvl4f75gwgv3z25cwthhuh+100000000000 --tx-out addr1vyhjzjg6hqr2gtrdzj4q5t2ukj4jjc7jvhl2rw5jgavxd4qq6mylk+100000000000 --tx-out addr1vyu25e92ec2dla527sfgegkds6qg703rgpmvt29ceyju68s9jmmsf+100000000000 --tx-out addr1vylvp86ut7su7awnsydl2c0har7356uvwjvyu0lrqvylzjc62sqmp+100000000000 --tx-out addr1vy043r0pjlavsm3fff67qjry6zvk0mgwvzndurg953gxyvq04v2nl+100000000000 --tx-out addr1vxnmynghrcpqgxs709t070xt6nl05njpdxyfrued2j8fxks7e7f58+100000000000 --tx-out addr1v9ylpwux5ljcl5gvz9aunrqwp6wv7eqpw74kzxyxyw2kyqqw0zc6c+100000000000 --tx-out addr1v920h7x7u7msdru2dtrl4hh47jrswuavyhkppswkv4c8u4sj8pwls+100000000000 --tx-out addr1vxlvfmajra6d7cxtlx70uxtev3g8ct7zx8hxrew589h9lfccregzw+100000000000 --tx-out addr1v9g3scvqeh3zmv9yzsfrlnml2ypjk0mlquhetj2as8r35hsc90u7n+100000000000 --tx-out addr1v9al6q2rs8tqmlt2umtdqszprg9m9hghgsjcan464quhfgsccpaqg+100000000000 --tx-out addr1vy3p5fzvufugcses99ht7ugxxvqy5vkd2wu0ekcrfjnjjsqm5sewp+100000000000 --tx-out addr1v97qrcs59tqshy8hjw7lptyrfaalae00phkfl0a85vpaydqp5xwlu+100000000000 --tx-out addr1v8mz85lzx5ajnelvyc4qhmk6yjdx2683xtupug3ysckxweqy2t9tk+100000000000 --tx-out addr1v8quqyqf7gzdm6c0urhagzggh0uq4lwl2fjsvqdthnagfzsnvlcu3+100000000000 --tx-out addr1vyg97lsgmwzcn9lzj3cec04va3wfjjj6q6jdupuw4c2we9q25n6ap+100000000000 --tx-out addr1v9zheyw4s79rpdhcunhstpu0nfjvffwuvtwanyznuvxjn3gu5za7v+100000000000 --tx-out addr1vxxx9netc54zxa5py7v697c99527lhkkvvzxrtk6t736zngs9alxk+100000000000 --tx-out addr1vyhffjlayf73u3hx9mrtv6x2pfe6jrfk9v9uxk5a4dt2vpsn98ru0+100000000000 --tx-out addr1v98tuwcsjwk5pqnjauluapye8m93k5666404zdp53v2ptvgr0am6k+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet6.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in d4880c2ee98021b6cf93c98e21a263d3e3c3db03b808898e60acc32c3152537f#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vx636g3kz6capppr793yhavrerqmx6uhly9g7s9r5t2rwashtpkxm+100000000000 --tx-out addr1v9jqmzfwq79gguemsq6v28urmfu29xu8zq53vp386al4gxcn6vukr+100000000000 --tx-out addr1v93qqm02t273jyvngq44ud2wauv7mfdpzjsth64zl4n87zcyup080+100000000000 --tx-out addr1vydwkwxrwzvf62ka9vv86auhj7wejeqsjuv5e9w8u8n8jmshmus9f+100000000000 --tx-out addr1vxtjylpq9eg65n3xm6h6zk5pp9djnasduhr2reqpkr8muhg5z8mts+100000000000 --tx-out addr1v8jcz5kjgz4vlu8g089r4ykfjuwzdw0dxcqgmk4aehe8xzg9gad9m+100000000000 --tx-out addr1vyzx4usdz53gqr29mdrhck2907qqmj535p39xdkk8a4yxkc86f98g+100000000000 --tx-out addr1vyaapgatp54z83gqhldvmgaxlhwnrpxthlpffggksj9726s4avhus+100000000000 --tx-out addr1v9tep3cafzrrmcwf83xtyljzykplkrrn9enk8l029pnunfq853dg8+100000000000 --tx-out addr1v8lvet6kte45mcdld28dv5uhdrhlvy5q4npe4y2zd9quqyq48u5fs+100000000000 --tx-out addr1vxq6ejcaw25lualt0arqhfh7kgpv4ttnupmxfyktquaqx8s42v7e6+100000000000 --tx-out addr1vxmqun0h4tkr03kcyfs6s90geu7sndgp38p3pfmlnkf8tsssnp5z2+100000000000 --tx-out addr1v9kccpwqnftf5gkm7w0s0keukw5le3pugk5qtcfx2pzhlfqq0709s+100000000000 --tx-out addr1v90wxk9n5ye3f2f7vvqfead84f5vm377q9ljwr9auhd7svcyxdvmc+100000000000 --tx-out addr1v8whkrsxzw29ttdxjaah3cvzh78yqz6mjkuvg2jl9h7fwgs0akzna+100000000000 --tx-out addr1vxyzpldfye9nsrlsyxvz6mw9lzc462v6xn52h8fu56a4vhg7yslpd+100000000000 --tx-out addr1v94fu709rtjpzn7j0x4a9p4ds3vt7wtherwvyxqq68wkx8qxhmgrp+100000000000 --tx-out addr1v83y8zxk49vhqx3casawl2jrcj5xh6zxhelyf62xqsqpltsjtmkmh+100000000000 --tx-out addr1v9lrq7ypsut74paefu7r7up5k2t6w9qzd8rqfcauatuz72sldeuun+100000000000 --tx-out addr1vxepp6lmz7tcajpevxfruywm45yrrua9vugq78usmjwkr7cu3eqz4+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet7.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 61c95578660bf2f02ed3d5100ea6480c647401aa0a68acdfd5d934bcd4a11f44#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v822r9w95fhl33sfukhvul0gwauw78jxn0jqp58gnrxjduqvggazc+100000000000 --tx-out addr1vytcfxwxcct6npsv0q50c7vraksavs5aake0uvf84hxtqpc2f8qnz+100000000000 --tx-out addr1vx3x6frwtpccdem2fm4vx4gw52rnx2az4nlxeggqkxvgskqf2xmts+100000000000 --tx-out addr1v80tpr5gyr080srhzsmau238d4k94upxknyvfcvfg5t45ngskx70h+100000000000 --tx-out addr1v8e6ws6jvuc6au2hf4u96utnhwdfkwqfcay9pnfn6gttlwgm80v60+100000000000 --tx-out addr1v8c4l4yeyu4uprd6ersw06nyqehwcf5pv5z6q9c7trr0yjs9ek9ls+100000000000 --tx-out addr1v9vwgmud343c7exfe0q90dlp0t3gn076hhc39hqut2dvdjccz4h2z+100000000000 --tx-out addr1v9h4hvf7qpg6tustjpz8kxsk9wp5mlljgvlyjpqnjg5sahc5n7yr0+100000000000 --tx-out addr1vxg7m9nrg3nam4anphhamcen63zlfksgyhxcrkttzuyp90cugx27a+100000000000 --tx-out addr1v9ugl52qkvyrjslcfngv9m2nah6c7cx8lw7t3uuzrn8l8uqqg9nrj+100000000000 --tx-out addr1vywja02fnnvkukdjst93esy6yq7rf09pfxsv75um8053srgr4nedg+100000000000 --tx-out addr1v9m62mrfxuv8ana2vq4p0fkpyd8u6tgnh05awgu3cnhfpdq0h45zc+100000000000 --tx-out addr1v9ax2pmjmkskra3whkg9y6wpz03p8h23m45sd5tz9n30h5cu52hnp+100000000000 --tx-out addr1vyd87zea4z729vdntzywu2s34vrpd2jp6qjgj5cc7qeehws796sut+100000000000 --tx-out addr1vyyu3nxhyd8z59na7nxplxd88ztledpj7jzr8rwd2tcmavgwum5mk+100000000000 --tx-out addr1vy98564e4zdx2g9u9cfnw2uultt04mmjgawgv5n2g4zjtcqt6zecr+100000000000 --tx-out addr1vyqg73fz3hswk9fvpf50r7ds5p8x3fmgw7rzcqzwdhuc2fq20vu6j+100000000000 --tx-out addr1vxqr3tm940wd2hz6mg5hztqpegm4g0xhxfh6yef3na4tkyq6mumva+100000000000 --tx-out addr1v8lng05x5u89awrc4kal590asjmej50dgpkvtlz6trcn77gpza33z+100000000000 --tx-out addr1v84uq4tprcwvt3nu89tg9yy8403tkxlzl5nae82qcszez7gpde9ka+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet8.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 3fb720e1273d34166aecc8d54dd96df6198fa6ea78536606af755409001d10ed#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v8yvpzu3m5t2pjfdwhx0gc9rrpse7tdv6pcv4gr0cr66p0cf40dn6+100000000000 --tx-out addr1vxfr85364lkyyxevnsj7swlzf6l0r8aqkaavzd8aagxg3vg0eaf4h+100000000000 --tx-out addr1v8req727km3qkq7rd49xx3tguce99jyhnjthl5mqv7juvfclnr378+100000000000 --tx-out addr1vyfu3cnx3ewwez6hyldfvvvm9tgdj0jtsm26hslyqfcghrsq3fty5+100000000000 --tx-out addr1vyweh22s95dgplakz34jjlfxdl6uzryrsy4ftajwjcn9yzgkcajl5+100000000000 --tx-out addr1vxgdq70zk3xmpqy357pn6dvvzzcj609ma5hthysmzjp65rclv6g3x+100000000000 --tx-out addr1v8knr6q200mcn5uhr8wtrscc753d2hkaccu0jmfq8wscv7csnnhd8+100000000000 --tx-out addr1vy3spj2kch5ufm698mrrgqkt8yp3tkcad88wv3ut2mlc3pckaypfg+100000000000 --tx-out addr1v9t35dy6v07aw5wxqp9l3cd8htse2fk8cyenchvf73qh59qrhxrd8+100000000000 --tx-out addr1vxhvrszlxa7h39sy8ry30jcz2ctxxt0ta8raxnltds6sepg7a7uct+100000000000 --tx-out addr1vyrn0vqwq9rr0wddad4ys2n3g3ytxenq2xph89g3hxgdj8skc2y8m+100000000000 --tx-out addr1v9kmja3umkewwfnxq2pzvpfu44lzkhgqn7d57pgrvv7v3xsu5vncy+100000000000 --tx-out addr1vxq6p8pjz90c3z7ekettprs4e6w0lk65skcgu8fe096cfaqalfh4u+100000000000 --tx-out addr1v823qr8qgv62ae6dtnafjpg3h9628umyqedllx7dkv9f9gsrxgkzc+100000000000 --tx-out addr1vx8ydvsnf8459lkenqgwqhysfrmvmsnfpxe3p38nu8hpcfcgz07ft+100000000000 --tx-out addr1v9ztf4dvwnn67c4zcr8pcdhhzc40u0958slu8mg8hret9sg2g7rcc+100000000000 --tx-out addr1vyx4c0z40wlsxqsu8susc5feqrp4xht4lhnt9z62rafwqtq2d770d+100000000000 --tx-out addr1vy2kkjx2vadxeagvx5ggv6fl530fs3hgpa8hlz5jwcz9tpqac3647+100000000000 --tx-out addr1vyynq55fet47fjmejwr3wu5g2r4fmt0g8zc2dvd86x777xqzna2zz+100000000000 --tx-out addr1v80r0xr9u6z87zqkgvsla445tw3clkgznrwhy0ns32l9qngwghewq+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet9.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in df07f5a34b0a4ce1f319d8481d5bd2c319184ed1ac7d308cbf5c6f75dd1bc9c2#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vy5wuu23ekrm7acqfzzahphrmjl3rrwu4ma9f8w972hz9rcwg7sew+100000000000 --tx-out addr1vym7f8kf8xnm2f8923taevgvd2m3smtr9ryflndzarhhkxqqesdm3+100000000000 --tx-out addr1vyft8ydhqehfcqeuqvuwa36j0qmq3qjwckqfclu94jads2g4yxhn4+100000000000 --tx-out addr1v8ulkgem6syff4u57eetqt6u2jcta0rjmc82q56986mgndsequh6z+100000000000 --tx-out addr1v9sfqsplv7atm8csr2x2kgdc89zjmcw4ug5t2dtqamgcjnc9t69hv+100000000000 --tx-out addr1vxkjlqmnhquneqqw0ue79s5dlfg7eh9akzmputjgglvyx2szwcsmc+100000000000 --tx-out addr1v8r88y8syj9s3m2j09sxcg03aak56ken3nyy5u4l9cwrm3qr5a2ld+100000000000 --tx-out addr1v9hreayrh0gffczwjsu9azlvmv6kv8zlq9t8klzhgkg48egnqnu86+100000000000 --tx-out addr1v94txa225mtej83cah5fsq6zxwxn5xhrszwsc5qn6ysyengll4z39+100000000000 --tx-out addr1vyex6k6xg88y0m2033xhrvq4y33uqu88spxljayrgvj0pwcw8fqqq+100000000000 --tx-out addr1v8jkqdxt0g7ccu2fwffsmjmv258scw2w44ez6dsryr932lganklv8+100000000000 --tx-out addr1vyyve22mqk75045kv3ufxf40laslag00dgg7epyvdpgxhzcwjdnfh+100000000000 --tx-out addr1v9qh7ete2zwp433frc5vmdvz3w7wzgdjuflpmed6wmvgq4qeumxfq+100000000000 --tx-out addr1vxu90u6tdq5ku422zuqy0mca4x5djemjq34nk6p73upwydq8rkjpz+100000000000 --tx-out addr1v95jwhxzgsdej6c6rv8xzmzwd7xgcrj0dpq9gcx4y55zlrswxpnzk+100000000000 --tx-out addr1v820qckfysp273fuavtljam5ww9k8mwwrpge7n0p92cejvcnjvh37+100000000000 --tx-out addr1vx5ysucf75xeg35syngaxpj3jh7jlhxs2rw97ktklyx5nqsy6chps+100000000000 --tx-out addr1vxtwfdypjpfrsh6ws06vh7d7rjmgvyxsx29ks3q4zlwna4g7hlqay+100000000000 --tx-out addr1vxs5rxnc5e7w2drvsgja037md8rp25aman76c20a6t46yss5jw342+100000000000 --tx-out addr1vyexqr0ugsgdlxg5t8sgsr2yph6f4fysp0jl00yrcxav9espfrnr0+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet10.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 9dae91b5ff64d4f025df3e420b7c9125737b42dc096f1790b55f0dc613c56362#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vxt2e8w0798ph876gs4rh0yxefnvk4ca9023lcc4z75jy4gdq4kf9+100000000000 --tx-out addr1vx439yq3x8qzz8m0sqrs6rfatxmal8ezrqqcv7htpv2sp7g9prxkj+100000000000 --tx-out addr1v8wv4z4kekvap0q9cvw6wlfltpn4zds8su3m6vww2jvlz4g3vz8ar+100000000000 --tx-out addr1vxeekt8sz6vmut5ecc30t88egtpaapmea5n2shhmsf0gheqtr8lga+100000000000 --tx-out addr1vyfv7xfum669hf73va4yngzp8v4tvupwfpgkjftrzn69xasnegwtd+100000000000 --tx-out addr1v9rte69v9fxym8kevd7zk3pzfapr0kl7s3tuuc4k3sq6clq80lrnz+100000000000 --tx-out addr1vymanz9dw66nx2n3fwn9tur8q67g2pdgm57wd2ajc2c7jgc94ajn3+100000000000 --tx-out addr1vx2gjzqjlspxz94kun84pl5aq3w5nqn3huyl4rgku46gvjg8j939h+100000000000 --tx-out addr1vynstzypgfjy2vrnxhmst7q9rw79d4xqvlxqn7y3mcler0gnrnn47+100000000000 --tx-out addr1v8p6wa2rguzke9csptduejggq992nevzl5j8tnld0pddzfq3kwcfs+100000000000 --tx-out addr1vytccrk0lvg05gex34dt73j83x02h9d3r5hsm793hve24gg8dnvv0+100000000000 --tx-out addr1v9dxhf3pw9x9arkauhvknuevkjzt04c2awum6qd20dccvjskca6ax+100000000000 --tx-out addr1v9ypp4gesxwsmdy9k43sx6k67cqrth34ecr764frmk5n8aqqqhc8l+100000000000 --tx-out addr1vy5njrvzlkcma6yq3l2lezxafu3ecw8pgdp687250c5h4pqsuqqfk+100000000000 --tx-out addr1vypemtn504dhrjr87w4zmu0lrcv7x3uht290285uafm7ssqt87534+100000000000 --tx-out addr1v966uf9fe8j7usu885hk7xkhfexg5ljfvtgp4tu4pk7lhlqddynr2+100000000000 --tx-out addr1v95wa5q0jhnt9udzgvk63228vry6f0n6h2c4et3e6d8g5wgmzlmkl+100000000000 --tx-out addr1vyk5dwtg03juxw9mnvhwwccvwx3nssv2vd6lch0vptrzyaqmraa9a+100000000000 --tx-out addr1vy4cegpuj4z33jkw9mcsmmrdj25579lkrtkwykwtlctnzesdqxt0d+100000000000 --tx-out addr1vxyw2au8zmx2r7x7dagqwu6mcnt60jcmt0hj4annedwpw6s55w0sw+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet11.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in a837901ad331f661d3b907956c5a94bc56bb44c1f7e5291188ecc7815159df56#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9px5v5fpav2ym9wt2wwp2zs5fs0df8qq5y5n0myqt5cqhqs5mm0z+100000000000 --tx-out addr1vxmjzg5h26p4jlc2h77d43grnwts8zgw0hlscpjd960km7skpegng+100000000000 --tx-out addr1vyyuwlwlha4kw4akuywdgxrxmp5yqt5u2fxf7mwa497yrds4v5z8g+100000000000 --tx-out addr1v9xscqgvme2gdv6htl07rfe2ecm36ll0t22lqf8wnsqzpfcdegt0r+100000000000 --tx-out addr1vxyqjrg5ycjcldls95trstpvdvqdyyda2dyrcm56e5mearq0xawk4+100000000000 --tx-out addr1v88wkll06ug6jarv4xz0ffck7pd05dkzzp0732xa2evekeqc3dtef+100000000000 --tx-out addr1vyfj5yn5k9x8cnzpl5vdcqyreqhg3xz8ycuuel7vne5p8as2v8cd6+100000000000 --tx-out addr1v848tj9hsf90q6l3p2w8aww2pg7y8f3vsnl32d5x7eduxnq8cyar2+100000000000 --tx-out addr1vykmpg8daes86874zx0chhggjnkz6cpansr3eagxeh0399cdaau72+100000000000 --tx-out addr1vyut8n3kjfp2m6yjp4gqzgljz32np782mrf4vxzpdhrum4gyp4j5z+100000000000 --tx-out addr1v9284dvwvpm4q72wurnndmd82m9kk5ae9uvj98mdnvpgvjgu5jh74+100000000000 --tx-out addr1vxtk3lut49ny82kj9pg6pkdk9eeen7pufct4u4z920l08egedu45x+100000000000 --tx-out addr1vxw4vhjg2xpufrlfhqtlyr5vnupjct8h3wuu5ze0lnra0ccrjvdg8+100000000000 --tx-out addr1v9svsntxvcj8d8j6f990p5q0s3vz4kjpwu7uawkaf7lch9cx6qgr4+100000000000 --tx-out addr1vxhfeprvny4ezrfpfy242ws3al3a8p77xsyenycvh94pc0q027v3p+100000000000 --tx-out addr1v9ym6e8gz3u8thqnucrfdhqu7ec2az96x5s83tf76je8glg9wm93d+100000000000 --tx-out addr1v9cg9vlfvdparhr8m6f4qge86aa8636zgw835axejgx98ecra84u2+100000000000 --tx-out addr1vx68vfcr262vp3vjlh82jc7dwx0famw4ph8t0mt8l5laj6cz8rd7q+100000000000 --tx-out addr1v8hzt40eqgge46k80a5cn8hqtrvhk3qawsul23gyj7nmy7qj0t3v7+100000000000 --tx-out addr1vysrfepyhvey938nz25hm5n6yrnpn5wwtjvt4fkcc6f8qcg4k2j9x+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet12.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in da5685bdb3599f4a11ce505f4fdd4459383382a37e677b240fa38fd2dd8987a1#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vyqfu25qcq4qyw0ulalppy3jeehnfhc8jzpsphrxfc2tl8c6vkm90+100000000000 --tx-out addr1vycf8gsq4xdlrrs47vr6d88ug2u60y35scfyatjc0fz9pjcsnr9pq+100000000000 --tx-out addr1v86hfv9xxz4khfq6ajvwv4rs02573mgke0s2wyn88enhuyss5scyn+100000000000 --tx-out addr1v95xevp86q8k50vdcjlxs5ekdr3auwjmxk0ueqrcswnjgtgpak4ku+100000000000 --tx-out addr1v8uhn42wlqcz6csda5809ggaeuymw5pegk0vdgrxs7qvefsk3slr7+100000000000 --tx-out addr1vxes983eh8cnhszf2lml8aecaem43k48h50y7qm7venaqdqqcst5r+100000000000 --tx-out addr1v92fmrmndvsvtxens5fful4ncpxznah6x2x8ck9q3zgj58gwvy9mr+100000000000 --tx-out addr1vx2tgv6rvq9pltsnxc5pas2fgne7ge3mwhucjuwwdz577ecxd0hp0+100000000000 --tx-out addr1v85tsl95jz3ff7udmy2ks3j787rqxyyqh3rv5a4egl4em5c5vyszv+100000000000 --tx-out addr1v9dt3ywqrvqgt3uwddgs6t8q6tsh80qg2mhsg74ng9x8nuqna3aea+100000000000 --tx-out addr1vy6lanzd05sxlulwsm6ex99tlnxg55cs26ncczhsl3zjuasn6nrth+100000000000 --tx-out addr1vx2vkvgrf5vq6xda0cq0tu3mk2038uy8wt54fm804xjms0gxg8sru+100000000000 --tx-out addr1v8jnnavvgfv6pz4ka095ryg45q5auf4c7awhnmkeklj6n4qwsjd3q+100000000000 --tx-out addr1vxac5hu26v6asva6qp8u2ugjcdyht5el5eytd4jhrhf4s7sr6z95p+100000000000 --tx-out addr1vx5zlcx0wmlcn9srdxle9j453v40eym6h2z30gznq9tjwucyw8w6f+100000000000 --tx-out addr1v9fz52xe4m56wwmnnhqmlz97ywgn2xjg3dyv87ssy83z62cehvjsn+100000000000 --tx-out addr1vy2z7fududu7xfuzftx4cw7uxytudxlaxmgtzu9aqara2mgp23v39+100000000000 --tx-out addr1vxjkjhvehsk05n3mytjnclty926hcv0nxzk0uqphkhlssyqwkfjfq+100000000000 --tx-out addr1vyytnxpluyc3q4dayks9y263pua6vkw9h9t2tjxwn244jqsmqznpu+100000000000 --tx-out addr1vxpq30gv4p88tvwyfan46ddnm9d5qfa3rgq37nv7xvcsj6suf9849+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet13.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in a8e86b6cff9d05bb0ab39e8b3e37aae1a8ec89bd4eae24d861a4493740ed887c#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v98flksp0q4gp0pmxvne75sfdtxvhdl0822xpdlgd0e80ngza9wmz+100000000000 --tx-out addr1v9pvv7k2q3p0ms2289cccmueak8delh25tz785675tqcves52at8h+100000000000 --tx-out addr1vynz9mu6kkjsdaespgdayftvcnftd8y0nwgkjf8he00p7mqgskmml+100000000000 --tx-out addr1v8yhmnvp60z7f3xjhswda28kxptez4n4vah4e920jlaljpqaz3teq+100000000000 --tx-out addr1vxfp4v56yn5lpvpad55q7fe5educv3d99vapplzphvkvu3q3snlrs+100000000000 --tx-out addr1v8ngfs7gd29nt0c6l4e2naprkh6hkryp8599qmaj7qpq8uqllqxdm+100000000000 --tx-out addr1vy8fgzldq7wuc2c8vnknunc7kg389799d9gxdqe2pwpje9qw47hqw+100000000000 --tx-out addr1vxpullq23wlgfmy7mcxrgjy8nnef65yu8md0r44ky34cvhq5zhz3f+100000000000 --tx-out addr1vxqmn9q6gfc9cu76pcg6vsun3kxrxcu4zhpjdqdkglswc7gmr2r7e+100000000000 --tx-out addr1v93e405uvq4aqnzfycav6kjwvmxfrrm55jhxfr6el2uszhqvmdwl6+100000000000 --tx-out addr1vyzxk83dz8j9qe45xjw3e6uzvgpxtjh2dvrwmhs9jgpwqqg3rnpdn+100000000000 --tx-out addr1vxkak647xxwusayv3vkvhs6jtgu53vtlk5fp7nhyc4d9kzchzct3d+100000000000 --tx-out addr1v94ekf3f6jlnpucczzy2lfyhmagljj0jz7d8qqm3z7e5a7csxlztk+100000000000 --tx-out addr1v9uwl52zrm4njl4f46cmrp0ysgewfcajpqhgcqv2vwq6evqsxu4j8+100000000000 --tx-out addr1v9jn7fw4zs6hwpw5k658m9m3asgxe0dpdz7pns48n9072lgv2jk5m+100000000000 --tx-out addr1v9acfw2ws90n2vwmalqsnvz6g8w5208m2x656lud70k67cc9n5g5v+100000000000 --tx-out addr1vx3u5uayxcgtntazj5g3q749x3x4mh4ds2wzzaqzuhn3yrc37cn42+100000000000 --tx-out addr1vxx96jtxmf775k4acd3remjt56u50z2aptzqagxt50xnpqgud87lr+100000000000 --tx-out addr1vx40ceah00xcsahaxk9dpxe27dzfee88rwtsfs8agk4dvyg6mnkaw+100000000000 --tx-out addr1vxp426fq5z50hyyujes5adxtzj2heyycpmcvscmrqvcq3xc2tasp9+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet14.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in d5373a5c571d6fab3fdf3baf55e419423f413c0a81e9b0e91ee1244b1b702f44#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vy2qes50hvsx0z8usktjmtke6rztkdz2xrnzgcuan5zwqeqnhge5x+100000000000 --tx-out addr1vxq2rkkr27ltqfs7ldj64ftpwg0c5meq4tk6vyv0zynqn4gv3hely+100000000000 --tx-out addr1v9n9jgu0n726ulw90ae7lud755v47gdw2t3enrvmx03meqs62f000+100000000000 --tx-out addr1v9s3j4fw4ye0gu0xpkm3v8pm335fjujzylvhe6xtvjqwwjc2wdnx6+100000000000 --tx-out addr1v8cjslhxsayygd9mamhecwnpcs88j3y7z6gs7urze6n58astr9my3+100000000000 --tx-out addr1vydt3wtw3r2qqj9e5zegcftwmtkyzyu6jy2ctm2uu2p9racay7vh8+100000000000 --tx-out addr1vxv4g8m85vuxr28l5c3kv7a99nexrk3806qt9zn7ejjydjsfwhl5v+100000000000 --tx-out addr1v8cakurlnpzq0f6jlvz8l5729eur6g4w785uyqamy3dhh8caek6ma+100000000000 --tx-out addr1vyrvfsyzlakrd5fs4td0f72fyv3ngwsllrmumftmlracjfg23qdup+100000000000 --tx-out addr1vywtvcxqx3v8vxcn7zya6qv7pv66kmc6fu8ph2vdnpj7t7cgjdz82+100000000000 --tx-out addr1vxhp3jja8nzvgwnx2r0sjgmgjzwedzhcapyejwyndvgcxvgc2p608+100000000000 --tx-out addr1v9atsnmuxmnr6l54yq7ffglnvgq5wkuu6wd8g0zg43lllps59p9q5+100000000000 --tx-out addr1v93xupnwva3uw6n8hu937ja2wtdrats994tstlvvs2z2eascyv5qy+100000000000 --tx-out addr1v9z9rztzz6ackeslyte75l490ksmhsalftld75z753e0t4cx87tr8+100000000000 --tx-out addr1v9g4k3vays7u2a5m6plfykrqult6sv4pynq7yqtwk3vlusgujr586+100000000000 --tx-out addr1vxckxvdjhx64h48yqkwsr2pfnr2lfm9lzwhmy59jp8m3fscm5xc97+100000000000 --tx-out addr1v8gr9dvww753j7ksgrf5f8pgg4m23qxa2nr4rr7sjqe43rskkg9f9+100000000000 --tx-out addr1v9ykeey0j2kgjsleak3ar9fg0pg9rnjufkq3pnh9x0fct4qlwwtaz+100000000000 --tx-out addr1v905dvj5mwqq8hhcjslxu6khux3708jsem9rndmaa7pluzct90cz3+100000000000 --tx-out addr1vy4l30rksggv7ljl875wmcwdu9eet8xelgus3k2gfrteh4sxn0jdd+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet15.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in af46484853c71cb45015d92b220d10120fb6dc4d8f6bcb3926f24229fe8b86e3#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v96kmfq09crg5cd08pxtpxdkt5kj6mww7xa69vz82f34qcqkyyz2f+100000000000 --tx-out addr1v8ddlpmea9npx65nkdk8vhw9arfzqpqqljgq8ly4ej2h56g72kfk5+100000000000 --tx-out addr1vxqk2wdkfffw286erpzt7lkrvkguf0maum5gpd36gkegg5s6ajd0v+100000000000 --tx-out addr1vx003nq2gy57f48fesjrhcl3hlhl93gu6avwwsgdm0wmdjq7zjn0y+100000000000 --tx-out addr1v9yz6pr5zcfeslahapjehlwu55l5sxj2366zsklgesfsakgynea4d+100000000000 --tx-out addr1v9jc090etrmywnal754zv7fcqk4xal2aedu8wn2wn2d5amccak85v+100000000000 --tx-out addr1v8mm2une8rf93ghlc56he6tjkdlkafs8vvlwmkmmauuryuq3pgycq+100000000000 --tx-out addr1v9d5zawujr78ddnt4x9dx6duppymg3s6csspq2y55wgguycq7lt77+100000000000 --tx-out addr1vyn3jckqnhjm7kt0fp0n03uw6v2ep9kq55llmc42agnzrjqmtk73j+100000000000 --tx-out addr1vxfkc44d4hm5aqpdv48fujajmqmny0duz0d763qjcz4j4fgslkhee+100000000000 --tx-out addr1vxhvjmhyeyezlygarxtla4m68yxfdpuwp7gpy3k3vw2c76sjxq7nm+100000000000 --tx-out addr1v86fphl8n5ddm45plqdzc6tcjk2v4sv6xge34gn3ejj5xesjm70lh+100000000000 --tx-out addr1v8sssvzvz7326f2xkqkn0ahm3ty2jdd9h9ta362493wn8kcx90mxh+100000000000 --tx-out addr1v9tyxsvccyzpeljs0r3ulun75twl3hdjltdep085yhk5pqsxqv7tp+100000000000 --tx-out addr1v960q92423y2cvtfl737sdlv76yye6ug4yfmj2nj75ydyhsj7q0e5+100000000000 --tx-out addr1vx5hg9c8uzdg40lcj9rlynlpma9wjl4w7gvd0pjxgqlss3grs32q4+100000000000 --tx-out addr1vyv64wpepauegdd330gxf6ngcx3pg5vh0ahtrx34wg8yczgq4a8jk+100000000000 --tx-out addr1vxwleu3wecgaxr3hpuhgdsx5u5ls3343ykr45dax9w2363swwznnx+100000000000 --tx-out addr1v9p3glnl986kznnvnvsyr7lgjhuprd2g2wp0vxjc6tdc55q4yrq79+100000000000 --tx-out addr1v8qwu6u7w6dx0mtckvz4cxghrljtfndenjeet2g42puxvac7y3u83+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet16.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 9bf816f40f46ceffc4e3996cbec104c5e5fadf9ad58c4854fcd2a3eedbdb207d#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vxlddjdlkvpfa5x4ycvqgxy8tf4azav7k03vvhq3k2lhu8q2t8c3c+100000000000 --tx-out addr1vx6p8a8vdr4dlfud04kzpt0cqwc8dulzwzuruh0tz4kym3q3776a8+100000000000 --tx-out addr1v9lf7nkvps6wyav2faptdeky5f47n82n726d2jw34892mnskwkj4k+100000000000 --tx-out addr1v86w0nlwdln6w4xt04wcdfsdrlsqu99evh27cv5krefmhxqr257zz+100000000000 --tx-out addr1v969r85e5rruv8rzfz06aczfrcqfk2sua0ysmmy5nwx8l5cejy4ss+100000000000 --tx-out addr1vxnts4z20shvvy0488hnxcnmdncnkp39hgta2ll2hhuuh3s693ndk+100000000000 --tx-out addr1vxyjesl6j3jafm6p3yn5hnw2lfcauws3k6ffmcz4crj5agqgk7t7q+100000000000 --tx-out addr1v9agv46dak4rc8qwv520vstkm20xfu5rvfrzejj3fwfagpc5klvse+100000000000 --tx-out addr1vx6m2cayrnyz4rhze4amp5z49tg5ztjz4cak9e6q6nxwergky5sdr+100000000000 --tx-out addr1vx2jh4prel6t29jkan5xr0tefcrw0a9dzyk3apaavz6juusgrzd6k+100000000000 --tx-out addr1v8wcc3fp4a7kvlyuyszss8dhym95tya597vgc4alqgaec8g5dw6kt+100000000000 --tx-out addr1v8q86lj40dx6qetfqkqh8aemzhvd3p9qnjslu647kfwdu6g9sy004+100000000000 --tx-out addr1v8h80uh64n49sw5utley0aqrvq7mlv2d2jlfkpwrrjmzvngkghgh7+100000000000 --tx-out addr1v8vl8q5694v8vjdwlq6vf9yunfnxh3074klz3w7jm2r8gssz3t22m+100000000000 --tx-out addr1vy0r0thgyagkcqjm55nst98umk9nfcld746j9veynx3f4tcucjkyy+100000000000 --tx-out addr1vxnxxxcz85clt5lhf64cl09tna65ga98r3k2dm8zedth42gv462ux+100000000000 --tx-out addr1v9gs0sa0urw9zm7x0ad8sc9azv63t5pajp09pmrra8n8t0cyqs8qd+100000000000 --tx-out addr1v8xtwes924pllvkwgnjhkktey7e8c80cq0qxm29e8444hvc3k6axy+100000000000 --tx-out addr1vyy8c4r5a7csvp3rwk0rpeukaherdxhc8xu5e90595t3g4s5r9gkf+100000000000 --tx-out addr1v92h3j26xszpwak0svd6yqe6elg8jzuxgeykwtnhgd7l08c408lxf+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet17.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in eafa2b2f6666de2a782e4f2d6468ff6a90d3677064c23f8656d09433483046d5#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vxmlvp0d846psqheen7echffq49nh9wm96lm4jqxcf4zmjghg2r33+100000000000 --tx-out addr1vypape7auenvh38029xeac3ppreaxhdqnjnqdsrn75qyhcgj7wa84+100000000000 --tx-out addr1vxm4vcu9qc0pgfdhws9hajtwg4n8u9rlmyas7l0wlsd92kcs4t8mj+100000000000 --tx-out addr1vyhpmk6gqxlxsz6uysxc08teg58x207zykddmmxa4pdxwusxs2wct+100000000000 --tx-out addr1v8la8ye6dwcpx3wq5jczckzms275q0q3fkcq3uujrs97pzsms5tpw+100000000000 --tx-out addr1vyg9qevgh3ruwmvcq7r7gjgceazd728psk73vfyq5y55h2qdgczxd+100000000000 --tx-out addr1vyd25newept5rnszsvgceqtmuj2g9rxlssry5jqum5vz0vcgwkuqa+100000000000 --tx-out addr1v8zk3qxpatfp4t3x66hl5nmweygtrgmtqjpqp9ekqdhwrvg883hlq+100000000000 --tx-out addr1v8r6edkw43xeq06w5n8lkfm8f58mfvnlz9f2878ms5jtquqvzypm0+100000000000 --tx-out addr1v9ygalhprchuttvjvyp99cnwu28x792uv9zsz7u8frezg9q28kxsv+100000000000 --tx-out addr1v9djwef057vncy2tl52g320vmges90q70grpyw5xhjyjsyqhxa432+100000000000 --tx-out addr1vxjnl5pmkcwqz0vacsxvh9aklffkxju87328u8fenu5ah0q4evj6f+100000000000 --tx-out addr1v8qjse4cumhwhcm5g2kzxkjf0qkvdgu8q235v98dyr9a5cqhmft0t+100000000000 --tx-out addr1v9u3tpmucm9u3vyjczwz6q00thzcg4785ytt6cud4v85szsvx9tt2+100000000000 --tx-out addr1vyu630umrl3jlth7s48zyrfcp5ml3x2clgpsmnjv346hp7q36my9w+100000000000 --tx-out addr1v9ruytwypwns3eq5s7aahhpc47st7qsplgg3aaa0zalfrzs3448tt+100000000000 --tx-out addr1vyh692x6e7n8up6lwlcpfjxzp66apmjenfkfu54dr7vdnds8le36h+100000000000 --tx-out addr1v9yd75w6n720q5zhgk86vuun62xpp85t0502wvta6leznqq254lg7+100000000000 --tx-out addr1vx9xcvw3mvrfk8gep693yr5jd7gfzzh8hcd2fz8pprqat2szw6ehw+100000000000 --tx-out addr1vxml8a9alhmc58fmtfxj9mcxaq98n8xdp8yu90cexzfetqqzwpayz+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet18.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 305c2b4e8b1db8b9b0cec12dee21fbed9c5a78fcab91e1759c534f53f7a18248#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vxhatjfdt2xqxmmdl304ru3r0uj6lk4lgq65kl0x8d5mcjg629vwf+100000000000 --tx-out addr1vycx8zva2jn4q59v2p5kq7p62uedmac0awf5yjpwgkdrpds6ccfxz+100000000000 --tx-out addr1v8w9s0p8xhtwkglj280czwx6m9c7hjwcrwtlv0xa3cdw2vqrjhyjm+100000000000 --tx-out addr1v82sztxs9tkpgcrzqtkxgudrdhrhkhm4tlwjvlkh0s26ddscmvfax+100000000000 --tx-out addr1vxglrpmrk6ru96vvzmm2czpqfhyud3l0ykkl358auv8gnzs2mk4mp+100000000000 --tx-out addr1vxyxqje4gtware074nl644jjq6xwn2j9wff02xak5mexnwgygcfaz+100000000000 --tx-out addr1v90u226prkr3j8g4p949c4fh9pmvqxma6l7apf3prqfxrsct5wjhe+100000000000 --tx-out addr1v9v8kf0llx34k4aj7a927su6qr3p7tl83j7f49qs70fkfdsa3qt2x+100000000000 --tx-out addr1v8c93fhtnf82549c7y5plgw77psn9cjlqrlp6rjv5667k5cpeg46e+100000000000 --tx-out addr1v9ky2mhc00lq769264qke3kek3sthmldaugy3m9a6p2m3eqdrfk4y+100000000000 --tx-out addr1v8nz8uast5ta8jqy9mszp65kd93mkw5rvpzf5gwn9r9zsecvh5x2c+100000000000 --tx-out addr1vyut9fgldk5djqrlhrdj7cjrrn8sk07jqz3766geaw88u6qewkmsn+100000000000 --tx-out addr1v9rvfzc23ce60wuk0myu4htxc2f0c9kamx5sd457s68z8ngnums25+100000000000 --tx-out addr1v84gacwvyyg0zar8g4zjhcy3087m6vj5647zl6pnxluuy4smk7xw0+100000000000 --tx-out addr1vy3j6268qcnug9tprfpe64a9yxjpn3qs8z7swsalkcpv2egxvf6tq+100000000000 --tx-out addr1vxevzv855qdxetrkau5texkujdn84u9lyktdsy302mtf6lgh97nhy+100000000000 --tx-out addr1v99jf4ytk3tj3g0fu5yvk9vmfmxpchzvmdnz28h9l9xkvqg96tvxn+100000000000 --tx-out addr1vxur4qaadan9473rwvpq0dnuf675lp4khnwt262v0c7m7ys8f00ls+100000000000 --tx-out addr1vxfwxcsglz9wceathy73lle5pc7a4jjakljg30rpzjnzcwcc3aa7r+100000000000 --tx-out addr1v8k57h5cnh6ehy0aw78vzzd5h7zlwrnqfvwzm4hu036qy7g9y4mvm+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet19.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in ffc678efca3913809876789733244c91e4f618bbfa573bc1fc6d70c5e53d0c78#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v97r88ygznxqgyphegaqkan48zmfyye4yxxprfsfd07j8ygeuspng+100000000000 --tx-out addr1v9h7tgngw44c737fj9v2lxlt7uglpx5xdxwm3j569wv05zsprm06v+100000000000 --tx-out addr1vxngqqkgc7vd933qnkmpgtqlj3csqfy34u752pgf7wx7ldgfjxg45+100000000000 --tx-out addr1vyfr9jkx28s9ptaeejjm3l24uqvfzdldx78t9r0drut9pfsqpc69a+100000000000 --tx-out addr1v94kx59wfprk0a888l9f0amdlkqwhmmyazqjkvyyr03ssjgm242ds+100000000000 --tx-out addr1v9hrsy3wf2yt2d25tj39u7c9m9vz8exu4ga5h9k9awfpg0sgg2wx6+100000000000 --tx-out addr1vx5lp9kanv0xk4tq7k5q05jycmmnwrvdaat7vkq9fryczws5xta59+100000000000 --tx-out addr1vxl39lgdvepykamtx3zy99uczhu0ewygfz9kv2pupxsqntqxs5kv3+100000000000 --tx-out addr1vydpps7hfpy5j428wrw5fkf49nttmxjns8d5vg20yxhqdwqhwstap+100000000000 --tx-out addr1v8usqenexu2h9luvdz32964edc7qwjlvqmpclaqggxndh3sm8c329+100000000000 --tx-out addr1vytp98rq0e72hvkx6rdctrkf6vscushxd74xkqr9mhpmkqca5gdh2+100000000000 --tx-out addr1vx55m5rm5rrmwcaphque0epyc4rnyzzlpjfl9rkcpluj0vshd8pra+100000000000 --tx-out addr1v95fq3kttghu4dnfqm0grnqtmg904luj7ta87jtvma5a2gsemny9s+100000000000 --tx-out addr1vyqyfekq22ts4aw259crrxdxmavc2hymprxn075prd3g32c4x7xf9+100000000000 --tx-out addr1v8n35dnnnv35hf9gdtfa7tduxhulmla4jwzvrte9ahul5mgjx9mpw+100000000000 --tx-out addr1v9ssc7upefmlz3e6zk023xfhfmxvl9rd5mvqtsd9883sufse2z49w+100000000000 --tx-out addr1vxkkwahhg4zc5vu7gk9q2zp4ltckq5s2g3ntshz0fnfdu4qpjyt9e+100000000000 --tx-out addr1v977vxqt3p5unmhvdll5apq5xs732d6te9rrezuulvvtcdsdrh5l0+100000000000 --tx-out addr1v8ruk7ttm20j6f2tdwg8udzm725l83g7kfv3p6p9qa4s3xq0pnywr+100000000000 --tx-out addr1v8mnwan03qljcz8dmgy9mu4fa8flpqy2hv7n4fdg9hcjgys30906h+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet20.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 8c801c188a1f86efa8b12e90cac1161f1a29dc5e8442c2e7c54708f244dacf64#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v8ehgj64q58l2v8hx90z996psqrdmyu8hgjs2fdsd28umtsap9hj7+100000000000 --tx-out addr1vytauexthcfkcywzr9j66p9u7c80gw88ucxq2ytp35sleuq4e6xs7+100000000000 --tx-out addr1v9x3zrlsaykmt709t2x8rqrjzksvx0ylaxhp7amyvueuarg4hg4cj+100000000000 --tx-out addr1v8n224pyglx6ujr9emhj22ftk95fztp6vrc46rak538tdjc9j84n0+100000000000 --tx-out addr1v9j7h9qpmt3n7zd82f8rgg7sjwxatwfjnukt3z0g5pm6n6gdqmnzc+100000000000 --tx-out addr1vyda0nzwd380shxhfrxra823r0n78wr96uwqsgggsl5au7c4g85ty+100000000000 --tx-out addr1v9qz553m6ngdfn6td4qvrvn4w8edar4ggj7s54cyyvgqwfshpypnk+100000000000 --tx-out addr1vxh9l50ly0sqyzx5sks6wajzed9m007lpvsz45ppt058mmqpjnled+100000000000 --tx-out addr1vxyynlwusas4t0p0dgnaqyvmea8c6az5altag0c9f8e8gdgg7evwn+100000000000 --tx-out addr1vyykdx8yts7p92mwak2umputd83fdxfl3r9xhqag7vqukzcw3re0y+100000000000 --tx-out addr1vxjljwau28s9dfg6uat249jcc98xm4xf47lzv7wds0mmp2ghnu73p+100000000000 --tx-out addr1vyudj6zph7tekk72ectpzs3hulj4ce4y0npwd288tkfzqvqd72x9r+100000000000 --tx-out addr1vxlj5ahd4zjr3qs3d5sdxsydzdczdekqjgph6m99e8dsjngyu6jnt+100000000000 --tx-out addr1v8ezqce4zcmy9aj06wc59e284h495wnjsn08dvejqqu4udqyaw0rt+100000000000 --tx-out addr1v9x4kn8dnfuevuen6a064epm53z9a6jwucy7zptxvsfvv9qngzg90+100000000000 --tx-out addr1v8lnffxxszfstkgsprpmgka9z2hx9tamx6576sg2zgdq8jcu7msm2+100000000000 --tx-out addr1v9wy5l3putz9y6q4zk3fvky0thacjm3janypwg5gy6t0trsc3lnp9+100000000000 --tx-out addr1vxa96urvy0gu4yd9yktyzte706vkmy520zffsjaswx6nfegx43zlh+100000000000 --tx-out addr1v8j6epuqr6nnjga05xu6shw9k8pe3waqc26y7atx78mvt5c2xettd+100000000000 --tx-out addr1vyu5vc9xg5ctsfxtrgf8zpkqmnx3k23zhu865uegnpu4svszyc0z6+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet21.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 3d9dc32c15c2edc9f6cb1735745efd9a027978e64b90cf4343b0e9a8799a0768#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v920txrmm8llayx8veeeeppal3r73frk50saaldy27s4x9cx2lskm+100000000000 --tx-out addr1v84kzge4l6fecsraustd3zuu7gd72y2pswvfakjr2afz6cqwkzuz5+100000000000 --tx-out addr1vx8ewq5qql202grelcaepdmhchgxw0unmayzg68ktw0v4lsms4vv7+100000000000 --tx-out addr1vy4lrlvwlu28vt2l574qjmzrkzjt6hxypv7t0l40klv8rxcuu8tpr+100000000000 --tx-out addr1vy4kgwdpz6m8xrfvuqgdaf5nt5gf7ssqapdsal5w3m0kx0qa96af8+100000000000 --tx-out addr1vy8gzhun9kryrq4tmzme42rvw2qgznzqelz42snvpw5mcjcq0a5yk+100000000000 --tx-out addr1v8v0jdafn72yurvfs6ff9e2vyp4ms2qx28f08auaxg39elc60645s+100000000000 --tx-out addr1vxr2wcyjtu96gzjn7en97xwhyjxs2fv8vwdjzyd8mljx68c0s5fjh+100000000000 --tx-out addr1v9txvyhlhx5ftgz8kxmete3ysmcqfuffdnfcn7zq4rjhprsmp8qt6+100000000000 --tx-out addr1vygtucw84rxsrd23lcsrn7ck4kld6g5ve3rhmkr367wvgmsp7fe6c+100000000000 --tx-out addr1vy98670y9skavpuraqphun8spmj5h93uhkdzl0auxf5u8xg87k3lx+100000000000 --tx-out addr1v9d5ux9mgle87phld5alxmj0ptu9lfpjvfu383sxvrznw6cz8jc48+100000000000 --tx-out addr1v9p5jhwzvunh50zrx775elfh262a99xudnylmv5qyddk3dg2csdgt+100000000000 --tx-out addr1v94cx7wuyhjf7l8gc3uy9xh3724l4ftcv46hyqmqez8xdrgsynaus+100000000000 --tx-out addr1vytq633t6un38pqhwmuv8wvccqqrryx93safyukfypprfgcd5cz7w+100000000000 --tx-out addr1vxq6pr5jkkz3sm358rjcv4lhassktz2vv5g5dewa8qgnagcs3njpc+100000000000 --tx-out addr1vx89hcdjrwa6e2g884evl6t9gc9fudczdq9lsrfvrs82m4gmha8lk+100000000000 --tx-out addr1vxwmcagm3zh7wy9qd2sq769fqsrp5g2ac0x2c4nk52qw34s7gla8f+100000000000 --tx-out addr1vxpjzwtf595cg7uwytkyrv5p4u5qpt2jvqz8zx6n9as4p8sktwhyl+100000000000 --tx-out addr1vx9qqwx75300twyu8v2zn2l8gn2qd9wsc9wylcjlma9fwzqw6nfls+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet22.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in c1b2dd65559ca18de96d8fe829950d7fa245b1bb1c1e8dd3c31cd6da86bed46f#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9lv45rwkjftdm4cd3nc3zdtv4glm4p8rwwh5nc9e32lh4gmrcgs5+100000000000 --tx-out addr1vx9yelql77pvtus7dhyj672drqjpp85apq5s0dlhrpkuw4ghcy8x9+100000000000 --tx-out addr1vxwnvqetwhuyden07z4a23d6udpr9u9n5gyzmhk7aq9wxkc2w0luu+100000000000 --tx-out addr1vyp7l9sluehqwgju8xspxjg0zn73dkxm75uwwjttpdnktwqvgxuup+100000000000 --tx-out addr1vxgx6wyk3y9h3gc5cwu68xj4uga9qcxumtr2esd922rnmpc7rm2qz+100000000000 --tx-out addr1v8wcny6vuempuk9wtnge49wx9p2wl9zstyy5quugccpf38ct348hp+100000000000 --tx-out addr1v8qzczhlxnj06xwgcf5mdmwr0wt5r7tfxrswcdfnhw0kmxsuxzelf+100000000000 --tx-out addr1vxwnxrv7s9j03t8j4rgmm2ek6q4k3ve2cl90pkpzmvrr30qf3uzyd+100000000000 --tx-out addr1vyf4et72m984dj722deq4tmt4psg3z4vzzrzew54xwqtvwqw0rea0+100000000000 --tx-out addr1vyydt2k4d6420dtn7qjx9c787yq0h9m0z2mg869w0pjgsvs34xf0l+100000000000 --tx-out addr1v9aurm62mxte3gj2ejryv40tgjpcc003rr28napec67ggcgx6flq8+100000000000 --tx-out addr1vy26w4w7vczlfl099vae6vpe5z3zhha3zxz5uam4uy4c9lst54v8l+100000000000 --tx-out addr1v8ltwgj4lpy7hnqxjlef54yu2v7cr5laa8sm9ns68cwd3mcfnqs9v+100000000000 --tx-out addr1v9q6mcxjfj058puvlndf0h6dj3dw4ee82fwk2h6uyy43kzguk96m9+100000000000 --tx-out addr1v8qxef2h6utgc0gwan5a9rcnxlsp30227hs7tczurv7j39swahead+100000000000 --tx-out addr1vxp8nrm5dw6c5n63yjjk89l54qh56m98y9clxln2qfahlvqemysnc+100000000000 --tx-out addr1vyn7c7jhnyqsjsxraa643p34apxfp6alvkc2rdsplc88xtqdgq9mn+100000000000 --tx-out addr1vxge9xz0culylweyapaktnre2gl7v2nztrua0g6qh6uwd9cue0e7h+100000000000 --tx-out addr1vxyf0yg6jhsp28n3fxjh0ywjegf6v8lpwqvczcmceg38z9gh9wf9e+100000000000 --tx-out addr1v9net549vhwjszlu6qrs5dgq3ft9aqgsje5uksdsttll8qs8jedcu+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet23.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 2982e77fce7dd0983499edb30a6768b3f3cb296274060163057f31d884272bf7#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v8aym3lk7z6y60mapxfxzm50n69njv99fs4fxfe2phtemacm5rtvw+100000000000 --tx-out addr1vx78m3cxxwz4vyy0sr2rdz8u32e0rrgpe2pte7vzzzreq7c7zrtwr+100000000000 --tx-out addr1v8s7l5tqlaec3thjk3cm08u8rjn5jjgcfplhamxkhrp2n2cshysun+100000000000 --tx-out addr1vye5sa3v6hw08ym3u0cwlp8tmd0ltfwzhc7vdnxwja79dtsrcgfxj+100000000000 --tx-out addr1v8cq85jj7wcw6zwe8n72urt0njze72ydvupk9y5yrs6tx2cxj5kcz+100000000000 --tx-out addr1vxpft937efyz5uc59kxrx2ruasdctxt6zdtpn6vksf803pquwp8au+100000000000 --tx-out addr1v8vv5lrs7xlcvmq0ytue08p07lln8yygr2wwum42d0e3aksnj0utu+100000000000 --tx-out addr1vyxsk8z5xnm8sxvdddxkjq3vmpk7e2m95kwvvwurr76q4cc7jtqw8+100000000000 --tx-out addr1v9sxe3nv9hxd4q97maf87pt5gn5rsmj4r4sjrtgfdvc4jtse70tlg+100000000000 --tx-out addr1vx78vxnhym56wjpnl9jsdne4d326fjrg2pd566htvgn3pxgwk8d3p+100000000000 --tx-out addr1vyk03jrsjxew8nved936agxdr96vg739hhqmftsulh2k5sg6hw6yu+100000000000 --tx-out addr1v9mruy3da5akyyp9qn7maevtsrzcx4ahy0tjunmhuy5nrfsndda4x+100000000000 --tx-out addr1v85pzqcsmltsdsknzn9mfc4wle5fqzqsknklnfwaukcxlqgxrasgw+100000000000 --tx-out addr1vyhez4whd7plkh0wafaxp3h5t2sxm0ttghjm8yn0vxelejc48qt02+100000000000 --tx-out addr1vyuc8tygum7s3eq2a4mkq0ppdhqsgztaqc502ml4502kz9syh3q9n+100000000000 --tx-out addr1v8he23dss4z7jvqesdzj786gyp3dypd64pftxln3tw2h89cdwtnfx+100000000000 --tx-out addr1v89hxdddgwg90w7cu5umtmwgz25j2dfv7cz3h3x5x2kcees5hnz3v+100000000000 --tx-out addr1v8akgvpcdwlt00wty6kcskhkrkzqkjfhs6wgzca7lk98zpqm3e69j+100000000000 --tx-out addr1v8asucnwguwrfvg0zcprdtucqe9mvmw2zmrmhzcpn2rx0vcmz3m9m+100000000000 --tx-out addr1v9h2ngzkfz3q2kjw870x9ny35tg3y63thatq6y0cxja9mfc6xhue4+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet24.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in b1a1383056bf964b23eab6c12a862b072a91de78f2a482ff52514f9559e0d2b7#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vyhqznryjn8z5tj3gnj5zcvekqt9ye3wcmgns97kdamuuag56vgfd+100000000000 --tx-out addr1vykguwaf66twq3q4qfnrv4hvrka4gu0md8l9ppgrrygss4qujln9g+100000000000 --tx-out addr1v8v4p43p5mfqx7jywuwjtwfztwhd0g2zwqvzmd4g0450wygqn3s3p+100000000000 --tx-out addr1vxwk47ee08sku3k3yd2le4xxzceacgys96u9vt37wznstrcvamf67+100000000000 --tx-out addr1vxrkxg5h7u30pfx6mgdyqg2300r8uyeygk5999hy7cqevpsp3magh+100000000000 --tx-out addr1vxtw6tzc0thsl9zfecm6qgjlvzyf8jn3tnf30vwmxklvfpgrq0xep+100000000000 --tx-out addr1v8f60ujctl0vkn2uqw2msq7wayjwqlvnpfd3lmgz07sww0sw5spkg+100000000000 --tx-out addr1vx2u4rjxs0puand7jw990h9zw92r85wrsnrg07t8l0q5g3sp88pz3+100000000000 --tx-out addr1vyc9jvaerv0azn294ndf7nw2kch6sxccrlcf7jjtwggvehckln9jc+100000000000 --tx-out addr1vxvjxmprmhrsv9atg4e9xe9tntxw6377ha7lryrwqyfp3zqlwwcj2+100000000000 --tx-out addr1v9lu4q3usee3jetecrxvqnnequuw894hk9wa8ffp72mffcs2nmu7h+100000000000 --tx-out addr1vys7tr9nxe3e072egvtxjstpnku8eek63syr32s2mgw7nacc9tvf0+100000000000 --tx-out addr1v8was7vv4ja2v3zzlktar25ue2pkhlyxcx7n635hw0yzvschhyx2w+100000000000 --tx-out addr1vyeq3x2ncttl6kd4px7m4qsevycmx4ytn72lry03yh9gkpq8zjdgt+100000000000 --tx-out addr1v8yhafz0uz9zluj4p49fht63ytnywpu7zjgq85h9lrmdyvqukjnqt+100000000000 --tx-out addr1vys9j48grkayws8vpmf6cmrfhntkf4x622cgzw83xthfswswsnqap+100000000000 --tx-out addr1v869w0f5e07s0v4un50zyvactvzuvx2up24py6tz653d6msz07wxn+100000000000 --tx-out addr1vx9an3x5phy9556pqrscfr24njy62ey3ljtux03jk68ugrs35me0w+100000000000 --tx-out addr1v9kdtm08lvqzqy77ljjmdyxqgrjjx5twnwkcesth8dlh0nq6yyrp8+100000000000 --tx-out addr1vx2h9625qlgzgfr9u3uncr44ns4c4k0c9mplesh2d603vcskae66y+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet25.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in afa88c588ef7241fe0e5938974249091ea7b702dd933e2e69ee81e40541bc62a#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9f0d657msng9cppvfn4466xaqfm5qdhzvax2xm2m272p0su075w8+100000000000 --tx-out addr1v984e469g70yqjymwtnqxdc3wva0kfqlx7k8hqcsafwgp4q0hfg49+100000000000 --tx-out addr1vyjn8r3dp45x8stlfnseehwg0zeejjtqerrfywm362ft3vcqtw3ek+100000000000 --tx-out addr1vxupx9et3ptzutu2du9t5hlr74d3frnenrq7c2usvc7dxkcwhggj6+100000000000 --tx-out addr1vyjcra0aus8c2p4rr97gkmc7jxr468a8z467rxp97nz4m2q60vkmw+100000000000 --tx-out addr1v9zs07tvq84mqwa4yak38dh6qjrq9nwleqhmpve34vfx7cgxxan86+100000000000 --tx-out addr1vy0rg6e5czsx4hj493yt5987hduwdyjn8uza29q3yfwrm0sv5ruwf+100000000000 --tx-out addr1vyr50nksrg97xrd3uuh2c24v72pzeu32yx2p9cqm78x5crsq4re4z+100000000000 --tx-out addr1v8cwwksvuyuvw8uhc0t338ell43uprjre4envdhwksdjdkqafjtsp+100000000000 --tx-out addr1v8fygmt88r9d5gsavqvzzrswyk4unhy5534ucjy5rhk2ndq74tk5v+100000000000 --tx-out addr1vy8sgytmt6dq48ls4xdkf6hsykhfeuly7m9fpnwfa868f9scjxs06+100000000000 --tx-out addr1v946v7y87vu0mx4ryu4lkkw60vpgkvchz4q76qtrswanv0quljff5+100000000000 --tx-out addr1vx4l2kqr28za90nzc3hl4x25wkam0uueqekrrahcdnnm0hsv0djpw+100000000000 --tx-out addr1vys88qjtjsj5lgjwvqkkeym8wfmx2tanpgfnf3pj6ldlt0c2qfvcd+100000000000 --tx-out addr1v98a9nsyy4s2vskm0hdkrps6sgxz3n2t53dd2tmanszknscwc6z97+100000000000 --tx-out addr1vxt7pk8pj6kmzpaxljp4rxrujgzy7cgxdw2u6m6s33w99vc742m7k+100000000000 --tx-out addr1vy2nem2c3l3nselu7f6ghzjkshv98jkq3xje5plvcmjv2jgygahzt+100000000000 --tx-out addr1vxgfzvk5fch42wfd9x9hrfpxhldthrynscqn44c7uqr3egcgcqyj0+100000000000 --tx-out addr1vx3qfc94772zazp8c8ax8etxt7hrzle7ggtwulxslmfd5xsgp3rfu+100000000000 --tx-out addr1v8sjhwhqgttkvy4gh4yl0x4a40zp3g5y3jw0llhygt2dzqqnhagg2+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet26.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in f988329a949a825a9b2ab5b058d228d2f77da950aa9db3f56ad16d162c824296#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9qzdj8gskt364ctduun3ve9hgw8j6amhjhafg5a85rl84gc95uf7+100000000000 --tx-out addr1v9axnf3r0x76mjarl93u6y8auq9qrjck5zy8e34asz6k88cp730xs+100000000000 --tx-out addr1v8uc3lz5769f2f9cutq678n54sk0yngzfl3ps63pzvp2g3gyvk6jv+100000000000 --tx-out addr1v92fzpynhz93ehaqh278dz73e2e67k0ct6sc9anfgadzlxq3j09xu+100000000000 --tx-out addr1v8geufjr9kartlxwvm0pva28r3asnd4wzl73mgkskngx5ec6hh45k+100000000000 --tx-out addr1v9m69jp63el7f9p7qw3tlpz3hptwj4m3za60l5m80fdef4sfrqmwj+100000000000 --tx-out addr1vyqrx0sjej0e8snuuvv8djhupz4unh0aqhzq2v90mneempqexkvy8+100000000000 --tx-out addr1v835v6zsdy435gpksvlrejewp54kn23vydzp4cn45x20cag2vdzvv+100000000000 --tx-out addr1v9zhuw3hcucwe6l4pqtyxsnvzhcfcr05034henv66klkz6gnrv53q+100000000000 --tx-out addr1vx0c84nzh8fp7zh07e45nnw0x43dtdzw3duam0tvt8fnxlgfnyd9a+100000000000 --tx-out addr1vyukgkkv4mj76tnu52paz7up2h002lcu90y2fq9q6pe72cqzfrawc+100000000000 --tx-out addr1vyr9t05tzzv3wx0qp4dv9h5fckna4sj0e40pplfytfvzfls0pvm8s+100000000000 --tx-out addr1vx9kejfgmma94087c82g6aeh0fq9qylr34m79j5khu7u52ssx69af+100000000000 --tx-out addr1v8g2220w9samvz4skpntpqg7cweyym574qhq5s732vkld9cjt7xfd+100000000000 --tx-out addr1v9yl5kz2s37lkqsv90rl0j948h6stehx9cskdtfx4plwjyst9ly3k+100000000000 --tx-out addr1v99htllul979hx2t8xt33s3n353nqdt395a7ksp8h48pavqy2szg8+100000000000 --tx-out addr1vxeg84ckn8uh8tx3a6d8aeh6tdwxhqpcfy8lta72ljxr7nqfkslh0+100000000000 --tx-out addr1v94gfwn9sjzd6wcxnua6wwhc7umz6wqf0tnu4zsxt3zu9gsvxc3zc+100000000000 --tx-out addr1v8uuzkq25m9dj3epvfjxcyf0lftu733akha5v4r6jynmstgmazaxh+100000000000 --tx-out addr1vxnzxt9wnnrklhfuj44mcux275yu03szjrdeyq2c7uec3dcdq965f+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet27.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in c2e000796cd1959e7c12c414ac180f6308b0627e439eae982d488de120f297e7#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v90aqaftrauexvyzq43qglqnwnhuq8tytchw97nh6chfqrgp5vcat+100000000000 --tx-out addr1vyznzyfhxxkfmftml6wmegdwnya49u6zwyzlwtl69h04dts0qjsgg+100000000000 --tx-out addr1vyaz78yhky0njaggycl4cn9q4cl8y05k7skusqwmr32f59gxu3rwg+100000000000 --tx-out addr1v9krnthmlsumlszxtxzaqaf3pzf0w7u9v6w3t0nfhthkl8cvdgrp4+100000000000 --tx-out addr1vy6q82msqlwe60yntpju7d3wwnz5plv6g5srntecud7t88gde7pgz+100000000000 --tx-out addr1v8va5jjvg5ncc65kkkz9r4c3zdkmg2th77x2mxah53w97ds3lskt6+100000000000 --tx-out addr1v8gly6c9pcajfe8us5jmvkwqvd5c5tmrx6lrylp6hpnvkrsxjn5q9+100000000000 --tx-out addr1vyf3sypwsvcnfwywxj7nm90lxcw5glaye9tpd332wthvy3g8hrdaf+100000000000 --tx-out addr1v8557yejxawk07mmrpjqplr03s2eg09pzyhfv6d8zpxhuzged9xg0+100000000000 --tx-out addr1v8f5reen3328rs9h04sk8q7lx02vjctwtaha3k2fqsmaxrctp5kla+100000000000 --tx-out addr1vxxg6f876gfjumrurkdp3s2eqkku9ythslpn4egupau2ljg3rkkls+100000000000 --tx-out addr1vy08npvdfa2867e8ulu97jlcf7kutdqmtdm0rtrrg9mlzws9pwhyz+100000000000 --tx-out addr1v9umnapg3gzj4zf7h2je705qmtvpahky33q8teupmh2rajcq3lrju+100000000000 --tx-out addr1v8jfzmkqlchd6sqgj33tzla3kzkt3agfjqxj9hyc65k7rwqmdk2ws+100000000000 --tx-out addr1v9zjulc9n2f8xrce32k08npw5dk4c3udcs0wmtk22rmv6fqmcn6rl+100000000000 --tx-out addr1v8f4w25klqfkhdsrjndg5xu6vjlmpn75mmtp7cuy3zv49cgvpn6ly+100000000000 --tx-out addr1v9jawhxfv5qgdrgphl03cfl6lrwlpqnh326cnza0swxxrksncxjjw+100000000000 --tx-out addr1v966ztrgh6jpaf8ycjmlq90s288tc0u2m3zv4nnee95lfzcgcf5hs+100000000000 --tx-out addr1v90srpzjcy0uuf84ev4kpjvh96pns2gkj783m4xk4smrskqym3tj3+100000000000 --tx-out addr1vyxxugvzpt07fuhadndac26zgp535e9fdnqvlkfaaldlnug9qlgfc+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet28.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 2c3554fd87220156229c6cb0a5cd8adf3541cfdb645eb25cf9be0a07e9ede981#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9v5xvqn8hhntdp45jwfdlwnnj9e4myf4ty9y0y0dtrp9dgvq2sv3+100000000000 --tx-out addr1vy3yc2xhquz5wurjag2m5dv6utr8jlz2n7p9k07he9xlz0gk8xds4+100000000000 --tx-out addr1v9pe7a5452d593huq73x3mrw2fr2shhrsy7thapx257ckfchtwmpa+100000000000 --tx-out addr1v9fk9yunhfd7nk5psy7059q0w8sva7qlsem7eemguvcflvskjlek3+100000000000 --tx-out addr1vy6wjk43fs62ywuenvsp7cg0fk7ewjgvu2kvvtc0wymnneq9s5d2r+100000000000 --tx-out addr1vy3kdaa0patj77ah6yy65f6j7hvgxlfmmnk3ceua3v8xmlq6hgj6f+100000000000 --tx-out addr1v9zrjn6s6p3wnu4w9jectzu9fgq484s2fycartykpnhg90gwuchdg+100000000000 --tx-out addr1v90ruhf6z0a5nvhjcq6u88t5jw2y0f5nuqhu4n809wln96q9jj2gg+100000000000 --tx-out addr1vxdm5ntyws88v2892grsg9d7s54jjtfv7ge0f32773mx8dqckcehe+100000000000 --tx-out addr1v8vthpk2z85kukl45jk9ylw5vhz48aedcsv08qxsqdt2u6qs2r0vj+100000000000 --tx-out addr1vyz9nsrky8ut3fgkyuqz3d4yh36kvs9fc5m6el5vg06nqcstd6n89+100000000000 --tx-out addr1vysvh46hh00xp0udp769zqkex9a99qshn8swsaexaduaamc8gglcc+100000000000 --tx-out addr1vy5x5lzkyq4kn6tg2yfy3e8nh2tqprqkjmzx62lqf7ussksktkh84+100000000000 --tx-out addr1vxrve5p0yfceqzhmutufdzcpr7ay93rr6aleteah02r7ydc7ve8nn+100000000000 --tx-out addr1v96m9t8ztwtxvmgfhj9xzs85ayg0xd2x06m3trznn7lmwlc4qpks0+100000000000 --tx-out addr1v8w5hgqpklk5eu59t5dax93zzx6xeyz34c2gdduyae28apsd0495j+100000000000 --tx-out addr1v8n6wjvgefxtxhfmteg346s84j7k4t44n20dveqf3q8y90qdn9au9+100000000000 --tx-out addr1v9hrpe99ap58wmdkpquxqje7mwvucqzwkk2sjtj7287s8jshy44nj+100000000000 --tx-out addr1vx69l3q0fhj7ahue5adwwg6p245skm9fgm8e9ge4t96zw9gs8jjjd+100000000000 --tx-out addr1v89gxf3vepnmaggwn4ekwkaxp6v60u4035uxnmwjj0lzq7smluygx+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet29.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in d0da20bf168d46a9028a43ce97fdfe8f532081229fd25aba5209a86301445221#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v8gq56j095fyd9ajznze2fvttxzscpgcgtkryfflqudjygsvuyrjw+100000000000 --tx-out addr1v83drxtlk7vhx4acd5tg024ajlf6k3mxwd9n95vqj5377gcpu6jhs+100000000000 --tx-out addr1v8e08q5geakm4mccptk7vvz9ra96x4c42w67kce59k829zgseycud+100000000000 --tx-out addr1v8y33t49yrafce9sht78cc6paj52z4h2udhudfrpx4jy9ugm7lrr8+100000000000 --tx-out addr1v89ax63qs7duqddjxmfngq7zwqkz98h4t3vg5sx3s0plnzqut3jqq+100000000000 --tx-out addr1v8nk88ycrcm47scd6ee3zqjv3xvp98kmg44l2gr8kwjqryqvlxvqt+100000000000 --tx-out addr1vxe7we938x6dls3ve933082avv5rq4aa7j3dsd9mlqypxjq9j4pc7+100000000000 --tx-out addr1vy8yw674altpgykrrscjm6rsxylj27acq9hep90xwwsd86glzrvam+100000000000 --tx-out addr1v89ryau088sghfuntae95mwxdkswn5r0f0cjlt5qa8w7aagd4y9x8+100000000000 --tx-out addr1v809mtdy9qmmxf56yh0xsgw8jvjafr4jy2vs7977adtdcycqedcp4+100000000000 --tx-out addr1v87t62pjpfmcgv0d87vvw3wyped45tjnts7ammgk8jms66scekte2+100000000000 --tx-out addr1vxf38x5nhvxrka09a39a0xvyykdd0fxd3y0yvr668stpyucp9ujv5+100000000000 --tx-out addr1v88tl7u53s3rsejjgsqjqdmc2ut0acwve85crf0y9pmugechswz96+100000000000 --tx-out addr1vx76c9efu7uyesg8e8zvmxxs86a28wzt6gszug7wpkp90fsgtvcvf+100000000000 --tx-out addr1v9htg6f977n8nvc6x9fzsr2678yt788cxvtcnwd86nljfygfrvlde+100000000000 --tx-out addr1vytlq8e0009y0zau0dj4gj3h95tnm9dp6rqcx6csxzqgfgcglfd3a+100000000000 --tx-out addr1v8hkywshuwpy2kryhmh8yy2ech2tlr95g6pkaavzsde8vxssl2fu3+100000000000 --tx-out addr1v9za70guz4c4q4x8wkjmujpw7xuxtt8qqqykxrjrhnmtmkgjtvl3s+100000000000 --tx-out addr1v9y3fm8dyqpnklk0ccrsq7mm4psen6nxtnjgarfg77fyfjckf2v7g+100000000000 --tx-out addr1v8ms74e5vt3qzm0n3auq7s83k5kplz64vup68elgu0ewwzckvcuc9+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet30.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in e5832977eef71383ab91d151e23eeba31dd75402f10d05fc43060a28c460c185#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9ysxd9s5ctym7a7fc5rh5tc8g0nh360v6c3a63jml76ajszhfftx+100000000000 --tx-out addr1vxjyus3d7y6y8pthzmaaxmntwq50a7g003ym232walzyzqsq3t55v+100000000000 --tx-out addr1v9wglldxh9mu3qfxjdxd7ylhuddcqdecmnwk46mfjv0s9yqpe3njq+100000000000 --tx-out addr1vyrlpwk2042gjgev8vmt340tp6vqf4x2g8ax2eljnd9xxgs7r3ngs+100000000000 --tx-out addr1vyzc2kmr4x0xnhr0zjfxxwqxz57z8c5j2uxwz5ex749udlqpxma94+100000000000 --tx-out addr1v9h7w03ed643nl54had8g7s593y89ng8n0htjmyx8nsgezsgn3l09+100000000000 --tx-out addr1v8ageqdkxfvnd5nkxupywekwx4ewcw7kz85x470pkg7g4xqgwm6qh+100000000000 --tx-out addr1v9d0cfey70jgp2wh3r8ehvrj79g3jfh4m5h7s4nw5hjysvsq7h9me+100000000000 --tx-out addr1v97jh6ezq2ewn0mm29uelgv8lcxh8kgemhw8egwxyzzk0hc6kg2dw+100000000000 --tx-out addr1v9xxwdxm8j6h292y96feljqdz2g42l9cjvcymze282nwjzg5ta8hj+100000000000 --tx-out addr1vyk28u2030n66eefmu37eq75ynuahc89k3cwcyr23gwtsgqdmnase+100000000000 --tx-out addr1vxx23ecvpxka3zjxs6qfald0mue2t0slut90tvkcc78kxlqtf9c70+100000000000 --tx-out addr1vyyul3jyk8p0gqc8aqdcy3wffrwyqs23jt2dh0vg7mw7etchttppj+100000000000 --tx-out addr1vyd7vh4cq48vgrkxmsrua8y2u0jufy4ddegxemlekh8cy2qrktn8z+100000000000 --tx-out addr1v9fyy0wuyc6cuch309hs8766gkfwzvf6e7chudkm34lmt7ggszqeu+100000000000 --tx-out addr1v8ednfw2vpltag6tmg8n58dlpczaza6ak9fzt2q8kgz9fnclgf2ax+100000000000 --tx-out addr1vye8e2g79gaz646xsey4xgjn2h0qspc86x2v0m04lx205zsz4zvh9+100000000000 --tx-out addr1v93c4t8le20z8cymv8x09r5vrlxh5s25cm69llft6dzmt4qm67qu9+100000000000 --tx-out addr1v8jyh6xkdyytsvswkca64weg26kn3n8prtmunk56cpyuepgn8cpmu+100000000000 --tx-out addr1v97h7xqfpt5k6ujxngs33hvk6xz5eq649rndr46m5nerjtqkzuyh6+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet31.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 8561191c9bdd9873268acfc7a0f182a07c3ec4f3b674253970595b2c014ac751#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9mkymp37hm8yzulc8puej5qy4ng249gvhttc8wx7p8raysdrm8jm+100000000000 --tx-out addr1vyd0pte57kd000zhn23w3gd8rzmhcqz4vrtuddpdqsepsmgnf9k0p+100000000000 --tx-out addr1vxkz04cln5cft8hxcm9yerewyrt7v3lllcz2hhmazll4hcsgs4m7f+100000000000 --tx-out addr1vymmskzcf3vgtglutwv635capwej0nfydtmhdfga9kvd98g26dw8d+100000000000 --tx-out addr1vyjqxs740msp9v0exq54hlupzlga5s0me6uk6jc4rgm2tjcas98m6+100000000000 --tx-out addr1vysnzm7w8jcg5srgmm7ja4967y643qglawe53wuramrjpjgvkk23n+100000000000 --tx-out addr1vyfqgmq8ms36peal4zywgskw4ljldkw402h5kv8runnrm0qhmj79z+100000000000 --tx-out addr1vxqslyj4ayp7u4xrhhqqwyg8dkm9vmratjmwuzydcy8r2tsnk6st6+100000000000 --tx-out addr1v8k44hwdzd83ps7aam4hgvss7kqjdrvrvnsz20d67n8f9dqexuz7n+100000000000 --tx-out addr1v8jt67h0eml4gqtxx2qwztr4djcs8qwlhmuqed7a0tunpygch2x0z+100000000000 --tx-out addr1vxzgvv0985nsl85l0zeqkjjqwj3ay7gyplyjz27v5sqhhtg4qspfz+100000000000 --tx-out addr1vx3yuvdqnkde04fswdk9jv5c9nnqkcjk6vmdhgcvtjg8tcsgk6f8v+100000000000 --tx-out addr1v97gm6l47fz8cddlwk3y5y7j4kywt7y0fj0qp2pxzeqk80cezp5kr+100000000000 --tx-out addr1v9hvp7mqt0mqweqt44z53nwpxa5f3dzq7hvsyy6s9w59esqrhv4lc+100000000000 --tx-out addr1v9gzxjmzs94y26nz2yyxzwlgk7yrenmd84ykpwsgwevv0ec6upy9m+100000000000 --tx-out addr1vy6q3n3gkfrjvgxqg4lxunprtrythd84jx8qrfkvfcadfcgg09p4z+100000000000 --tx-out addr1v85cpqz78n79vfw2hkqqw4fda0q5zhervkxn998yyd6cjfs6vlvnu+100000000000 --tx-out addr1vyvzkpu570xk9se70pelrp03yeywlrzw4gz9w59yraw0dxgj0sqm5+100000000000 --tx-out addr1v92fh47dyqpwklqy948k5aqexj3kg9mu7qq2zfd45rzm82g5mjj3s+100000000000 --tx-out addr1vywkreg2unxfhzqu4tksmcx54fqnvfacmt7rfafn98xysxgxnewc4+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet32.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 1669654d59d76084dfd7c14a0960d3de56f81d24e5a19351853ea0be434b3ed1#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vxepnvzxrdaxvrrxl253ehj93wj2jyfvtaksrd8j3gt8wyspdjfhx+100000000000 --tx-out addr1vy420jy9mk45ca9hqns6svt2s90dq2xkhuxffxpaju38kuq3ukgtt+100000000000 --tx-out addr1v8y5qemr52s636gyur2de4793rnuych9s6204aljlc2ghrsnl9g5j+100000000000 --tx-out addr1v99zdpc2rmpw9f45rqr2zmv39c2r0l4scmu0ley8hmyqazsxkxgcg+100000000000 --tx-out addr1vyqgu37up30qqs9y4ueansq75umtcapygxxmqhk6pj38h8s266k75+100000000000 --tx-out addr1v9x4430dg53yqtgwh722w6rtgslasfhzuu080ftaks32y8sh3sc0s+100000000000 --tx-out addr1vyyw33rpgvqtpwpvjhr0czctc0mv2et6e5ycpekp40cg2kql522e5+100000000000 --tx-out addr1vyy3294k79ytfenpd6zu5v2a3nfd7vz9pctzg2xedcdr6ygcsn3pu+100000000000 --tx-out addr1v8vf2f94h8zezct0yasvym5eesm9ge3mxj8s05222k4gqjg28czw7+100000000000 --tx-out addr1vycmnsev3k8nxqum0nv29m7qmm5fertsc73e8v3xcv6g5qg0cts07+100000000000 --tx-out addr1v8qfg0038r9w6hdlyfa8ea8l3p2ltuhm9fxhxqzhme65yug76h7p2+100000000000 --tx-out addr1vycg9effkfaru5ym47mn4yklgwp0tyk7q4hlauw7dpan8dct4c8fm+100000000000 --tx-out addr1v96z65tnln7u74uerd95qjqxky8uq22a0tupmkrasn9ctpg4cz4hm+100000000000 --tx-out addr1vy8fswlmfparyudwlljt2ag0c9ldnmt3zrmmd82w5lch0xgdupjp5+100000000000 --tx-out addr1v98pdru4j5a6u49zj4kfpsk7gw8qrdy8nhu2tej3230552c3l2f79+100000000000 --tx-out addr1v936fcxqs3qkkun34u9j9q6m0p9zfcxmp705jrcxfuv4ekq54qxxa+100000000000 --tx-out addr1v8w3xs6f3nrzary9jyph25xedlpp7cvcr8cmzqwh4en834ce2da48+100000000000 --tx-out addr1v95xtc79vfyl0xrkjkvp0nrkap3w9r8mmee47g7an08xavg2cd05m+100000000000 --tx-out addr1v8ua647pxh9gtuxt8h36r98cwrjzu2gptlysqtq7fkejyxgq9snnj+100000000000 --tx-out addr1v867hjzrkq8z7dv29rz84utr0wkygrjdvnrggz9prwgf0ugyal0xl+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet33.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 0bfa37567be63ecdf17db8a719293ac5352b42ff5f4e642167a0ca3ccd02b473#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vylysn4e9nucdvfl9vzztkma45y7m6wp63hf8x803mnqfrcujju9d+100000000000 --tx-out addr1v9xgyw48ywc33vgw2046ejjrh9d6vf2tu6v5lk6z3xfsdpsru9k08+100000000000 --tx-out addr1v9yf00pp323qm0a92es675jchul5ch47q3xlcg6cvwj3lcqt9fedn+100000000000 --tx-out addr1v94mf35s65ygewzkxaj80p2f6vtxnud6npgqca0llaz5g5q08fmwz+100000000000 --tx-out addr1vxfgfjh07m0k79qt7rh4r35pwv75gd6km3tymrfpkc8t9mcvzxlul+100000000000 --tx-out addr1v82l05fs78s0vfdcapdthkatftv5fz2pzeye3qlx5eu8crsqhhx0t+100000000000 --tx-out addr1vxw9d0p6ad4t38658k5ksn94n047mas6ydcggrrztyamunqs23ve8+100000000000 --tx-out addr1vx6nd5xgeuxxjr7r5f2c7enj6rr5ju2p4xzxkspndu5tfqghdfwnp+100000000000 --tx-out addr1v8xl32kxdhle7f5n893fp9xqcyffmxmmfqn3jkg4kr5yeps5s4dac+100000000000 --tx-out addr1v9veuhevu0a57vw9j7v0j9qz99z0f3907lny4yhe4dc7uksjseptd+100000000000 --tx-out addr1vyegy972d2h6qexnga4aun3kg96q9jzumv826shn3fq8vlgl6vrdn+100000000000 --tx-out addr1v9eg7k2xk9hkdz0ww48gzvgqjl6rxmjc7cngk6lqzdhs7uszuplcw+100000000000 --tx-out addr1vxkwm0uefjmu04m308amcvynr3q2aflvudfajd3axqfaxhq8a20nc+100000000000 --tx-out addr1vxqzgwves78qu55rhzrw6syzxcr0ye409jkn8ttj52pe28q0c0zla+100000000000 --tx-out addr1vxd69v2gf6m0mpylmjkahepglp4htlarn6d2ag282txqjjqm5lfte+100000000000 --tx-out addr1vxm7jkxe2qw83xg0a83ten7pm7u6wna0cpxt6hll9sf3z8st90yx8+100000000000 --tx-out addr1v80xkr2pp0w99sw3nvhq2kfr3aycu62dxjn0nysmch990rgve2tgw+100000000000 --tx-out addr1vxh7946agt3lsrytjj0a29229dx3ckfruts9q6awzck85ms28whjn+100000000000 --tx-out addr1vykvsdtnql79dfxzyexaeyu40r4shf0zumye49ypp2dtzlgkaqpg3+100000000000 --tx-out addr1vxyq3fqcytcp6kuupmsedsrk2eaheqgf7h9s2mpm9ddztuslduk0x+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet34.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 3f1ca265756e24c9373b567674ae51be271ebc806d3305854fa8ca44b7cd3ef4#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v85rnfvyftfmy57r29fljke5yspa9djspruech6p8nn59yswxald3+100000000000 --tx-out addr1vy77g6csh80sdqwhnvszj7p0tzp44en4fd4ykgmmc57p89clddnuj+100000000000 --tx-out addr1v9fth4yhl03z2jya54jk82xsp2p4mz69wpe9y2jaadr8z8sfxnp62+100000000000 --tx-out addr1vyqsnkfgpvs9dxzfet55e93mq9zehcvwdm9hz4u43w6yvyqlpwlt8+100000000000 --tx-out addr1v9e4hsx4qglg8jpp4dfz25w2en86jkdcgd27g34uc5xu6xgrdrsqx+100000000000 --tx-out addr1v958xgshfh0sxq55hc994778lvftnlr7xnja6829c8fdepgvsaval+100000000000 --tx-out addr1v8gxe2f503we9etpa8ym7633ceftyux54er9celmxd984ls6e25ys+100000000000 --tx-out addr1v9n84kvz49kjnj5ezvc0ezjc3pudtt7sn3fz26tvxjefrvqnjl4et+100000000000 --tx-out addr1vysd9atzldermpqwa4ghk58y86nme8hwf58zpmxjpgcjjxgm9zp2u+100000000000 --tx-out addr1vy0l2t0tyhkshzuymfse9p6726yyk0e9vt3g779m4er5sdqmjhxgx+100000000000 --tx-out addr1v88pdg2jsf7k7j92078hlpl0kcd69csedf24ndg46dut38sx55y8a+100000000000 --tx-out addr1vxjgysqqjmczv63lqkk8pta29ysw8setcul8sutcexp374shw4paf+100000000000 --tx-out addr1vxgay80zqj4x6yrrua9eqp6e4a0p6p3m3a66z9azsaxa3js4furru+100000000000 --tx-out addr1v8dtmln0p2mlmey0nlhp4rqseqk3eusuc2cgkhyw98qy2aslsugel+100000000000 --tx-out addr1v8ph758ad0le9zffraw6c7gywysfxn8mnx5kz72qvgag8zse0rsy8+100000000000 --tx-out addr1vyn9hfryk3zd434hegjs40kh9e2q9ylhzjz8qf4sg3zsldgq0jtqg+100000000000 --tx-out addr1vx4sd6t8pxpn3p5t02jlg4pdf6etksg4d2lldhlh4v972uqsps3un+100000000000 --tx-out addr1v8eftner7uuvluz45cc09k8futftw2wjecg4eunah3j5t8cv33v2l+100000000000 --tx-out addr1vxyrsj537la9s3lk2yyxqk3kmf2vxwkvm5x8qkh57r0gnxgdz3v7r+100000000000 --tx-out addr1vyxn5a0zy54ppj550xzex302rkwkj5ahsn36ly075fs6mas8vhznk+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet35.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in b9234c509bda5c46beae923220da203e2aa3d33acb7b2004025a34d22c9e523f#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vx4e86kc4gjgswycms40rfypj2pxp64du7zcgzs6eady4ggw6afnr+100000000000 --tx-out addr1vxlxprjag53a7myk0tnes766pw0aa3pj2gudntrkh2gxdccep4y7j+100000000000 --tx-out addr1vxy2x65l625mtyvdgxpdx6khznpz8mcrszaheddaafscrughhmh3v+100000000000 --tx-out addr1v85na3axusg24gz0l40v6ccrav2fyc0ewnx7lv73q7fjt2can2pqd+100000000000 --tx-out addr1v9macjfw2vhnxzrx20jvvtc3pfht7hfyytsnt25wpc6tuesfp5xd2+100000000000 --tx-out addr1v8u9qpvk0t52lml5prgmyz050cyf9rqx33qdnvrwjnr378chc5vd4+100000000000 --tx-out addr1vx7nzadjlqje8zvtvrhxfg72gztvw8jklv5q7pvjkldw2qganvkaf+100000000000 --tx-out addr1vys28nkmly4p7zntfwkjg8drgdmhh7fqzmtzuepwrc9fhhgjzqexj+100000000000 --tx-out addr1v8skw64wejw8e93feku4tut8u09j8kfdxfrngmxd7fgr7hqmge5kd+100000000000 --tx-out addr1vyk074785h33x63yx9r4xfqupejv89srr5d0602hvgmmp0gmflvmh+100000000000 --tx-out addr1vypf3pfm8afrmxypzqczy69auwgm8ef829umc2pd0ujrtac2c3jx9+100000000000 --tx-out addr1vy0th3uhhz0kn5fc0ek2prrryvsdp0vtfxl4mjmnet9yyeg25sl3v+100000000000 --tx-out addr1vy4pauywavhdgweyfhy4fzmhl6grkspe80yursuk5h7txhcaa9gsq+100000000000 --tx-out addr1vyjax44rn5l8gny6vn7fjxvfpv32x6t6x2pmqxd7sw94qgs7xl4sg+100000000000 --tx-out addr1vxv9ze6tlew45egntf7d3e8vk0atr3vhw0p7uvel68xna3q4ghc60+100000000000 --tx-out addr1vx00tr97rcxt4vrdcg2ax85w3230artt2q4gdvrh326q95qwa2ynp+100000000000 --tx-out addr1v9vnzkf7ua69lkmssz0yln2m43rdc0t489tgac4uxczaj5swwmyda+100000000000 --tx-out addr1v8wxlg4szvt58ndl5w92xd43xa97uvynvux5pzhzdnke7egnyxqdl+100000000000 --tx-out addr1v904pa6uwm8anktdycvgxqn3ecm4jdqghyy34e0msx5dwycazhngk+100000000000 --tx-out addr1v9fl3sm6jnuslgrvdl2k4kcgz8l6dmx9wtku8jpfcw4kr9ckwthp0+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet36.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 1a3ff0cb4dbd0c71df099fbfbaee897ebc034ee2450d8f732d68754c9064cac9#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vy0u2rhh6smkxf2wlwyjh67c2xzdaft8vdfw2yrhl6dgcagrq8g6d+100000000000 --tx-out addr1vyp7mutxfnnw3kpvplhu8xv5xt0y8y7hpdwpddtszr66hzsvu5ear+100000000000 --tx-out addr1v89fdku6wpwkvd5tnh7y2pv6g3q3dfdcjsgzfpjyws5yshgzvgmhm+100000000000 --tx-out addr1vxtl0pujvhdzhmw2xh83rz0f02ma5u245h4z73yszm8sxzq5vl27c+100000000000 --tx-out addr1vx0l9e447wy3hsydrh2y4fpxuasc378c4zdg9m555xc2r3s9xkyhs+100000000000 --tx-out addr1v99lcr5cttnttrj70ghq9nk9xe9aana752qj7uq8saae5rgaatdnp+100000000000 --tx-out addr1vyt2nk9um7dy3gs36w4x742wvk9xm50xzghe7h2jm0ay6gcn0w5m4+100000000000 --tx-out addr1vyeuwhwzard7as2u7rknxy76ltwsnl2qdh5zm5axjs3slas0w8qlm+100000000000 --tx-out addr1v8kp8jkqgvf6676gjzv9tz0y3ryuxk6gd95ujqeg8tkcghqpdxesg+100000000000 --tx-out addr1v9ztvhqppnlkpjgle9zxlgvasrp5zlz33dvxh7e95pnacesynfj5q+100000000000 --tx-out addr1v9ul84e59uap42dsp8efrv56e8feenyffy7af0vulgc8s8qr2rfqa+100000000000 --tx-out addr1vxk3kuhpvy3k67m2aaq0w9vcsusd54y2j4fegx9gas2ffcs79nu9t+100000000000 --tx-out addr1vxs2sq4wzamw0gx8ynv3ef8mj4fmx6ma83ee599t7v0ufxqegeln7+100000000000 --tx-out addr1vy7zc84qqvljchuqw8n5tgrt9fdhe9mtgmlaj0acztu8lzc30qau7+100000000000 --tx-out addr1v99u0l95elfnhx4temwdw4card4agtwap6sspac448p50jswhacth+100000000000 --tx-out addr1v86kwa8v6hlc30uh20qc8tr7hnxy5ga8hex74ps6pdxvxfqws0zsu+100000000000 --tx-out addr1v99g6c23dpzpu0jaeatv8dtyxh3yselxmsrlp86dga4qgzcdkn80p+100000000000 --tx-out addr1vxxscjcmh7rf20pf33zjqcsy2ggst8gryuhepptl4qer8kgzxln6y+100000000000 --tx-out addr1vxcg6pndll4h0mk679szwmw3qa3xt3tqjc4dxpyv7xp4lvqjjjdln+100000000000 --tx-out addr1v8u9ely979dxlrsacjwjk8mqrpj898vmjj6cuh75v2n99sgwl2xel+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet37.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 9171b6028081ef4993eeadbd178efec97b14da0731cd2db077357e8db5037111#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vypgj3lze6ll2dv8e9s8dz73psagn22xwcvych6w4c879pc8jccdd+100000000000 --tx-out addr1vxl5zw7vaq9nrmtuectp33mpnzdlszhx7r37cy3acal042gsfxsed+100000000000 --tx-out addr1vy0ntqnlaykk4jew289jdcwgrdg52h62uesys9lcm2t7kwc52kzjs+100000000000 --tx-out addr1v80kxdupce69cdfgzu5uc6xxnuxave7pl8mlha8ddq66hcqsemjre+100000000000 --tx-out addr1v8scdtmdaraf6cr858st9r7w264s8jdtdvjudp5lakgya2qgkdfjt+100000000000 --tx-out addr1v85cpc83rmgjw3jn6y6qa6l9qtk4kr4dgww32jrm6wkzpwcvphaeq+100000000000 --tx-out addr1vye5fqpxu2fcppaffyqd9f0ygqqh2maru9a26fquc9hs5yqvujejt+100000000000 --tx-out addr1vxcrpn5n4tntr7xwzjhavmyzl9rtcx679ah538ydy3jwszgpfmq5t+100000000000 --tx-out addr1vyjhnkq7ec4ac6vns5gkqvewr454tdjfxa5nhzmge7cpx0sxtdnj5+100000000000 --tx-out addr1vxzwkk34hu5vkjm84mcg2l8dkqprag5nfv59lf8f6kcravqhul9dq+100000000000 --tx-out addr1vyyswh3zl7gf49kkutllgj5mwsmqtxq8chcglyjy3dwh0pch9ypvx+100000000000 --tx-out addr1vx8w3wdqm6e952m65tvlch2e8gwssc88xpn4sh547zq6geqgj0xpg+100000000000 --tx-out addr1v9kehdlszx0mq2g2h4rsj4cua0q583tfs4eflduz3jml85s6t9ya0+100000000000 --tx-out addr1vxs89647qltan092r8ylr943zjtj0g4094cedm8gfcpwqkqae4u85+100000000000 --tx-out addr1vykt7jtfaw4e8dw3nlphjd6u05ds5srx3xlzf57nd6wfhwgt3sfvp+100000000000 --tx-out addr1vx00txj7acrhfzetjed0hug43x25req0e0s0cnkzge2en2qqyv78g+100000000000 --tx-out addr1vx3zy428e4xqm96cefsgs552upve7y6tvwr92g7n3jwqegqc8j08h+100000000000 --tx-out addr1vytezc056cstp60elycvrgqunpc7as728z0z2vf84wkkkqspmnk40+100000000000 --tx-out addr1vxx3n3zvzqm2du98m3k2h46ed64tal44ww0kpu9ukneswss0fuglf+100000000000 --tx-out addr1v9dr6t2lgzyycj8a43q8k6frpjxlfsh6jkgp82xv9u755hq7mugf7+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet38.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 56229754f11e8021af227c209ca202c64c3c18feff7f52ec3a67e1cca461bee4#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vy8cjlkulx0hjmycpvyglyv6atwpznkz4yvd3zcn6hy8jscrm22a7+100000000000 --tx-out addr1v9x57u2f9xzhhq0guszemnvx58qyeum4d2ac5u4aughf0zcm58s5g+100000000000 --tx-out addr1vx626f4846drpmuzgkcjjjma8f2495mkv6r7us5mhyl034qnchzfd+100000000000 --tx-out addr1v9mhnpqngug3vv20khvcj7rsckl0gsjpa2hrgduqglgxzuc0a9fwa+100000000000 --tx-out addr1vyx2vtmhf9gazxespcua3wzdu3hmmdlgpc8eepn0pawlg6c4mxemy+100000000000 --tx-out addr1v8wtsysz9qn40njswdhh9cj7e0ze9d3z4qd3q8yaye2xffq63qmve+100000000000 --tx-out addr1v92mxsw2pdsp8g2wg9anj6hk3v7a2c5e3pp0tm3vjmcemtghfmv90+100000000000 --tx-out addr1vxfurf77wmv0jy3vhv0qwxhqjkmsljtfsutcuq66ud4wl3sgjfaf9+100000000000 --tx-out addr1vxuqx5wuh9ngvxxapvs3cqah6u6wuar3f0gft5mna3ztzxqpemly6+100000000000 --tx-out addr1v8d3ltzw9zargla7l5c93cn3y8xuejjr00ku2dc6xv0gs3ghp3jzu+100000000000 --tx-out addr1vy44ke5v90v776c2j6p0nmn7520ujdf7rhncmk3cj6wv22qdscxlh+100000000000 --tx-out addr1vyxrdmmlluyxn4l8tnts7reknwmhp4nwl4gxyhpvrf0gfucc0tdwq+100000000000 --tx-out addr1v90hv5sh337h9005f65puj64nn69uukzrmlz5wc3huq2w6ctm4gmc+100000000000 --tx-out addr1vyy4gr63qwvclltt8lw0rkkagyv7q4x4n89e6aajdrrn7hq0uu7j5+100000000000 --tx-out addr1v8tp9y6r6t4cwqpp4utepyahq9gp2ya808f07c2dwnlnvysm7c5rg+100000000000 --tx-out addr1vykmd8fezm8j9gy9g7aj32u28c59l4qjwt8k82aacr6ukqqp6v76s+100000000000 --tx-out addr1v93crzwzpr6kudeekwuwd93tdxfzrjwsr3lqn0d2sgn3vrspy2vv8+100000000000 --tx-out addr1vxdhww6whdygxc8mw47lepdh06lclx55hjx8tmqd5mxukgq6r9n44+100000000000 --tx-out addr1v9kr6jq6v8qpy97mzrtjx5gm68t8eah6dt9dmxny6pst9uc0sgj2l+100000000000 --tx-out addr1vyak28g5hqn6a6wsceax4zggdkwd0mxsk8ecrh5mwxkxjxs4pzksm+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet39.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 820be4b327b968870dc9086548d917152233d99c5f912ed2496c8caa7dcc9211#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9acv60ht42xs7lqeagcv77m6thr96estf47nfl5zzehumg7ge6mh+100000000000 --tx-out addr1v9gmjq92q23adr4z5u7s77t4p03f3jvewky3d5sqvye49vswqht4n+100000000000 --tx-out addr1v9trcf99y966y6pkasnu7guav5age7050zsyjgh8eeenyhc58k3v8+100000000000 --tx-out addr1vyn0q6hu06cf8au9ld680xx2hy99m7vmmtnwhktk3g0mw6sfmsy46+100000000000 --tx-out addr1vyfhatrmdftfhls0lmzsgwfn6n3dmglrudvqk8wvh6jsjzcx0pw6a+100000000000 --tx-out addr1v8spa0wt6q7dyt62vw8tp8atntd5lyj8ug5sh7808lzjm8c8q520s+100000000000 --tx-out addr1v99ar5k6h79mq54knhvcrtl7llu8xlk462ccr2rvezju8zc7p9esm+100000000000 --tx-out addr1vy943hkmws7ndx57lhy9s6khahmewg0umxpcld83vr598us3gswnl+100000000000 --tx-out addr1vx6hme22z32au72hhnaj46vu6dl2jun8k70gukm67z07afs8eqvdr+100000000000 --tx-out addr1v8tp3ela0qsp0j0rntws0rx599csge5ng5ukjlejl52wqscqymjnz+100000000000 --tx-out addr1vyeee6mrx7mhfejnr9ms2r3wtf2cshf2ulm84ud5drjys9cf48dx4+100000000000 --tx-out addr1v8vq9zypnza4k8u8z8dwrzvm7qwkyltj0ejahlzqgyccexsgh0kkz+100000000000 --tx-out addr1vxuqna4mfwekserc9x27603scskd82m96m7cy43f3l9923cz9hzup+100000000000 --tx-out addr1vyf00fzq6ad3nksljtv58c8t4nrc02xlf4ngypewd4ydfxctf6vzx+100000000000 --tx-out addr1vy89vglfcrtjexhs6p60y72n3l5f543as4kcqa8y86zjcvgetv93w+100000000000 --tx-out addr1vyf2gew9tfpqfccwmr6qyy8p0u5ze6dfm9xxlnsercnhz6gxh2za0+100000000000 --tx-out addr1vxhmn2etlpzkgm38ktf0ey4pa26x58y2yj93sf834zpvtxcgavs46+100000000000 --tx-out addr1vyac3rxy3lj93ggcmaqrjhqk5svyhanrfd5wv58a79jan9q3k2dnr+100000000000 --tx-out addr1vyhqwkgezpzzyqlmthj58g50tmy5kwq03zvvtmyajn377ccxvf64l+100000000000 --tx-out addr1v9w7rcdwhfq3py4lppqf34pvpd4vewf0a026th8s0jvw2hgdsh7ur+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet40.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 28cdaffc3f75f6426850412486b5919bcca48062c10bfe78c614e62c59111fea#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vx6gxlty6ny7j4slp0klah3cs3c4t9ckgjsvzhuadpm9jqsw8zhuz+100000000000 --tx-out addr1vxunjjl53y2eae60uzf39vzjp7v58xq6fftdhp8qcqjkxrsqkk93x+100000000000 --tx-out addr1v9zgvku585e0c08aywyhmvzsghwa4ch73lk3m6azzcxq32g9lm49j+100000000000 --tx-out addr1vxda4xt4763ywv8vuwpwyw09zdsmppzfhwqmqa755faj7vs8shk2g+100000000000 --tx-out addr1vymrz64pfmgmptd7sd0aj3n7c6jeevlnc0sv36p0ylhft0c2ncx8a+100000000000 --tx-out addr1vxy72s0nhh7cdrqxx7sflwnyx0pdnffvgjzprspxcza7uaqp4adcy+100000000000 --tx-out addr1v9esdujq0cglauxc0jtqqtz23jjftg2qnhsd0xqs6txy82s3um4uv+100000000000 --tx-out addr1v9fhqavzn0s68w6p9sxjrn38sm7npf9755nrfgkgx6p4hycwdj0fq+100000000000 --tx-out addr1v8tjwxhc894m9n4hmwvex7d44tv5c5qlmhnyg50zdxhzuzqep58sh+100000000000 --tx-out addr1v8radyd2l9674fz6j0uwtlylrdtstmaetccehv3yxfney3q0mme8p+100000000000 --tx-out addr1vx3hy5jrgah73menu4wu99cx5lhz6em9xml7dfshn5p0zpchhut3x+100000000000 --tx-out addr1vxnphl8t58yhmy4grdsjzpy7sk443rxek0fszf5k8hwrkvqfcezgr+100000000000 --tx-out addr1v9tayjj3cqh2qj3546f62cu2v0ug2xafvta68cvv4phsh2c9nvkpt+100000000000 --tx-out addr1v8nj66h8gcrfa8vze5fup5alww364864dyvtpp6fwgteumgus6lsh+100000000000 --tx-out addr1vx8nv5mrjc5y5ftx9cgr4u4prrpthemxtdpcvkjd5racehgyqf3cv+100000000000 --tx-out addr1v8g0fvda08uxuad0738wd5zf4s05ev55ml842p0y7ps59eghs0xja+100000000000 --tx-out addr1vx00ahf72uxa97c3zp3xku066n2zzqcnr2cl2lggxfw6prqhs05hw+100000000000 --tx-out addr1vymay7pdesrtuwzlnkjf725em9n3tjhuhztcvwnj04j6t8qt5zntw+100000000000 --tx-out addr1vyrlvv9rhwjmwy2nzpgvqs7kzusgtm0jkdeh9kmlsldyw8qvyl32q+100000000000 --tx-out addr1vypyc2ghx38p3k3jgdcf6z27w5k9zexzdksadfn49z8h5agtjpdv3+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet41.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in fc24284c84fd59fc79a7e7b887878be935c6adf7ee89a552b5e1242056d9a23b#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vxqwfasfrr6tatzd35kysd90t7qzqpmdasl6rulp70uzavqyqjkhq+100000000000 --tx-out addr1vycejtdh5fspcetwrp2yt363lm7lmu202ww7kat8we4gqngqqfsl4+100000000000 --tx-out addr1vycqlmn08pmvlwvf06et074rc2n0fx82lrkc2sj4zktvy5g7c5zrt+100000000000 --tx-out addr1v99ugkhjhxmu6tky3pw2y6w9shezhwnu4athhynp8dqjrnszzz0sh+100000000000 --tx-out addr1v9wdhpwpygrt3dcej7htwrp5p5rktj4pqsqs8p5tz3t3gmgng9mtg+100000000000 --tx-out addr1v8ummmg2clfva389f0f8xvxx726q6a783y4m5e3ll9aullsy2pvdt+100000000000 --tx-out addr1v9tgdt3g9tpew6tkf06xv77kw3dg32k5u8tvlf6seq4q8pqtf2fzr+100000000000 --tx-out addr1vxphctazdhh249z3p9z5p3g9w0aj55gays6t9ev7ztjn4hgkc7lug+100000000000 --tx-out addr1vxu48ca9lvcl2hu4wsp6re4uwfkuvzg33pllj7dkk0npmtsefkerr+100000000000 --tx-out addr1vx3gc60alyvtyrtfdd4cyavdv6xq27v4fnhyfgq2dzxfaxq6yfz3s+100000000000 --tx-out addr1vxh4lqnzv2naxxe8ytlkk7lr0a35uhdfv8fkardnsv6c85c56yr72+100000000000 --tx-out addr1v9zug5f3tgt5re7ra3k2dwrx29496qhp8dl3p7gqaue7f6ceq0f0x+100000000000 --tx-out addr1vycfhf3n6u5g2zk9nk74ta540usdvtxxdzvmh0c0xmzvrfcvrug7v+100000000000 --tx-out addr1vyj0p8lv0mfsqs5jjwda4c34x3rmcvyxj75uur50jksuxjqyrxcqz+100000000000 --tx-out addr1v99kcmrcrmxa0j8x8k53de7rtyzdyrmnzqh4t48gus9ycrgen95nz+100000000000 --tx-out addr1vyqe3pca5g7zys2xmzr8suwrxx47cm7ej0t6e20mrz60wlglp3vtt+100000000000 --tx-out addr1vxetywr323qchf3jr4snayjx9gxfcl08dxv5z20mf5hq03c4zeuua+100000000000 --tx-out addr1v8lw68s2uenlcdcqk24l5vn58j773l9fryl3x8e4ktt9vdspzeeql+100000000000 --tx-out addr1vxsrwwjq5mlqm96ycxyf9f2l4v69jdnfmssq06pytx9lsnq7h4kda+100000000000 --tx-out addr1v9qr6emu3fu33rx990dynpnuplfuj3dvfh9ndrtj7r406yq06gyrm+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet42.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 0a74edc07b54aaff3af72fdd277628d0e8b0f134de1d12d95f4e96184e254b42#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vx9vwxlxk0j4x9svxheyvffjtrjtx2q4m96426s0n3n5h7s242hwq+100000000000 --tx-out addr1vxqfxypgsx9z7qdy6pcyn8thm4ythsndgczr5q7hu4v4srgdwzkk0+100000000000 --tx-out addr1vydv27m5vutsxaw084a0fvuthpj542883drku5tmucmvwtghpjuze+100000000000 --tx-out addr1v8juwmlmxgfawne5vw3ntdwzfmlspuw7muzd24ds5sj4gugsr95e6+100000000000 --tx-out addr1v8hpem04dp059afxke86fz8yd004azr8mjm0s975tfktmrcwfnyuq+100000000000 --tx-out addr1v85su5azu8slj8w34al2pu054d5ukqnud3t4nz5e0fh4lqckxnule+100000000000 --tx-out addr1v9qunr5cpp2kya3shnz3fjvumhk9y7htp4hcuqtwfn6nm0cx3t4cq+100000000000 --tx-out addr1vyz4hxyh7r3gavlmppv79sr0uvdy3aapapky5yxu3y8znpqwp6r9n+100000000000 --tx-out addr1vxk5hldtwmad9usp4t5yhgyz0jujva962jjcfemgtlrwcksagz5mq+100000000000 --tx-out addr1v9nhgrp75zmd4ehkr9jfcqa4lnzeu3rzvsk4n67kesrxvsqv4dakh+100000000000 --tx-out addr1vyggr20d676d9dv2a84ydv7qdlkgmychdukq0xt3e46999skcdmf6+100000000000 --tx-out addr1vy5ygr4t4aqu3nfzdvhggw4x5um547jc0t49wmkfh2j8n4c3lel77+100000000000 --tx-out addr1vym2sqdlq49rqy0wu54puq8wyxu7r69wphx04vashv6p5pquqxh6m+100000000000 --tx-out addr1v887jvu8ss7rpej8xxaw87k0955v2l6hp8cqpr6x5kd885q7r8c6u+100000000000 --tx-out addr1v8ahxq3p057gl853mpdev5nkxp39em5zua0qcl57elj6fhscw0fam+100000000000 --tx-out addr1vy8dwus6p38tlws88f5krp8c50sfg4s5jv0anxm3aq6055sfuzf7t+100000000000 --tx-out addr1v98dz8jqtpgw7eyq0fqs4fvfuqam09m466kmpmqe5zfjrysnqhz74+100000000000 --tx-out addr1vyr4etqjy6t23znvtcydcr0h5chj7vkdtsxl497j22slxssp43x6r+100000000000 --tx-out addr1v868rrxkzk520l50frhey9rln05vlrg472tsyjl93axg4fcrrzf6j+100000000000 --tx-out addr1v90zxpryqmzmlpuglxtg65amyvmzl42e4dhm0k3rhsj9vpgehsmzz+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet43.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 8421d79cee29d31885e35a05b489a532af14092fde92a3a954145e7e49398e2f#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9ajdje69zc9hak97zcpdgnu49e0np6rppra4ta9mzrvjwg0kvryu+100000000000 --tx-out addr1v9pcr2r23t67f4kjlwy7t0nk8sazpyxc0ngld5adq4d075q7pmm4d+100000000000 --tx-out addr1vxaxlm9lvnn45wtexuuhjlf3tjuyfrfdl7mella33gndl7gqz3nw6+100000000000 --tx-out addr1vyul57046w4hstsmpx5x34e4s9r2l65zdntvs56wtft6zdsgtqu4v+100000000000 --tx-out addr1v96gzxkr9ynhux7dnj80frt0wzw94dq6vr5x2sklhtvlztgjzsx85+100000000000 --tx-out addr1v8f9d9htxgrlmc3n6k09vsjsvfcjlq254f7x4qyxwd826hclvrd20+100000000000 --tx-out addr1vyzek63f2vprxu2thvxjgfzd9727j5g9j2k23z4tp0mcuaggapp9z+100000000000 --tx-out addr1v8r0jrekr8682r6gkldeq783u0jukshv604kkekeuxd4qpc2a6472+100000000000 --tx-out addr1v9wk3rz39947khy0e7mks7yzt98d728vgxljqquv8p0l37gzzhwyh+100000000000 --tx-out addr1v9ehjugm4cyceqgee29k5npdwl4nkfp9e2mu7slc5he6nfspyyen9+100000000000 --tx-out addr1vycv6dnlkhjd9nh500g55yj5q26t0znm6kqxy905md098sgwar07v+100000000000 --tx-out addr1vyhmajzj7x9nzex8askvja3qalju9a9vfeq4s7dlh3q6nksgs9nv2+100000000000 --tx-out addr1v94ka6k7d29zfujud6kwllrnwx69cjeqdnurfr0fc5ng8zs4xkj5h+100000000000 --tx-out addr1vxyg557w4fxvp0aplaehtufaeue5z7g9kd7wfjyrpyp40dq2n7y7z+100000000000 --tx-out addr1vxuu0p7u3aamar3776f6fewmumj498jztsfaz7xyhqm0fsgyeljyc+100000000000 --tx-out addr1vx09fuz0pdvy2h6ywuuerx3hdhmhtjv8kvp8phtr4vegcqc7s53fj+100000000000 --tx-out addr1v9mesvpkpkynzsalcykxayx54rg6r0g0nzfn2ahkc6zv0pql3evqu+100000000000 --tx-out addr1v87ndve95ycgue2sccglsce4s8xxayc9q7j04r309lf92dsxgdlde+100000000000 --tx-out addr1v96mlzmt33zd7mtg84erd47nk8dx3erpvdrkcjdnjpu528qrkq6zd+100000000000 --tx-out addr1vy4tf9rwdt2wuyvqet0ghh2fphga4q7kh2eut9ry40d2hngmc09qv+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet44.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 81900a454e55b6cd33968ca1509304672060142807383190fdcd472d47e62df1#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v8vzq5rvvukrgp2ul3z9v9ax4nw45486hawhfaf7gk8tlmqgr3yt2+100000000000 --tx-out addr1vyluqxdthwkgkpv47jlpfaflcv58ep44a6uh8wcc5jh74csqxtxly+100000000000 --tx-out addr1vyss4myusxv8gyql9nmck73mrewvhqvhe3l42cnswz7h7mq9dpua6+100000000000 --tx-out addr1vxwdwzu32kk0747c03069gd9kux8zx0fk7x35gmzatvwamszhh3jf+100000000000 --tx-out addr1vy8lnc6d4gsh7pwl5kc3cc28mmema2mu86eaw4sk4vcs97g9gmnqv+100000000000 --tx-out addr1v9uue3pd07tlkv57wvngtxhfyq0x6f4xcnt2pk3kqyugwpqfc7j9p+100000000000 --tx-out addr1v8ylyzdtpsxe7v36eul9txv2ctcamtttnwwud3ydn6w9v2clljdfj+100000000000 --tx-out addr1v88dkhudnwppxsm9y5dcn02yt4gu3xp88sze34khkdgnuvqaq6m6e+100000000000 --tx-out addr1vygrn45z4tadygd8j8gm8rwlw4lphacltfsafw0zdgtrpcs6lhkxd+100000000000 --tx-out addr1vyu85q8ksdxsl2v5vgehdcqxnnqswzpkvr2064rtf0jfahgmvqlf4+100000000000 --tx-out addr1v8ldmk5s2nds5hl3dwnx25ch8lceemuhzmzjtu239ll58lgazqqjd+100000000000 --tx-out addr1v9cevt8gdrv4nkj2lfafd2r5evylwy0yjk4sc0mdyp80d3q8p7va2+100000000000 --tx-out addr1vx7vsx5r3rz2w2afa0j7d4wcajapnnuf4xdsefztsyz98sqtz445s+100000000000 --tx-out addr1v898hnxv4yqs5aj55addrcga2q7cfqnpdg6jjvle29da38sypdv8l+100000000000 --tx-out addr1vyn7hhjul5zvh6mrlpl3j33hdexg63l4zc0l6uq4yc38f3q7zz7gq+100000000000 --tx-out addr1vx0t8usmmpdwgeyt32erz4lc6us3n287292fuxt799y5gjsnjpa2u+100000000000 --tx-out addr1vylc2acwsgrxptat7c4e8zk9a6kz993q6kluwnlnt7sz94c4hve37+100000000000 --tx-out addr1v9ngmpgs50tvk94ml8mqezel5ettlx2sj97v8u5a25hfgsc9mayed+100000000000 --tx-out addr1vxjf52l84ag0q0ph4ej5p6c727lquvdvm7qnuu387fdad7qmjmfkj+100000000000 --tx-out addr1v9le9vtsyhf7dectgw7wk7wfylc2t73gjnqwju9lwlyqrwgdf5lzd+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet45.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in d5914669046bf1bdf905a2a37b2efd5e71170a04a13b09d29f4e4b29dff61cb9#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9rlvtctsgmx6fw0gr9k0kjs2ce26dp0zjntpak6xwrl5ccxpdua3+100000000000 --tx-out addr1vxwg6p2jjj0ltvqawkevq4km630n4jpm6j8tals3juj903sw74pqj+100000000000 --tx-out addr1vy60p6frj47daegsqjsda3d4vlg4p6v6qqgx4kaqf9j6l8cay47tv+100000000000 --tx-out addr1v8xwdss830mwneyy9knnw6uagz3rk4wmaleqfy4agfy9dfq704005+100000000000 --tx-out addr1vxwjrr7fx5wukgf3e2mfwr3k3m2qafugfcctn6eghcf5ltsd7q3p7+100000000000 --tx-out addr1vxuvy5a28f7xvr8fya77xlkwjwpnkae3xh3zxk5xy4lltwqgrllfy+100000000000 --tx-out addr1vxfrr8kcwkzc9883cfeaj0cvyrmrvn6g652u3a3lm3rnjfqpr2x0t+100000000000 --tx-out addr1v9nr0kqw59lrupgz9ykdcvkykxgwu3clmgmagysdchh8vdqyld3am+100000000000 --tx-out addr1v9cpqk5fk42hnd953mttet9hrzrpwj0u509evkv34nmnf8csc83c4+100000000000 --tx-out addr1vx3y584jpgcuu0um2ps7fkpq2gjx6y24z9pyq2cdegzpnhcq92d3h+100000000000 --tx-out addr1v9pa7dun7tfup58xe87fg05z2zn6qs0767ukzsvhmlug2gqrej2jm+100000000000 --tx-out addr1v9q2eawz3d0p7z4c2w9kv64u8haujzfhpy0y75ht78wwxecqw4ea9+100000000000 --tx-out addr1v90tkf34fqch32ec2yc9p6ym9qc0fd40d0lp0cnemk4fc6s8geg58+100000000000 --tx-out addr1v9cwa7dq88vq730gc5j24uukznpu4rljd3fu6s725jqy3lcrmrvld+100000000000 --tx-out addr1v8trrm63kvchk6s6a0a7t6mfpxujke2vzqth8sf7dn59jsqxxdl32+100000000000 --tx-out addr1vymeh9qgrcngyufsqras9df3cfvcnjjjaxftqlqz39ggjgcn3x802+100000000000 --tx-out addr1vyn3vvremadhclsll37tsa2egl8jg5v9rsa9gwcszzsqyfgg9vgvj+100000000000 --tx-out addr1vxgjef6fsdsazrhr0h8atsrehdxazzrmtd3mxyj8u3aw3gc35uvvt+100000000000 --tx-out addr1vxnhudffasaacuwtn6u003puux0wtlea9j9l06tn8gx6jwgfmpgx2+100000000000 --tx-out addr1v9enaxfvc9k6v2q9t5tswrrx6a24yj2t6zwwx7xjy88qx7gd872mj+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet46.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 80062b5abac68efe511f382496c51892a3e1d15d366d2e0c0e74adc4e85c3c73#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vxfvtyu2d9kcax9yan805pnnen487f2eflm7kydy92kynjsk92zj0+100000000000 --tx-out addr1vxp5gfumq6lzltkrkdpz09t337rv5g9lw34maenls6vet0s3xezl4+100000000000 --tx-out addr1v9wpcwx5fap47fqqyzqcp49gfmnpfuckhev45knnl6ely4gdykpu4+100000000000 --tx-out addr1v9ag2epm9ucy36ngg6ycpcymmwnu5p98tc7px9wfq7adzlc2c6je9+100000000000 --tx-out addr1vymj3ceg9zug9plj0z9nlwckewztryt2swykcvuma7avc3gze02en+100000000000 --tx-out addr1vyzv5mv449xcwmm8z4pkc0dqak5xmksackxjksvjuk9mmtcaqxnmm+100000000000 --tx-out addr1v8a524up9pshwkvxk84m38wle7hayhgme4xp3h90w48rsuctw0h7j+100000000000 --tx-out addr1vxxtk9acrea2ar3rh2cm3xj7lve32pe4fpvv3rj0pqx06hqsqwrn4+100000000000 --tx-out addr1v839kw3tqg5sqg5ayvqz9w6qd0surm6wnv34pvs82mk0azqhngwgh+100000000000 --tx-out addr1vxh3acq5ds32f37y9qm354mghupg5hhxf6svu6t8zu4z27sy995u8+100000000000 --tx-out addr1vyk8x3gzk38338mwmp94pg22cmhsd7tr46cettg6g90pucsydzvut+100000000000 --tx-out addr1vxa98etuzct9arhnphkhgwt6vu4s4d5y46ftkrgxm76l09q95h863+100000000000 --tx-out addr1vxh8d2m7e0j287r3s3lmf2ut6th9vl56mmrx6q848mf6ncg9tglxw+100000000000 --tx-out addr1v984zzl4pjmn0ec3a9h3lrmacaplfpd03edupn9srd2qvksas6zr6+100000000000 --tx-out addr1v9x6xvk8m3wc5wtk7t00h05u9d9twkxkxzjzk800ytxudvggfzgk9+100000000000 --tx-out addr1v9dl7kanx0ul72jes7errfkep7cj4f0cyj5hl8dfrcmamfsta4lfs+100000000000 --tx-out addr1v90e3y0mgst3aa64vr0nse33lrxqt3g22r9x032z800clesfnq452+100000000000 --tx-out addr1vxhhdkd0qge58ze9tdhwzx4ljrsh8658qrq2dgddd2x4jdc8cluls+100000000000 --tx-out addr1vyyjyjzy9h2w95pfy0la25wnzs4p8vm6h5p3unczl8fqnrgz65crj+100000000000 --tx-out addr1vyw26kfpquggenvqaw69637lprncfusclamkyx93f4lrhkcamfrkp+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet47.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in ace27fc8ac21eb6bd6743b4109cd5f7acb6678f9489252c864919137b113ae42#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9mz99rsxa9ffxyyz7u39nc5qsthg23jvlxctu5em4my5ms5xmw9g+100000000000 --tx-out addr1v9lw52zh8dqkx5yuwgl6ac5xulee6nawfynthuyeyqccqrqyryh0y+100000000000 --tx-out addr1vyv5lj9d0qvg7fkf4z0mjd3ug8yghn7qhf9rsfafxfsr9dg6jamr9+100000000000 --tx-out addr1v87wrarmh450zys880ataelt2x4n4sm0fuxjaafx7n6nrlce4g67s+100000000000 --tx-out addr1v8en32lczq880223x8vll5pzy8e3pq6ftrf4a8ygarw0kkqx66yhg+100000000000 --tx-out addr1vyznx4wayqx7rqlakhdcaz0j64rslxjz64vwte3sdzelhqg4khqt5+100000000000 --tx-out addr1v9rzvs0vez2yp86vm36zykk0427nums87pm8ysupj2cul0s8j003m+100000000000 --tx-out addr1v9kh9yx0ahkplwutffywwr69etc0f7phl5hu56hf4y5szhg0am3fm+100000000000 --tx-out addr1v8jtxk2zazhul3w2adkpm5ag7xlnrfuuear9uy3nedr40wc6wkzva+100000000000 --tx-out addr1v8avxvy6szhxkf5day0egg5s7c5lqjjrhe5jll9frsavezgyna4dn+100000000000 --tx-out addr1v8snsljm63zmfq3c49n8wqlphm49z8d7hfrfcm0wayr3erg95psvj+100000000000 --tx-out addr1vxrwwvhytgpqesnn4vwvtm5gp5s6u9xad5gfws8yl5npkzgd83mq3+100000000000 --tx-out addr1v9jp7cnvskn6uyay4t9t3mgxracnpknjllt354ff95fns9g72frkn+100000000000 --tx-out addr1v9rfk43zlxaye34p75087ultxnhmphp9yp70r9k6rshnluslcrnla+100000000000 --tx-out addr1vxtczdsl4t6cj94tfaqctwvjw08sjv5agp8wv253gl6c3nqy5n4yw+100000000000 --tx-out addr1vxafrnpld80wmmyejer54vs3qwdr737gu447aehf4vpplscnjx8nm+100000000000 --tx-out addr1vyacjkxg952plmyeahw3m6dkj38fxjau0v53agj9pknwwagjagys3+100000000000 --tx-out addr1vyv7c8j2tuj42lkz988xaxy5m4p9k74esu2qfaw6u4w2x0sa7qtha+100000000000 --tx-out addr1v9zkpnz8dezm2nptyhtkequsjs779kp0gcjdk44zw0u0ldgzr6trl+100000000000 --tx-out addr1vyscdwltma7nyye2tcwrwxqxvpa38xc9tg9fvssn659c8rqx5fhxz+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet48.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 53d89c8a5c1fa3d9e880afaef6152901669c5bb52e022a57b51c23c7347b9b55#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9zfwtwwhmv8plxg7fmtz8a5jeamsvfjer8cwztsua5zxtc984lmg+100000000000 --tx-out addr1vyjhs7aclf3xm8dq3tlut8e0uckva0fz42lts38meqmvswqa7yngq+100000000000 --tx-out addr1v8qu9v83rcz0500agkfflf0cf5ham4sws3qymhnmam4mrmczkfndr+100000000000 --tx-out addr1vytgv7pd648w97d4zefwzvlavw3uyccdq3t0xcw7a7x683cra527m+100000000000 --tx-out addr1v9a60dkma3ygjdfnwyjamukx6kts6twtqhh9cvkpx6ahhjg0gu3c4+100000000000 --tx-out addr1v8xyh62k9aykk907fupekevrty07th0u6ldhdva4vwmmeqgrktjal+100000000000 --tx-out addr1v8w2an0ercxpurrq6ju597svur70a8ut4zapygthfd9ujysarcllm+100000000000 --tx-out addr1v8xkx9amuzpzqa0sdqzu50x7fdl6k7v5h3ncucwu5rp92fqxsyqq4+100000000000 --tx-out addr1v89crsdhqmtepe4dsafs39xkz53srchku34y34stc88etpsk4uu72+100000000000 --tx-out addr1v8h24cners7g2e707eslxhdz093958t87tn0lmsjcfvj6ls8lqsey+100000000000 --tx-out addr1vy3gvtvsctkvgdrgzv803382r5jye8glevfjdgmunwrwtaqrxapep+100000000000 --tx-out addr1v9c2sfm3rrgvycejj9rpjrtfn4ewxvq7n70d3as7t30r0wg5cw9w4+100000000000 --tx-out addr1v8tgl6v6rzw6fzvaawx0x0pjpyv7u3l8rm89aa03szww7qq3rftz6+100000000000 --tx-out addr1vxqhey8sp68mz6um5l6x49dzclznz6pwykrqctntn6j4jasav7t7q+100000000000 --tx-out addr1vyx6xd4hh7hn725nkmgcldkxz2m0wejfs4smeexz2w2q4qq28st3a+100000000000 --tx-out addr1v9el6p0z2u24su4muqe8mwjuzdwjg48qns5u7ev78nxqwxcqzf202+100000000000 --tx-out addr1vytkjm4du7js6r4wnmdppdxjgceuhjz4qxtkvdqepnys0mc0k3l4a+100000000000 --tx-out addr1vxtftmad2kpeq90cvpkl3tgczrzng87d5rs4r42n4y6wm9shrm9fg+100000000000 --tx-out addr1v8se6n66f3rcymafr8z4a3a5pj43rjz9k0ce5ute5s0e0gsezqluz+100000000000 --tx-out addr1vxnye6xh849sz2xkduvmhnsph80g4qu3vs8l7hhw0p0ge4sxyk3yz+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet49.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 1bbb8be5bfad65be1ed6c3108027f2cbe53ffd4991c9dee7f2048ca84b9ec7ca#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vxexntdp2cl89923ttwut9hgjg6ydfzv8nv2dagmcfyewdq060we2+100000000000 --tx-out addr1vxtzwr3gmrxgg2snx2hz2z5swnq89eympvv2g7af64r2w0g4rsn46+100000000000 --tx-out addr1vxprhw9ugpqy79d3zm3tdtkrfzhffxree9mumagf3jf8meqkg28gg+100000000000 --tx-out addr1vyhvsy4rey9s8px4r8sk5vny0zz8djyv4qnnxl6crur5mrs0wfffg+100000000000 --tx-out addr1vynmrvjadlhy75ktgx06kydkp8exer0swtd5fjxrqcrkr4ch2szfs+100000000000 --tx-out addr1v9akqnr26jrmswavcvm6wlslm9qlr6vf8wfdwuwta554c0qmwluey+100000000000 --tx-out addr1vy86hezk086act2956rk74rt3hulm2reg55yy3lj3q74zasafvnvs+100000000000 --tx-out addr1v8j9vpkzgjqd2q9hpw45x5udfq7t0ygk0y2tm945lqw977gnl0ke8+100000000000 --tx-out addr1vy9c2ymzf8p0df4zmuknmkag540zvcjmrqc3hy587s65h5ce028p8+100000000000 --tx-out addr1v8p7m5wd2d0nwdgmcfq3c0yrert3fv86ypps8ecgnzp947gyk4fup+100000000000 --tx-out addr1v9ca2tedg6gfchvjqtkphnmknfcpns65t5fn4spgg7fwvmqr6eaxh+100000000000 --tx-out addr1v9l352sz86zmevpy70y3qw34h9krgxgxs83c566e36z6d9gy7yqjs+100000000000 --tx-out addr1vx52md9pwwlmtxkff5y3cepy3unwhvaa3uqnyf5ke96r3ds0sqv63+100000000000 --tx-out addr1v98g4zrjp5zn8s5ue9p3ktxmj40dydtl9j79jpntap86zlsws5gt4+100000000000 --tx-out addr1v9ymjlrvrumskqxk0wpnwcqa6sfjv5m56epgd4s0j0gl7esrmkvt5+100000000000 --tx-out addr1v986dazf87g6rntyg7v9l30h876hus99lvs96jzp3240npsxyha4u+100000000000 --tx-out addr1v8ea20a7f4lwjzgp5tvzcmdwasw47kx0vgadd50a7q88g8ccw62a2+100000000000 --tx-out addr1v8un7lh0sx8fk8kl0f6f64tn24yq48efgrunsyd2qm0fd9svvefx9+100000000000 --tx-out addr1v94g25fnrdqmp3mdz8lssfkjp9vzweg678vgjwy9kmj7v0c847yst+100000000000 --tx-out addr1vy2r8fxw7c3c7zhvcthlmhh6rwasl6lzl8rs0jl5jrwc8mc8uzkxr+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet50.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 47693e52359191985a83b9ded739f4b86efcdb7f5e7191d684fb33913c72b842#0 --ttl 600 --fee 998999999999957 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vx2etfhpx2zegfzsl2l2ts5x6rkc7dwwhkxvyngn8pg29csp0wzuc+1 --tx-out addr1v9rcrtzc37hk92ka5zjcfeqml9mkud0c8tcgpqqd362stcqjgje7m+1 --tx-out addr1vyumjueqmfr29dzdwl4fzvr6srwgluaehw2dge7rft0m35s8amjsw+5 --tx-out addr1vxlassd5m5z2757zqkj9vsfyqnjpzqa79tfclypa5ltwtgcfsgk0y+12 --tx-out addr1vxlzf5427t40rg80t7gexwdy36r5rrvxpmp53d9zlavt7vqcnp60j+1 --tx-out addr1v8a8ywtvzaqm7q3egvzycasxnnt94fgsv436gx5y69ez4dchfngg8+5 --tx-out addr1v9xum7e86trk4dmgwxu3panlnhfyz5dtumh7hg875xa624g0kyuyp+3 --tx-out addr1vytqzys3acy7lfxzavy58s2zce7h4kayrx4hdfhvaea7zyg9kddp0+10 --tx-out addr1vyhskay8ctlktu696570julln525h0lfv65m4g27cjswspg8vlx8k+2 --tx-out addr1vyhykl0ty0mpzp0ke69hfv4r8663sw468vq452fw0tekrrsq65f36+3 --tx-out addr1v8nstmzr796v2m4hkns0mc0az09lfhxp26akav0dfh924kse8wyyp+100000000000 --tx-out addr1v92tnud4ug83uwdjngej03jlnxx732gynydup2faph5ruccxcvlvm+100000000000 --tx-out addr1vxgkyc7g74qq8gwwjysxrzuqur5vh2ujt7y08hk0ddengzgpkjkgn+100000000000 --tx-out addr1vy2d7m9udkhzqjqm89fq8s6mm09n080gcawvqyww6cdhegskqtx4d+100000000000 --tx-out addr1vytu3l3t88m2fk33dy8pqr6azr3kqgf97n6vt4c725fuvkqd8qwwy+100000000000 --tx-out addr1vygn3gshvfqun5xzwpvz3lxahl67ycsq35a7gl3q3ygf35qytu2de+100000000000 --tx-out addr1vycq0kmk4j5ey0gte420qc37wqnfl0kmshzh599vhz6zedqhutzcg+100000000000 --tx-out addr1v9n0phmw0vdppxhq7y957z8xfqgcgkg4t7wsvtdqesukw8qs47z9j+100000000000 --tx-out addr1vyputmmlpalfhzct4regq900ztmqpm9kpjaj46wwgdwnatse6df57+100000000000 --tx-out addr1vyj07hkj0jjpmq99skmd2s83hegx9tq6zema7r528tz0xnq7mlcxg+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet51.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in bec6fa22f36ec94fd42cd746cab599393050ccbc3006c4eb115481fede888c47#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vynh2tk2dz5jjsdd4fe4r2squsu54xfsldaps82kljwzm4cursa90+100000000000 --tx-out addr1v8fwfsk7sr9vvhpykggpkuftkmdcsrr604msu6p7fzk2tagsfghnq+100000000000 --tx-out addr1vya97ttsah78wqvz9w3en75ge9fr08dpwxyhm2rtt2kuwjgnrzcnc+100000000000 --tx-out addr1v8x5ret7w227sgc5w4j3y7ugcj0m5cc5962napr7lt4tpsgua7k72+100000000000 --tx-out addr1v8wxg6yzrqqt8d96f9anln7h82vdfsl0nug83exkczatj9gjmr5eq+100000000000 --tx-out addr1v9ywrwk75a8jgt4wzchmy76qhzd9tez8ha27q3c3t0nqlggq9x27h+100000000000 --tx-out addr1v8gv05092psdrlv3afeeraqcxgdh9q4yavxglx0wukhuvtg930pa0+100000000000 --tx-out addr1vy376mjk9nq7uw42qkhycrrcany9nqx9dfup85xut7ld2mcjq7pad+100000000000 --tx-out addr1v8avk4sg3g02m6pqhulj4ym362nfwgvp376elv8n4cklacqvvql8d+100000000000 --tx-out addr1v82y9wg9223sgyludtvtrmsudjqjjqe7yeenq80dlfs2zlg4pvehl+100000000000 --tx-out addr1v8ev8cwah39xaly0fey6f5dtmyrz0t4207n2e0d3lmenz9qdjx4r9+100000000000 --tx-out addr1vyv2xnk970ez4p4m6gcnhjuvzrmckejwf89e4r5puj3zsqslcrqcq+100000000000 --tx-out addr1vyp7h40hla0a8dv0yqndmrynjudst3uznns8p73fr8yrrtcmyvctm+100000000000 --tx-out addr1v862qrtcld7jjc9ay8gufx50mmp0ppmsk4c5rvlsjx3atngvpryz2+100000000000 --tx-out addr1v8eakj90anycz53uq4r2xgduxqzaaajc03phddrntdzjq7q7y9hf9+100000000000 --tx-out addr1v8wfkhfkxth8zrnjw5vyx4tgscd0dxm4wsrmkf24ytwwd7cfkhnme+100000000000 --tx-out addr1v9y6vq63zx97zndl3mmdwhujsnyr0lnum2dysmmtr6pyfusc7m75k+100000000000 --tx-out addr1vyha0p8phmurpzv400ch2dcjtg95ck0gpf0jkp357ak0vqsuu5vx4+100000000000 --tx-out addr1vyzgfwyktggatgwz6jfhy5rw7yqprwtt3e6eax0v0yfmp7scvwfrt+100000000000 --tx-out addr1v833d9t5g9uay6ljf538hpwqdu44nns2pttnrzu4e7g4yrga04ecr+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet52.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 300bf0cadce47b7dafa7afe3d6eb2b1dd496470a959f3e15fc7eb8936292795c#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v8yls9js7e835hfhvs2ep52d2934hd59dzx4z3jqhvkal5qwlxrhe+100000000000 --tx-out addr1v9waqd70tjqv3tca70r3slmzvhednphrhdjsgrzwhv7hwyg5qtvjh+100000000000 --tx-out addr1vyjpa0ud8etj3zez0gjvg3m2nfv372ezc9y9qz96lcgd79smgfx7a+100000000000 --tx-out addr1vx9t0ndxpuawhexx58f344660k6ypmp68tvpnduauqcrw5q9mg59z+100000000000 --tx-out addr1v8c8rp6x73klf6xumspu8a06785u0ylhudvlxp7wtj0rtfqd90q0f+100000000000 --tx-out addr1v9v46dhseypmy3aktjqnvmwwhxmttgz2kl2ugashqmdgv6s6a502m+100000000000 --tx-out addr1v90lftd5sq4k3tcrdjcsc3ulg7ltr7xltgj3tfqt6x2wrksq0rt04+100000000000 --tx-out addr1v9dh8cyhgarzgyrhneq0fxuaq8g205qqhzqpws426xcqpxcd0a9s4+100000000000 --tx-out addr1v9d39pth4mh5yctpl40mrptfwtrktgt0k6y6lp0x9xntexg65qu23+100000000000 --tx-out addr1vyaewxx35v3wf6pptqjj9z5qtwfphpgxx4gj7plmzvq5fkq6kl593+100000000000 --tx-out addr1vx39fcew3hfk5ap4gk75d9ep9fq88c009460k9exg60gs4ge0eh0q+100000000000 --tx-out addr1vxctjpknq9uq4qjg3glpg24fpxy0wvqnvmkch3hjnp4aulc0smtqy+100000000000 --tx-out addr1v9nukm042k35dw8z0l0alhddt2zv29vs8rc9pu7j8a2zs5c83u0jc+100000000000 --tx-out addr1vx45chgfmqahzc5hzsntj7kjt86ljtdgqgwzc5qt0su38dgk7c380+100000000000 --tx-out addr1vy84wdk6zv7g8j2ywm8csv3nc8292kavxw9cs0a82t8f0ncqshf9x+100000000000 --tx-out addr1vxzrjdupt5czsrqeul2hdap77c7zy0rxqfygrgvfuc6nrtqcehe5w+100000000000 --tx-out addr1vxhmtcgd095nrrrltulv07r3mrdlt9eswjc285yxlxwpdpcqqq45t+100000000000 --tx-out addr1v98que8wr9vyy6mcutwkwt6n50j0nkhy0w8fpwg6vpnlgnqwk2l2t+100000000000 --tx-out addr1vyjsz5wc54umh7l4u5k82r5y2g7lej9ml2r3eek9adux6rcus92t2+100000000000 --tx-out addr1v92mqsrznunt7atgexgu26l6tamws0tp5hnzx052zd9tguq2jxstl+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet53.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 3dc2bd366e8d45e39bb1d74faa4175d6032bcce2be70c632d39988e579a9d848#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vyhnldlk8xpvvm5q7jrtaxcjh68252x25shhp95zlrwy9ygzkyey2+100000000000 --tx-out addr1v9h5hj6hf8ac7jzr3c79lmx8cx6df8px2ntxpnd9mg7gc0g278z2r+100000000000 --tx-out addr1vycn208k3xnegrf3vxsfnnvehe77xkyz6z52l3x67a0j3kclqvg04+100000000000 --tx-out addr1v9frwqkm3xflyyl04h5v2jkhrahwy6cx5cv0tar509tvevqsera88+100000000000 --tx-out addr1vx8puqr5suu3j8qq6wz4zuq8a8rfwa0m95tgh8nknjz0hcgfcnnas+100000000000 --tx-out addr1v96vx25z5rnxh6k8udvexa2cjmctezsqrc265vm3zrqy7qsuhuxgx+100000000000 --tx-out addr1v9nawjun930qpdgyuyfj5jthw4kfpfxy3d8xlylygw0fqygt9x99n+100000000000 --tx-out addr1vyktuhca0ug9hrj8p5aglqf6pv4t4wjvxgrsdaxcrtwckfqaw5v5p+100000000000 --tx-out addr1v9h2ckdr6gks20rdhhlyy82ren0xacjwg73ms8wg347wvtqgqd2gj+100000000000 --tx-out addr1v8pufefawhnue2zw2wfszf3qhx8y22epdrr3ltkh2vzwnts7xxugd+100000000000 --tx-out addr1vyk3j9kge7fepuzxxu099lg7wypqtqrj7erzj2pstay5dssznlyq4+100000000000 --tx-out addr1vy9mwnng890ddsye3cc6u8qmxyx453fyx2gaf7n55uqllgc5y8le6+100000000000 --tx-out addr1vyakfla3wz4nz5ccv5aem0snukle0zaxj8ezpvtla4vf04qmgfs58+100000000000 --tx-out addr1vygdf3vgl5gej6zw5x34y8l7m7dnkr89hl0gqw3r5ygk8es80redm+100000000000 --tx-out addr1vxfvqwswzq0ccfvhx30kdfx02rfh5yv9qjx09dux6xch54ggrptgd+100000000000 --tx-out addr1vy7qgmj2rkdg6njad47hqr3pverx448x5vrw6zxrxskgzjq5n695z+100000000000 --tx-out addr1vxg64nqh3aj84e2qkv957xxzvpdclk8kq5st003puqcqvwgc6lnpa+100000000000 --tx-out addr1v9nuvx4kyhz5u5d46kdcym5vlvvlg3s2dyme2qpdk2qd05gmleuef+100000000000 --tx-out addr1v80g8jhc208tzavsq385aglr24ag28w2pzmevdw0a60ngwsfchrkz+100000000000 --tx-out addr1v97c44k0lhmpgqqscnp7u7kraztruyq0rjyx7py849vpwxcc342uz+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet54.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 8f98b3b301fb6b05270eb6b694fff9d8c07ecb8ff86ee03b915b0fec006556a7#0 --ttl 600 --fee 998000000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v85dw6kl4nhrgsdcpre2aj688mw9ytjh6w2fgdg9dmwa55g54dml4+100000000000 --tx-out addr1v8vlpch4m5lg5jqcpcqw2jcs6045awxs2fx9vjkh0t6kp0ch0nw5p+100000000000 --tx-out addr1vyxa5flum27tm42ptq0zusmqq6xq4juszt3swvlq7jf09ksj89zv6+100000000000 --tx-out addr1vykmz386hmzgcf7hlu3kwghquzgvdfklxck7z48rm4avu3gg9yzev+100000000000 --tx-out addr1v98zr76rektd6n723erkekv2mpjk2xkpte0f44da36fdumsccuhn2+100000000000 --tx-out addr1vym0y9gk7pqzq4nyc5gmfcw7j6mylkpqklcxh74u5m7cw2ceh5fz4+100000000000 --tx-out addr1v8eumkvsjhsvefefxjdyhltqrg73gz8ht4amyd9hrggnlgss28xsl+100000000000 --tx-out addr1v9eqels9nd8al6wzjqduxeys7ldysl5zljp7jvd298vh2tswckgw6+100000000000 --tx-out addr1v96cx64v0yghhkrsf5mcgakrqvhyqpqttjvp9vf6gzwqegq506lls+100000000000 --tx-out addr1v8m42w2rtg6jcudg7esmw6a82v697rntnhyk6xlq7len2xcv387k3+100000000000 --tx-out addr1vyckqnc705ntkrqux66vzzt0v7au6rrpmg36qqa9xn0wq9c6fflec+100000000000 --tx-out addr1v84h6t4qxdhfkm6auxuz7te8xhppucdwhrx0rd786ytlhhglklgt9+100000000000 --tx-out addr1vxesnulgyn7kz5pjzvqx6j9m4p90m8maj0vh0v9y2f7ngpssshm0n+100000000000 --tx-out addr1vyts7yhrt5ys0h6wc0vqywhyqxnsxn29ck2fcym2lj3g4ns90wfd7+100000000000 --tx-out addr1vxn64y7zy8ehpd4qt4u3l9lrucq7c5l7v0tktmg5fl6zrds6kpmap+100000000000 --tx-out addr1v960swftc506r76k3934jadydl8rtdchzpadkwxvkdwfnnqnvsqlw+100000000000 --tx-out addr1v9wc2zqk7j0d0vex5c9p9h2svt50ef9czrv8guv7hq6qkdqa58l4c+100000000000 --tx-out addr1vy9vrvf2xf3s9a9kcs5gewq03wcaku8d4q48a3q9x903t9qudpute+100000000000 --tx-out addr1v8ye45rmp9e9lxgtnwnjvalp6sa5lhd4duksay6ldd7978qen7p5l+100000000000 --tx-out addr1vxtua6e9m2gchgfpd5trtv8tkxyhvtgvn9t7d2cmtnpsdpcl25s9m+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet55.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in e095c4294c377c305b9fdef2d860fb79ac7e65af7b700420bd4bcc4c6e825622#0 --ttl 600 --fee 998999999999990 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9s7lwp9zk7cculc7u3xdjjrnk6wng24wjs2scyg46kt5pg83sq6m+100000000000 --tx-out addr1vx7ehl7p7p3r4r3k3x4r7ank5ytlpcj9djs7kw2zakenxlsx4x08u+100000000000 --tx-out addr1vxukksv0egxkagmyf0g5ut5dntuk9ft58ktvupy7uynupns9nhkkw+100000000000 --tx-out addr1vy8mmf7a5y4y9e30jrf74n7utftlf0l7lad9z4tdjvnhc8qpwhznh+100000000000 --tx-out addr1vyunfdfpwa29zhh5p3wy2dhe3ntckpg0j2jlx7vkrxm0upg30hrss+100000000000 --tx-out addr1vxw3xqmn80gwmnjsnyza6qp05hrvqe60kxn4e66553jlc3gd4x3wk+100000000000 --tx-out addr1v8rq8r5ls2algsd8mfa6akuy79lqhseu44552c25tfxup0gxff24c+100000000000 --tx-out addr1vx9fddfkt4d3mq5tnh7p97a7xlqmjlcfm2lf4ucpnkfz2lcp7g3hx+100000000000 --tx-out addr1vxtd0epgznwwle3lkdvnjklv0jph62eytm9yl8mkg9t0l6g4gjy8j+100000000000 --tx-out addr1vy4t42rdqf7ycuha7sdnj3r5qwu58g4tstsphemrf8499vg99nt3d+100000000000 --tx-out addr1v8nrp05vvjj48plcrja5qytcunjrnhzf7la0k5ns337ng0scme5ym+1 --tx-out addr1vxq2zgjglpkzj90cejx9flul3eczga0649e6p9nz8e459vgqf7zt7+1 --tx-out addr1vxwphzqy0twtn89jaa7z5vqew0n75jg4qxu2yqfdthk6wkska04hr+1 --tx-out addr1vyup4wcyh669kxuc6y0lhsymssypxhpa72fkv4s27wpncmc94s2qx+1 --tx-out addr1v94elynhamxeu8535vsp2aeg2ljl06wxk4pr9yyfqxafr9qhda6lf+1 --tx-out addr1v87dxk98h296qn035fwect3a3z07jw8u3z0u5qgvptwlmjg0ektaf+1 --tx-out addr1vxdtskfxc6xqdme4u80wkwpgzlcqpzxelt0kmzvuq50negc68zgw8+1 --tx-out addr1vx09646zrsfdjqvpx79fv2dqwfm9jvawtv707qskupymwys96x0vy+1 --tx-out addr1vxulnkypdyyccn5cqh5jlqslwye726w4vv2l5hl0g9ksm7c89yshy+1 --tx-out addr1v97t9ht3qn0335nd59x6w5uf80we7esn9xk9ug5phnhr5wcwf3n8h+1
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet56.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in fca821b41c2f326467a9bf513eae533de555acc76f1326209382da53b469f412#0 --ttl 600 --fee 999999999999980 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vxue9qvv9kcaxg8wlmhvuuxndy5vj0870d7jw4msu99z0lska73vs+1 --tx-out addr1vxs7jcqzm4h8rlfzddvm36wcr02xql696zufr60u6dpz28cnuy064+1 --tx-out addr1vxcrl6pu0n696xlvg8zjz6p6mndsgaj0jx0ww67ty39s5fctsax9z+1 --tx-out addr1v9p8ltqcm620rmjq732p3plgq4k2xq7aynm335mttktnx0srqnj9k+1 --tx-out addr1v8cc73arwemcvm5lgrrd5a0ejf3h9cmhtjtjn0jvhgyw3rq0ftfv4+1 --tx-out addr1v9cljuuylatefcqe9fa5dlvs89y9jyefdlkhsyazhl8gwpcal9een+1 --tx-out addr1v8jvdy477zcml4mupxx8gmg9qrec8ldk0fd9g6yujgnvvwquk9l33+1 --tx-out addr1vy9c2nes9m46z2a095l5ulwgyywzas6gw89r96hy6ej2jgsq3fjd2+1 --tx-out addr1v87s6g7e2u7rx9svgrvxdp7mp38anfe5fcxrgh4l89f4v2sqwuaq2+1 --tx-out addr1vxjwyerz8epqleegm7dezczlmv0cv4hc5rpdx36hkdyn6tssmnryj+1 --tx-out addr1v96pqsq5q0lk8y5ac9m9a6cfuyln2np6zpyvr7evgkn96xssj34pq+1 --tx-out addr1v99hve9h9e5rnh4ledncnherls3xjnw782qzsw53xc3jttgv7pzm3+1 --tx-out addr1vx4mmdz9356xs75eg0evdfeqfa3a2zd5vc907sk59w5fmcqk8t0ld+1 --tx-out addr1v935paz6psgcr5n6ped7nd4tllvwm8cv2j0sjz3kd479ezsz36nl4+1 --tx-out addr1v8lumca4y9j3u6xwd7s9g8c89hyzmpf0x6zgucugzvemsqg9k9swn+1 --tx-out addr1vxwcfxkqyq67asull3tdj94as7tyj66ql8qcnvk05ar5s0q5ssmlq+1 --tx-out addr1v94yedlldy0dw8lzpl0ma3uquv3hqs3lag043a5w9l927ug4ranqz+1 --tx-out addr1v8zhgjtd7ax8mqy6szlwatftvmyqpus2x2splfxz3ydkctgz4eqha+1 --tx-out addr1v9mgnwkazslkua4uzlx8tg9ghn8ukt2kgt3uk7hrtt9l5rct4ktnp+1 --tx-out addr1vyr582mcezelcrn2cc4dxm3getzmkrcgxus7rnhtd0np9ncwt9nky+1
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet57.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 61c336d09d540879bd2447f6d98fc570ab854c15ba46902b0620054f34d9bf25#0 --ttl 600 --fee 999999999999980 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v87tr2r27fxpvfkc4l3ktj0andfrkum4w72r5dt8950antqqqlym0+1 --tx-out addr1vxehz6d2qpeaska4htc84eps65zxffvrehfe42zr9trnmpgcz34t3+1 --tx-out addr1v9a4enhljd5rfk6vmacpyx73l5ae9us6ylz9sheejft6argw6xw5w+1 --tx-out addr1vyk7ed0d4z5tpvcsccgdvrj4nm3x624asrqd9smzxeu30tqvl5mys+1 --tx-out addr1vyssrf2gy8v6ja5seq6yh0r994gfngdl04acxa9gn6pcwkstdj427+1 --tx-out addr1v9xhseesgugyg8jw9zty9tmsau756kdlfl5c762z0jyagdc02pa3p+1 --tx-out addr1v8mym7syjaswzyewx2pd0qweyxkay7exlmqnemprlpcgl5sr7rlq6+1 --tx-out addr1vyjmgu4tyygtenntzfz7uc99pqs23glr6a30wdw9mu7vmscjamju2+1 --tx-out addr1v8hhcrzqmcgprx9etm2rc595x7j6emnkh8d2347c2vgd4dqh8yp54+1 --tx-out addr1vxutz3kdgdv846ms7xhxxkvy2rjx769pj8qxr4cayuhlr9gda5z38+1 --tx-out addr1v8t58w979us95c8q9uellckerq07k3rq7q8j6mha9wl4usqwpfyyy+1 --tx-out addr1v9yk79q6zfzfqjjy960ankkej7vtvq72z0qpv7kcszccwecd6adlc+1 --tx-out addr1v9nj7v6ns4gndenhpanq7ksg6kx2ld9zu42c90jk73ajtrq6kvw04+1 --tx-out addr1vyl8wyydxvt2cn450h6d2de7ge5nuqpa43vmregrynyj56glu5xvh+1 --tx-out addr1v838en57t2mkkvwggld7su2aqu7gv0jwsgcpjh77udtmweqf2stj5+1 --tx-out addr1v950y70t9wqqk0tcrasesg8th80u7c5x8uzslf2sud9aa4qhcdpvl+1 --tx-out addr1vy2ukqsrud9mtqkh50jmslgpsf5662qpyslzw7pn4uz0jcc2z3ave+1 --tx-out addr1vxwe30ghrjem7xd05s5k3rjyc53vzs3dsw5jws784pky5wsrmyxhw+1 --tx-out addr1v8fak9rpuc8vmnf04sw4hwq9n6v5f8jt7p2anu3ntqqfuagt5y6re+1 --tx-out addr1v9dzcmz88pwpm2ksjwufl923v5d9gcpz2wd39rgr5quhv9qn9e880+1
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet58.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 96c660157ddca4e91b32f1099da55d38a0ba4c2a9ab0a85a960a2c5f110ef9d2#0 --ttl 600 --fee 999999999999980 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9m7qqkehg8y08wkw0p8qrnkrsqdj4tew78r7vqt0e4rfyg6e628h+1 --tx-out addr1vxk7zajwxrj7d63d857leyr5xjns5eqwu90t7av9s3qansgy3n03h+1 --tx-out addr1vxzfrx9fqmr9rksy3d3p5dt4s7kuzvxecptp4g6k6jyjf0c4wqrqv+1 --tx-out addr1v9fgg22y8zg9ew0sr8zecem3awlp8y2nkz06pj9rp0jze2g8yaz8s+1 --tx-out addr1vxqxrkn4m9gkkw9zjxv0ucclakl9yk0mf58szfnexv6gp4cqd8lmc+1 --tx-out addr1vxyh67eruv8lk7j5cd4uxxlwzhh5s37agmq82g8yly8d6ysgvf36v+1 --tx-out addr1v8fh0twhfl8asg2umdrghc0atawtlsvgtn4w2em5cdka5nq9htxna+1 --tx-out addr1v9jxt6pyruyjp09hcgmfz842cewgd76rft7kc2th7xaq74qfcrflh+1 --tx-out addr1vynncsy67q5gzuextklwhgg7fqesm28lk7k3tryy4j9cmfsepfas7+1 --tx-out addr1vxwghnp98zdnqwxhsjccm4w7kcz5u5cazhe6f3dyes4g7pgf6f5lp+1 --tx-out addr1v8kjvptz7htc03uck4a6s78cvuetqgwhqyt5kf7mtleta8ce94xxu+1 --tx-out addr1vxy82rpx84s58vy74y34gy88lw0x0hvttuap6599nujp3cgdqvwsh+1 --tx-out addr1v8twacd3svulf74kxg4us59yrvp3lt4ajvl90w3u8vdjx2cajgkgy+1 --tx-out addr1vxwz08f2nd28eagctmpfxzcv8xn5lg8d4wjpx20ypfn93zcs8uucg+1 --tx-out addr1vx9n2zkkgc6gqy2j3kkyfxjf27mtm98lx0vnwhj5jz5uasq9yl5hk+1 --tx-out addr1v9zsagjclpwam9p6humeg87x7r8r268kf5k8h5kun0sh3rgs7536w+1 --tx-out addr1vyjqralj63q5xyw03sxxeyc8svfk3ymrw2gwj79p0p00lxcapajam+1 --tx-out addr1vx7r3cy4uanwjgqjyttnymqkqsrt448ezylrkkdvqrjzxzssn75lu+1 --tx-out addr1vydvk9kl2tqf5wkxajalkgf8kemjak3glhrm4d5l99jwhysfqx5ts+1 --tx-out addr1vy7qf5ctc8ydaz0d0g8dwy05eq8d4mtenlz377mzpec45sgk3f5q0+1
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet59.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 721d9c43a1a77f5822e3c3ef1ce36c541a2dc07841f8103930fb95803f5163a6#0 --ttl 600 --fee 999999999999980 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9c36pmak8t8a8ra8jz347rmv3vxxq4mvc3ccmn9aez9glgq5mwq6+1 --tx-out addr1vy3f4vhj8xt9x8t93np94uak2kptltuw2spr0a7jy0jnftgzskwy5+1 --tx-out addr1v8y20cs4h8n4jcf6fgpkf9yea35r8sawazk7r7rktf9w2hssz5yu7+1 --tx-out addr1v94ywg549gh0zs4g9fmty4tgm0cq5a95lsm29lccpezks3qf9w3hg+1 --tx-out addr1v876apusu8nfs6d6apgmj6vp5lcjjxmlvlc2sj9y98wtv5c7qc2yq+1 --tx-out addr1vxyht88xde2nj25wfm63a0c24tvs2xulzpcvvhm4z4sjxsc0rfvah+1 --tx-out addr1v95k6agq60kjdpf9uh68nz32wayqdf7m9zgqzeqc64mdefstkmfj8+1 --tx-out addr1vyshpxd63rwpg7l9qt3atsfnf2mgw749zuz9sk5ytk5jtxctw66gt+1 --tx-out addr1vy2qapgq2m8f6rawzlh9f9e4haz0h6rxsk4rul6xec29rsc96c9nt+1 --tx-out addr1v946mhp66he3x8vwltpakf9m3k4nrs85k6gpxg8pprhmhyq5n8erd+1 --tx-out addr1vyzngcwg46eemhu9uduvu7nwmjhzc5grnzl9dtftmhjf9fc8vqq7a+1 --tx-out addr1v8qfgyumu7n0tsje3m9aednwgm9vut79h8l02dr99rtjvssps5qr5+1 --tx-out addr1vyhcdseax6mjcrxz2c64p2czmgqtpvzptgtjhdlykm0ppmg8emn7s+1 --tx-out addr1v8qafj5c5yms4wcquvq6mznnhv9qdtpemr5y0dw9m885rqs2cjg7e+1 --tx-out addr1v92gawsmqg5qguugclyearf2qrv6m9sjhsy20qdxp7a76dsg6yn5f+1 --tx-out addr1vxwpcgf27r7nnwf983zzc8zgh0mgh3jgdhugps7cvuy0mcgyzs9sa+1 --tx-out addr1vxe02c3trl78295wmdymgc02ep4l299t80msq4zk70dxtuckl9k29+1 --tx-out addr1v8kt5a9fu6emsqwn9pmkzxwf5cws8nnyk72nsseqldt7r2cc40gw2+1 --tx-out addr1vxzh0n0kleyazj8uvla92vvxhydwrpmfnsnuq5paa45lk9smr9pxc+1 --tx-out addr1v9rw4mn2hlgcvhw96p25r98vgppk2xpyq78f3mrkufwhxncw6a0qs+1
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet60.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in fe13857230b6db7f4d30acb043c6cd0c36595657ef79212f6b4e0cc5d5af1c8b#0 --ttl 600 --fee 998999999999990 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1vy02rescazffxy9447eh3pcgvy22kywdwatmp4ehu2cy5dgtwd2fr+1 --tx-out addr1v9csrpk0l9rh5y3xx0qwjpq97ag00cp3qunlgdwmzwfd0nqrqtqny+1 --tx-out addr1vxed6d24ug6h5xsvr5prnzsyur5ux38l2cw6rva84a4e9ccm42vm2+1 --tx-out addr1vyqysc73p93ecrnea6jx98u09ueuq39kk52z0f57vzl5vjqqzdw3p+1 --tx-out addr1v89tyleg3qxqg00u9qsvmykyy3dfutcl2qsu5wnsm2fj33q5rdr5m+1 --tx-out addr1vxq95kjh5yf6t4uy9ytlu5mzp6kgxa3wvszv5fzx99k92hc0d248y+1 --tx-out addr1v8mpmyf5fj2hgvfapgwc3g2tvw4revnpn4xy6ezrprsjencrsaudf+1 --tx-out addr1v8qmyqyacms90zr5npww4zl3gh5sxe4afmzdzr6temtcw4surwdhx+1 --tx-out addr1vy074kt6eytqra6gh58ju70u76n5gujm09q6ej3hqpcw5gc9vhktm+1 --tx-out addr1vy3qlm7k4chn3p9zh37u0mpny420n5r7854yujc30lsyf7gk2ppyf+1 --tx-out addr1vxv60se24f26v2xex66nnuqa2s2nrr0v3094uk0vwxhkjkc3mwljs+100000000000 --tx-out addr1vyuxc75xmzzy7sy955pyz4tqg0ycgttjcv2u39ay929q2yq8h7umy+100000000000 --tx-out addr1vx7hsxtpw3vae52avvwy24j4xj7kpcvpxqzs4m24h0r8ngc9e6rd6+100000000000 --tx-out addr1v9qw9xflglesswd8prfagn3e3rauu7hyn7cnd6fw7y2ht3gdah3qf+100000000000 --tx-out addr1vxu5sa6effs76vgayk9n5wfdaprmwt96g6wrfxaz7nhynncl3a9j2+100000000000 --tx-out addr1vym7k0fkzfr6q6ykvd7wfdn35aqyx6mnewsh0ws2zdh7l5spt00my+100000000000 --tx-out addr1v99wq77g6t2jvmy420r22hqd028s7079p8ssgz45ehxnexqjg5qwx+100000000000 --tx-out addr1vy7ptj37j2j09agtqa822fdqpf82e5ws2xtzd0xn8xeygpqu6pvqu+100000000000 --tx-out addr1vxztq9lhj9k7v7r3ye930uvpwarc8cps53qjcq0q35t4glcx9a3m7+100000000000 --tx-out addr1vy97tuy34tz42jg60dyft9qp89msyn9vsdd730nmemk5s4qzu5tjf+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet61.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
+cardano-cli shelley transaction build-raw --tx-in 811536874fd5ef89b5d0c3052b229587a130af8ec5b2b41c303722e4c14a3c82#0 --ttl 600 --fee 998600000000000 --out-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --tx-out addr1v9qhhts5p86qj9ursda7y22rv5m0mcjsuqdct7gulnfkhps9ysqeg+100000000000 --tx-out addr1vy835wr2cgu7ypff304hana5j9c8nuald28ktldn53wzedsxxzwkv+100000000000 --tx-out addr1vx8uckm9s4ty0ste2mk6tj77h0pcrfystmrmthns5nls8rqallrvy+100000000000 --tx-out addr1v8jdrahgwxyc26ptdtfgm2qrrpath6p5wdhcrqtcj94vkts72czsg+100000000000 --tx-out addr1vyx0myhmrd7dj3l6zkyhmag7shmdd48yhylm34u2lud3pdcehesq2+100000000000 --tx-out addr1vy6sqevluqp7lftl88hup6h4pu3ggeexnwrmqkfvewtvuvsn9ftn5+100000000000 --tx-out addr1vxtk0aguznvjqqatj9cfdx0xhmtp52hqxky87yusjsn34cc7kh3k6+100000000000 --tx-out addr1vx48m9dn30hgm840g9s30yyjlv5dsqfh429xn89sskunr4q46q3yd+100000000000 --tx-out addr1v8ecg4npdm76m8gdmnvnze4hukmgn7yy4au5ta7447kh4vq2pkt30+100000000000 --tx-out addr1vx9j2tk307qzkkzk68x6h57r26fj802g9gja268r8z5umpgnql9fw+100000000000 --tx-out addr1v9u6pzee8v733z6cptppjq6wyprztqpp58kzfaz8qypphdsummuyt+100000000000 --tx-out addr1v9fwez477qgc9wm72c78e46q0nvfujcefqklsea4kdn784stk7ufq+100000000000 --tx-out addr1v957kxplc6pq8j7xajm2kcydn3cj8zf3a7u55swysah8ldq6narjd+100000000000 --tx-out addr1v98d5fszt89zk9fw4jjnuptk67n8z0707v8gqr03c88y8uc7plull+100000000000
+cardano-cli shelley transaction sign --tx-body-file /tmp/latency-2640e0e25453d0a5/faucet-tx.raw --mainnet --out-file /tmp/latency-2640e0e25453d0a5/tx.signed --signing-key-file test/data/cardano-node-shelley/faucet-addrs/faucet62.shelley.key
+Submitting transaction for faucet tx
+Successfully finished Submitting transaction for faucet tx
     Non-cached run
-        getNetworkInfo      - 1.4 ms
+        getNetworkInfo      - 28.2 ms
     Latencies for 2 fixture wallets scenario
-        listWallets         - 1.4 ms
-        getWallet           - 0.7 ms
-        getUTxOsStatistics  - 0.7 ms
-        listAddresses       - 1.1 ms
-        listTransactions    - 1.2 ms
-        postTransactionFee  - 0.8 ms
-        getNetworkInfo      - 0.0 ms
-    Latencies for 10 fixture wallets scenario
-        listWallets         - 7.2 ms
-        getWallet           - 0.6 ms
-        getUTxOsStatistics  - 0.7 ms
-        listAddresses       - 1.0 ms
-        listTransactions    - 1.0 ms
-        postTransactionFee  - 0.8 ms
-        getNetworkInfo      - 0.0 ms
-    Latencies for 100 fixture wallets scenario
-        listWallets         - 106.6 ms
-        getWallet           - 0.7 ms
-        getUTxOsStatistics  - 0.7 ms
-        listAddresses       - 1.1 ms
-        listTransactions    - 1.2 ms
-        postTransactionFee  - 0.8 ms
-        getNetworkInfo      - 0.0 ms
-    Latencies for 2 fixture wallets with 10 txs scenario
-        listWallets         - 1.7 ms
-        getWallet           - 0.8 ms
-        getUTxOsStatistics  - 0.9 ms
-        listAddresses       - 1.9 ms
-        listTransactions    - 2.6 ms
-        postTransactionFee  - 1.0 ms
-        getNetworkInfo      - 0.0 ms
-    Latencies for 2 fixture wallets with 20 txs scenario
-        listWallets         - 1.7 ms
-        getWallet           - 0.9 ms
-        getUTxOsStatistics  - 0.9 ms
-        listAddresses       - 2.3 ms
-        listTransactions    - 3.1 ms
-        postTransactionFee  - 1.1 ms
-        getNetworkInfo      - 0.0 ms
-    Latencies for 2 fixture wallets with 100 txs scenario
-        listWallets         - 2.3 ms
-        getWallet           - 1.5 ms
-        getUTxOsStatistics  - 1.6 ms
-        listAddresses       - 7.6 ms
-        listTransactions    - 12.2 ms
-        postTransactionFee  - 1.9 ms
-        getNetworkInfo      - 0.1 ms
-    Latencies for 10 fixture wallets with 10 txs scenario
-        listWallets         - 6.7 ms
-        getWallet           - 0.8 ms
-        getUTxOsStatistics  - 0.8 ms
-        listAddresses       - 1.7 ms
-        listTransactions    - 2.5 ms
-        postTransactionFee  - 0.9 ms
-        getNetworkInfo      - 0.0 ms
-    Latencies for 10 fixture wallets with 20 txs scenario
-        listWallets         - 7.1 ms
-        getWallet           - 0.9 ms
-        getUTxOsStatistics  - 0.9 ms
-        listAddresses       - 2.5 ms
-        listTransactions    - 3.7 ms
-        postTransactionFee  - 1.1 ms
-        getNetworkInfo      - 0.0 ms
-    Latencies for 10 fixture wallets with 100 txs scenario
-        listWallets         - 8.5 ms
-        getWallet           - 1.9 ms
-        getUTxOsStatistics  - 1.7 ms
-        listAddresses       - 7.9 ms
-        listTransactions    - 13.1 ms
-        postTransactionFee  - 2.2 ms
-        getNetworkInfo      - 0.1 ms
-    Latencies for 2 fixture wallets with 100 utxos scenario
-        listWallets         - 2.9 ms
-        getWallet           - 1.5 ms
-        getUTxOsStatistics  - 1.4 ms
-        listAddresses       - 4.9 ms
-        listTransactions    - 10.4 ms
-        postTransactionFee  - 5.7 ms
-        getNetworkInfo      - 0.0 ms
-    Latencies for 2 fixture wallets with 200 utxos scenario
-        listWallets         - 3.8 ms
-        getWallet           - 2.3 ms
-        getUTxOsStatistics  - 2.2 ms
-        listAddresses       - 9.1 ms
-        listTransactions    - 19.6 ms
-        postTransactionFee  - 13.0 ms
-        getNetworkInfo      - 0.0 ms
-    Latencies for 2 fixture wallets with 500 utxos scenario
-        listWallets         - 7.5 ms
-        getWallet           - 6.3 ms
-        getUTxOsStatistics  - 5.3 ms
-        listAddresses       - 22.1 ms
-        listTransactions    - 55.0 ms
-        postTransactionFee  - 61.2 ms
-        getNetworkInfo      - 0.1 ms
-    Latencies for 2 fixture wallets with 1000 utxos scenario
-        listWallets         - 11.8 ms
-        getWallet           - 8.9 ms
-        getUTxOsStatistics  - 9.3 ms
-        listAddresses       - 45.3 ms
-        listTransactions    - 120.7 ms
-        postTransactionFee  - 226.5 ms
-        getNetworkInfo      - 0.1 ms
-
-
-Icarus wallets
-    Non-cached run
-        getNetworkInfo      - 1.3 ms
-    Latencies for 2 fixture wallets scenario
-        listWallets         - 2.3 ms
-        getWallet           - 1.3 ms
-        getUTxOsStatistics  - 1.2 ms
-        listAddresses       - 16.0 ms
-        listTransactions    - 1.6 ms
-        postTransactionFee  - 1.6 ms
-        getNetworkInfo      - 0.0 ms
-    Latencies for 10 fixture wallets scenario
-        listWallets         - 12.1 ms
-        getWallet           - 1.6 ms
-        getUTxOsStatistics  - 1.6 ms
-        listAddresses       - 16.0 ms
-        listTransactions    - 2.0 ms
-        postTransactionFee  - 1.6 ms
-        getNetworkInfo      - 0.0 ms
-    Latencies for 100 fixture wallets scenario
-        listWallets         - 216.2 ms
-        getWallet           - 6.5 ms
-        getUTxOsStatistics  - 7.0 ms
-        listAddresses       - 22.7 ms
-        listTransactions    - 6.8 ms
-        postTransactionFee  - 10.4 ms
-        getNetworkInfo      - 0.1 ms
-    Latencies for 2 fixture wallets with 10 txs scenario
-        listWallets         - 2.6 ms
-        getWallet           - 1.4 ms
-        getUTxOsStatistics  - 1.4 ms
-        listAddresses       - 14.0 ms
-        listTransactions    - 2.8 ms
-        postTransactionFee  - 1.5 ms
-        getNetworkInfo      - 0.0 ms
-    Latencies for 2 fixture wallets with 20 txs scenario
-        listWallets         - 2.7 ms
-        getWallet           - 1.6 ms
-        getUTxOsStatistics  - 1.7 ms
-        listAddresses       - 19.5 ms
-        listTransactions    - 3.7 ms
-        postTransactionFee  - 1.7 ms
-        getNetworkInfo      - 0.0 ms
-    Latencies for 2 fixture wallets with 100 txs scenario
-        listWallets         - 3.5 ms
-        getWallet           - 2.3 ms
-        getUTxOsStatistics  - 2.5 ms
-        listAddresses       - 19.3 ms
-        listTransactions    - 12.7 ms
-        postTransactionFee  - 2.9 ms
-        getNetworkInfo      - 0.0 ms
-    Latencies for 10 fixture wallets with 10 txs scenario
-        listWallets         - 12.5 ms
-        getWallet           - 1.8 ms
-        getUTxOsStatistics  - 1.8 ms
-        listAddresses       - 14.4 ms
-        listTransactions    - 3.1 ms
-        postTransactionFee  - 1.9 ms
-        getNetworkInfo      - 0.1 ms
-    Latencies for 10 fixture wallets with 20 txs scenario
-        listWallets         - 13.7 ms
-        getWallet           - 2.2 ms
-        getUTxOsStatistics  - 2.2 ms
-        listAddresses       - 15.3 ms
-        listTransactions    - 4.5 ms
-        postTransactionFee  - 2.4 ms
-        getNetworkInfo      - 0.1 ms
-    Latencies for 10 fixture wallets with 100 txs scenario
-        listWallets         - 15.0 ms
-        getWallet           - 3.1 ms
-        getUTxOsStatistics  - 3.0 ms
-        listAddresses       - 20.2 ms
-        listTransactions    - 13.5 ms
-        postTransactionFee  - 8.0 ms
-        getNetworkInfo      - 0.1 ms
-    Latencies for 2 fixture wallets with 100 utxos scenario
-        listWallets         - 4.9 ms
-        getWallet           - 2.4 ms
+        listWallets         - 11.5 ms
+        getWallet           - 5.7 ms
         getUTxOsStatistics  - 2.3 ms
-        listAddresses       - 7.4 ms
-        listTransactions    - 8.5 ms
-        postTransactionFee  - 7.6 ms
+        listAddresses       - 6.3 ms
+        listTransactions    - 1.1 ms
+        postTransactionFee  - 118.1 ms
+        listStakePools      - 1.5 ms
+        getNetworkInfo      - 0.1 ms
+    Latencies for 10 fixture wallets scenario
+        listWallets         - 69.8 ms
+        getWallet           - 5.8 ms
+        getUTxOsStatistics  - 2.3 ms
+        listAddresses       - 6.3 ms
+        listTransactions    - 1.2 ms
+        postTransactionFee  - 121.3 ms
+        listStakePools      - 1.5 ms
+        getNetworkInfo      - 0.1 ms
+    Latencies for 2 fixture wallets with 10 txs scenario
+        listWallets         - 80.6 ms
+        getWallet           - 6.7 ms
+        getUTxOsStatistics  - 2.4 ms
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:06:52.30 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed \"<socket: 46> closed when reading data, waiting on next header True\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+        listAddresses       - 6.5 ms
+        listTransactions    - 3.0 ms
+        postTransactionFee  - 150.5 ms
+        listStakePools      - 1.4 ms
+        getNetworkInfo      - 0.1 ms
+    Latencies for 2 fixture wallets with 20 txs scenario
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:07:00.05 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed \"<socket: 48> closed when reading data, waiting on next header True\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+        listWallets         - 93.3 ms
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:07:03.37 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed \"<socket: 49> closed when reading data, waiting on next header True\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+        getWallet           - 6.9 ms
+        getUTxOsStatistics  - 2.6 ms
+        listAddresses       - 6.6 ms
+        listTransactions    - 4.7 ms
+        postTransactionFee  - 158.6 ms
+        listStakePools      - 1.7 ms
+        getNetworkInfo      - 0.1 ms
+    Latencies for 2 fixture wallets with 100 txs scenario
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:07:09.69 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed \"<socket: 50> closed when reading data, waiting on next header True\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:07:13.00 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed \"<socket: 51> closed when reading data, waiting on next header True\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:07:16.08 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed \"<socket: 50> closed when reading data, waiting on next header True\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:07:19.40 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed \"<socket: 51> closed when reading data, waiting on next header True\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:07:22.48 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed \"<socket: 50> closed when reading data, waiting on next header True\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:07:25.81 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed \"<socket: 51> closed when reading data, waiting on next header True\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:07:28.89 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed \"<socket: 50> closed when reading data, waiting on next header True\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:07:32.20 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed \"<socket: 51> closed when reading data, waiting on next header True\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:07:35.28 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed \"<socket: 50> closed when reading data, waiting on next header True\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:07:38.62 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed \"<socket: 51> closed when reading data, waiting on next header True\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+        listWallets         - 109.7 ms
+        getWallet           - 30.0 ms
+        getUTxOsStatistics  - 3.7 ms
+        listAddresses       - 8.6 ms
+        listTransactions    - 20.1 ms
+        postTransactionFee  - 188.8 ms
+        listStakePools      - 2.0 ms
+        getNetworkInfo      - 0.1 ms
+    Latencies for 10 fixture wallets with 10 txs scenario
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:08:01.01 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed \"<socket: 60> closed when reading data, waiting on next header True\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+        listWallets         - 202.4 ms
+        getWallet           - 6.1 ms
+        getUTxOsStatistics  - 2.7 ms
+        listAddresses       - 6.6 ms
+        listTransactions    - 3.1 ms
+        postTransactionFee  - 176.8 ms
+        listStakePools      - 2.0 ms
+        getNetworkInfo      - 0.1 ms
+    Latencies for 10 fixture wallets with 20 txs scenario
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:08:20.38 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed \"<socket: 70> closed when reading data, waiting on next header True\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:08:25.17 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed \"<socket: 71> closed when reading data, waiting on next header True\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+        listWallets         - 293.2 ms
+        getWallet           - 6.2 ms
+        getUTxOsStatistics  - 2.7 ms
+        listAddresses       - 6.8 ms
+        listTransactions    - 5.1 ms
+        postTransactionFee  - 203.1 ms
+        listStakePools      - 2.4 ms
+        getNetworkInfo      - 0.1 ms
+    Latencies for 10 fixture wallets with 100 txs scenario
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:08:44.41 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError (MuxIOException writev: resource vanished (Broken pipe)) \"(sendAll errored)\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:08:49.21 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError (MuxIOException writev: resource vanished (Broken pipe)) \"(sendAll errored)\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:08:54.00 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError (MuxIOException writev: resource vanished (Broken pipe)) \"(sendAll errored)\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:08:58.81 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError (MuxIOException writev: resource vanished (Broken pipe)) \"(sendAll errored)\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:09:03.61 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError (MuxIOException writev: resource vanished (Broken pipe)) \"(sendAll errored)\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:09:08.41 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError (MuxIOException writev: resource vanished (Broken pipe)) \"(sendAll errored)\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:09:13.20 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError (MuxIOException writev: resource vanished (Broken pipe)) \"(sendAll errored)\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:09:18.01 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError (MuxIOException writev: resource vanished (Broken pipe)) \"(sendAll errored)\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:09:22.81 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError (MuxIOException writev: resource vanished (Broken pipe)) \"(sendAll errored)\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:09:27.61 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError (MuxIOException writev: resource vanished (Broken pipe)) \"(sendAll errored)\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+        listWallets         - 452.0 ms
+        getWallet           - 8.6 ms
+        getUTxOsStatistics  - 3.8 ms
+        listAddresses       - 7.8 ms
+        listTransactions    - 21.0 ms
+        postTransactionFee  - 319.6 ms
+        listStakePools      - 2.8 ms
+        getNetworkInfo      - 0.1 ms
+    Latencies for 2 fixture wallets with 100 utxos scenario
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:10:10.80 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError (MuxIOException writev: resource vanished (Broken pipe)) \"(sendAll errored)\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+        listWallets         - 471.0 ms
+        getWallet           - 7.2 ms
+        getUTxOsStatistics  - 3.7 ms
+        listAddresses       - 7.8 ms
+        listTransactions    - 21.2 ms
+        postTransactionFee  - 1390.0 ms
+        listStakePools      - 3.1 ms
         getNetworkInfo      - 0.1 ms
     Latencies for 2 fixture wallets with 200 utxos scenario
-        listWallets         - 5.4 ms
-        getWallet           - 3.1 ms
-        getUTxOsStatistics  - 2.9 ms
-        listAddresses       - 11.1 ms
-        listTransactions    - 15.6 ms
-        postTransactionFee  - 14.6 ms
-        getNetworkInfo      - 0.0 ms
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:11:37.20 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError (MuxIOException writev: resource vanished (Broken pipe)) \"(sendAll errored)\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+        listWallets         - 604.0 ms
+        getWallet           - 8.5 ms
+        getUTxOsStatistics  - 5.1 ms
+        listAddresses       - 10.4 ms
+        listTransactions    - 101.9 ms
+        postTransactionFee  - 3718.5 ms
+        listStakePools      - 3.8 ms
+        getNetworkInfo      - 0.1 ms
     Latencies for 2 fixture wallets with 500 utxos scenario
-        listWallets         - 8.5 ms
-        getWallet           - 6.2 ms
-        getUTxOsStatistics  - 5.7 ms
-        listAddresses       - 20.4 ms
-        listTransactions    - 39.4 ms
-        postTransactionFee  - 71.8 ms
+[31m[node:cardano.node.LocalErrorPolicy:Error:42][0m [2020-08-29 11:15:06.80 UTC] [String "ErrorPolicyUnhandledApplicationException (MuxError (MuxIOException writev: resource vanished (Broken pipe)) \"(sendAll errored)\")",String "ErrorPolicyTrace",String "LocalAddress {getFilePath = \"\"}"]
+        listWallets         - 486.6 ms
+        getWallet           - 28.9 ms
+        getUTxOsStatistics  - 9.3 ms
+        listAddresses       - 13.1 ms
+        listTransactions    - 173.3 ms
+        postTransactionFee  - 19237.3 ms
+        listStakePools      - 6.4 ms
         getNetworkInfo      - 0.1 ms
     Latencies for 2 fixture wallets with 1000 utxos scenario
-        listWallets         - 14.0 ms
-        getWallet           - 14.7 ms
-        getUTxOsStatistics  - 9.8 ms
-        listAddresses       - 38.1 ms
-        listTransactions    - 83.5 ms
-        postTransactionFee  - 242.7 ms
-        getNetworkInfo      - 0.0 ms
+    CURRENTLY DISABLED. SEE #2006 & #2051
 +++ Run benchmark - jormungandr
 Non-cached run
-   getNetworkInfo      - 1.1 ms
+        getNetworkInfo      - 10.4 ms
 Latencies for 2 fixture wallets scenario
-   listWallets         - 13.4 ms
-   getWallet           - 6.3 ms
-   getUTxOsStatistics  - 1.1 ms
-   listAddresses       - 4.4 ms
-   listTransactions    - 1.7 ms
-   postTransactionFee  - 1.6 ms
-   listStakePools      - 0.3 ms
-   getNetworkInfo      - 0.2 ms
+        listWallets         - 11.8 ms
+        getWallet           - 5.7 ms
+        getUTxOsStatistics  - 2.5 ms
+        listAddresses       - 7.0 ms
+        listTransactions    - 1.4 ms
+        postTransactionFee  - 7.9 ms
+        listStakePools      - 301.0 ms
+        getNetworkInfo      - 0.4 ms
 Latencies for 10 fixture wallets scenario
-   listWallets         - 66.2 ms
-   getWallet           - 6.6 ms
-   getUTxOsStatistics  - 1.2 ms
-   listAddresses       - 4.3 ms
-   listTransactions    - 1.6 ms
-   postTransactionFee  - 1.7 ms
-   listStakePools      - 408.6 ms
-   getNetworkInfo      - 0.9 ms
+        listWallets         - 60.4 ms
+        getWallet           - 5.8 ms
+        getUTxOsStatistics  - 2.4 ms
+        listAddresses       - 6.6 ms
+        listTransactions    - 1.4 ms
+        postTransactionFee  - 8.7 ms
+        listStakePools      - 269.8 ms
+        getNetworkInfo      - 0.4 ms
 Latencies for 100 fixture wallets scenario
-   listWallets         - 972.3 ms
-   getWallet           - 6.6 ms
-   getUTxOsStatistics  - 1.3 ms
-   listAddresses       - 4.2 ms
-   listTransactions    - 1.9 ms
-   postTransactionFee  - 2.2 ms
-   listStakePools      - 460.3 ms
-   getNetworkInfo      - 2.2 ms
+        listWallets         - 1443.5 ms
+        getWallet           - 5.9 ms
+        getUTxOsStatistics  - 2.4 ms
+        listAddresses       - 6.5 ms
+        listTransactions    - 1.7 ms
+        postTransactionFee  - 12.4 ms
+        listStakePools      - 654.7 ms
+        getNetworkInfo      - 130.2 ms
 Latencies for 2 fixture wallets with 10 txs scenario
-   listWallets         - 14.1 ms
-   getWallet           - 7.0 ms
-   getUTxOsStatistics  - 1.4 ms
-   listAddresses       - 4.7 ms
-   listTransactions    - 2.8 ms
-   postTransactionFee  - 1.5 ms
-   listStakePools      - 196.3 ms
-   getNetworkInfo      - 0.4 ms
+        listWallets         - 11.6 ms
+        getWallet           - 6.1 ms
+        getUTxOsStatistics  - 2.7 ms
+        listAddresses       - 6.6 ms
+        listTransactions    - 3.4 ms
+        postTransactionFee  - 12.7 ms
+        listStakePools      - 245.1 ms
+        getNetworkInfo      - 0.5 ms
 Latencies for 2 fixture wallets with 20 txs scenario
-   listWallets         - 14.4 ms
-   getWallet           - 6.9 ms
-   getUTxOsStatistics  - 1.4 ms
-   listAddresses       - 5.0 ms
-   listTransactions    - 4.9 ms
-   postTransactionFee  - 1.6 ms
-   listStakePools      - 171.4 ms
-   getNetworkInfo      - 0.4 ms
+        listWallets         - 12.0 ms
+        getWallet           - 6.2 ms
+        getUTxOsStatistics  - 2.8 ms
+        listAddresses       - 6.9 ms
+        listTransactions    - 5.5 ms
+        postTransactionFee  - 20.8 ms
+        listStakePools      - 243.6 ms
+        getNetworkInfo      - 0.4 ms
 Latencies for 2 fixture wallets with 100 txs scenario
-   listWallets         - 14.7 ms
-   getWallet           - 8.3 ms
-   getUTxOsStatistics  - 2.1 ms
-   listAddresses       - 8.7 ms
-   listTransactions    - 13.0 ms
-   postTransactionFee  - 2.3 ms
-   listStakePools      - 302.6 ms
-   getNetworkInfo      - 0.4 ms
+        listWallets         - 13.1 ms
+        getWallet           - 8.1 ms
+        getUTxOsStatistics  - 4.4 ms
+        listAddresses       - 7.9 ms
+        listTransactions    - 21.3 ms
+        postTransactionFee  - 53.1 ms
+        listStakePools      - 346.9 ms
+        getNetworkInfo      - 0.5 ms
 Latencies for 10 fixture wallets with 10 txs scenario
-   listWallets         - 70.4 ms
-   getWallet           - 6.8 ms
-   getUTxOsStatistics  - 1.4 ms
-   listAddresses       - 4.7 ms
-   listTransactions    - 2.8 ms
-   postTransactionFee  - 1.5 ms
-   listStakePools      - 196.8 ms
-   getNetworkInfo      - 0.5 ms
+        listWallets         - 57.2 ms
+        getWallet           - 6.1 ms
+        getUTxOsStatistics  - 2.6 ms
+        listAddresses       - 6.8 ms
+        listTransactions    - 3.3 ms
+        postTransactionFee  - 16.0 ms
+        listStakePools      - 263.2 ms
+        getNetworkInfo      - 4.0 ms
 Latencies for 10 fixture wallets with 20 txs scenario
-   listWallets         - 65.2 ms
-   getWallet           - 6.9 ms
-   getUTxOsStatistics  - 1.4 ms
-   listAddresses       - 5.1 ms
-   listTransactions    - 3.8 ms
-   postTransactionFee  - 1.5 ms
-   listStakePools      - 268.1 ms
-   getNetworkInfo      - 0.4 ms
+        listWallets         - 58.2 ms
+        getWallet           - 6.3 ms
+        getUTxOsStatistics  - 2.8 ms
+        listAddresses       - 7.0 ms
+        listTransactions    - 5.3 ms
+        postTransactionFee  - 21.6 ms
+        listStakePools      - 220.7 ms
+        getNetworkInfo      - 0.5 ms
 Latencies for 10 fixture wallets with 100 txs scenario
-   listWallets         - 68.9 ms
-   getWallet           - 10.1 ms
-   getUTxOsStatistics  - 2.1 ms
-   listAddresses       - 8.9 ms
-   listTransactions    - 13.7 ms
-   postTransactionFee  - 2.5 ms
-   listStakePools      - 447.6 ms
-   getNetworkInfo      - 0.6 ms
+        listWallets         - 60.1 ms
+        getWallet           - 7.5 ms
+        getUTxOsStatistics  - 4.0 ms
+        listAddresses       - 7.9 ms
+        listTransactions    - 22.4 ms
+        postTransactionFee  - 44.5 ms
+        listStakePools      - 365.6 ms
+        getNetworkInfo      - 0.5 ms
 Latencies for 2 fixture wallets with 100 utxos scenario
-   listWallets         - 14.9 ms
-   getWallet           - 8.3 ms
-   getUTxOsStatistics  - 2.0 ms
-   listAddresses       - 6.8 ms
-   listTransactions    - 10.8 ms
-   postTransactionFee  - 2.4 ms
-   listStakePools      - 345.8 ms
-   getNetworkInfo      - 0.3 ms
+        listWallets         - 13.3 ms
+        getWallet           - 7.4 ms
+        getUTxOsStatistics  - 4.0 ms
+        listAddresses       - 8.0 ms
+        listTransactions    - 14.4 ms
+        postTransactionFee  - 35.7 ms
+        listStakePools      - 341.2 ms
+        getNetworkInfo      - 0.8 ms
 Latencies for 2 fixture wallets with 200 utxos scenario
-   listWallets         - 19.5 ms
-   getWallet           - 9.8 ms
-   getUTxOsStatistics  - 2.8 ms
-   listAddresses       - 10.1 ms
-   listTransactions    - 19.9 ms
-   postTransactionFee  - 4.4 ms
-   listStakePools      - 351.9 ms
-   getNetworkInfo      - 0.4 ms
+        listWallets         - 14.8 ms
+        getWallet           - 11.9 ms
+        getUTxOsStatistics  - 5.3 ms
+        listAddresses       - 9.6 ms
+        listTransactions    - 27.7 ms
+        postTransactionFee  - 127.6 ms
+        listStakePools      - 164.2 ms
+        getNetworkInfo      - 1.1 ms
 Latencies for 2 fixture wallets with 500 utxos scenario
-   listWallets         - 23.5 ms
-   getWallet           - 15.3 ms
-   getUTxOsStatistics  - 5.6 ms
-   listAddresses       - 20.5 ms
-   listTransactions    - 43.6 ms
-   postTransactionFee  - 7.1 ms
-   listStakePools      - 356.4 ms
-   getNetworkInfo      - 0.4 ms
+        listWallets         - 19.1 ms
+        getWallet           - 14.0 ms
+        getUTxOsStatistics  - 9.9 ms
+        listAddresses       - 13.6 ms
+        listTransactions    - 70.1 ms
+        postTransactionFee  - 303.8 ms
+        listStakePools      - 386.0 ms
+        getNetworkInfo      - 0.5 ms
 Latencies for 2 fixture wallets with 1000 utxos scenario
-   listWallets         - 33.6 ms
-   getWallet           - 27.0 ms
-   getUTxOsStatistics  - 10.5 ms
-   listAddresses       - 36.6 ms
-   listTransactions    - 98.3 ms
-   postTransactionFee  - 12.8 ms
-   listStakePools      - 424.1 ms
-   getNetworkInfo      - 0.5 ms
+        listWallets         - 27.7 ms
+        getWallet           - 19.6 ms
+        getUTxOsStatistics  - 16.2 ms
+        listAddresses       - 23.0 ms
+        listTransactions    - 165.1 ms
+        postTransactionFee  - 676.1 ms
+        listStakePools      - 400.2 ms
+        getNetworkInfo      - 0.5 ms
 ~~~ Running global pre-exit hook
 [90m$[0m /nix/store/i42glba5vjzdsyfgicji807k4blchykk-buildkite-agent-hooks/pre-exit

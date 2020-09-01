@@ -44,12 +44,26 @@ module Helpers
     end # Restoration
 
     module Latencies
+      def proper_log_line?(l)
+        (LATENCY_CATEGORIES + LATENCY_BENCHMARKS + LATENCY_MEASUREMENTS).any?{|i| l.include? i }
+      end
+
       def read_to_hash(str)
-        lines = []
+        # Clean the log output string from latency benchmark from trash
+        proper_str = ''
         str.split(/\r?\n|\r/).map{|l| l.strip}.each do |l|
+          if (proper_log_line? l)
+            proper_str += "#{l}\n"
+          end
+        end
+
+        # split cleaned log output into array where following item is a measurement
+        lines = []
+        proper_str.split(/\r?\n|\r/).map{|l| l.strip}.each do |l|
           if (l.include? "-") &&
-             (not (l.include? "+++ Run benchmark - jormungandr")) &&
-             (not (l.include? "Non-cached run"))
+             (not (l.include? LATENCY_CATEGORIES[0])) &&
+             (not (l.include? LATENCY_CATEGORIES[1])) &&
+             (not (l.include? LATENCY_BENCHMARKS[0]))
             lines << l.split("-").map{|l| l.strip}
           else
             lines << [l]
@@ -59,22 +73,9 @@ module Helpers
         h_top = {}
         h_main = {}
         h_latencies = {}
-        latency_benchmarks =
-            [ "Latencies for 2 fixture wallets with 1000 utxos scenario",
-              "Latencies for 2 fixture wallets with 500 utxos scenario",
-              "Latencies for 2 fixture wallets with 200 utxos scenario",
-              "Latencies for 2 fixture wallets with 100 utxos scenario",
-              "Latencies for 10 fixture wallets with 100 txs scenario",
-              "Latencies for 10 fixture wallets with 20 txs scenario",
-              "Latencies for 10 fixture wallets with 10 txs scenario",
-              "Latencies for 2 fixture wallets with 100 txs scenario",
-              "Latencies for 2 fixture wallets with 20 txs scenario",
-              "Latencies for 2 fixture wallets with 10 txs scenario",
-              "Latencies for 100 fixture wallets scenario",
-              "Latencies for 10 fixture wallets scenario",
-              "Latencies for 2 fixture wallets scenario",
-              "Non-cached run"
-            ]
+        latency_benchmarks = LATENCY_BENCHMARKS
+
+        # build a hash from data
         lines.reverse.each_with_index do |l, i|
           if l.size == 2
             h_latencies[l[0]] = l[1].to_f
@@ -90,8 +91,8 @@ module Helpers
               h_latencies = {}
             end
 
-            if (l[0] == "Random wallets") || (l[0] == "Icarus wallets") ||
-               (l[0] == "+++ Run benchmark - jormungandr")
+            if (l[0] == LATENCY_CATEGORIES[0]) ||
+               (l[0] == LATENCY_CATEGORIES[1])
               h_top[l[0]] = h_main
               h_main = {}
             end
@@ -100,7 +101,7 @@ module Helpers
         h_top
       end
 
-      module_function :read_to_hash
+      module_function :read_to_hash, :proper_log_line?
     end # Latency
 
     module Jobs
