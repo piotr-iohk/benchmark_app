@@ -1,6 +1,202 @@
 All results:
-  restore testnet (1097911063) seq: 225 s
-  restore testnet (1097911063) rnd: 106 s
-  restore testnet (1097911063) 1% ownership: 250 s
-  restore testnet (1097911063) 2% ownership: 255.7 s
-[bench-restore:Notice:14] [2020-08-24 09:31:19.25 UTC] [cardano-node.377] Terminating child process
+BenchResults:
+  benchName: Seq 0% Wallet
+  restorationTime: 124.5 s
+  listingAddressesTime: 7.028 ms
+  estimatingFeesTime: 1.227 s
+  utxoStatistics:
+    = Total value of -0 lovelace across 0 UTxOs
+     ... 10                0
+     ... 100               0
+     ... 1000              0
+     ... 10000             0
+     ... 100000            0
+     ... 1000000           0
+     ... 10000000          0
+     ... 100000000         0
+     ... 1000000000        0
+     ... 10000000000       0
+     ... 100000000000      0
+     ... 1000000000000     0
+     ... 10000000000000    0
+     ... 100000000000000   0
+     ... 1000000000000000  0
+     ... 10000000000000000 0
+     ... 45000000000000000 0
+
+BenchResults:
+  benchName: Rnd 0% Wallet
+  restorationTime: 111.1 s
+  listingAddressesTime: 457.1 Î¼s
+  estimatingFeesTime: 24.57 s
+  utxoStatistics:
+    = Total value of -0 lovelace across 0 UTxOs
+     ... 10                0
+     ... 100               0
+     ... 1000              0
+     ... 10000             0
+     ... 100000            0
+     ... 1000000           0
+     ... 10000000          0
+     ... 100000000         0
+     ... 1000000000        0
+     ... 10000000000       0
+     ... 100000000000      0
+     ... 1000000000000     0
+     ... 10000000000000    0
+     ... 100000000000000   0
+     ... 1000000000000000  0
+     ... 10000000000000000 0
+     ... 45000000000000000 0
+
+BenchResults:
+  benchName: Rnd 0.1% Wallet
+  restorationTime: 116.4 s
+  listingAddressesTime: 4.566 ms
+  estimatingFeesTime: 142.2 ms
+  utxoStatistics:
+    = Total value of 5922204907552 lovelace across 51 UTxOs
+     ... 10                0
+     ... 100               0
+     ... 1000              0
+     ... 10000             1
+     ... 100000            0
+     ... 1000000           2
+     ... 10000000          1
+     ... 100000000         2
+     ... 1000000000        12
+     ... 10000000000       11
+     ... 100000000000      18
+     ... 1000000000000     4
+     ... 10000000000000    0
+     ... 100000000000000   0
+     ... 1000000000000000  0
+     ... 10000000000000000 0
+     ... 45000000000000000 0
+
+BenchResults:
+  benchName: Rnd 0.2% Wallet
+  restorationTime: 122.0 s
+  listingAddressesTime: 10.59 ms
+  estimatingFeesTime: 148.9 ms
+  utxoStatistics:
+    = Total value of 14480158761643 lovelace across 115 UTxOs
+     ... 10                1
+     ... 100               1
+     ... 1000              1
+     ... 10000             1
+     ... 100000            2
+     ... 1000000           3
+     ... 10000000          1
+     ... 100000000         6
+     ... 1000000000        21
+     ... 10000000000       26
+     ... 100000000000      42
+     ... 1000000000000     10
+     ... 10000000000000    0
+     ... 100000000000000   0
+     ... 1000000000000000  0
+     ... 10000000000000000 0
+     ... 45000000000000000 0
+
+BenchResults:
+  benchName: Rnd 0.4% Wallet
+  restorationTime: 132.8 s
+  listingAddressesTime: 22.30 ms
+  estimatingFeesTime: 124.5 ms
+  utxoStatistics:
+    = Total value of 32229118360065 lovelace across 269 UTxOs
+     ... 10                1
+     ... 100               3
+     ... 1000              1
+     ... 10000             3
+     ... 100000            8
+     ... 1000000           4
+     ... 10000000          6
+     ... 100000000         21
+     ... 1000000000        44
+     ... 10000000000       59
+     ... 100000000000      97
+     ... 1000000000000     22
+     ... 10000000000000    0
+     ... 100000000000000   0
+     ... 1000000000000000  0
+     ... 10000000000000000 0
+     ... 45000000000000000 0
+
+BenchResults:
+  benchName: Seq 0.1% Wallet
+  restorationTime: 129.1 s
+  listingAddressesTime: 12.61 ms
+  estimatingFeesTime: 19.28 ms
+  utxoStatistics:
+    = Total value of 5922204907552 lovelace across 51 UTxOs
+     ... 10                0
+     ... 100               0
+     ... 1000              0
+     ... 10000             1
+     ... 100000            0
+     ... 1000000           2
+     ... 10000000          1
+     ... 100000000         2
+     ... 1000000000        12
+     ... 10000000000       11
+     ... 100000000000      18
+     ... 1000000000000     4
+     ... 10000000000000    0
+     ... 100000000000000   0
+     ... 1000000000000000  0
+     ... 10000000000000000 0
+     ... 45000000000000000 0
+
+BenchResults:
+  benchName: Seq 0.2% Wallet
+  restorationTime: 135.7 s
+  listingAddressesTime: 21.43 ms
+  estimatingFeesTime: 23.35 ms
+  utxoStatistics:
+    = Total value of 14480158761643 lovelace across 115 UTxOs
+     ... 10                1
+     ... 100               1
+     ... 1000              1
+     ... 10000             1
+     ... 100000            2
+     ... 1000000           3
+     ... 10000000          1
+     ... 100000000         6
+     ... 1000000000        21
+     ... 10000000000       26
+     ... 100000000000      42
+     ... 1000000000000     10
+     ... 10000000000000    0
+     ... 100000000000000   0
+     ... 1000000000000000  0
+     ... 10000000000000000 0
+     ... 45000000000000000 0
+
+BenchResults:
+  benchName: Seq 0.4% Wallet
+  restorationTime: 148.2 s
+  listingAddressesTime: 35.41 ms
+  estimatingFeesTime: 47.10 ms
+  utxoStatistics:
+    = Total value of 32229118360065 lovelace across 269 UTxOs
+     ... 10                1
+     ... 100               3
+     ... 1000              1
+     ... 10000             3
+     ... 100000            8
+     ... 1000000           4
+     ... 10000000          6
+     ... 100000000         21
+     ... 1000000000        44
+     ... 10000000000       59
+     ... 100000000000      97
+     ... 1000000000000     22
+     ... 10000000000000    0
+     ... 100000000000000   0
+     ... 1000000000000000  0
+     ... 10000000000000000 0
+     ... 45000000000000000 0
+
+[35m[bench-restore:Notice:14][0m [2020-09-05 11:38:47.30 UTC] [cardano-node.106434] Terminating child process
