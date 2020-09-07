@@ -54,9 +54,9 @@ class BenchmarkApp < Sinatra::Base
   get "/nightbuilds/:id" do
     build_no = params[:id].to_i
     builds = DB[:nightly_builds]
-    mainnet = DB[:nightly_builds].join(:mainnet_restores, nightly_build_id: :nightly_build_id).
+    mainnet = DB[:nightly_builds].join(:mainnet_restores_new, nightly_build_id: :nightly_build_id).
                                   where(build_no: build_no)
-    testnet = DB[:nightly_builds].join(:testnet_restores, nightly_build_id: :nightly_build_id).
+    testnet = DB[:nightly_builds].join(:testnet_restores_new, nightly_build_id: :nightly_build_id).
                                   where(build_no: build_no)
     bk = Buildkite.new
     begin
@@ -85,14 +85,12 @@ class BenchmarkApp < Sinatra::Base
   end
 
   get "/mainnet-restoration" do
-    dataset = DB[:mainnet_restores].join_table(:inner, DB[:nightly_builds], [:nightly_build_id]).
-                                    exclude(time_seq: nil, time_1per: nil, time_2per: nil)
+    dataset = DB[:mainnet_restores_new].join(:nightly_builds, nightly_build_id: :nightly_build_id)
     erb :restoration_graphs, { :locals => { :dataset => dataset } }
   end
 
   get "/testnet-restoration" do
-    dataset = DB[:testnet_restores].join_table(:inner, DB[:nightly_builds], [:nightly_build_id]).
-                                    exclude(time_seq: nil, time_1per: nil, time_2per: nil)
+    dataset = DB[:testnet_restores_new].join(:nightly_builds, nightly_build_id: :nightly_build_id)
     erb :restoration_graphs, { :locals => { :dataset => dataset } }
   end
 
@@ -111,22 +109,13 @@ class BenchmarkApp < Sinatra::Base
                               where(name: LATENCY_CATEGORIES[0]).
                               or(name: LATENCY_CATEGORIES[1])
     latency_benchmarks = DB[:latency_benchmarks]
-    latency_measurements = [ "all",
-                             "listWallets",
-                             "getWallet",
-                             "getUTxOsStatistics",
-                             "listAddresses",
-                             "listTransactions",
-                             "postTransactionFee",
-                             "getNetworkInfo",
-                             "listStakePools" ]
-    puts dataset                     
+    latency_measurements = [ "all" ] + LATENCY_MEASUREMENTS
+
     erb :latency_graphs, { :locals => { :dataset => dataset,
                                         :latency_categories => latency_categories,
                                         :latency_benchmarks => latency_benchmarks,
                                         :latency_measurements => latency_measurements
                                          }}
-
   end
 
 end
