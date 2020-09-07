@@ -17,6 +17,49 @@ module Helpers
       "<a href='/nightbuilds/#{id.to_s}'>#{id.to_s}</a>"
     end
 
+    def nighbuild_results_table(res)
+      table = %Q{
+        <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Bench name</th>
+            <th scope="col">Restoration time</th>
+            <th scope="col">Listing addresses time</th>
+            <th scope="col">Estimating fees time</th>
+          </tr>
+        </thead>
+        <tbody>
+      }
+      res.each do |m|
+        table += %Q{
+            <tr>
+              <td scope="row">
+                <details>
+                  <summary>#{m[:bench_name]}</summary>
+                    <code>
+                    #{m[:utxo_statistics].gsub("...", "<br/>&nbsp;...")}
+                    </code>
+                </details>
+              </td>
+              <td>
+                #{m[:restoration_time] ? "#{m[:restoration_time]} s" : "<i>N/A</i>"}
+              </td>
+              <td>
+                #{m[:listing_addresses_time] ? "#{m[:listing_addresses_time]} s" : "<i>N/A</i>"}
+              </td>
+              <td>
+                #{m[:estimating_fees_time] ? "#{m[:estimating_fees_time]} s" : "<i>N/A</i>"}
+              </td>
+            </tr>
+          }
+      end
+      table += %Q{
+          </tbody>
+        </table>
+      }
+      table
+    end
+
     def restoration_dataset(dataset, filter = [])
       data = [{ :name => "restoration_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:restoration_time]]}.to_h},
        { :name => "listing_addresses_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:listing_addresses_time]]}.to_h},

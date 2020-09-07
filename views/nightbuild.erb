@@ -55,7 +55,9 @@
     <tbody>
     </tbody>
   </table>
+  <%= nighbuild_results_table(mainnet) %>
 <% end %>
+<hr/>
 <%
   if t
 %>
@@ -88,91 +90,9 @@
     <tbody>
     </tbody>
   </table>
+  <%= nighbuild_results_table(testnet) %>
 <% end %>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">Measurement</th>
-        <th scope="col">Mainnet</th>
-        <th scope="col">Testnet</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">restoration seq</th>
-        <td>
-          <% if m %>
-          <%= m[:time_seq] ? "#{m[:time_seq]} s" : "<i>N/A</i>"%>
-          <% else %>
-            <i>N/A</i>
-          <% end %>
-        </td>
-        <td>
-          <% if t %>
-          <%= t[:time_seq] ? "#{t[:time_seq]} s" : "<i>N/A</i>"%>
-          <% else %>
-            <i>N/A</i>
-          <% end %>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">restoration rnd</th>
-        <td>
-          <% if m %>
-          <%= m[:time_rnd] ? "#{m[:time_rnd]} s" : "<i>N/A</i>"%>
-          <% else %>
-            <i>N/A</i>
-          <% end %>
-        </td>
-        <td>
-          <% if t %>
-          <%= t[:time_rnd] ? "#{t[:time_rnd]} s" : "<i>N/A</i>"%>
-          <% else %>
-            <i>N/A</i>
-          <% end %>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">restoration 1%</th>
-        <td>
-          <% if m %>
-          <%= m[:time_1per] ? "#{m[:time_1per]} s" : "<i>N/A</i>"%>
-          <% else %>
-            <i>N/A</i>
-          <% end %>
-        </td>
-        <td>
-          <% if t %>
-          <%= t[:time_1per] ? "#{t[:time_1per]} s" : "<i>N/A</i>"%>
-          <% else %>
-            <i>N/A</i>
-          <% end %>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">restoration 2%</th>
-        <td>
-          <% if m %>
-          <%= m[:time_2per] ? "#{m[:time_2per]} s" : "<i>N/A</i>"%>
-          <% else %>
-            <i>N/A</i>
-          <% end %>
-        </td>
-        <td>
-          <% if t %>
-          <%= t[:time_2per] ? "#{t[:time_2per]} s" : "<i>N/A</i>"%>
-          <% else %>
-            <i>N/A</i>
-          <% end %>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <p> Trend charts: <%= "<i>N/A</i>" unless (m || t) %></p>
-  <ul>
-    <%= "<li><a href='/mainnet-restoration'>Mainnet restoration</a></li>" if (m && m[:time_seq]) %>
-    <%= "<li><a href='/testnet-restoration'>Testnet restoration</a></li>" if (t && t[:time_seq]) %>
-  </ul>
+
 <% else %>
   <div class="alert alert-danger" role="alert">
     <%= "No such nightly build: #{params[:id]}. Back to <a href='/nightbuilds'>nightbuilds</a>."%>
