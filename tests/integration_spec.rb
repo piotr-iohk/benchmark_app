@@ -24,8 +24,8 @@ describe 'On the Benchmark App', type: :feature do
                rev: "2e258c3e5852dd758a7a81dc8be35bd729c58241",
                build_status: "passed"
             }
-    @mainnet_results = Readers::Restorations.read_to_hash mainnet, "mainnet"
-    @testnet_results = Readers::Restorations.read_to_hash testnet, "testnet"
+    @mainnet_results = Readers::Restorations.read_to_hash mainnet
+    @testnet_results = Readers::Restorations.read_to_hash testnet
     @latency_results = Readers::Latencies.read_to_hash latency
     results = { build: @build,
                 mainnet_restores: @mainnet_results,
@@ -40,8 +40,8 @@ describe 'On the Benchmark App', type: :feature do
     DB[:latency_measurements].delete
     DB[:latency_benchmarks].delete
     DB[:latency_categories].delete
-    DB[:mainnet_restores].delete
-    DB[:testnet_restores].delete
+    DB[:mainnet_restores_new].delete
+    DB[:testnet_restores_new].delete
     DB[:nightly_builds].delete
   end
 
