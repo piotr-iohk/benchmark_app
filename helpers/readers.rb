@@ -6,41 +6,61 @@ require_relative "../env"
 module Helpers
   module Readers
     module Restorations
-      def read_to_hash(benchmark_string, mainnet_or_testnet)
+      def read_to_hash(benchmark_string)
         # remove last line if it includes log entry "Terminating child process"
         str = benchmark_string.strip.split("\n")
         if str.last.include? "Terminating child process"
           str = str - [str.pop]
         end
-        str = str.join("\n")
 
-        r = YAML.load(str).to_hash['All results'].map { |k,v| [k, v.to_f] }.to_h
-        time_seq_key, time_rnd_key, time_1per_key, time_2per_key = restoration_keys(mainnet_or_testnet)
-        { time_seq: r[time_seq_key].to_f,
-          time_rnd: r[time_rnd_key].to_f,
-          time_1per: r[time_1per_key].to_f,
-          time_2per: r[time_2per_key].to_f
-        }
+        # remove first line if it includes "All results:"
+        if str.first.include? "All results:"
+          str = str - [str.first]
+        end
+
+        # rename top key to be unique
+        idx = 0
+        str.each_with_index do |s, i|
+          if s == "BenchResults:"
+            str[i] = "BenchResults_#{idx+=1}:"
+          end
+        end
+        str = str.join("\n")
+        r = YAML.load(str)
+
+        # make time to be in seconds
+        x = r.map do |s|
+          s[1]['restorationTime'] = to_seconds(s[1]['restorationTime'])
+          s[1]['listingAddressesTime'] = to_seconds(s[1]['listingAddressesTime'])
+          s[1]['estimatingFeesTime'] = to_seconds(s[1]['estimatingFeesTime'])
+          s[1]
+        end
+        # returns list of hashes: 
+        # [{"benchName"=>"Seq 0% Wallet",
+        #   "restorationTime"=>466.7,
+        #   "listingAddressesTime"=>0.007535,
+        #   "estimatingFeesTime"=>1.166,
+        #   "utxoStatistics"=>"..."},
+        #   {"benchName"=>"Seq 0% Wallet",
+        #     ...
+        #   }
+        #   ...
+        # ]
+        x
       end
 
-      def restoration_keys(artifact_name)
-        case artifact_name
-        when MAINNET_RESTORE_FILE, 'mainnet'
-          ['restore mainnet seq',
-           'restore mainnet rnd',
-           'restore mainnet 1% ownership',
-           'restore mainnet 2% ownership']
-        when TESTNET_RESTORE_FILE, 'testnet'
-          ['restore testnet (1097911063) seq',
-           'restore testnet (1097911063) rnd',
-           'restore testnet (1097911063) 1% ownership',
-           'restore testnet (1097911063) 2% ownership']
+      def to_seconds(time_str)
+        case
+        when (time_str.include?("μs") || time_str.include?("Î¼s"))
+          time_str.to_f * 0.000001
+        when time_str.include?("ms")
+          time_str.to_f * 0.001
         else
-          raise "Wrong artifact name: #{artifact_name}"
+          time_str.to_f
         end
       end
 
-      module_function :read_to_hash, :restoration_keys
+      module_function :read_to_hash, :to_seconds
     end # Restoration
 
     module Latencies

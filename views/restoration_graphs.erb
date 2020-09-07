@@ -1,24 +1,68 @@
-<%# dataset.all %>
-<!-- <h2><%= (url.include? "mainnet") ? "Mainnet" : "Testnet"%> restoration</h2> -->
 <%
   url = request.env['PATH_INFO'].to_s
+  params[:type_of_measurement] ||= "all"
+  params[:type_of_wallet] ||= "all"
 %>
-<%= line_chart dataset.map {|i| [link_to_nb(i[:build_no]), i[:time_seq]]},
-    title: "<a href='#'>restore " + ((url.include? "mainnet") ? "mainnet" : "testnet") + " seq</a>",
-    ytitle: "Time (s)", xtitle: "Nightbuild no"
- %>
- <br/>
-<%= line_chart dataset.map {|i| [link_to_nb(i[:build_no]), i[:time_rnd]]},
-   title: "<a href='#'>restore " + ((url.include? "mainnet") ? "mainnet" : "testnet") + " rnd</a>",
-   ytitle: "Time (s)", xtitle: "Nightbuild no"
+<!-- FORM -->
+<form action=<%= "/#{((url.include? "mainnet") ? "mainnet" : "testnet")}-restoration" %> method="GET">
+  <div class="row">
+    <div class="col">
+      <select class="custom-select" name="type_of_wallet">
+        <option value="all">all</option>
+        <option value="Seq" <%= (params[:type_of_wallet] == "Seq") ? "selected" : "" %>>Seq</option>
+        <option value="Rnd" <%= (params[:type_of_wallet] == "Rnd") ? "selected" : "" %>>Rnd</option>
+      </select>
+      <small class="form-text text-muted">Wallet type</small>
+    </div>
+    <div class="col">
+      <select class="custom-select" name="type_of_measurement">
+        <option value="all">all</option>
+        <option value="restoration_time" <%= (params[:type_of_measurement] == "restoration_time") ? "selected" : "" %>>restoration_time</option>
+        <option value="listing_addresses_time" <%= (params[:type_of_measurement] == "listing_addresses_time") ? "selected" : "" %>>listing_addresses_time</option>
+        <option value="estimating_fees_time" <%= (params[:type_of_measurement] == "estimating_fees_time") ? "selected" : "" %>>estimating_fees_time</option>
+      </select>
+      <small class="form-text text-muted">Benchmark type</small>
+    </div>
+
+    <div class="col">
+      <button type="submit" class="btn btn-success">Draw</button>
+    </div>
+  </div>
+</form>
+<br/>
+<%
+case params[:type_of_wallet]
+when "all"
 %>
- <br/>
-<%= line_chart dataset.map {|i| [link_to_nb(i[:build_no]), i[:time_1per]]},
-    title: "<a href='#'>restore " + ((url.include? "mainnet") ? "mainnet" : "testnet") + " 1% ownership</a>",
-    ytitle: "Time (s)", xtitle: "Nightbuild no"
+<div class="row row-cols-2">
+  <div class="col">
+    <%= restoration_graph dataset, "Seq 0% Wallet", url, [params[:type_of_measurement]] %> <br/>
+    <%= restoration_graph dataset, "Seq 0.1% Wallet", url, [params[:type_of_measurement]] %> <br/>
+    <%= restoration_graph dataset, "Seq 0.2% Wallet", url, [params[:type_of_measurement]] %> <br/>
+    <%= restoration_graph dataset, "Seq 0.4% Wallet", url, [params[:type_of_measurement]] %> <br/>
+  </div>
+  <div class="col">
+    <%= restoration_graph dataset, "Rnd 0% Wallet", url, [params[:type_of_measurement]] %> <br/>
+    <%= restoration_graph dataset, "Rnd 0.1% Wallet", url, [params[:type_of_measurement]] %> <br/>
+    <%= restoration_graph dataset, "Rnd 0.2% Wallet", url, [params[:type_of_measurement]] %> <br/>
+    <%= restoration_graph dataset, "Rnd 0.4% Wallet", url, [params[:type_of_measurement]] %> <br/>
+  </div>
+</div>
+<%
+when "Seq"
 %>
- <br/>
-<%= line_chart dataset.map {|i| [link_to_nb(i[:build_no]), i[:time_2per]]},
-    title: "<a href='#'>restore " + ((url.include? "mainnet") ? "mainnet" : "testnet") + " 2% ownership</a>",
-    ytitle: "Time (s)", xtitle: "Nightbuild no"
- %>
+<%= restoration_graph dataset, "Seq 0% Wallet", url, [params[:type_of_measurement]] %> <br/>
+<%= restoration_graph dataset, "Seq 0.1% Wallet", url, [params[:type_of_measurement]] %> <br/>
+<%= restoration_graph dataset, "Seq 0.2% Wallet", url, [params[:type_of_measurement]] %> <br/>
+<%= restoration_graph dataset, "Seq 0.4% Wallet", url, [params[:type_of_measurement]] %> <br/>
+
+<%
+when "Rnd"
+%>
+<%= restoration_graph dataset, "Rnd 0% Wallet", url, [params[:type_of_measurement]] %> <br/>
+<%= restoration_graph dataset, "Rnd 0.1% Wallet", url, [params[:type_of_measurement]] %> <br/>
+<%= restoration_graph dataset, "Rnd 0.2% Wallet", url, [params[:type_of_measurement]] %> <br/>
+<%= restoration_graph dataset, "Rnd 0.4% Wallet", url, [params[:type_of_measurement]] %> <br/>
+<%
+end
+%>

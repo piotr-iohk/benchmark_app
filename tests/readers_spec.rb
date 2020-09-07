@@ -3,45 +3,34 @@ require_relative 'spec_helper'
 include Helpers::Readers
 
 describe Helpers::Readers::Restorations do
-  describe "restoration_keys" do
-    it "mainnet" do
-      k1, k2, k3, k4 = Restorations.restoration_keys 'mainnet'
-      expect(k1).to eq 'restore mainnet seq'
-      expect(k2).to eq 'restore mainnet rnd'
-      expect(k3).to eq 'restore mainnet 1% ownership'
-      expect(k4).to eq 'restore mainnet 2% ownership'
-    end
-
-    it "testnet" do
-      k1, k2, k3, k4 = Restorations.restoration_keys 'testnet'
-      expect(k1).to eq 'restore testnet (1097911063) seq'
-      expect(k2).to eq 'restore testnet (1097911063) rnd'
-      expect(k3).to eq 'restore testnet (1097911063) 1% ownership'
-      expect(k4).to eq 'restore testnet (1097911063) 2% ownership'
-    end
-
-    it "wrong artifact name" do
-      wrong_artifact = 'wrong.txt'
-      expect { Restorations.restoration_keys wrong_artifact }.to raise_error("Wrong artifact name: #{wrong_artifact}")
-    end
-  end
 
   it "read_to_hash - mainnet" do
     res = File.read("#{Dir.pwd}/tests/artifacts/restoration-mainnet.txt")
-    h = Restorations.read_to_hash res, "mainnet"
-    expect(h).to eq({time_seq: 1064.5,
-                     time_rnd: 503.1,
-                     time_1per: 3566,
-                     time_2per: 6493.12})
+    h = Restorations.read_to_hash res
+    # p h
+    expect(h[0]['benchName']).to eq "Seq 0% Wallet"
+    expect(h[0]['restorationTime']).to eq 466.7
+
+    expect(h[1]['benchName']).to eq "Rnd 0% Wallet"
+    expect(h[1]['listingAddressesTime']).to eq 0.0005687
+
+    expect(h[2]['benchName']).to eq "Rnd 0.1% Wallet"
+    expect(h[2]['restorationTime']).to eq 1598
+
   end
 
   it "read_to_hash - testnet" do
     res = File.read("#{Dir.pwd}/tests/artifacts/restoration-testnet.txt")
-    h = Restorations.read_to_hash res, "testnet"
-    expect(h).to eq({time_seq: 225,
-                     time_rnd: 106,
-                     time_1per: 250,
-                     time_2per: 255.7})
+    h = Restorations.read_to_hash res
+
+    expect(h[0]['benchName']).to eq "Seq 0% Wallet"
+    expect(h[0]['restorationTime']).to eq 124.5
+
+    expect(h[1]['benchName']).to eq "Rnd 0% Wallet"
+    expect(h[1]['listingAddressesTime']).to eq 0.0004571
+
+    expect(h[2]['benchName']).to eq "Rnd 0.1% Wallet"
+    expect(h[2]['estimatingFeesTime']).to eq 0.1422
   end
 end
 

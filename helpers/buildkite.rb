@@ -68,12 +68,12 @@ module Helpers
       rescue
         puts "No url for artifact: #{artifact_name}"
       end
-      puts "============="
-      puts res.body if res
-      puts "============="
+      # puts "============="
+      # puts res.body if res
+      # puts "============="
 
       begin
-        results = Restorations.read_to_hash(res.body, artifact_name)
+        results = Restorations.read_to_hash(res.body)
       rescue
         puts "No results for artifact: #{artifact_name}"
       end
