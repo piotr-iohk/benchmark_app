@@ -1,202 +1,242 @@
 All results:
-BenchResults:
-  benchName: Seq 0% Wallet
-  restorationTime: 466.7 s
-  listingAddressesTime: 7.535 ms
-  estimatingFeesTime: 1.166 s
-  utxoStatistics:
-    = Total value of -0 lovelace across 0 UTxOs
-     ... 10                0
-     ... 100               0
-     ... 1000              0
-     ... 10000             0
-     ... 100000            0
-     ... 1000000           0
-     ... 10000000          0
-     ... 100000000         0
-     ... 1000000000        0
-     ... 10000000000       0
-     ... 100000000000      0
-     ... 1000000000000     0
-     ... 10000000000000    0
-     ... 100000000000000   0
-     ... 1000000000000000  0
-     ... 10000000000000000 0
-     ... 45000000000000000 0
+BenchSeqResults:
+  benchName: 0-percent-seq
+  restoreTime: 453.1 s
+  readWalletTime: 8.029 ms
+  listAddressesTime: 7.044 ms
+  listTransactionsTime: 363.1 Î¼s
+  estimateFeesTime: 6.747 s
+  walletOverview:
+     number of addresses: 20
+     number of transactions: -0
+     = Total value of -0 lovelace across 0 UTxOs
+      ... 10                0
+      ... 100               0
+      ... 1000              0
+      ... 10000             0
+      ... 100000            0
+      ... 1000000           0
+      ... 10000000          0
+      ... 100000000         0
+      ... 1000000000        0
+      ... 10000000000       0
+      ... 100000000000      0
+      ... 1000000000000     0
+      ... 10000000000000    0
+      ... 100000000000000   0
+      ... 1000000000000000  0
+      ... 10000000000000000 0
+      ... 45000000000000000 0
 
-BenchResults:
-  benchName: Rnd 0% Wallet
-  restorationTime: 515.6 s
-  listingAddressesTime: 568.7 Î¼s
-  estimatingFeesTime: 24.64 s
-  utxoStatistics:
-    = Total value of -0 lovelace across 0 UTxOs
-     ... 10                0
-     ... 100               0
-     ... 1000              0
-     ... 10000             0
-     ... 100000            0
-     ... 1000000           0
-     ... 10000000          0
-     ... 100000000         0
-     ... 1000000000        0
-     ... 10000000000       0
-     ... 100000000000      0
-     ... 1000000000000     0
-     ... 10000000000000    0
-     ... 100000000000000   0
-     ... 1000000000000000  0
-     ... 10000000000000000 0
-     ... 45000000000000000 0
+BenchRndResults:
+  benchName: 0-percent-rnd
+  restoreTime: 516.9 s
+  readWalletTime: 1.186 ms
+  listAddressesTime: 431.6 Î¼s
+  listTransactionsTime: 478.0 Î¼s
+  importOneAddressTime: 1.344 ms
+  importManyAddressesTime: 182.6 ms
+  estimateFeesTime: 3.530 s
+  walletOverview:
+     number of addresses: -0
+     number of transactions: -0
+     = Total value of -0 lovelace across 0 UTxOs
+      ... 10                0
+      ... 100               0
+      ... 1000              0
+      ... 10000             0
+      ... 100000            0
+      ... 1000000           0
+      ... 10000000          0
+      ... 100000000         0
+      ... 1000000000        0
+      ... 10000000000       0
+      ... 100000000000      0
+      ... 1000000000000     0
+      ... 10000000000000    0
+      ... 100000000000000   0
+      ... 1000000000000000  0
+      ... 10000000000000000 0
+      ... 45000000000000000 0
 
-BenchResults:
-  benchName: Rnd 0.1% Wallet
-  restorationTime: 1598 s
-  listingAddressesTime: 2.964 s
-  estimatingFeesTime: 218.0 ms
-  utxoStatistics:
-    = Total value of 21452648887986 lovelace across 736 UTxOs
-     ... 10                7
-     ... 100               4
-     ... 1000              6
-     ... 10000             10
-     ... 100000            22
-     ... 1000000           66
-     ... 10000000          50
-     ... 100000000         65
-     ... 1000000000        193
-     ... 10000000000       192
-     ... 100000000000      87
-     ... 1000000000000     29
-     ... 10000000000000    5
-     ... 100000000000000   0
-     ... 1000000000000000  0
-     ... 10000000000000000 0
-     ... 45000000000000000 0
+BenchRndResults:
+  benchName: 0.1-percent-rnd
+  restoreTime: 1193 s
+  readWalletTime: 155.0 ms
+  listAddressesTime: 153.6 ms
+  listTransactionsTime: 4.055 s
+  importOneAddressTime: 336.2 ms
+  importManyAddressesTime: 783.4 ms
+  estimateFeesTime: 584.9 ms
+  walletOverview:
+     number of addresses: 5777
+     number of transactions: 10006
+     = Total value of 21610383492984 lovelace across 745 UTxOs
+      ... 10                7
+      ... 100               4
+      ... 1000              6
+      ... 10000             10
+      ... 100000            22
+      ... 1000000           66
+      ... 10000000          54
+      ... 100000000         65
+      ... 1000000000        191
+      ... 10000000000       195
+      ... 100000000000      92
+      ... 1000000000000     28
+      ... 10000000000000    5
+      ... 100000000000000   0
+      ... 1000000000000000  0
+      ... 10000000000000000 0
+      ... 45000000000000000 0
 
-BenchResults:
-  benchName: Rnd 0.2% Wallet
-  restorationTime: 2702 s
-  listingAddressesTime: 2.223 s
-  estimatingFeesTime: 520.6 ms
-  utxoStatistics:
-    = Total value of 43118228502470 lovelace across 1540 UTxOs
-     ... 10                11
-     ... 100               9
-     ... 1000              12
-     ... 10000             19
-     ... 100000            38
-     ... 1000000           127
-     ... 10000000          117
-     ... 100000000         116
-     ... 1000000000        370
-     ... 10000000000       388
-     ... 100000000000      241
-     ... 1000000000000     87
-     ... 10000000000000    5
-     ... 100000000000000   0
-     ... 1000000000000000  0
-     ... 10000000000000000 0
-     ... 45000000000000000 0
+BenchRndResults:
+  benchName: 0.2-percent-rnd
+  restoreTime: 1895 s
+  readWalletTime: 466.4 ms
+  listAddressesTime: 423.4 ms
+  listTransactionsTime: 19.04 s
+  importOneAddressTime: 964.7 ms
+  importManyAddressesTime: 1.899 s
+  estimateFeesTime: 1.602 s
+  walletOverview:
+     number of addresses: 16053
+     number of transactions: 26793
+     = Total value of 31424229668230 lovelace across 1396 UTxOs
+      ... 10                11
+      ... 100               9
+      ... 1000              12
+      ... 10000             19
+      ... 100000            38
+      ... 1000000           127
+      ... 10000000          123
+      ... 100000000         117
+      ... 1000000000        330
+      ... 10000000000       361
+      ... 100000000000      194
+      ... 1000000000000     50
+      ... 10000000000000    5
+      ... 100000000000000   0
+      ... 1000000000000000  0
+      ... 10000000000000000 0
+      ... 45000000000000000 0
 
-BenchResults:
-  benchName: Rnd 0.4% Wallet
-  restorationTime: 5262 s
-  listingAddressesTime: 3.417 s
-  estimatingFeesTime: 991.7 ms
-  utxoStatistics:
-    = Total value of 73774064230589 lovelace across 2916 UTxOs
-     ... 10                14
-     ... 100               10
-     ... 1000              28
-     ... 10000             38
-     ... 100000            79
-     ... 1000000           256
-     ... 10000000          250
-     ... 100000000         252
-     ... 1000000000        715
-     ... 10000000000       736
-     ... 100000000000      395
-     ... 1000000000000     132
-     ... 10000000000000    11
-     ... 100000000000000   0
-     ... 1000000000000000  0
-     ... 10000000000000000 0
-     ... 45000000000000000 0
+BenchRndResults:
+  benchName: 0.4-percent-rnd
+  restoreTime: 3661 s
+  readWalletTime: 830.8 ms
+  listAddressesTime: 7.049 s
+  listTransactionsTime: 72.32 s
+  importOneAddressTime: 3.806 s
+  importManyAddressesTime: 3.553 s
+  estimateFeesTime: 3.120 s
+  walletOverview:
+     number of addresses: 28731
+     number of transactions: 48049
+     = Total value of 68824456066832 lovelace across 2778 UTxOs
+      ... 10                14
+      ... 100               10
+      ... 1000              28
+      ... 10000             38
+      ... 100000            79
+      ... 1000000           256
+      ... 10000000          263
+      ... 100000000         250
+      ... 1000000000        666
+      ... 10000000000       709
+      ... 100000000000      351
+      ... 1000000000000     102
+      ... 10000000000000    12
+      ... 100000000000000   0
+      ... 1000000000000000  0
+      ... 10000000000000000 0
+      ... 45000000000000000 0
 
-BenchResults:
-  benchName: Seq 0.1% Wallet
-  restorationTime: 1483 s
-  listingAddressesTime: 268.6 ms
-  estimatingFeesTime: 240.4 ms
-  utxoStatistics:
-    = Total value of 21452648887986 lovelace across 736 UTxOs
-     ... 10                7
-     ... 100               4
-     ... 1000              6
-     ... 10000             10
-     ... 100000            22
-     ... 1000000           66
-     ... 10000000          50
-     ... 100000000         65
-     ... 1000000000        193
-     ... 10000000000       192
-     ... 100000000000      87
-     ... 1000000000000     29
-     ... 10000000000000    5
-     ... 100000000000000   0
-     ... 1000000000000000  0
-     ... 10000000000000000 0
-     ... 45000000000000000 0
+BenchSeqResults:
+  benchName: 0.1-percent-seq
+  restoreTime: 1199 s
+  readWalletTime: 250.7 ms
+  listAddressesTime: 275.8 ms
+  listTransactionsTime: 4.008 s
+  estimateFeesTime: 274.5 ms
+  walletOverview:
+     number of addresses: 5797
+     number of transactions: 10006
+     = Total value of 21610383492984 lovelace across 745 UTxOs
+      ... 10                7
+      ... 100               4
+      ... 1000              6
+      ... 10000             10
+      ... 100000            22
+      ... 1000000           66
+      ... 10000000          54
+      ... 100000000         65
+      ... 1000000000        191
+      ... 10000000000       195
+      ... 100000000000      92
+      ... 1000000000000     28
+      ... 10000000000000    5
+      ... 100000000000000   0
+      ... 1000000000000000  0
+      ... 10000000000000000 0
+      ... 45000000000000000 0
 
-BenchResults:
-  benchName: Seq 0.2% Wallet
-  restorationTime: 3174 s
-  listingAddressesTime: 2.221 s
-  estimatingFeesTime: 743.3 ms
-  utxoStatistics:
-    = Total value of 43016859278783 lovelace across 1540 UTxOs
-     ... 10                11
-     ... 100               9
-     ... 1000              12
-     ... 10000             19
-     ... 100000            38
-     ... 1000000           127
-     ... 10000000          117
-     ... 100000000         116
-     ... 1000000000        370
-     ... 10000000000       389
-     ... 100000000000      241
-     ... 1000000000000     86
-     ... 10000000000000    5
-     ... 100000000000000   0
-     ... 1000000000000000  0
-     ... 10000000000000000 0
-     ... 45000000000000000 0
+BenchSeqResults:
+  benchName: 0.2-percent-seq
+  restoreTime: 2483 s
+  readWalletTime: 776.6 ms
+  listAddressesTime: 1.894 s
+  listTransactionsTime: 20.26 s
+  estimateFeesTime: 2.314 s
+  walletOverview:
+     number of addresses: 16073
+     number of transactions: 26795
+     = Total value of 31144491147879 lovelace across 1394 UTxOs
+      ... 10                11
+      ... 100               9
+      ... 1000              12
+      ... 10000             19
+      ... 100000            38
+      ... 1000000           127
+      ... 10000000          123
+      ... 100000000         117
+      ... 1000000000        329
+      ... 10000000000       361
+      ... 100000000000      194
+      ... 1000000000000     49
+      ... 10000000000000    5
+      ... 100000000000000   0
+      ... 1000000000000000  0
+      ... 10000000000000000 0
+      ... 45000000000000000 0
 
-BenchResults:
-  benchName: Seq 0.4% Wallet
-  restorationTime: 6435 s
-  listingAddressesTime: 13.35 s
-  estimatingFeesTime: 4.911 s
-  utxoStatistics:
-    = Total value of 73671271431009 lovelace across 2915 UTxOs
-     ... 10                14
-     ... 100               10
-     ... 1000              28
-     ... 10000             38
-     ... 100000            79
-     ... 1000000           256
-     ... 10000000          249
-     ... 100000000         252
-     ... 1000000000        716
-     ... 10000000000       737
-     ... 100000000000      394
-     ... 1000000000000     131
-     ... 10000000000000    11
-     ... 100000000000000   0
-     ... 1000000000000000  0
-     ... 10000000000000000 0
-     ... 45000000000000000 0
+BenchSeqResults:
+  benchName: 0.4-percent-seq
+  restoreTime: 5163 s
+  readWalletTime: 1.441 s
+  listAddressesTime: 3.547 s
+  listTransactionsTime: 72.25 s
+  estimateFeesTime: 4.040 s
+  walletOverview:
+     number of addresses: 28755
+     number of transactions: 48054
+     = Total value of 69527281216646 lovelace across 2781 UTxOs
+      ... 10                14
+      ... 100               10
+      ... 1000              28
+      ... 10000             38
+      ... 100000            79
+      ... 1000000           256
+      ... 10000000          263
+      ... 100000000         250
+      ... 1000000000        666
+      ... 10000000000       709
+      ... 100000000000      352
+      ... 1000000000000     104
+      ... 10000000000000    12
+      ... 100000000000000   0
+      ... 1000000000000000  0
+      ... 10000000000000000 0
+      ... 45000000000000000 0
 
-[35m[bench-restore:Notice:14][0m [2020-09-06 10:00:56.54 UTC] [cardano-node.112509] Terminating child process
+[35m[bench-restore:Notice:14][0m [2020-09-10 07:31:03.00 UTC] [cardano-node.11149] Terminating child process

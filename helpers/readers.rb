@@ -6,9 +6,14 @@ require_relative "../env"
 module Helpers
   module Readers
     module Restorations
+
       def read_to_hash(benchmark_string)
+
+        bs = benchmark_string.gsub("number of addresses:", "number_of_addresses=").
+                              gsub("number of transactions:", "number_of_transactions=")
+
         # remove last line if it includes log entry "Terminating child process"
-        str = benchmark_string.strip.split("\n")
+        str = bs.strip.split("\n")
         if str.last.include? "Terminating child process"
           str = str - [str.pop]
         end
@@ -21,25 +26,36 @@ module Helpers
         # rename top key to be unique
         idx = 0
         str.each_with_index do |s, i|
-          if s == "BenchResults:"
-            str[i] = "BenchResults_#{idx+=1}:"
+          if s == "BenchRndResults:"
+            str[i] = "BenchResults_#{i}:"
+          end
+          if s == "BenchSeqResults:"
+            str[i] = "BenchResults_#{i}:"
           end
         end
-        str = str.join("\n")
+        str = (str - [""]).join("\n").strip
         r = YAML.load(str)
+        # puts r
 
         # make time to be in seconds
         x = r.map do |s|
-          s[1]['restorationTime'] = to_seconds(s[1]['restorationTime'])
-          s[1]['listingAddressesTime'] = to_seconds(s[1]['listingAddressesTime'])
-          s[1]['estimatingFeesTime'] = to_seconds(s[1]['estimatingFeesTime'])
+          s[1]['restoreTime'] = to_seconds(s[1]['restoreTime']) if s[1]['restoreTime']
+          s[1]['listAddressesTime'] = to_seconds(s[1]['listAddressesTime']) if s[1]['listAddressesTime']
+          s[1]['estimateFeesTime'] = to_seconds(s[1]['estimateFeesTime']) if s[1]['estimateFeesTime']
+          s[1]['readWalletTime'] = to_seconds(s[1]['readWalletTime']) if s[1]['readWalletTime']
+          s[1]['listTransactionsTime'] = to_seconds(s[1]['listTransactionsTime']) if s[1]['listTransactionsTime']
+          s[1]['importOneAddressTime'] = to_seconds(s[1]['importOneAddressTime']) if s[1]['importOneAddressTime']
+          s[1]['importManyAddressesTime'] = to_seconds(s[1]['importManyAddressesTime']) if s[1]['importManyAddressesTime']
           s[1]
         end
-        # returns list of hashes: 
+        # returns list of hashes:
         # [{"benchName"=>"Seq 0% Wallet",
-        #   "restorationTime"=>466.7,
-        #   "listingAddressesTime"=>0.007535,
-        #   "estimatingFeesTime"=>1.166,
+        #   "restoreTime"=>466.7,
+        #   "listAddressesTime"=>0.007535,
+        #   "estimateFeesTime"=>1.166,
+        #   "readWalletTime"=>1.166,
+        #   "importOneAddressTime"=>1.166,
+        #   "importManyAddressesTime"=>1.166,
         #   "utxoStatistics"=>"..."},
         #   {"benchName"=>"Seq 0% Wallet",
         #     ...
@@ -52,9 +68,9 @@ module Helpers
       def to_seconds(time_str)
         case
         when (time_str.include?("μs") || time_str.include?("Î¼s"))
-          time_str.to_f * 0.000001
+          (time_str.to_f * 0.000001).round(8)
         when time_str.include?("ms")
-          time_str.to_f * 0.001
+          (time_str.to_f * 0.001).round(8)
         else
           time_str.to_f
         end
