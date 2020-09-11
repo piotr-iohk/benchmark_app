@@ -20,6 +20,10 @@
         <option value="restoration_time" <%= (params[:type_of_measurement] == "restoration_time") ? "selected" : "" %>>restoration_time</option>
         <option value="listing_addresses_time" <%= (params[:type_of_measurement] == "listing_addresses_time") ? "selected" : "" %>>listing_addresses_time</option>
         <option value="estimating_fees_time" <%= (params[:type_of_measurement] == "estimating_fees_time") ? "selected" : "" %>>estimating_fees_time</option>
+        <option value="read_wallet_time" <%= (params[:type_of_measurement] == "read_wallet_time") ? "selected" : "" %>>read_wallet_time</option>
+        <option value="list_transactions_time" <%= (params[:type_of_measurement] == "list_transactions_time") ? "selected" : "" %>>list_transactions_time</option>
+        <option value="import_one_address_time" <%= (params[:type_of_measurement] == "import_one_address_time") ? "selected" : "" %>>import_one_address_time</option>
+        <option value="import_many_addresses_time" <%= (params[:type_of_measurement] == "import_many_addresses_time") ? "selected" : "" %>>import_many_addresses_time</option>
       </select>
       <small class="form-text text-muted">Benchmark type</small>
     </div>
@@ -36,33 +40,33 @@ when "all"
 %>
 <div class="row row-cols-2">
   <div class="col">
-    <%= restoration_graph dataset, "Seq 0% Wallet", url, [params[:type_of_measurement]] %> <br/>
-    <%= restoration_graph dataset, "Seq 0.1% Wallet", url, [params[:type_of_measurement]] %> <br/>
-    <%= restoration_graph dataset, "Seq 0.2% Wallet", url, [params[:type_of_measurement]] %> <br/>
-    <%= restoration_graph dataset, "Seq 0.4% Wallet", url, [params[:type_of_measurement]] %> <br/>
+    <%= restoration_graph dataset, "0-percent-seq", url, [params[:type_of_measurement]] %> <br/>
+    <%= restoration_graph dataset, "0.1-percent-seq", url, [params[:type_of_measurement]] %> <br/>
+    <%= restoration_graph dataset, "0.2-percent-seq", url, [params[:type_of_measurement]] %> <br/>
+    <%= restoration_graph dataset, "0.4-percent-seq", url, [params[:type_of_measurement]] %> <br/>
   </div>
   <div class="col">
-    <%= restoration_graph dataset, "Rnd 0% Wallet", url, [params[:type_of_measurement]] %> <br/>
-    <%= restoration_graph dataset, "Rnd 0.1% Wallet", url, [params[:type_of_measurement]] %> <br/>
-    <%= restoration_graph dataset, "Rnd 0.2% Wallet", url, [params[:type_of_measurement]] %> <br/>
-    <%= restoration_graph dataset, "Rnd 0.4% Wallet", url, [params[:type_of_measurement]] %> <br/>
+    <%= restoration_graph dataset, "0-percent-rnd", url, [params[:type_of_measurement]] %> <br/>
+    <%= restoration_graph dataset, "0.1-percent-rnd", url, [params[:type_of_measurement]] %> <br/>
+    <%= restoration_graph dataset, "0.2-percent-rnd", url, [params[:type_of_measurement]] %> <br/>
+    <%= restoration_graph dataset, "0.4-percent-rnd", url, [params[:type_of_measurement]] %> <br/>
   </div>
 </div>
 <%
 when "Seq"
 %>
-<%= restoration_graph dataset, "Seq 0% Wallet", url, [params[:type_of_measurement]] %> <br/>
-<%= restoration_graph dataset, "Seq 0.1% Wallet", url, [params[:type_of_measurement]] %> <br/>
-<%= restoration_graph dataset, "Seq 0.2% Wallet", url, [params[:type_of_measurement]] %> <br/>
-<%= restoration_graph dataset, "Seq 0.4% Wallet", url, [params[:type_of_measurement]] %> <br/>
+<%= restoration_graph dataset, "0-percent-seq", url, [params[:type_of_measurement]] %> <br/>
+<%= restoration_graph dataset, "0.1-percent-seq", url, [params[:type_of_measurement]] %> <br/>
+<%= restoration_graph dataset, "0.2-percent-seq", url, [params[:type_of_measurement]] %> <br/>
+<%= restoration_graph dataset, "0.4-percent-seq", url, [params[:type_of_measurement]] %> <br/>
 
 <%
 when "Rnd"
 %>
-<%= restoration_graph dataset, "Rnd 0% Wallet", url, [params[:type_of_measurement]] %> <br/>
-<%= restoration_graph dataset, "Rnd 0.1% Wallet", url, [params[:type_of_measurement]] %> <br/>
-<%= restoration_graph dataset, "Rnd 0.2% Wallet", url, [params[:type_of_measurement]] %> <br/>
-<%= restoration_graph dataset, "Rnd 0.4% Wallet", url, [params[:type_of_measurement]] %> <br/>
+<%= restoration_graph dataset, "0-percent-rnd", url, [params[:type_of_measurement]] %> <br/>
+<%= restoration_graph dataset, "0.1-percent-rnd", url, [params[:type_of_measurement]] %> <br/>
+<%= restoration_graph dataset, "0.2-percent-rnd", url, [params[:type_of_measurement]] %> <br/>
+<%= restoration_graph dataset, "0.4-percent-rnd", url, [params[:type_of_measurement]] %> <br/>
 <%
 end
 %>
