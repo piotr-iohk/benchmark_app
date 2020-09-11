@@ -2,6 +2,43 @@
 # helper module for puting serialized data from buildkite into DB
 module Helpers
   module DataTransfer
+    def insert_restoration(db_conn, result, nightly_build_id)
+      if result["utxoStatistics"]
+        stats = result["utxoStatistics"]
+      end
+      if result["walletOverview"]
+        stats = result["walletOverview"]
+      end
+      db_conn.insert(
+        nightly_build_id: nightly_build_id,
+        bench_name: result["benchName"],
+        restoration_time: result["restoreTime"],
+        listing_addresses_time: result["listAddressesTime"],
+        estimating_fees_time: result["estimateFeesTime"],
+        read_wallet_time: result["readWalletTime"],
+        list_transactions_time: result["listTransactionsTime"],
+        import_one_address_time: result["importOneAddressTime"],
+        import_many_addresses_time: result["importManyAddressesTime"],
+        utxo_statistics: stats
+      )
+    end
+
+    def insert_latency(db_conn, result, nightly_build_id, latency_category_id, latency_benchmark_id)
+      db_conn.insert(
+        nightly_build_id: nightly_build_id,
+        latency_category_id: latency_category_id,
+        latency_benchmark_id: latency_benchmark_id,
+        listWallets: result['listWallets'],
+        getWallet: result['getWallet'],
+        getUTxOsStatistics: result['getUTxOsStatistics'],
+        listAddresses: result['listAddresses'],
+        listTransactions: result['listTransactions'],
+        postTransactionFee: result['postTransactionFee'],
+        listStakePools: result['listStakePools'],
+        getNetworkInfo: result['getNetworkInfo']
+      )
+    end
+
     def insert_into_db(buildkite_data_hash, db_connection, options = {})
       res = buildkite_data_hash
       if res[:build]
@@ -29,14 +66,10 @@ module Helpers
           m = res[:mainnet_restores]
           puts " Inserting mainnet_restores for build: #{build_no}"
           m.each do |result|
-            db_connection[:mainnet_restores_new].insert(
-              nightly_build_id: nightly_build_id,
-              bench_name: result["benchName"],
-              restoration_time: result["restorationTime"],
-              listing_addresses_time: result["listingAddressesTime"],
-              estimating_fees_time: result["estimatingFeesTime"],
-              utxo_statistics: result["utxoStatistics"]
-            )
+            insert_restoration(db_connection[:mainnet_restores_new],
+                               result,
+                               nightly_build_id
+                              )
           end
         end
       end
@@ -48,14 +81,10 @@ module Helpers
           t = res[:testnet_restores]
           puts " Inserting testnet_restores for build: #{build_no}"
           t.each do |result|
-            db_connection[:testnet_restores_new].insert(
-              nightly_build_id: nightly_build_id,
-              bench_name: result["benchName"],
-              restoration_time: result["restorationTime"],
-              listing_addresses_time: result["listingAddressesTime"],
-              estimating_fees_time: result["estimatingFeesTime"],
-              utxo_statistics: result["utxoStatistics"]
-            )
+            insert_restoration(db_connection[:testnet_restores_new],
+                               result,
+                               nightly_build_id
+                              )
           end
         end
       end
@@ -94,18 +123,9 @@ module Helpers
               end
 
               puts "    Inserting measurements..."
-              db_connection[:latency_measurements].
-              insert(nightly_build_id: nightly_build_id,
-                latency_category_id: latency_category_id,
-                latency_benchmark_id: latency_benchmark_id,
-                listWallets: m['listWallets'],
-                getWallet: m['getWallet'],
-                getUTxOsStatistics: m['getUTxOsStatistics'],
-                listAddresses: m['listAddresses'],
-                listTransactions: m['listTransactions'],
-                postTransactionFee: m['postTransactionFee'],
-                listStakePools: m['listStakePools'],
-                getNetworkInfo: m['getNetworkInfo'] )
+              insert_latency(db_connection[:latency_measurements],
+                             m, nightly_build_id, latency_category_id,
+                             latency_benchmark_id)
             end
           end
         else
@@ -122,7 +142,8 @@ module Helpers
         end
     end
 
-    module_function :insert_into_db, :find_builds_to_transfer
+    module_function :insert_into_db, :find_builds_to_transfer,
+                    :insert_restoration, :insert_latency
 
   end
 end

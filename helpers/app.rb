@@ -23,21 +23,27 @@ module Helpers
         <thead>
           <tr>
             <th scope="col">Bench name</th>
-            <th scope="col">Restoration time</th>
-            <th scope="col">Listing addresses time</th>
-            <th scope="col">Estimating fees time</th>
+            <th scope="col">Restore time</th>
+            <th scope="col">List addresses</th>
+            <th scope="col">Estimate fees</th>
+            <th scope="col">Read wallet</th>
+            <th scope="col">List txs</th>
+            <th scope="col">Import one address</th>
+            <th scope="col">Import many addresses</th>
           </tr>
         </thead>
         <tbody>
       }
-      res.each do |m|
+      res.sort_by{|r| -r[:bench_name].reverse }.each do |m|
         table += %Q{
             <tr>
               <td scope="row">
                 <details>
                   <summary>#{m[:bench_name]}</summary>
                     <code>
-                    #{m[:utxo_statistics].gsub("...", "<br/>&nbsp;...")}
+                    #{m[:utxo_statistics].gsub("...", "<br/>&nbsp;...").
+                                          gsub("number_of_t", "<br/>number_of_t").
+                                          gsub("= T", "<br/>= T")}
                     </code>
                 </details>
               </td>
@@ -49,6 +55,18 @@ module Helpers
               </td>
               <td>
                 #{m[:estimating_fees_time] ? "#{m[:estimating_fees_time]} s" : "<i>N/A</i>"}
+              </td>
+              <td>
+                #{m[:read_wallet_time] ? "#{m[:read_wallet_time]} s" : "<i>N/A</i>"}
+              </td>
+              <td>
+                #{m[:list_transactions_time] ? "#{m[:list_transactions_time]} s" : "<i>N/A</i>"}
+              </td>
+              <td>
+                #{m[:import_one_address_time] ? "#{m[:import_one_address_time]} s" : "<i>N/A</i>"}
+              </td>
+              <td>
+                #{m[:import_many_addresses_time] ? "#{m[:import_many_addresses_time]} s" : "<i>N/A</i>"}
               </td>
             </tr>
           }
@@ -63,7 +81,11 @@ module Helpers
     def restoration_dataset(dataset, filter = [])
       data = [{ :name => "restoration_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:restoration_time]]}.to_h},
        { :name => "listing_addresses_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:listing_addresses_time]]}.to_h},
-       { :name => "estimating_fees_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:estimating_fees_time]]}.to_h}
+       { :name => "estimating_fees_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:estimating_fees_time]]}.to_h},
+       { :name => "read_wallet_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:read_wallet_time]]}.to_h},
+       { :name => "list_transactions_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:list_transactions_time]]}.to_h},
+       { :name => "import_one_address_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:import_one_address_time]]}.to_h},
+       { :name => "import_many_addresses_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:import_many_addresses_time]]}.to_h}
       ]
       if filter.empty?
         data

@@ -7,15 +7,17 @@ describe Helpers::Readers::Restorations do
   it "read_to_hash - mainnet" do
     res = File.read("#{Dir.pwd}/tests/artifacts/restoration-mainnet.txt")
     h = Restorations.read_to_hash res
-    # p h
-    expect(h[0]['benchName']).to eq "Seq 0% Wallet"
-    expect(h[0]['restorationTime']).to eq 466.7
+    expect(h[0]['benchName']).to eq "0-percent-seq"
+    expect(h[0]['restoreTime']).to eq 453.1
 
-    expect(h[1]['benchName']).to eq "Rnd 0% Wallet"
-    expect(h[1]['listingAddressesTime']).to eq 0.0005687
+    expect(h[1]['benchName']).to eq "0-percent-rnd"
+    expect(h[1]['listAddressesTime']).to eq 0.0004316
 
-    expect(h[2]['benchName']).to eq "Rnd 0.1% Wallet"
-    expect(h[2]['restorationTime']).to eq 1598
+    expect(h[2]['benchName']).to eq "0.1-percent-rnd"
+    expect(h[2]['restoreTime']).to eq 1193
+
+    expect(h[7]['benchName']).to eq "0.4-percent-seq"
+    expect(h[7]['listTransactionsTime']).to eq 72.25
 
   end
 
@@ -23,14 +25,14 @@ describe Helpers::Readers::Restorations do
     res = File.read("#{Dir.pwd}/tests/artifacts/restoration-testnet.txt")
     h = Restorations.read_to_hash res
 
-    expect(h[0]['benchName']).to eq "Seq 0% Wallet"
-    expect(h[0]['restorationTime']).to eq 124.5
+    expect(h[0]['benchName']).to eq "0-percent-seq"
+    expect(h[0]['restoreTime']).to eq 124.6
 
-    expect(h[1]['benchName']).to eq "Rnd 0% Wallet"
-    expect(h[1]['listingAddressesTime']).to eq 0.0004571
+    expect(h[1]['benchName']).to eq "0-percent-rnd"
+    expect(h[1]['listAddressesTime']).to eq 0.0005528
 
-    expect(h[2]['benchName']).to eq "Rnd 0.1% Wallet"
-    expect(h[2]['estimatingFeesTime']).to eq 0.1422
+    expect(h[2]['benchName']).to eq "0.1-percent-rnd"
+    expect(h[2]['estimateFeesTime']).to eq 0.02367
   end
 end
 
