@@ -32,6 +32,10 @@ export BENCH_DB_PATH=sqlite:/tmp/test.db
 export BUILDKITE_API_TOKEN=fake_token
 rake db:migrate
 
+# To set up data being downloaded from buildkite set up as a cron job or
+# in heroku scheduler
+rake bk:latest
+
 # Run all tests
 rspec tests
 
