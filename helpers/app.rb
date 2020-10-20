@@ -34,7 +34,7 @@ module Helpers
         </thead>
         <tbody>
       }
-      res.sort_by{|r| -r[:bench_name].reverse }.each do |m|
+      res.each do |m|
         table += %Q{
             <tr>
               <td scope="row">
