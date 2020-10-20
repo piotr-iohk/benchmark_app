@@ -44,6 +44,9 @@ when "all"
     <%= restoration_graph dataset, "0.1-percent-seq", url, [params[:type_of_measurement]] %> <br/>
     <%= restoration_graph dataset, "0.2-percent-seq", url, [params[:type_of_measurement]] %> <br/>
     <%= restoration_graph dataset, "0.4-percent-seq", url, [params[:type_of_measurement]] %> <br/>
+    <%= restoration_graph dataset, "1-wallets-to-0.1", url, [params[:type_of_measurement]] %> <br/>
+    <%= restoration_graph dataset, "10-wallets-to-0.01", url, [params[:type_of_measurement]] %> <br/>
+    <%= restoration_graph dataset, "100-wallets-to-0.01", url, [params[:type_of_measurement]] %> <br/>
   </div>
   <div class="col">
     <%= restoration_graph dataset, "0-percent-rnd", url, [params[:type_of_measurement]] %> <br/>
@@ -59,6 +62,9 @@ when "Seq"
 <%= restoration_graph dataset, "0.1-percent-seq", url, [params[:type_of_measurement]] %> <br/>
 <%= restoration_graph dataset, "0.2-percent-seq", url, [params[:type_of_measurement]] %> <br/>
 <%= restoration_graph dataset, "0.4-percent-seq", url, [params[:type_of_measurement]] %> <br/>
+<%= restoration_graph dataset, "1-wallets-to-0.1", url, [params[:type_of_measurement]] %> <br/>
+<%= restoration_graph dataset, "10-wallets-to-0.01", url, [params[:type_of_measurement]] %> <br/>
+<%= restoration_graph dataset, "100-wallets-to-0.01", url, [params[:type_of_measurement]] %> <br/>
 
 <%
 when "Rnd"
