@@ -67,8 +67,8 @@ describe 'On the Benchmark App', type: :feature do
     expect(page).to have_xpath(is_active "/latency")
     visit '/latency?latency_category=3&latency_benchmark=12&latency_measurement=listWallets'
     expect(page).to have_xpath(is_active "/latency")
-    visit '/testnet-restoration'
-    expect(page).to have_xpath(is_active "/testnet-restoration")
+    # visit '/testnet-restoration'
+    # expect(page).to have_xpath(is_active "/testnet-restoration")
     visit '/mainnet-restoration'
     expect(page).to have_xpath(is_active "/mainnet-restoration")
   end
@@ -122,11 +122,10 @@ describe 'On the Benchmark App', type: :feature do
     expect(page).to have_xpath(is_active "/mainnet-restoration")
   end
 
-  it "Testnet restoration graphs" do
-    visit '/'
-    click_link "Testnet"
-    expect(page).to have_xpath(is_active "/testnet-restoration")
-  end
+  # it "Testnet restoration graphs" do
+  #   visit '/testnet-restoration'
+  #   expect(page).to have_xpath(is_active "/testnet-restoration")
+  # end
 
   it "Database graphs" do
     visit '/'
