@@ -3,10 +3,13 @@ require "sequel/core"
 require_relative "env"
 require_relative "helpers/buildkite"
 require_relative "helpers/data_transfer"
+require_relative "helpers/data_cleaner"
 
 include Helpers
 
 namespace :db do
+  ##
+  # rake db:migrate
   desc "Run DB migrations"
   task :migrate, [:version] do |t, args|
     Sequel.extension :migration
@@ -14,6 +17,15 @@ namespace :db do
     Sequel.connect(DB_PATH) do |db|
       Sequel::Migrator.run(db, "db/migrations", target: version)
     end
+  end
+
+  ##
+  # rake db:clean[555]
+  desc "Remove all nightbuilds (with all measurements) older than nb"
+  task :clean, [:nb] do |t, args|
+    nb = args[:nb]
+    db_conn = Sequel.connect(DB_PATH)
+    Helpers::DataCleaner.remove(db_conn, nb)
   end
 end
 
@@ -40,6 +52,8 @@ namespace :bk do
     end
   end
 
+  ##
+  # rake bk:latest
   desc "Get latest results from buildkite"
   task :latest do
     bk = Helpers::Buildkite.new
