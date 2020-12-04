@@ -47,7 +47,7 @@ class BenchmarkApp < Sinatra::Base
   end
 
   get "/nightbuilds" do
-    dataset = DB[:nightly_builds].all.reverse
+    dataset = DB[:nightly_builds].order(Sequel.desc(:build_no)).all
     erb :nightbuilds, { :locals => { :dataset => dataset } }
   end
 
