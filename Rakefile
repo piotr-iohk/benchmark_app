@@ -21,11 +21,20 @@ namespace :db do
 
   ##
   # rake db:clean[555]
-  desc "Remove all nightbuilds (with all measurements) older than nb"
+  desc "Remove specific nb"
   task :clean, [:nb] do |t, args|
     nb = args[:nb]
     db_conn = Sequel.connect(DB_PATH)
     Helpers::DataCleaner.remove(db_conn, nb)
+  end
+
+  ##
+  # rake db:clean_after[555]
+  desc "Remove all nightbuilds (with all measurements) older than nb, including it"
+  task :clean_older, [:nb] do |t, args|
+    nb = args[:nb]
+    db_conn = Sequel.connect(DB_PATH)
+    Helpers::DataCleaner.remove_this_and_older(db_conn, nb)
   end
 end
 
