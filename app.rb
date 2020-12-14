@@ -103,6 +103,7 @@ class BenchmarkApp < Sinatra::Base
         join nightly_builds as n on m.nightly_build_id = n.nightly_build_id
         join latency_benchmarks as b on m.latency_benchmark_id = b.latency_benchmark_id
         join latency_categories as c on m.latency_category_id = c.latency_category_id
+      order by build_no
     }
     dataset = DB[sql]
     latency_categories = DB[:latency_categories].
