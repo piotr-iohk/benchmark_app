@@ -85,12 +85,16 @@ class BenchmarkApp < Sinatra::Base
   end
 
   get "/mainnet-restoration" do
-    dataset = DB[:mainnet_restores_new].join(:nightly_builds, nightly_build_id: :nightly_build_id)
+    dataset = DB[:mainnet_restores_new].
+              join(:nightly_builds, nightly_build_id: :nightly_build_id).
+              order(Sequel.asc(:build_no))
     erb :restoration_graphs, { :locals => { :dataset => dataset } }
   end
 
   get "/testnet-restoration" do
-    dataset = DB[:testnet_restores_new].join(:nightly_builds, nightly_build_id: :nightly_build_id)
+    dataset = DB[:testnet_restores_new].
+              join(:nightly_builds, nightly_build_id: :nightly_build_id).
+              order(Sequel.asc(:build_no))
     erb :restoration_graphs, { :locals => { :dataset => dataset } }
   end
 
@@ -103,7 +107,7 @@ class BenchmarkApp < Sinatra::Base
         join nightly_builds as n on m.nightly_build_id = n.nightly_build_id
         join latency_benchmarks as b on m.latency_benchmark_id = b.latency_benchmark_id
         join latency_categories as c on m.latency_category_id = c.latency_category_id
-      order by build_no
+      order by build_no ASC
     }
     dataset = DB[sql]
     latency_categories = DB[:latency_categories].
