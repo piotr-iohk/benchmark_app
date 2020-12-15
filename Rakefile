@@ -29,7 +29,7 @@ namespace :db do
   end
 
   ##
-  # rake db:clean_after[555]
+  # rake db:clean_older[555]
   desc "Remove all nightbuilds (with all measurements) older than nb, including it"
   task :clean_older, [:nb] do |t, args|
     nb = args[:nb]

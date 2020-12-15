@@ -110,6 +110,8 @@ module Helpers
        { :name => "listAddresses", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:listAddresses]]}.to_h},
        { :name => "listTransactions", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:listTransactions]]}.to_h},
        { :name => "postTransactionFee", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:postTransactionFee]]}.to_h},
+       { :name => "postTransaction", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:postTransaction]]}.to_h},
+       { :name => "postTransTo5Addrs", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:postTransTo5Addrs]]}.to_h},
        { :name => "getNetworkInfo", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:getNetworkInfo]]}.to_h},
        { :name => "listStakePools", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:listStakePools]]}.to_h}
        ]
