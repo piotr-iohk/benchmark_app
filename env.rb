@@ -32,6 +32,8 @@ LATENCY_MEASUREMENTS = ["listWallets",
                         "listAddresses",
                         "listTransactions",
                         "postTransactionFee",
+                        "postTransaction",
+                        "postTransTo5Addrs",
                         "listStakePools",
                         "getNetworkInfo"
                        ]

@@ -24,19 +24,16 @@ module Helpers
     end
 
     def insert_latency(db_conn, result, nightly_build_id, latency_category_id, latency_benchmark_id)
-      db_conn.insert(
-        nightly_build_id: nightly_build_id,
-        latency_category_id: latency_category_id,
-        latency_benchmark_id: latency_benchmark_id,
-        listWallets: result['listWallets'],
-        getWallet: result['getWallet'],
-        getUTxOsStatistics: result['getUTxOsStatistics'],
-        listAddresses: result['listAddresses'],
-        listTransactions: result['listTransactions'],
-        postTransactionFee: result['postTransactionFee'],
-        listStakePools: result['listStakePools'],
-        getNetworkInfo: result['getNetworkInfo']
-      )
+      columns = [:nightly_build_id,
+                 :latency_category_id,
+                 :latency_benchmark_id
+                ] + LATENCY_MEASUREMENTS.map{|c| c.to_sym}
+      values = [nightly_build_id,
+                latency_category_id,
+                latency_benchmark_id
+               ] + LATENCY_MEASUREMENTS.map{|c| result[c]}
+
+      db_conn.insert(columns, values)
     end
 
     def insert_into_db(buildkite_data_hash, db_connection, options = {})
