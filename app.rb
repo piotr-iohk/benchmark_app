@@ -101,7 +101,7 @@ class BenchmarkApp < Sinatra::Base
   get "/latency" do
     sql = %{
       select build_no, c.name as category, b.name as benchmark,
-             #{LATENCY_MEASUREMENTS.join(", ")}
+             #{LATENCY_MEASUREMENTS.map{|m| "\"" + m + "\""}.join(", ")}
         from latency_measurements as m
         join nightly_builds as n on m.nightly_build_id = n.nightly_build_id
         join latency_benchmarks as b on m.latency_benchmark_id = b.latency_benchmark_id
