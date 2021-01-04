@@ -36,6 +36,15 @@ namespace :db do
     db_conn = Sequel.connect(DB_PATH)
     Helpers::DataCleaner.remove_this_and_older(db_conn, nb)
   end
+
+  ##
+  # rake db:clean_newer[734]
+  desc "Remove all nightbuilds (with all measurements) NEWER than nb, including it"
+  task :clean_newer, [:nb] do |t, args|
+    nb = args[:nb]
+    db_conn = Sequel.connect(DB_PATH)
+    Helpers::DataCleaner.remove_this_and_newer(db_conn, nb)
+  end
 end
 
 namespace :bk do

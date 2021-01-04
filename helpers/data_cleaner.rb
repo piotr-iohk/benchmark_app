@@ -10,6 +10,13 @@ module Helpers
       end
     end
 
+    def remove_this_and_newer(db_conn, nb)
+      nbs_to_remove = db_conn["SELECT * FROM nightly_builds WHERE build_no >= #{nb.to_i}"].all
+      nbs_to_remove.each do |nb|
+        remove_particular_nb(db_conn, nb)
+      end
+    end
+
     def remove(db_conn, nb)
       nb_to_remove = db_conn["SELECT * FROM nightly_builds WHERE build_no = #{nb.to_i}"].first
       remove_particular_nb(db_conn, nb_to_remove)
@@ -32,6 +39,6 @@ module Helpers
       puts db_conn[:nightly_builds].where(nightly_build_id: nb_id).delete
     end
 
-    module_function :remove, :remove_this_and_older, :remove_particular_nb
+    module_function :remove, :remove_this_and_older, :remove_this_and_newer, :remove_particular_nb
   end
 end
