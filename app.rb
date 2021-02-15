@@ -23,7 +23,7 @@ class BenchmarkApp < Sinatra::Base
   end
 
   get "/database" do
-    last_build = DB[:nightly_builds].all.reverse.first[:build_no]
+    last_build = DB[:nightly_builds].order(Sequel.desc(:build_no)).first[:build_no]
     redirect "/database/#{last_build}"
   end
 
