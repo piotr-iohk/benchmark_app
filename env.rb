@@ -31,9 +31,13 @@ LATENCY_MEASUREMENTS = ["listWallets",
                         "getUTxOsStatistics",
                         "listAddresses",
                         "listTransactions",
+                        "getTransaction",
                         "postTransactionFee",
                         "postTransaction",
                         "postTransTo5Addrs",
+                        "postTransactionMA",
                         "listStakePools",
-                        "getNetworkInfo"
+                        "getNetworkInfo",
+                        "listMultiAssets",
+                        "getMultiAsset"
                        ]
