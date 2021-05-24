@@ -117,7 +117,9 @@ module Helpers
        { :name => "getNetworkInfo", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:getNetworkInfo]]}.to_h},
        { :name => "listStakePools", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:listStakePools]]}.to_h},
        { :name => "listMultiAssets", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:listMultiAssets]]}.to_h},
-       { :name => "getMultiAsset", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:getMultiAsset]]}.to_h}
+       { :name => "getMultiAsset", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:getMultiAsset]]}.to_h},
+       { :name => "postMigrationPlan", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:postMigrationPlan]]}.to_h},
+       { :name => "postMigration", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:postMigration]]}.to_h}
        ]
       if filter.empty?
         data
