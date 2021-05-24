@@ -39,5 +39,7 @@ LATENCY_MEASUREMENTS = ["listWallets",
                         "listStakePools",
                         "getNetworkInfo",
                         "listMultiAssets",
-                        "getMultiAsset"
+                        "getMultiAsset",
+                        "postMigrationPlan",
+                        "postMigration"
                        ]
