@@ -17,7 +17,7 @@ describe 'On the Benchmark App', type: :feature do
     DB = Sequel.connect(DB_PATH)
     testnet = File.read("#{Dir.pwd}/tests/artifacts/restoration-testnet.txt")
     mainnet = File.read("#{Dir.pwd}/tests/artifacts/restoration-mainnet.txt")
-    latency = File.read("#{Dir.pwd}/tests/artifacts/latency.log")
+    latency = File.read("#{Dir.pwd}/tests/artifacts/latency_NB1268.log")
 
     @build = { build_no: 111,
                datetime: Time.now,
