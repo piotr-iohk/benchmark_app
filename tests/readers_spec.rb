@@ -38,26 +38,21 @@ end
 
 describe Helpers::Readers::Latencies do
   it "read_to_hash" do
-    res = File.read("#{Dir.pwd}/tests/artifacts/latency.log")
+    res = File.read("#{Dir.pwd}/tests/artifacts/latency_NB1268.log")
+    # res = File.read("#{Dir.pwd}/tests/artifacts/latency.log")
     h = Latencies.read_to_hash res
 
-    v = h['+++ Run benchmark - jormungandr']['Non-cached run']['getNetworkInfo']
-    expect(v).to eq 10.4
-
-    v = h['+++ Run benchmark - jormungandr']['Latencies for 10 fixture wallets scenario']['listStakePools']
-    expect(v).to eq 269.8
-
     v = h['+++ Run benchmark - shelley']['Non-cached run']['getNetworkInfo']
-    expect(v).to eq 28.2
+    expect(v).to eq 27.0
 
     v = h['+++ Run benchmark - shelley']['Latencies for 2 fixture wallets with 10 txs scenario']['listAddresses']
-    expect(v).to eq 6.5
+    expect(v).to eq 1.5
 
     v = h['+++ Run benchmark - shelley']['Latencies for 2 fixture wallets scenario']['postTransactionFee']
-    expect(v).to eq 118.1
+    expect(v).to eq 21.5
 
     v = h['+++ Run benchmark - shelley']['Latencies for 2 fixture wallets with 200 utxos scenario']['listTransactions']
-    expect(v).to eq 101.9
+    expect(v).to eq 49.6
 
   end
 

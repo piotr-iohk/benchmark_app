@@ -1,0 +1,504 @@
+~~~ Running global environment hook
+[90m$[0m /nix/store/98b51piqs4fd04ccajcsiayfj79zq36v-buildkite-agent-hooks/environment
+[90m# PLUTUS_CI_PRIVATE_SSH added[0m
+[90m# NIX_BUILD_SHELL added[0m
+[90m# PLUTUS_CI_AWS_SECRET_ACCESS_KEY added[0m
+[90m# CARDANO_LEDGER_COVERALLS_REPO_TOKEN added[0m
+[90m# BUILDKITE_S3_DEFAULT_REGION added[0m
+[90m# CARDANO_LEDGER_SPECS_COVERALLS_REPO_TOKEN added[0m
+[90m# BUILDKITE_S3_ACCESS_KEY_ID added[0m
+[90m# CARDANO_CHAIN_COVERALLS_REPO_TOKEN added[0m
+[90m# CARDANO_WALLET_COVERALLS_REPO_TOKEN added[0m
+[90m# SMASH_COVERALLS_REPO_TOKEN added[0m
+[90m# BUILDKITE_S3_SECRET_ACCESS_KEY added[0m
+[90m# PLUTUS_CI_AWS_ACCESS_KEY_ID added[0m
+[90m# IOHK_MONITORING_FRAMEWORK_COVERALLS_REPO_TOKEN added[0m
+[90m# CARDANO_BASE_COVERALLS_REPO_TOKEN added[0m
+[90m# PATH changed[0m
+~~~ Preparing working directory
+[90m$[0m cd /var/lib/buildkite-agent-iohk/builds/packet-ipxe-4-ci4-bench/input-output-hk/cardano-wallet-nightly
+[90m$[0m git remote set-url origin https://github.com/input-output-hk/cardano-wallet.git
+[90m$[0m git clean -ffdqx
+[90m$[0m git fetch -v --prune -- origin cc0f201a67d0730c7cfe31d3c6e0ae4452a6af05
+POST git-upload-pack (102 bytes)
+
+From https://github.com/input-output-hk/cardano-wallet
+
+ * branch                cc0f201a67d0730c7cfe31d3c6e0ae4452a6af05 -> FETCH_HEAD
+
+[90m$[0m git checkout -f cc0f201a67d0730c7cfe31d3c6e0ae4452a6af05
+HEAD is now at cc0f201a6 Merge #3157
+
+[90m# Cleaning again to catch any post-checkout changes[0m
+[90m$[0m git clean -ffdqx
+[90m# Checking to see if Git data needs to be sent to Buildkite[0m
+[90m$[0m buildkite-agent meta-data exists buildkite:git:commit
+~~~ Running global pre-command hook
+[90m$[0m /nix/store/98b51piqs4fd04ccajcsiayfj79zq36v-buildkite-agent-hooks/pre-command
+~~~ Running script
+[90m$[0m ./.buildkite/bench-latency.sh
+--- Build
+
+
+[0m[K
+[K[35;1mwarning:[0m Git tree '/var/lib/buildkite-agent-iohk/builds/packet-ipxe-4-ci4-bench/input-output-hk/cardano-wallet-nightly' is dirty[0m
+
+
+[0m[K
+[[32;1m0[0m/1 built] [0m[K
+[[32;1m0[0m/1 built] [0m[K
+[0m[K
+[K+++ Run benchmark - shelley
+
+Node configuration: NodeConfiguration {ncNodeIPv4Addr = Nothing, ncNodeIPv6Addr = Nothing, ncNodePortNumber = Just 43976, ncConfigFile = "/tmp/latency1558343/bft/node.config", ncTopologyFile = "/tmp/latency1558343/bft/node.topology", ncDatabaseFile = "db", ncProtocolFiles = ProtocolFilepaths {byronCertFile = Just "/tmp/latency1558343/bft/bft-leader.byron.cert", byronKeyFile = Just "/tmp/latency1558343/bft/bft-leader.byron.skey", shelleyKESFile = Just "/tmp/latency1558343/bft/bft-leader.kes.skey", shelleyVRFFile = Just "/tmp/latency1558343/bft/bft-leader.vrf.skey", shelleyCertFile = Just "/tmp/latency1558343/bft/bft-leader.opcert", shelleyBulkCredsFile = Nothing}, ncValidateDB = False, ncShutdownIPC = Nothing, ncShutdownOnSlotSynced = NoMaxSlotNo, ncProtocolConfig = NodeProtocolConfigurationCardano (NodeByronProtocolConfiguration {npcByronGenesisFile = "/tmp/latency1558343/bft/byron-genesis.json", npcByronGenesisFileHash = Nothing, npcByronReqNetworkMagic = RequiresNoMagic, npcByronPbftSignatureThresh = Just 1.0, npcByronApplicationName = ApplicationName {unApplicationName = "cardano-sl"}, npcByronApplicationVersion = 1, npcByronSupportedProtocolVersionMajor = 2, npcByronSupportedProtocolVersionMinor = 0, npcByronSupportedProtocolVersionAlt = 0}) (NodeShelleyProtocolConfiguration {npcShelleyGenesisFile = "/tmp/latency1558343/bft/shelley-genesis.json", npcShelleyGenesisFileHash = Nothing}) (NodeAlonzoProtocolConfiguration {npcAlonzoGenesisFile = "/tmp/latency1558343/bft/alonzo-genesis.json", npcAlonzoGenesisFileHash = Nothing}) (NodeHardForkProtocolConfiguration {npcTestEnableDevelopmentHardForkEras = False, npcTestShelleyHardForkAtEpoch = Just (EpochNo 0), npcTestShelleyHardForkAtVersion = Nothing, npcTestAllegraHardForkAtEpoch = Just (EpochNo 0), npcTestAllegraHardForkAtVersion = Nothing, npcTestMaryHardForkAtEpoch = Just (EpochNo 0), npcTestMaryHardForkAtVersion = Nothing, npcTestAlonzoHardForkAtEpoch = Just (EpochNo 0), npcTestAlonzoHardForkAtVersion = Nothing}), ncSocketPath = Just "/tmp/latency1558343/bft/node.socket", ncDiffusionMode = InitiatorAndResponderDiffusionMode, ncSnapshotInterval = DefaultSnapshotInterval, ncTestEnableDevelopmentNetworkProtocols = True, ncMaxConcurrencyBulkSync = Nothing, ncMaxConcurrencyDeadline = Nothing, ncLoggingSwitch = True, ncLogMetrics = False, ncTraceConfig = TracingOn (TraceSelection {traceVerbosity = NormalVerbosity, traceAcceptPolicy = OnOff {isOn = False}, traceBlockFetchClient = OnOff {isOn = False}, traceBlockFetchDecisions = OnOff {isOn = False}, traceBlockFetchProtocol = OnOff {isOn = False}, traceBlockFetchProtocolSerialised = OnOff {isOn = False}, traceBlockFetchServer = OnOff {isOn = False}, traceBlockchainTime = OnOff {isOn = False}, traceChainDB = OnOff {isOn = True}, traceChainSyncBlockServer = OnOff {isOn = False}, traceChainSyncClient = OnOff {isOn = False}, traceChainSyncHeaderServer = OnOff {isOn = False}, traceChainSyncProtocol = OnOff {isOn = False}, traceConnectionManager = OnOff {isOn = False}, traceConnectionManagerCounters = OnOff {isOn = True}, traceDebugPeerSelectionInitiatorTracer = OnOff {isOn = False}, traceDebugPeerSelectionInitiatorResponderTracer = OnOff {isOn = False}, traceDiffusionInitialization = OnOff {isOn = False}, traceDnsResolver = OnOff {isOn = False}, traceDnsSubscription = OnOff {isOn = True}, traceErrorPolicy = OnOff {isOn = True}, traceForge = OnOff {isOn = True}, traceForgeStateInfo = OnOff {isOn = True}, traceHandshake = OnOff {isOn = False}, traceInboundGovernor = OnOff {isOn = False}, traceInboundGovernorCounters = OnOff {isOn = True}, traceIpSubscription = OnOff {isOn = True}, traceKeepAliveClient = OnOff {isOn = False}, traceLedgerPeers = OnOff {isOn = False}, traceLocalChainSyncProtocol = OnOff {isOn = False}, traceLocalConnectionManager = OnOff {isOn = False}, traceLocalErrorPolicy = OnOff {isOn = True}, traceLocalHandshake = OnOff {isOn = False}, traceLocalInboundGovernor = OnOff {isOn = False}, traceLocalMux = OnOff {isOn = False}, traceLocalRootPeers = OnOff {isOn = False}, traceLocalServer = OnOff {isOn = False}, traceLocalStateQueryProtocol = OnOff {isOn = False}, traceLocalTxSubmissionProtocol = OnOff {isOn = False}, traceLocalTxSubmissionServer = OnOff {isOn = False}, traceMempool = OnOff {isOn = True}, traceMux = OnOff {isOn = False}, tracePeerSelection = OnOff {isOn = False}, tracePeerSelectionCounters = OnOff {isOn = True}, tracePeerSelectionActions = OnOff {isOn = False}, tracePublicRootPeers = OnOff {isOn = False}, traceServer = OnOff {isOn = False}, traceTxInbound = OnOff {isOn = False}, traceTxOutbound = OnOff {isOn = False}, traceTxSubmissionProtocol = OnOff {isOn = False}, traceTxSubmission2Protocol = OnOff {isOn = False}}), ncMaybeMempoolCapacityOverride = Nothing, ncProtocolIdleTimeout = 5s, ncTimeWaitTimeout = 60s, ncAcceptedConnectionsLimit = AcceptedConnectionsLimit {acceptedConnectionsHardLimit = 512, acceptedConnectionsSoftLimit = 384, acceptedConnectionsDelay = 5s}, ncTargetNumberOfRootPeers = 100, ncTargetNumberOfKnownPeers = 100, ncTargetNumberOfEstablishedPeers = 50, ncTargetNumberOfActivePeers = 20, ncEnableP2P = DisabledP2PMode}
+
+Node configuration: NodeConfiguration {ncNodeIPv4Addr = Nothing, ncNodeIPv6Addr = Nothing, ncNodePortNumber = Just 28050, ncConfigFile = "/tmp/latency1558343/node/node.config", ncTopologyFile = "/tmp/latency1558343/node/node.topology", ncDatabaseFile = "db", ncProtocolFiles = ProtocolFilepaths {byronCertFile = Nothing, byronKeyFile = Nothing, shelleyKESFile = Nothing, shelleyVRFFile = Nothing, shelleyCertFile = Nothing, shelleyBulkCredsFile = Nothing}, ncValidateDB = False, ncShutdownIPC = Nothing, ncShutdownOnSlotSynced = NoMaxSlotNo, ncProtocolConfig = NodeProtocolConfigurationCardano (NodeByronProtocolConfiguration {npcByronGenesisFile = "/tmp/latency1558343/node/byron-genesis.json", npcByronGenesisFileHash = Nothing, npcByronReqNetworkMagic = RequiresNoMagic, npcByronPbftSignatureThresh = Just 1.0, npcByronApplicationName = ApplicationName {unApplicationName = "cardano-sl"}, npcByronApplicationVersion = 1, npcByronSupportedProtocolVersionMajor = 2, npcByronSupportedProtocolVersionMinor = 0, npcByronSupportedProtocolVersionAlt = 0}) (NodeShelleyProtocolConfiguration {npcShelleyGenesisFile = "/tmp/latency1558343/node/shelley-genesis.json", npcShelleyGenesisFileHash = Nothing}) (NodeAlonzoProtocolConfiguration {npcAlonzoGenesisFile = "/tmp/latency1558343/node/alonzo-genesis.json", npcAlonzoGenesisFileHash = Nothing}) (NodeHardForkProtocolConfiguration {npcTestEnableDevelopmentHardForkEras = False, npcTestShelleyHardForkAtEpoch = Just (EpochNo 0), npcTestShelleyHardForkAtVersion = Nothing, npcTestAllegraHardForkAtEpoch = Just (EpochNo 0), npcTestAllegraHardForkAtVersion = Nothing, npcTestMaryHardForkAtEpoch = Just (EpochNo 0), npcTestMaryHardForkAtVersion = Nothing, npcTestAlonzoHardForkAtEpoch = Just (EpochNo 0), npcTestAlonzoHardForkAtVersion = Nothing}), ncSocketPath = Just "/tmp/latency1558343/node/node.socket", ncDiffusionMode = InitiatorAndResponderDiffusionMode, ncSnapshotInterval = DefaultSnapshotInterval, ncTestEnableDevelopmentNetworkProtocols = True, ncMaxConcurrencyBulkSync = Nothing, ncMaxConcurrencyDeadline = Nothing, ncLoggingSwitch = True, ncLogMetrics = False, ncTraceConfig = TracingOn (TraceSelection {traceVerbosity = NormalVerbosity, traceAcceptPolicy = OnOff {isOn = False}, traceBlockFetchClient = OnOff {isOn = False}, traceBlockFetchDecisions = OnOff {isOn = False}, traceBlockFetchProtocol = OnOff {isOn = False}, traceBlockFetchProtocolSerialised = OnOff {isOn = False}, traceBlockFetchServer = OnOff {isOn = False}, traceBlockchainTime = OnOff {isOn = False}, traceChainDB = OnOff {isOn = True}, traceChainSyncBlockServer = OnOff {isOn = False}, traceChainSyncClient = OnOff {isOn = False}, traceChainSyncHeaderServer = OnOff {isOn = False}, traceChainSyncProtocol = OnOff {isOn = False}, traceConnectionManager = OnOff {isOn = False}, traceConnectionManagerCounters = OnOff {isOn = True}, traceDebugPeerSelectionInitiatorTracer = OnOff {isOn = False}, traceDebugPeerSelectionInitiatorResponderTracer = OnOff {isOn = False}, traceDiffusionInitialization = OnOff {isOn = False}, traceDnsResolver = OnOff {isOn = False}, traceDnsSubscription = OnOff {isOn = True}, traceErrorPolicy = OnOff {isOn = True}, traceForge = OnOff {isOn = True}, traceForgeStateInfo = OnOff {isOn = True}, traceHandshake = OnOff {isOn = False}, traceInboundGovernor = OnOff {isOn = False}, traceInboundGovernorCounters = OnOff {isOn = True}, traceIpSubscription = OnOff {isOn = True}, traceKeepAliveClient = OnOff {isOn = False}, traceLedgerPeers = OnOff {isOn = False}, traceLocalChainSyncProtocol = OnOff {isOn = False}, traceLocalConnectionManager = OnOff {isOn = False}, traceLocalErrorPolicy = OnOff {isOn = True}, traceLocalHandshake = OnOff {isOn = False}, traceLocalInboundGovernor = OnOff {isOn = False}, traceLocalMux = OnOff {isOn = False}, traceLocalRootPeers = OnOff {isOn = False}, traceLocalServer = OnOff {isOn = False}, traceLocalStateQueryProtocol = OnOff {isOn = False}, traceLocalTxSubmissionProtocol = OnOff {isOn = False}, traceLocalTxSubmissionServer = OnOff {isOn = False}, traceMempool = OnOff {isOn = True}, traceMux = OnOff {isOn = False}, tracePeerSelection = OnOff {isOn = False}, tracePeerSelectionCounters = OnOff {isOn = True}, tracePeerSelectionActions = OnOff {isOn = False}, tracePublicRootPeers = OnOff {isOn = False}, traceServer = OnOff {isOn = False}, traceTxInbound = OnOff {isOn = False}, traceTxOutbound = OnOff {isOn = False}, traceTxSubmissionProtocol = OnOff {isOn = False}, traceTxSubmission2Protocol = OnOff {isOn = False}}), ncMaybeMempoolCapacityOverride = Nothing, ncProtocolIdleTimeout = 5s, ncTimeWaitTimeout = 60s, ncAcceptedConnectionsLimit = AcceptedConnectionsLimit {acceptedConnectionsHardLimit = 512, acceptedConnectionsSoftLimit = 384, acceptedConnectionsDelay = 5s}, ncTargetNumberOfRootPeers = 100, ncTargetNumberOfKnownPeers = 100, ncTargetNumberOfEstablishedPeers = 50, ncTargetNumberOfActivePeers = 20, ncEnableP2P = DisabledP2PMode}
+
+    Non-cached run
+
+        getNetworkInfo      - 27.0 ms
+
+    Latencies for 2 fixture wallets scenario
+
+        listWallets         - 1.8 ms
+
+        getWallet           - 0.5 ms
+
+        getUTxOsStatistics  - 0.4 ms
+
+        listAddresses       - 1.5 ms
+
+        listTransactions    - 5.5 ms
+
+        getTransaction      - 5.5 ms
+
+        postTransactionFee  - 21.5 ms
+
+        postTransaction     - 160.3 ms
+
+        postTransTo5Addrs   - 206.7 ms
+
+        postTransactionMA   - 18.0 ms
+
+        listStakePools      - 5.0 ms
+
+        getNetworkInfo      - 0.1 ms
+
+        listMultiAssets     - 4.2 ms
+
+        getMultiAsset       - 4.0 ms
+
+        postMigrationPlan   - 1.5 ms
+
+        postMigration       - 46.9 ms
+
+    Latencies for 10 fixture wallets scenario
+
+        listWallets         - 6.2 ms
+
+        getWallet           - 0.6 ms
+
+        getUTxOsStatistics  - 0.5 ms
+
+        listAddresses       - 1.5 ms
+
+        listTransactions    - 5.6 ms
+
+        getTransaction      - 6.9 ms
+
+        postTransactionFee  - 21.1 ms
+
+        postTransaction     - 161.3 ms
+
+        postTransTo5Addrs   - 276.8 ms
+
+        postTransactionMA   - 18.2 ms
+
+        listStakePools      - 5.1 ms
+
+        getNetworkInfo      - 0.1 ms
+
+        listMultiAssets     - 4.3 ms
+
+        getMultiAsset       - 8.2 ms
+
+        postMigrationPlan   - 1.7 ms
+
+        postMigration       - 45.7 ms
+
+    Latencies for 100 fixture wallets
+
+        listWallets         - 68.0 ms
+
+        getWallet           - 0.8 ms
+
+        getUTxOsStatistics  - 0.6 ms
+
+        listAddresses       - 2.3 ms
+
+        listTransactions    - 7.7 ms
+
+        getTransaction      - 7.7 ms
+
+        postTransactionFee  - 32.8 ms
+
+        postTransaction     - 197.6 ms
+
+        postTransTo5Addrs   - 307.4 ms
+
+        postTransactionMA   - 65.8 ms
+
+        listStakePools      - 6.7 ms
+
+        getNetworkInfo      - 0.1 ms
+
+        listMultiAssets     - 5.1 ms
+
+        getMultiAsset       - 4.8 ms
+
+        postMigrationPlan   - 2.2 ms
+
+        postMigration       - 46.4 ms
+
+    Latencies for 2 fixture wallets with 10 txs scenario
+
+        listWallets         - 2.2 ms
+
+        getWallet           - 0.6 ms
+
+        getUTxOsStatistics  - 0.5 ms
+
+        listAddresses       - 1.5 ms
+
+        listTransactions    - 12.8 ms
+
+        getTransaction      - 3.7 ms
+
+        postTransactionFee  - 22.2 ms
+
+        postTransaction     - 242.7 ms
+
+        postTransTo5Addrs   - 245.5 ms
+
+        postTransactionMA   - 18.1 ms
+
+        listStakePools      - 6.0 ms
+
+        getNetworkInfo      - 0.1 ms
+
+        listMultiAssets     - 7.3 ms
+
+        getMultiAsset       - 5.9 ms
+
+        postMigrationPlan   - 1.6 ms
+
+        postMigration       - 46.4 ms
+
+    Latencies for 2 fixture wallets with 20 txs scenario
+
+        listWallets         - 2.3 ms
+
+        getWallet           - 0.6 ms
+
+        getUTxOsStatistics  - 0.5 ms
+
+        listAddresses       - 1.5 ms
+
+        listTransactions    - 14.5 ms
+
+        getTransaction      - 3.9 ms
+
+        postTransactionFee  - 25.5 ms
+
+        postTransaction     - 282.9 ms
+
+        postTransTo5Addrs   - 301.5 ms
+
+        postTransactionMA   - 18.3 ms
+
+        listStakePools      - 6.9 ms
+
+        getNetworkInfo      - 0.1 ms
+
+        listMultiAssets     - 4.4 ms
+
+        getMultiAsset       - 4.1 ms
+
+        postMigrationPlan   - 2.2 ms
+
+        postMigration       - 46.3 ms
+
+    Latencies for 2 fixture wallets with 100 txs scenario
+
+        listWallets         - 2.4 ms
+
+        getWallet           - 0.6 ms
+
+        getUTxOsStatistics  - 0.5 ms
+
+        listAddresses       - 1.5 ms
+
+        listTransactions    - 32.3 ms
+
+        getTransaction      - 0.7 ms
+
+        postTransactionFee  - 28.2 ms
+
+        postTransaction     - 432.8 ms
+
+        postTransTo5Addrs   - 329.0 ms
+
+        postTransactionMA   - 18.3 ms
+
+        listStakePools      - 7.9 ms
+
+        getNetworkInfo      - 0.1 ms
+
+        listMultiAssets     - 4.4 ms
+
+        getMultiAsset       - 4.2 ms
+
+        postMigrationPlan   - 1.7 ms
+
+        postMigration       - 46.9 ms
+
+    Latencies for 10 fixture wallets with 10 txs scenario
+
+        listWallets         - 6.2 ms
+
+        getWallet           - 0.6 ms
+
+        getUTxOsStatistics  - 0.5 ms
+
+        listAddresses       - 1.5 ms
+
+        listTransactions    - 8.5 ms
+
+        getTransaction      - 0.7 ms
+
+        postTransactionFee  - 23.1 ms
+
+        postTransaction     - 271.5 ms
+
+        postTransTo5Addrs   - 274.5 ms
+
+        postTransactionMA   - 18.3 ms
+
+        listStakePools      - 8.3 ms
+
+        getNetworkInfo      - 0.1 ms
+
+        listMultiAssets     - 5.7 ms
+
+        getMultiAsset       - 4.1 ms
+
+        postMigrationPlan   - 1.7 ms
+
+        postMigration       - 47.7 ms
+
+    Latencies for 10 fixture wallets with 20 txs scenario
+
+        listWallets         - 8.5 ms
+
+        getWallet           - 0.6 ms
+
+        getUTxOsStatistics  - 0.5 ms
+
+        listAddresses       - 1.5 ms
+
+        listTransactions    - 11.1 ms
+
+        getTransaction      - 0.6 ms
+
+        postTransactionFee  - 23.7 ms
+
+        postTransaction     - 312.6 ms
+
+        postTransTo5Addrs   - 232.6 ms
+
+        postTransactionMA   - 21.0 ms
+
+        listStakePools      - 9.3 ms
+
+        getNetworkInfo      - 0.1 ms
+
+        listMultiAssets     - 4.5 ms
+
+        getMultiAsset       - 4.2 ms
+
+        postMigrationPlan   - 1.8 ms
+
+        postMigration       - 46.1 ms
+
+    Latencies for 10 fixture wallets with 100 txs scenario
+
+        listWallets         - 6.4 ms
+
+        getWallet           - 0.6 ms
+
+        getUTxOsStatistics  - 0.6 ms
+
+        listAddresses       - 1.6 ms
+
+        listTransactions    - 34.5 ms
+
+        getTransaction      - 0.6 ms
+
+        postTransactionFee  - 27.3 ms
+
+        postTransaction     - 393.4 ms
+
+        postTransTo5Addrs   - 290.1 ms
+
+        postTransactionMA   - 18.4 ms
+
+        listStakePools      - 10.0 ms
+
+        getNetworkInfo      - 0.1 ms
+
+        listMultiAssets     - 4.5 ms
+
+        getMultiAsset       - 4.3 ms
+
+        postMigrationPlan   - 1.7 ms
+
+        postMigration       - 45.9 ms
+
+    Latencies for 2 fixture wallets with 100 utxos scenario
+
+        listWallets         - 2.7 ms
+
+        getWallet           - 0.6 ms
+
+        getUTxOsStatistics  - 0.5 ms
+
+        listAddresses       - 1.5 ms
+
+        listTransactions    - 26.0 ms
+
+        getTransaction      - 2.9 ms
+
+        postTransactionFee  - 26.7 ms
+
+        postTransaction     - 437.1 ms
+
+        postTransTo5Addrs   - 263.8 ms
+
+        postTransactionMA   - 18.3 ms
+
+        listStakePools      - 11.1 ms
+
+        getNetworkInfo      - 0.1 ms
+
+        listMultiAssets     - 4.5 ms
+
+        getMultiAsset       - 5.4 ms
+
+        postMigrationPlan   - 1.7 ms
+
+        postMigration       - 45.8 ms
+
+    Latencies for 2 fixture wallets with 200 utxos scenario
+
+        listWallets         - 2.7 ms
+
+        getWallet           - 0.6 ms
+
+        getUTxOsStatistics  - 0.5 ms
+
+        listAddresses       - 1.5 ms
+
+        listTransactions    - 49.6 ms
+
+        getTransaction      - 4.6 ms
+
+        postTransactionFee  - 30.0 ms
+
+        postTransaction     - 436.7 ms
+
+        postTransTo5Addrs   - 259.0 ms
+
+        postTransactionMA   - 20.4 ms
+
+        listStakePools      - 12.8 ms
+
+        getNetworkInfo      - 0.1 ms
+
+        listMultiAssets     - 5.5 ms
+
+        getMultiAsset       - 4.2 ms
+
+        postMigrationPlan   - 1.7 ms
+
+        postMigration       - 47.2 ms
+
+    Latencies for 2 fixture wallets with 500 utxos scenario
+
+        listWallets         - 2.7 ms
+
+        getWallet           - 0.6 ms
+
+        getUTxOsStatistics  - 0.6 ms
+
+        listAddresses       - 1.5 ms
+
+        listTransactions    - 141.9 ms
+
+        getTransaction      - 7.5 ms
+
+        postTransactionFee  - 41.0 ms
+
+        postTransaction     - 438.1 ms
+
+        postTransTo5Addrs   - 301.7 ms
+
+        postTransactionMA   - 18.8 ms
+
+        listStakePools      - 16.4 ms
+
+        getNetworkInfo      - 0.1 ms
+
+        listMultiAssets     - 4.6 ms
+
+        getMultiAsset       - 5.5 ms
+
+        postMigrationPlan   - 1.8 ms
+
+        postMigration       - 46.1 ms
+
+    Latencies for 2 fixture wallets with 1000 utxos scenario
+
+        listWallets         - 2.7 ms
+
+        getWallet           - 0.7 ms
+
+        getUTxOsStatistics  - 0.7 ms
+
+        listAddresses       - 1.5 ms
+
+        listTransactions    - 301.6 ms
+
+        getTransaction      - 5.1 ms
+
+        postTransactionFee  - 59.5 ms
+
+        postTransaction     - 441.4 ms
+
+        postTransTo5Addrs   - 231.7 ms
+
+        postTransactionMA   - 18.2 ms
+
+        listStakePools      - 22.0 ms
+
+        getNetworkInfo      - 0.1 ms
+
+        listMultiAssets     - 4.2 ms
+
+        getMultiAsset       - 9.4 ms
+
+        postMigrationPlan   - 1.6 ms
+
+        postMigration       - 45.6 ms
+
+~~~ Running global pre-exit hook
+[90m$[0m /nix/store/98b51piqs4fd04ccajcsiayfj79zq36v-buildkite-agent-hooks/pre-exit

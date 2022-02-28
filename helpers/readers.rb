@@ -127,11 +127,16 @@ module Helpers
               h_latencies = {}
             end
 
-            if (l[0] == LATENCY_CATEGORIES[0]) ||
-               (l[0] == LATENCY_CATEGORIES[1])
-              h_top[l[0]] = h_main
+            if (l[0].include? LATENCY_CATEGORIES[0])
+              h_top[LATENCY_CATEGORIES[0]] = h_main
               h_main = {}
             end
+
+            if (l[0].include? LATENCY_CATEGORIES[1])
+              h_top[LATENCY_CATEGORIES[1]] = h_main
+              h_main = {}
+            end
+
           end
         end
         h_top
