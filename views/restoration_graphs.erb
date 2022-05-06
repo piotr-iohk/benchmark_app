@@ -40,6 +40,7 @@ when "all"
 %>
 <div class="row row-cols-2">
   <div class="col">
+    <%= restoration_graph dataset, "baseline", url, [params[:type_of_measurement]] %> <br/>
     <%= restoration_graph dataset, "0-percent-seq", url, [params[:type_of_measurement]] %> <br/>
     <%= restoration_graph dataset, "0.01-percent-seq", url, [params[:type_of_measurement]] %> <br/>
     <%= restoration_graph dataset, "1-wallets-to-0.1", url, [params[:type_of_measurement]] %> <br/>
@@ -53,6 +54,7 @@ when "all"
 <%
 when "Seq"
 %>
+<%= restoration_graph dataset, "baseline", url, [params[:type_of_measurement]] %> <br/>
 <%= restoration_graph dataset, "0-percent-seq", url, [params[:type_of_measurement]] %> <br/>
 <%= restoration_graph dataset, "0.01-percent-seq", url, [params[:type_of_measurement]] %> <br/>
 <%= restoration_graph dataset, "1-wallets-to-0.1", url, [params[:type_of_measurement]] %> <br/>

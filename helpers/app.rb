@@ -41,9 +41,10 @@ module Helpers
                 <details>
                   <summary>#{m[:bench_name]}</summary>
                     <code>
-                    #{m[:utxo_statistics].gsub("...", "<br/>&nbsp;...").
+
+                    #{m[:utxo_statistics] ? m[:utxo_statistics].gsub("...", "<br/>&nbsp;...").
                                           gsub("number_of_t", "<br/>number_of_t").
-                                          gsub("= T", "<br/>= T")}
+                                          gsub("= T", "<br/>= T") : "<i>N/A</i>"}
                     </code>
                 </details>
               </td>
