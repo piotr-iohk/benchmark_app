@@ -1,4 +1,8 @@
 All results:
+BenchBaselineResults:
+  benchName: baseline
+  restorationTime: 3131 s
+  
 BenchSeqResults:
   benchName: 0-percent-seq
   restoreTime: 124.6 s

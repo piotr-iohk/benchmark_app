@@ -32,6 +32,9 @@ module Helpers
           if s == "BenchSeqResults:"
             str[i] = "BenchResults_#{i}:"
           end
+          if s == "BenchBaselineResults:"
+            str[i] = "BenchResults_#{i}:"
+          end
         end
         str = (str - [""]).join("\n").strip
         r = YAML.load(str)
@@ -40,6 +43,7 @@ module Helpers
         # make time to be in seconds
         x = r.map do |s|
           s[1]['restoreTime'] = to_seconds(s[1]['restoreTime']) if s[1]['restoreTime']
+          s[1]['restoreTime'] = to_seconds(s[1]['restorationTime']) if s[1]['restorationTime']
           s[1]['listAddressesTime'] = to_seconds(s[1]['listAddressesTime']) if s[1]['listAddressesTime']
           s[1]['estimateFeesTime'] = to_seconds(s[1]['estimateFeesTime']) if s[1]['estimateFeesTime']
           s[1]['readWalletTime'] = to_seconds(s[1]['readWalletTime']) if s[1]['readWalletTime']
