@@ -12,11 +12,13 @@ module Helpers
         bs = benchmark_string.gsub("number of addresses:", "number_of_addresses=").
                               gsub("number of transactions:", "number_of_transactions=")
 
-        # remove garbage lines, they are typically after ""
-        # remove first line, as it holds unnecessary "All results:" sign
+        # remove garbage lines, all lines until last line is as expected
         str_arr = bs.strip.split("\n")
-        str_arr_selected = str_arr[1..str_arr.rindex("")-1]
-
+        until str_arr.last.include? "... 45000000000000000 0" do
+          str_arr = str_arr[0..str_arr.rindex("")-1]
+        end
+        str_arr_selected = str_arr - ["All results:"]
+        
         # rename top key to be unique
         str_arr_selected.each_with_index do |s, i|
           if s == "BenchRndResults:"
