@@ -12,33 +12,26 @@ module Helpers
         bs = benchmark_string.gsub("number of addresses:", "number_of_addresses=").
                               gsub("number of transactions:", "number_of_transactions=")
 
-        # remove last line if it includes log entry "Terminating child process"
-        str = bs.strip.split("\n")
-        if str.last.include? "Terminating child process"
-          str = str - [str.pop]
-        end
-
-        # remove first line if it includes "All results:"
-        if str.first.include? "All results:"
-          str = str - [str.first]
-        end
+        # remove garbage lines, they are typically after ""
+        # remove first line, as it holds unnecessary "All results:" sign
+        str_arr = bs.strip.split("\n")
+        str_arr_selected = str_arr[1..str_arr.index("")-1]
 
         # rename top key to be unique
-        idx = 0
-        str.each_with_index do |s, i|
+        str_arr_selected.each_with_index do |s, i|
           if s == "BenchRndResults:"
-            str[i] = "BenchResults_#{i}:"
+            str_arr_selected[i] = "BenchResults_#{i}:"
           end
           if s == "BenchSeqResults:"
-            str[i] = "BenchResults_#{i}:"
+            str_arr_selected[i] = "BenchResults_#{i}:"
           end
           if s == "BenchBaselineResults:"
-            str[i] = "BenchResults_#{i}:"
+            str_arr_selected[i] = "BenchResults_#{i}:"
           end
         end
-        str = (str - [""]).join("\n").strip
+
+        str = str_arr_selected.join("\n").strip
         r = YAML.load(str)
-        # puts r
 
         # make time to be in seconds
         x = r.map do |s|
