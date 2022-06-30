@@ -15,7 +15,7 @@ module Helpers
         # remove garbage lines, they are typically after ""
         # remove first line, as it holds unnecessary "All results:" sign
         str_arr = bs.strip.split("\n")
-        str_arr_selected = str_arr[1..str_arr.index("")-1]
+        str_arr_selected = str_arr[1..str_arr.rindex("")-1]
 
         # rename top key to be unique
         str_arr_selected.each_with_index do |s, i|
