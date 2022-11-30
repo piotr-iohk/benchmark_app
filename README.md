@@ -13,7 +13,7 @@ Graphs of [cardano-wallet](https://github.com/input-output-hk/cardano-wallet) be
 
 <br/>
 
-:tada: https://cardano-wallet-benchmarks.herokuapp.com :tada:
+http://ec2-44-197-192-237.compute-1.amazonaws.com:5555
 
 <br/>
 
