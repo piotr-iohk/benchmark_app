@@ -17,10 +17,10 @@ jobs:
       with:
         apt-get: libsqlite3-dev ruby-rspec-core
     - uses: actions/checkout@v2
-    - name: Set up Ruby 2.6
-      uses: actions/setup-ruby@v1
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1.127.0
       with:
-        ruby-version: 2.6.x
+        ruby-version: 2.7.1
     - name: Build and test with rspec
       run: |
         gem install bundler
