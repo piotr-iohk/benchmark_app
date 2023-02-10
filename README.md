@@ -13,7 +13,7 @@ Graphs of [cardano-wallet](https://github.com/input-output-hk/cardano-wallet) be
 
 <br/>
 
-http://ec2-44-197-192-237.compute-1.amazonaws.com:5555
+http://ec2-18-156-193-207.eu-central-1.compute.amazonaws.com:5555
 
 <br/>
 
