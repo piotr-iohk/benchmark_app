@@ -9,7 +9,7 @@ gem 'rake', '~> 13.0.6'
 
 group :development, :test do
   gem 'sqlite3', '~> 1.6.0'
-  gem 'rspec'
+  gem 'rspec', '~> 3.12.0'
   gem 'rack-test'
   gem 'capybara'
   gem 'simplecov', require: false
