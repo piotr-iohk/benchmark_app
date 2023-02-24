@@ -1,15 +1,16 @@
 All results:
 BenchBaselineResults:
   benchName: baseline
-  restorationTime: 3131 s
-  
+  restorationTime: 2308 s
+
+[31m[ci3-1:cardano.node.LocalErrorPolicy:Error:164][0m [2023-02-24 07:50:21.65 UTC] IP LocalAddress "/cache/cardano-wallet.home/node-db-mainnet/node.socket@121" ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed "<socket: 238> closed when reading data, waiting on next header True")
 BenchSeqResults:
   benchName: 0-percent-seq
-  restoreTime: 453.1 s
-  readWalletTime: 8.029 ms
-  listAddressesTime: 7.044 ms
-  listTransactionsTime: 363.1 Î¼s
-  estimateFeesTime: 6.747 s
+  restoreTime: 3560 s
+  readWalletTime: 1.433 ms
+  listAddressesTime: 60.62 Î¼s
+  listTransactionsTime: 38.51 Î¼s
+  estimateFeesTime: 5.943 ms
   walletOverview:
      number of addresses: 20
      number of transactions: -0
@@ -32,17 +33,75 @@ BenchSeqResults:
       ... 10000000000000000 0
       ... 45000000000000000 0
 
-BenchRndResults:
-  benchName: 0-percent-rnd
-  restoreTime: 516.9 s
-  readWalletTime: 1.186 ms
-  listAddressesTime: 431.6 Î¼s
-  listTransactionsTime: 478.0 Î¼s
-  importOneAddressTime: 1.344 ms
-  importManyAddressesTime: 182.6 ms
-  estimateFeesTime: 3.530 s
+BenchSeqResults:
+  benchName: 0.01-percent-seq
+  restoreTime: 8661 s
+  readWalletTime: 2.801 ms
+  listAddressesTime: 124.0 ms
+  listTransactionsTime: 101.1 ms
+  estimateFeesTime: 17.01 ms
   walletOverview:
-     number of addresses: -0
+     number of addresses: 13928
+     number of transactions: 16850
+     = Total value of 965673286714 lovelace across 787 UTxOs
+      ... 10                3
+      ... 100               1
+      ... 1000              0
+      ... 10000             4
+      ... 100000            2
+      ... 1000000           70
+      ... 10000000          298
+      ... 100000000         134
+      ... 1000000000        168
+      ... 10000000000       88
+      ... 100000000000      18
+      ... 1000000000000     1
+      ... 10000000000000    0
+      ... 100000000000000   0
+      ... 1000000000000000  0
+      ... 10000000000000000 0
+      ... 45000000000000000 0
+
+BenchRndResults:
+  benchName: 0.01-percent-rnd
+  restoreTime: 10413 s
+  readWalletTime: 2.762 ms
+  listAddressesTime: 3.793 ms
+  listTransactionsTime: 226.7 ms
+  importOneAddressTime: 1.861 ms
+  importManyAddressesTime: 617.3 ms
+  estimateFeesTime: 16.61 ms
+  walletOverview:
+     number of addresses: 13908
+     number of transactions: 16850
+     = Total value of 965673286714 lovelace across 787 UTxOs
+      ... 10                3
+      ... 100               1
+      ... 1000              0
+      ... 10000             4
+      ... 100000            2
+      ... 1000000           70
+      ... 10000000          298
+      ... 100000000         134
+      ... 1000000000        168
+      ... 10000000000       88
+      ... 100000000000      18
+      ... 1000000000000     1
+      ... 10000000000000    0
+      ... 100000000000000   0
+      ... 1000000000000000  0
+      ... 10000000000000000 0
+      ... 45000000000000000 0
+
+BenchSeqResults:
+  benchName: 1-wallets-to-0.1
+  restoreTime: 41.48 s
+  readWalletTime: 4.751 ms
+  listAddressesTime: 40.95 Î¼s
+  listTransactionsTime: 34.27 Î¼s
+  estimateFeesTime: 2.238 ms
+  walletOverview:
+     number of addresses: 20
      number of transactions: -0
      = Total value of -0 lovelace across 0 UTxOs
       ... 10                0
@@ -63,184 +122,67 @@ BenchRndResults:
       ... 10000000000000000 0
       ... 45000000000000000 0
 
-BenchRndResults:
-  benchName: 0.1-percent-rnd
-  restoreTime: 1193 s
-  readWalletTime: 155.0 ms
-  listAddressesTime: 153.6 ms
-  listTransactionsTime: 4.055 s
-  importOneAddressTime: 336.2 ms
-  importManyAddressesTime: 783.4 ms
-  estimateFeesTime: 584.9 ms
+BenchSeqResults:
+  benchName: 10-wallets-to-0.01
+  restoreTime: 26.65 s
+  readWalletTime: 188.7 ms
+  listAddressesTime: 188.5 ms
+  listTransactionsTime: 152.5 ms
+  estimateFeesTime: 219.5 ms
   walletOverview:
-     number of addresses: 5777
-     number of transactions: 10006
-     = Total value of 21610383492984 lovelace across 745 UTxOs
-      ... 10                7
-      ... 100               4
-      ... 1000              6
-      ... 10000             10
-      ... 100000            22
-      ... 1000000           66
-      ... 10000000          54
-      ... 100000000         65
-      ... 1000000000        191
-      ... 10000000000       195
-      ... 100000000000      92
-      ... 1000000000000     28
-      ... 10000000000000    5
-      ... 100000000000000   0
-      ... 1000000000000000  0
-      ... 10000000000000000 0
-      ... 45000000000000000 0
-
-BenchRndResults:
-  benchName: 0.2-percent-rnd
-  restoreTime: 1895 s
-  readWalletTime: 466.4 ms
-  listAddressesTime: 423.4 ms
-  listTransactionsTime: 19.04 s
-  importOneAddressTime: 964.7 ms
-  importManyAddressesTime: 1.899 s
-  estimateFeesTime: 1.602 s
-  walletOverview:
-     number of addresses: 16053
-     number of transactions: 26793
-     = Total value of 31424229668230 lovelace across 1396 UTxOs
-      ... 10                11
-      ... 100               9
-      ... 1000              12
-      ... 10000             19
-      ... 100000            38
-      ... 1000000           127
-      ... 10000000          123
-      ... 100000000         117
-      ... 1000000000        330
-      ... 10000000000       361
-      ... 100000000000      194
-      ... 1000000000000     50
-      ... 10000000000000    5
-      ... 100000000000000   0
-      ... 1000000000000000  0
-      ... 10000000000000000 0
-      ... 45000000000000000 0
-
-BenchRndResults:
-  benchName: 0.4-percent-rnd
-  restoreTime: 3661 s
-  readWalletTime: 830.8 ms
-  listAddressesTime: 7.049 s
-  listTransactionsTime: 72.32 s
-  importOneAddressTime: 3.806 s
-  importManyAddressesTime: 3.553 s
-  estimateFeesTime: 3.120 s
-  walletOverview:
-     number of addresses: 28731
-     number of transactions: 48049
-     = Total value of 68824456066832 lovelace across 2778 UTxOs
-      ... 10                14
-      ... 100               10
-      ... 1000              28
-      ... 10000             38
-      ... 100000            79
-      ... 1000000           256
-      ... 10000000          263
-      ... 100000000         250
-      ... 1000000000        666
-      ... 10000000000       709
-      ... 100000000000      351
-      ... 1000000000000     102
-      ... 10000000000000    12
+     number of addresses: 20
+     number of transactions: -0
+     = Total value of -0 lovelace across 0 UTxOs
+      ... 10                0
+      ... 100               0
+      ... 1000              0
+      ... 10000             0
+      ... 100000            0
+      ... 1000000           0
+      ... 10000000          0
+      ... 100000000         0
+      ... 1000000000        0
+      ... 10000000000       0
+      ... 100000000000      0
+      ... 1000000000000     0
+      ... 10000000000000    0
       ... 100000000000000   0
       ... 1000000000000000  0
       ... 10000000000000000 0
       ... 45000000000000000 0
 
 BenchSeqResults:
-  benchName: 0.1-percent-seq
-  restoreTime: 1199 s
-  readWalletTime: 250.7 ms
-  listAddressesTime: 275.8 ms
-  listTransactionsTime: 4.008 s
-  estimateFeesTime: 274.5 ms
+  benchName: 100-wallets-to-0.01
+  restoreTime: 341.7 s
+  readWalletTime: 1.329 ms
+  listAddressesTime: 52.18 Î¼s
+  listTransactionsTime: 20.12 Î¼s
+  estimateFeesTime: 3.771 ms
   walletOverview:
-     number of addresses: 5797
-     number of transactions: 10006
-     = Total value of 21610383492984 lovelace across 745 UTxOs
-      ... 10                7
-      ... 100               4
-      ... 1000              6
-      ... 10000             10
-      ... 100000            22
-      ... 1000000           66
-      ... 10000000          54
-      ... 100000000         65
-      ... 1000000000        191
-      ... 10000000000       195
-      ... 100000000000      92
-      ... 1000000000000     28
-      ... 10000000000000    5
+     number of addresses: 20
+     number of transactions: -0
+     = Total value of -0 lovelace across 0 UTxOs
+      ... 10                0
+      ... 100               0
+      ... 1000              0
+      ... 10000             0
+      ... 100000            0
+      ... 1000000           0
+      ... 10000000          0
+      ... 100000000         0
+      ... 1000000000        0
+      ... 10000000000       0
+      ... 100000000000      0
+      ... 1000000000000     0
+      ... 10000000000000    0
       ... 100000000000000   0
       ... 1000000000000000  0
       ... 10000000000000000 0
       ... 45000000000000000 0
 
-BenchSeqResults:
-  benchName: 0.2-percent-seq
-  restoreTime: 2483 s
-  readWalletTime: 776.6 ms
-  listAddressesTime: 1.894 s
-  listTransactionsTime: 20.26 s
-  estimateFeesTime: 2.314 s
-  walletOverview:
-     number of addresses: 16073
-     number of transactions: 26795
-     = Total value of 31144491147879 lovelace across 1394 UTxOs
-      ... 10                11
-      ... 100               9
-      ... 1000              12
-      ... 10000             19
-      ... 100000            38
-      ... 1000000           127
-      ... 10000000          123
-      ... 100000000         117
-      ... 1000000000        329
-      ... 10000000000       361
-      ... 100000000000      194
-      ... 1000000000000     49
-      ... 10000000000000    5
-      ... 100000000000000   0
-      ... 1000000000000000  0
-      ... 10000000000000000 0
-      ... 45000000000000000 0
+[35m[bench-restore:Notice:15][0m [2023-02-24 07:50:21.65 UTC] [cardano-node.58492] withBackend action done. Terminating child process
+[31m[ci3-1:cardano.node.DnsSubscription:Error:183][0m [2023-02-24 07:50:21.65 UTC] Domain: "relays-new.cardano-mainnet.iohk.io" Application Exception: 18.159.72.244:3001 SubscriberError {seType = SubscriberWorkerCancelled, seMessage = "SubscriptionWorker exiting", seStack = []}
+[31m[ci3-1:cardano.node.DnsSubscription:Error:11430][0m [2023-02-24 07:50:21.65 UTC] Domain: "relays-new.cardano-mainnet.iohk.io" Application Exception: 52.58.171.193:3001 SubscriberError {seType = SubscriberWorkerCancelled, seMessage = "SubscriptionWorker exiting", seStack = []}
 
-BenchSeqResults:
-  benchName: 0.4-percent-seq
-  restoreTime: 5163 s
-  readWalletTime: 1.441 s
-  listAddressesTime: 3.547 s
-  listTransactionsTime: 72.25 s
-  estimateFeesTime: 4.040 s
-  walletOverview:
-     number of addresses: 28755
-     number of transactions: 48054
-     = Total value of 69527281216646 lovelace across 2781 UTxOs
-      ... 10                14
-      ... 100               10
-      ... 1000              28
-      ... 10000             38
-      ... 100000            79
-      ... 1000000           256
-      ... 10000000          263
-      ... 100000000         250
-      ... 1000000000        666
-      ... 10000000000       709
-      ... 100000000000      352
-      ... 1000000000000     104
-      ... 10000000000000    12
-      ... 100000000000000   0
-      ... 1000000000000000  0
-      ... 10000000000000000 0
-      ... 45000000000000000 0
-
-[35m[bench-restore:Notice:14][0m [2020-09-10 07:31:03.00 UTC] [cardano-node.11149] Terminating child process
+Shutting down..
+cardano-node: thread killed
