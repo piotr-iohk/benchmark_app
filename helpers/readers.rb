@@ -11,6 +11,8 @@ module Helpers
 
         bs = benchmark_string.gsub("number of addresses:", "number_of_addresses=").
                               gsub("number of transactions:", "number_of_transactions=")
+        #remove all lines containing "" (because log entries sometimes spill into the file with measurements)
+        bs = bs.gsub(/.*\n/, "")
 
         # remove garbage lines, all lines until last line is as expected
         str_arr = bs.strip.split("\n")
@@ -18,7 +20,7 @@ module Helpers
           str_arr = str_arr[0..str_arr.rindex("")-1]
         end
         str_arr_selected = str_arr - ["All results:"]
-        
+
         # rename top key to be unique
         str_arr_selected.each_with_index do |s, i|
           if s == "BenchRndResults:"
