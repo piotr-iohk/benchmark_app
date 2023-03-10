@@ -17,6 +17,7 @@ module Helpers
         estimating_fees_time: result["estimateFeesTime"],
         read_wallet_time: result["readWalletTime"],
         list_transactions_time: result["listTransactionsTime"],
+        list_transactions_limited_time: result["listTransactionsLimitedTime"],
         import_one_address_time: result["importOneAddressTime"],
         import_many_addresses_time: result["importManyAddressesTime"],
         utxo_statistics: stats
