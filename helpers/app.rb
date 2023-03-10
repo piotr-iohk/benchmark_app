@@ -28,6 +28,7 @@ module Helpers
             <th scope="col">Estimate fees</th>
             <th scope="col">Read wallet</th>
             <th scope="col">List txs</th>
+            <th scope="col">List txs (max_count = 100)</th>
             <th scope="col">Import one address</th>
             <th scope="col">Import many addresses</th>
           </tr>
@@ -64,6 +65,9 @@ module Helpers
                 #{m[:list_transactions_time] ? "#{m[:list_transactions_time]} s" : "<i>N/A</i>"}
               </td>
               <td>
+              #{m[:list_transactions_limited_time] ? "#{m[:list_transactions_limited_time]} s" : "<i>N/A</i>"}
+            </td>
+              <td>
                 #{m[:import_one_address_time] ? "#{m[:import_one_address_time]} s" : "<i>N/A</i>"}
               </td>
               <td>
@@ -85,6 +89,7 @@ module Helpers
        { :name => "estimating_fees_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:estimating_fees_time]]}.to_h},
        { :name => "read_wallet_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:read_wallet_time]]}.to_h},
        { :name => "list_transactions_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:list_transactions_time]]}.to_h},
+       { :name => "list_transactions_limited_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:list_transactions_limited_time]]}.to_h},
        { :name => "import_one_address_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:import_one_address_time]]}.to_h},
        { :name => "import_many_addresses_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:import_many_addresses_time]]}.to_h}
       ]

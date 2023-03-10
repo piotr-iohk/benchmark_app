@@ -1,16 +1,17 @@
 All results:
 BenchBaselineResults:
   benchName: baseline
-  restorationTime: 2308 s
+  restorationTime: 2343 s
 
-[31m[ci3-1:cardano.node.LocalErrorPolicy:Error:164][0m [2023-02-24 07:50:21.65 UTC] IP LocalAddress "/cache/cardano-wallet.home/node-db-mainnet/node.socket@121" ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed "<socket: 238> closed when reading data, waiting on next header True")
+[31m[ci4-1:cardano.node.LocalErrorPolicy:Error:149][0m [2023-03-09 18:05:19.51 UTC] IP LocalAddress "/cache/cardano-wallet.home/node-db-mainnet/node.socket@118" ErrorPolicyUnhandledApplicationException (MuxError MuxBearerClosed "<socket: 231> closed when reading data, waiting on next header True")
 BenchSeqResults:
   benchName: 0-percent-seq
-  restoreTime: 3560 s
-  readWalletTime: 1.433 ms
-  listAddressesTime: 60.62 Î¼s
-  listTransactionsTime: 38.51 Î¼s
-  estimateFeesTime: 5.943 ms
+  restoreTime: 3654 s
+  readWalletTime: 378.7 Î¼s
+  listAddressesTime: 152.0 Î¼s
+  listTransactionsTime: 33.20 Î¼s
+  listTransactionsLimitedTime: 25.54 Î¼s
+  estimateFeesTime: 5.810 ms
   walletOverview:
      number of addresses: 20
      number of transactions: -0
@@ -35,27 +36,28 @@ BenchSeqResults:
 
 BenchSeqResults:
   benchName: 0.01-percent-seq
-  restoreTime: 8661 s
-  readWalletTime: 2.801 ms
-  listAddressesTime: 124.0 ms
-  listTransactionsTime: 101.1 ms
-  estimateFeesTime: 17.01 ms
+  restoreTime: 7218 s
+  readWalletTime: 66.86 ms
+  listAddressesTime: 57.19 ms
+  listTransactionsTime: 56.01 s
+  listTransactionsLimitedTime: 337.9 ms
+  estimateFeesTime: 260.1 ms
   walletOverview:
-     number of addresses: 13928
-     number of transactions: 16850
-     = Total value of 965673286714 lovelace across 787 UTxOs
+     number of addresses: 14052
+     number of transactions: 17000
+     = Total value of 722383388377 lovelace across 789 UTxOs
       ... 10                3
       ... 100               1
       ... 1000              0
       ... 10000             4
       ... 100000            2
       ... 1000000           70
-      ... 10000000          298
-      ... 100000000         134
-      ... 1000000000        168
-      ... 10000000000       88
-      ... 100000000000      18
-      ... 1000000000000     1
+      ... 10000000          300
+      ... 100000000         137
+      ... 1000000000        165
+      ... 10000000000       90
+      ... 100000000000      17
+      ... 1000000000000     0
       ... 10000000000000    0
       ... 100000000000000   0
       ... 1000000000000000  0
@@ -64,29 +66,30 @@ BenchSeqResults:
 
 BenchRndResults:
   benchName: 0.01-percent-rnd
-  restoreTime: 10413 s
-  readWalletTime: 2.762 ms
-  listAddressesTime: 3.793 ms
-  listTransactionsTime: 226.7 ms
-  importOneAddressTime: 1.861 ms
-  importManyAddressesTime: 617.3 ms
-  estimateFeesTime: 16.61 ms
+  restoreTime: 8429 s
+  readWalletTime: 2.674 ms
+  listAddressesTime: 9.749 ms
+  listTransactionsTime: 59.30 s
+  listTransactionsLimitedTime: 357.6 ms
+  importOneAddressTime: 302.7 ms
+  importManyAddressesTime: 472.9 ms
+  estimateFeesTime: 300.8 ms
   walletOverview:
-     number of addresses: 13908
-     number of transactions: 16850
-     = Total value of 965673286714 lovelace across 787 UTxOs
+     number of addresses: 14039
+     number of transactions: 17005
+     = Total value of 722244018001 lovelace across 790 UTxOs
       ... 10                3
       ... 100               1
       ... 1000              0
       ... 10000             4
       ... 100000            2
-      ... 1000000           70
-      ... 10000000          298
-      ... 100000000         134
-      ... 1000000000        168
-      ... 10000000000       88
-      ... 100000000000      18
-      ... 1000000000000     1
+      ... 1000000           71
+      ... 10000000          302
+      ... 100000000         135
+      ... 1000000000        165
+      ... 10000000000       90
+      ... 100000000000      17
+      ... 1000000000000     0
       ... 10000000000000    0
       ... 100000000000000   0
       ... 1000000000000000  0
@@ -95,11 +98,12 @@ BenchRndResults:
 
 BenchSeqResults:
   benchName: 1-wallets-to-0.1
-  restoreTime: 41.48 s
-  readWalletTime: 4.751 ms
-  listAddressesTime: 40.95 Î¼s
-  listTransactionsTime: 34.27 Î¼s
-  estimateFeesTime: 2.238 ms
+  restoreTime: 36.22 s
+  readWalletTime: 1.120 ms
+  listAddressesTime: 44.50 Î¼s
+  listTransactionsTime: 29.79 Î¼s
+  listTransactionsLimitedTime: 214.8 Î¼s
+  estimateFeesTime: 3.989 ms
   walletOverview:
      number of addresses: 20
      number of transactions: -0
@@ -124,11 +128,12 @@ BenchSeqResults:
 
 BenchSeqResults:
   benchName: 10-wallets-to-0.01
-  restoreTime: 26.65 s
-  readWalletTime: 188.7 ms
-  listAddressesTime: 188.5 ms
-  listTransactionsTime: 152.5 ms
-  estimateFeesTime: 219.5 ms
+  restoreTime: 26.81 s
+  readWalletTime: 2.647 ms
+  listAddressesTime: 45.09 Î¼s
+  listTransactionsTime: 35.25 Î¼s
+  listTransactionsLimitedTime: 18.84 Î¼s
+  estimateFeesTime: 3.044 ms
   walletOverview:
      number of addresses: 20
      number of transactions: -0
@@ -153,11 +158,12 @@ BenchSeqResults:
 
 BenchSeqResults:
   benchName: 100-wallets-to-0.01
-  restoreTime: 341.7 s
-  readWalletTime: 1.329 ms
-  listAddressesTime: 52.18 Î¼s
-  listTransactionsTime: 20.12 Î¼s
-  estimateFeesTime: 3.771 ms
+  restoreTime: 341.1 s
+  readWalletTime: 7.630 ms
+  listAddressesTime: 214.5 Î¼s
+  listTransactionsTime: 21.74 Î¼s
+  listTransactionsLimitedTime: 186.2 Î¼s
+  estimateFeesTime: 4.994 ms
   walletOverview:
      number of addresses: 20
      number of transactions: -0
@@ -180,9 +186,7 @@ BenchSeqResults:
       ... 10000000000000000 0
       ... 45000000000000000 0
 
-[35m[bench-restore:Notice:15][0m [2023-02-24 07:50:21.65 UTC] [cardano-node.58492] withBackend action done. Terminating child process
-[31m[ci3-1:cardano.node.DnsSubscription:Error:183][0m [2023-02-24 07:50:21.65 UTC] Domain: "relays-new.cardano-mainnet.iohk.io" Application Exception: 18.159.72.244:3001 SubscriberError {seType = SubscriberWorkerCancelled, seMessage = "SubscriptionWorker exiting", seStack = []}
-[31m[ci3-1:cardano.node.DnsSubscription:Error:11430][0m [2023-02-24 07:50:21.65 UTC] Domain: "relays-new.cardano-mainnet.iohk.io" Application Exception: 52.58.171.193:3001 SubscriberError {seType = SubscriberWorkerCancelled, seMessage = "SubscriptionWorker exiting", seStack = []}
-
-Shutting down..
+[35m[bench-restore:Notice:15][0m [2023-03-09 18:05:19.51 UTC] [cardano-node.488802] withBackend action done. Terminating child process
+[31m[ci4-1:cardano.node.DnsSubscription:Error:170][0m [2023-03-09 18:05:19.51 UTC] Domain: "relays-new.cardano-mainnet.iohk.io" Application Exception: 18.133.133.57:3001 SubscriberError {seType = SubscriberWorkerCancelled, seMessage = "SubscriptionWorker exiting", seStack = []}
+[31m[ci4-1:cardano.node.DnsSubscription:Error:18286][0m [2023-03-09 18:05:19.51 UTC] Domain: "relays-new.cardano-mainnet.iohk.io" Application Exception: 18.184.236.47:3001 SubscriberError {seType = SubscriberWorkerCancelled, seMessage = "SubscriptionWorker exiting", seStack = []}
 cardano-node: thread killed

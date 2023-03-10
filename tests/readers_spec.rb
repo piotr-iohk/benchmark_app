@@ -9,16 +9,16 @@ describe Helpers::Readers::Restorations do
     h = Restorations.read_to_hash res
 
     expect(h[0]['benchName']).to eq "baseline"
-    expect(h[0]['restoreTime']).to eq 2308.0
+    expect(h[0]['restoreTime']).to eq 2343.0
 
     expect(h[1]['benchName']).to eq "0-percent-seq"
-    expect(h[1]['restoreTime']).to eq 3560.0
+    expect(h[1]['restoreTime']).to eq 3654.0
 
     expect(h[2]['benchName']).to eq "0.01-percent-seq"
-    expect(h[2]['listAddressesTime']).to eq 0.124
+    expect(h[2]['listTransactionsLimitedTime']).to eq 0.3379
 
     expect(h[3]['benchName']).to eq "0.01-percent-rnd"
-    expect(h[3]['restoreTime']).to eq 10413.0
+    expect(h[3]['restoreTime']).to eq 8429.0
 
   end
 

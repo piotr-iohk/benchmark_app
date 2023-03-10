@@ -45,6 +45,7 @@ module Helpers
           s[1]['estimateFeesTime'] = to_seconds(s[1]['estimateFeesTime']) if s[1]['estimateFeesTime']
           s[1]['readWalletTime'] = to_seconds(s[1]['readWalletTime']) if s[1]['readWalletTime']
           s[1]['listTransactionsTime'] = to_seconds(s[1]['listTransactionsTime']) if s[1]['listTransactionsTime']
+          s[1]['listTransactionsLimitedTime'] = to_seconds(s[1]['listTransactionsLimitedTime']) if s[1]['listTransactionsLimitedTime']
           s[1]['importOneAddressTime'] = to_seconds(s[1]['importOneAddressTime']) if s[1]['importOneAddressTime']
           s[1]['importManyAddressesTime'] = to_seconds(s[1]['importManyAddressesTime']) if s[1]['importManyAddressesTime']
           s[1]
