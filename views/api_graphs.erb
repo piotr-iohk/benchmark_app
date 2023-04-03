@@ -1,0 +1,38 @@
+<%
+  url = request.env['PATH_INFO'].to_s
+  params[:type_of_measurement] ||= "all"
+%>
+
+<!-- FORM -->
+<form action=<%= "/api-measurements" %> method="GET">
+  <div class="row">
+    <div class="col">
+      <select class="custom-select" name="type_of_measurement">
+        <option value="all">all</option>
+        <option value="readWalletTime" <%= (params[:type_of_measurement] == "readWalletTime") ? "selected" : "" %>>readWalletTime</option>
+        <option value="getWalletUtxoSnapshotTime" <%= (params[:type_of_measurement] == "getWalletUtxoSnapshotTime") ? "selected" : "" %>>getWalletUtxoSnapshotTime</option>
+        <option value="listAddressesTime" <%= (params[:type_of_measurement] == "listAddressesTime") ? "selected" : "" %>>listAddressesTime</option>
+        <option value="listAssetsTime" <%= (params[:type_of_measurement] == "listAssetsTime") ? "selected" : "" %>>listAssetsTime</option>
+        <option value="listTransactionsTime" <%= (params[:type_of_measurement] == "listTransactionsTime") ? "selected" : "" %>>listTransactionsTime</option>
+        <option value="listTransactionsLimitedTime" <%= (params[:type_of_measurement] == "listTransactionsLimitedTime") ? "selected" : "" %>>listTransactionsLimitedTime (max_count = 100)</option>
+        <option value="createMigrationPlanTime" <%= (params[:type_of_measurement] == "createMigrationPlanTime") ? "selected" : "" %>>createMigrationPlanTime</option>
+        <option value="delegationFeeTime" <%= (params[:type_of_measurement] == "delegationFeeTime") ? "selected" : "" %>>delegationFeeTime</option>
+        <option value="selectAssetsTime" <%= (params[:type_of_measurement] == "selectAssetsTime") ? "selected" : "" %>>selectAssetsTime</option>
+      </select>
+      <small class="form-text text-muted">Benchmark type</small>
+    </div>
+
+    <div class="col">
+      <button type="submit" class="btn btn-success">Draw</button>
+    </div>
+  </div>
+</form>
+<br/>
+
+<%= api_graph(dataset, 'sequential Shelley sequential', [params[:type_of_measurement]])%>
+<br/>
+
+<%= api_graph(dataset, 'shared Shared sequential', [params[:type_of_measurement]])%>
+<br/>
+
+<%= api_graph(dataset, 'random Byron random', [params[:type_of_measurement]])%>

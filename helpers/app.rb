@@ -83,6 +83,33 @@ module Helpers
       table
     end
 
+    def api_dataset(b, filter = [])
+      data = [{ :name => "readWalletTime", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:readWalletTime]]}.to_h},
+       { :name => "getWalletUtxoSnapshotTime", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:getWalletUtxoSnapshotTime]]}.to_h},
+       { :name => "listAddressesTime", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:listAddressesTime]]}.to_h},
+       { :name => "listAssetsTime", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:listAssetsTime]]}.to_h},
+       { :name => "listTransactionsTime", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:listTransactionsTime]]}.to_h},
+       { :name => "listTransactionsLimitedTime", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:listTransactionsLimitedTime]]}.to_h},
+       { :name => "createMigrationPlanTime", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:createMigrationPlanTime]]}.to_h},
+       { :name => "delegationFeeTime", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:delegationFeeTime]]}.to_h},
+       { :name => "selectAssetsTime", :data => b.map{|i| [link_to_nb(i[:build_no]), i[:selectAssetsTime]]}.to_h}
+       ]
+      if filter.empty?
+        data
+      elsif filter.include? "all"
+        data
+      else
+        d = data.select { |s| s if filter.include? s[:name] }
+        d.empty? ? data : d
+      end
+    end
+
+    def api_graph(dataset, bench, filter = [])
+      line_chart api_dataset(dataset.where(bench_name: bench), filter),
+          title: "<a href='#'>#{bench}</a>",
+          ytitle: "Time (s)", xtitle: "Nightbuild no"
+    end
+
     def restoration_dataset(dataset, filter = [])
       data = [{ :name => "restoration_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:restoration_time]]}.to_h},
        { :name => "listing_addresses_time", :data => dataset.map{|i| [link_to_nb(i[:build_no]), i[:listing_addresses_time]]}.to_h},
