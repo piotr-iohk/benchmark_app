@@ -5,6 +5,54 @@ require_relative "../env"
 # helper module for serializing data from buildkite
 module Helpers
   module Readers
+    
+    def to_seconds(time_str)
+      case
+      when (time_str.include?("μs") || time_str.include?("Î¼s"))
+        (time_str.to_f * 0.000001).round(8)
+      when time_str.include?("ms")
+        (time_str.to_f * 0.001).round(8)
+      else
+        time_str.to_f
+      end
+    end
+    module_function :to_seconds
+
+    module Api
+      def read_to_hash(benchmark_string)
+        bs = benchmark_string.gsub("number of addresses:", "number_of_addresses=").
+                              gsub("number of transactions:", "number_of_transactions=")
+        bs = bs.gsub(']', '').gsub('[', '')
+
+        # transform to YAML
+        str_arr = bs.strip.split("\n")
+        str_arr_selected = str_arr - ["All results:"]
+        str = str_arr_selected.join("\n").strip
+        r = YAML.load(str)
+        x = r.map do |s|
+          # make time to be in seconds in case any key value starts with digit
+          s[1].each do |k, v|
+            if v.is_a?(String) && 
+              (v.start_with?("0") || 
+               v.start_with?("1") || 
+               v.start_with?("2") || 
+               v.start_with?("3") || 
+               v.start_with?("4") || 
+               v.start_with?("5") || 
+               v.start_with?("6") || 
+               v.start_with?("7") || 
+               v.start_with?("8") || 
+               v.start_with?("9"))
+              s[1][k] = Helpers::Readers.to_seconds(v)
+            end
+          end
+          s[1]
+        end
+        x
+      end
+      module_function :read_to_hash
+    end
+
     module Restorations
 
       def read_to_hash(benchmark_string)
@@ -39,15 +87,15 @@ module Helpers
 
         # make time to be in seconds
         x = r.map do |s|
-          s[1]['restoreTime'] = to_seconds(s[1]['restoreTime']) if s[1]['restoreTime']
-          s[1]['restoreTime'] = to_seconds(s[1]['restorationTime']) if s[1]['restorationTime']
-          s[1]['listAddressesTime'] = to_seconds(s[1]['listAddressesTime']) if s[1]['listAddressesTime']
-          s[1]['estimateFeesTime'] = to_seconds(s[1]['estimateFeesTime']) if s[1]['estimateFeesTime']
-          s[1]['readWalletTime'] = to_seconds(s[1]['readWalletTime']) if s[1]['readWalletTime']
-          s[1]['listTransactionsTime'] = to_seconds(s[1]['listTransactionsTime']) if s[1]['listTransactionsTime']
-          s[1]['listTransactionsLimitedTime'] = to_seconds(s[1]['listTransactionsLimitedTime']) if s[1]['listTransactionsLimitedTime']
-          s[1]['importOneAddressTime'] = to_seconds(s[1]['importOneAddressTime']) if s[1]['importOneAddressTime']
-          s[1]['importManyAddressesTime'] = to_seconds(s[1]['importManyAddressesTime']) if s[1]['importManyAddressesTime']
+          s[1]['restoreTime'] = Helpers::Readers.to_seconds(s[1]['restoreTime']) if s[1]['restoreTime']
+          s[1]['restoreTime'] = Helpers::Readers.to_seconds(s[1]['restorationTime']) if s[1]['restorationTime']
+          s[1]['listAddressesTime'] = Helpers::Readers.to_seconds(s[1]['listAddressesTime']) if s[1]['listAddressesTime']
+          s[1]['estimateFeesTime'] = Helpers::Readers.to_seconds(s[1]['estimateFeesTime']) if s[1]['estimateFeesTime']
+          s[1]['readWalletTime'] = Helpers::Readers.to_seconds(s[1]['readWalletTime']) if s[1]['readWalletTime']
+          s[1]['listTransactionsTime'] = Helpers::Readers.to_seconds(s[1]['listTransactionsTime']) if s[1]['listTransactionsTime']
+          s[1]['listTransactionsLimitedTime'] = Helpers::Readers.to_seconds(s[1]['listTransactionsLimitedTime']) if s[1]['listTransactionsLimitedTime']
+          s[1]['importOneAddressTime'] = Helpers::Readers.to_seconds(s[1]['importOneAddressTime']) if s[1]['importOneAddressTime']
+          s[1]['importManyAddressesTime'] = Helpers::Readers.to_seconds(s[1]['importManyAddressesTime']) if s[1]['importManyAddressesTime']
           s[1]
         end
         # returns list of hashes:
@@ -67,18 +115,7 @@ module Helpers
         x
       end
 
-      def to_seconds(time_str)
-        case
-        when (time_str.include?("μs") || time_str.include?("Î¼s"))
-          (time_str.to_f * 0.000001).round(8)
-        when time_str.include?("ms")
-          (time_str.to_f * 0.001).round(8)
-        else
-          time_str.to_f
-        end
-      end
-
-      module_function :read_to_hash, :to_seconds
+      module_function :read_to_hash
     end # Restoration
 
     module Latencies

@@ -1,0 +1,97 @@
+All results:
+[BenchSeqResults:
+  benchName: sequential Shelley sequential
+  walletOverview:
+     number of addresses: 535
+     number of transactions: 372
+     = Total value of 5046939756 lovelace across 67 UTxOs
+      ... 10                0
+      ... 100               0
+      ... 1000              0
+      ... 10000             0
+      ... 100000            0
+      ... 1000000           0
+      ... 10000000          7
+      ... 100000000         38
+      ... 1000000000        22
+      ... 10000000000       0
+      ... 100000000000      0
+      ... 1000000000000     0
+      ... 10000000000000    0
+      ... 100000000000000   0
+      ... 1000000000000000  0
+      ... 10000000000000000 0
+      ... 45000000000000000 0
+  readWalletTime: 2.028 ms
+  getWalletUtxoSnapshotTime: 317.6 Î¼s
+  listAddressesTime: 889.5 Î¼s
+  listAssetsTime: 238.6 ms
+  listTransactionsTime: 237.4 ms
+  listTransactionsLimitedTime: 24.39 ms
+  createMigrationPlanTime: 1.463 ms
+  delegationFeeTime: 36.70 ms
+  selectAssetsTime: 499.5 Î¼s
+]
+[BenchSharedResults:
+  benchName: shared Shared sequential
+  walletOverview:
+     number of addresses: 667
+     number of transactions: 522
+     = Total value of 4460003641 lovelace across 97 UTxOs
+      ... 10                0
+      ... 100               0
+      ... 1000              0
+      ... 10000             0
+      ... 100000            0
+      ... 1000000           0
+      ... 10000000          45
+      ... 100000000         51
+      ... 1000000000        0
+      ... 10000000000       1
+      ... 100000000000      0
+      ... 1000000000000     0
+      ... 10000000000000    0
+      ... 100000000000000   0
+      ... 1000000000000000  0
+      ... 10000000000000000 0
+      ... 45000000000000000 0
+  readWalletTime: 544.9 Î¼s
+  getWalletUtxoSnapshotTime: 314.3 Î¼s
+  listAddressesTime: 891.0 Î¼s
+  listAssetsTime: 110.6 ms
+  listTransactionsTime: 90.24 ms
+  listTransactionsLimitedTime: 7.138 ms
+  selectAssetsTime: 584.3 Î¼s
+]
+[BenchRndResults:
+  benchName: random Byron random
+  walletOverview:
+     number of addresses: 1166
+     number of transactions: 313
+     = Total value of 4828750598 lovelace across 65 UTxOs
+      ... 10                0
+      ... 100               0
+      ... 1000              0
+      ... 10000             0
+      ... 100000            0
+      ... 1000000           0
+      ... 10000000          5
+      ... 100000000         39
+      ... 1000000000        21
+      ... 10000000000       0
+      ... 100000000000      0
+      ... 1000000000000     0
+      ... 10000000000000    0
+      ... 100000000000000   0
+      ... 1000000000000000  0
+      ... 10000000000000000 0
+      ... 45000000000000000 0
+  readWalletTime: 707.6 Î¼s
+  getWalletUtxoSnapshotTime: 178.4 Î¼s
+  listAddressesTime: 308.9 Î¼s
+  listAssetsTime: 216.0 ms
+  listTransactionsTime: 199.4 ms
+  listTransactionsLimitedTime: 25.46 ms
+  createMigrationPlanTime: 1.214 ms
+  selectAssetsTime: 466.7 Î¼s
+]
