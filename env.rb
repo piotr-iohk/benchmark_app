@@ -1,6 +1,9 @@
 DB_PATH = ENV.fetch("BENCH_DB_PATH") # ENV var for sqlite db file
 BUILDKITE_API_TOKEN = ENV.fetch("BUILDKITE_API_TOKEN")
 
+API_MEASUREMENTS_FILE = "api.txt"
+API_MEASUREMENTS_JOB = "API benchmark"
+
 MAINNET_RESTORE_FILE = "restore-mainnet.txt"
 TESTNET_RESTORE_FILE = "restore-testnet.txt"
 

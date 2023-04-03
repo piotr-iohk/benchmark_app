@@ -2,6 +2,23 @@
 # helper module for puting serialized data from buildkite into DB
 module Helpers
   module DataTransfer
+    def insert_api(db_conn, result, nightly_build_id)
+      db_conn.insert(
+        nightly_build_id: nightly_build_id,
+        bench_name: result["benchName"],
+        utxo_statistics: result["walletOverview"],
+        readWalletTime: result["readWalletTime"],
+        getWalletUtxoSnapshotTime: result["getWalletUtxoSnapshotTime"],
+        listAddressesTime: result["listAddressesTime"],
+        listAssetsTime: result["listAssetsTime"],
+        listTransactionsTime: result["listTransactionsTime"],
+        listTransactionsLimitedTime: result["listTransactionsLimitedTime"],
+        createMigrationPlanTime: result["createMigrationPlanTime"],
+        delegationFeeTime: result["delegationFeeTime"],
+        selectAssetsTime: result["selectAssetsTime"]
+      )
+    end
+
     def insert_restoration(db_conn, result, nightly_build_id)
       if result["utxoStatistics"]
         stats = result["utxoStatistics"]
@@ -57,6 +74,21 @@ module Helpers
         end
       end
 
+      if options[:skip_api]
+        puts "Skipping api..."
+      else
+        if res[:api_results]
+          a = res[:api_results]
+          puts " Inserting api for build: #{build_no}"
+          a.each do |result|
+            insert_api(db_connection[:api_measurements],
+                        result,
+                        nightly_build_id
+                      )
+          end
+        end
+      end
+
       if options[:skip_mainnet]
         puts "Skipping mainnet_restores..."
       else
@@ -77,7 +109,7 @@ module Helpers
       else
         if res[:testnet_restores]
           t = res[:testnet_restores]
-          puts " Inserting testnet_restores for build: #{build_no}"
+          puts " Inserting api results build: #{build_no}"
           t.each do |result|
             insert_restoration(db_connection[:testnet_restores_new],
                                result,
@@ -141,7 +173,7 @@ module Helpers
     end
 
     module_function :insert_into_db, :find_builds_to_transfer,
-                    :insert_restoration, :insert_latency
+                    :insert_restoration, :insert_latency, :insert_api
 
   end
 end
