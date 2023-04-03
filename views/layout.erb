@@ -43,6 +43,11 @@ url = request.env['PATH_INFO'].to_s
                 href="/mainnet-restoration">Mainnet</a>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link <%= (url.include? "api-measurements") ? "active" : "" %>"
+                href="/api-measurements">Api</a>
+          </li>
+
           <!-- <li class="nav-item">
             <a class="nav-link <%= (url.include? "testnet-restoration") ? "active" : "" %>"
                 href="/testnet-restoration">Testnet</a>

@@ -98,6 +98,13 @@ class BenchmarkApp < Sinatra::Base
     erb :restoration_graphs, { :locals => { :dataset => dataset } }
   end
 
+  get "/api-measurements" do
+    dataset = DB[:api_measurements].
+              join(:nightly_builds, nightly_build_id: :nightly_build_id).
+              order(Sequel.asc(:build_no))
+    erb :api_graphs, { :locals => { :dataset => dataset } }
+  end
+
   get "/latency" do
     sql = %{
       select build_no, c.name as category, b.name as benchmark,

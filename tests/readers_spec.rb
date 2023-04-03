@@ -2,6 +2,23 @@ require_relative 'spec_helper'
 
 include Helpers::Readers
 
+describe Helpers::Readers::Api do
+  it "read_to_hash - api" do
+    res = File.read("#{Dir.pwd}/tests/artifacts/api.txt")
+    h = Api.read_to_hash res
+
+    expect(h[0]['benchName']).to eq "sequential Shelley sequential"
+    expect(h[0]['readWalletTime']).to eq 0.002028
+
+    expect(h[1]['benchName']).to eq "shared Shared sequential"
+    expect(h[1]['listAssetsTime']).to eq 0.1106
+
+    expect(h[2]['benchName']).to eq "random Byron random"
+    expect(h[2]['listTransactionsLimitedTime']).to eq 0.02546
+
+  end
+end
+
 describe Helpers::Readers::Restorations do
 
   it "read_to_hash - mainnet" do
