@@ -1,7 +1,7 @@
 <%
   b = builds.where(build_no: params[:id].to_i).first
-  t = testnet.first
   m = mainnet.first
+  a = api.first
 %>
 <% if b %>
 <%
@@ -32,18 +32,18 @@
       </tr>
       <tr>
         <td class="align-middle">
-          <% if svg_urls[0] %>
-          <a href="<%= svg_urls[0] %>">
-            <img width="640" height="360" src="<%= svg_urls[0] %>"/>
+          <% if svg_url %>
+          <a href="<%= svg_url %>">
+            <img width="640" height="360" src="<%= svg_url %>"/>
           </a>
           <% else %>
             <i>Memory plot N/A</i>
           <% end %>
         </td>
         <td class="align-middle">
-          <% if plot_urls[0] %>
-          <a href="<%= plot_urls[0] %>">
-            <img width="640" height="360" src="<%= plot_urls[0] %>"/>
+          <% if plot_url %>
+          <a href="<%= plot_url %>">
+            <img width="640" height="360" src="<%= plot_url %>"/>
           </a>
           <% else %>
             <i>Block height/time plot N/A</i>
@@ -57,40 +57,18 @@
   <%= nighbuild_results_table(mainnet) %>
 <% end %>
 <hr/>
-<%
-  if t
-%>
+<br/>
+<% if a %>
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col" colspan="2">Testnet restoration</th>
-      </tr>
-      <tr>
-        <td class="align-middle">
-          <% if svg_urls[1] %>
-          <a href="<%= svg_urls[1] %>">
-            <img width="640" height="360" src="<%= svg_urls[1] %>"/>
-          </a>
-          <% else %>
-            <i>Memory plot N/A</i>
-          <% end %>
-        </td>
-        <td class="align-middle">
-          <% if plot_urls[1] %>
-          <a href="<%= plot_urls[1] %>">
-            <img width="640" height="360" src="<%= plot_urls[1] %>"/>
-          </a>
-          <% else %>
-            <i>Block height/time plot N/A</i>
-          <% end %>
-        </td>
+        <th scope="col" colspan="2">API measurements</th>
       </tr>
     </thead>
-    <tbody>
-    </tbody>
   </table>
-  <%= nighbuild_results_table(testnet) %>
+  <%= api_results_table(api) %>
 <% end %>
+
 
 <% else %>
   <div class="alert alert-danger" role="alert">

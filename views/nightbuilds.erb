@@ -2,7 +2,28 @@
   size = dataset.size
   head, *tail = dataset
 %>
-
+<p>
+  <b>Benchmark app</b> contains a set of benchmarks for testing the performance of the <a href="https://github.com/input-output-hk/cardano-wallet" target="_blank">cardano-wallet</a>. 
+  The benchmarks are run on a nightly basis on <a href="https://buildkite.com/input-output-hk/cardano-wallet-nightly" target="_blank">buildkite</a> 
+  and the results are published on this page. There are following catgories of benchmarks:
+</p>
+<ul>
+  <li>
+    <b>Restoration</b> - benchmarks for testing the performance of the wallet restoration. 
+    The benchmarks are run against a local cardano-node instance connected to <b>mainnet</b>.
+  </li>
+  <li>
+    <b>Latency</b> - benchmarks for testing the performance of the wallet API. 
+    The benchmarks are run against a cardano-node instance connected to <b>local cluster of nodes</b>.
+  </li>
+  <li>
+    <b>API</b> - benchmarks for testing the performance of the wallet API. 
+    The benchmarks are run against the wallet connected to local datablase. Cardano-node is not used.
+  </li>
+  <li>
+    <b>Database</b> - benchmarks for testing the performance of the wallet database. 
+  </li>
+</ul>
 <h4>Total: <%= size%></h4>
 <h4>
   Latest: <a href ="/nightbuilds/<%= head[:build_no]%>"><%= head[:build_no]%></a>

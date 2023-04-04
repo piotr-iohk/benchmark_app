@@ -22,15 +22,15 @@ module Helpers
         <table class="table table-hover">
         <thead>
           <tr>
-            <th scope="col">Bench name</th>
-            <th scope="col">Restore time</th>
-            <th scope="col">List addresses</th>
-            <th scope="col">Estimate fees</th>
-            <th scope="col">Read wallet</th>
-            <th scope="col">List txs</th>
-            <th scope="col">List txs (max_count = 100)</th>
-            <th scope="col">Import one address</th>
-            <th scope="col">Import many addresses</th>
+            <th scope="col">Bench Name</th>
+            <th scope="col">Restore Time</th>
+            <th scope="col">List Addresses</th>
+            <th scope="col">Estimate Fees</th>
+            <th scope="col">Read Wallet</th>
+            <th scope="col">List Txs</th>
+            <th scope="col">List Txs (max_count = 100)</th>
+            <th scope="col">Import One Address</th>
+            <th scope="col">Import Many Addresses</th>
           </tr>
         </thead>
         <tbody>
@@ -72,6 +72,76 @@ module Helpers
               </td>
               <td>
                 #{m[:import_many_addresses_time] ? "#{m[:import_many_addresses_time]} s" : "<i>N/A</i>"}
+              </td>
+            </tr>
+          }
+      end
+      table += %Q{
+          </tbody>
+        </table>
+      }
+      table
+    end
+
+    def api_results_table(res)
+      table = %Q{
+        <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Bench Name</th>
+            <th scope="col">Read Wallet</th>
+            <th scope="col">Utxo Snapshot</th>
+            <th scope="col">List Addresses</th>
+            <th scope="col">List Assets</th>
+            <th scope="col">List Txs</th>
+            <th scope="col">List Txs (max_count = 100)</th>
+            <th scope="col">Create Migration Plan</th>
+            <th scope="col">Delegation Fees</th>
+            <th scope="col">Select Assets</th>
+          </tr>
+        </thead>
+        <tbody>
+      }
+      res.each do |m|
+        table += %Q{
+            <tr>
+              <td scope="row">
+                <details>
+                  <summary>#{m[:bench_name]}</summary>
+                    <code>
+
+                    #{m[:utxo_statistics] ? m[:utxo_statistics].gsub("...", "<br/>&nbsp;...").
+                                          gsub("number_of_t", "<br/>number_of_t").
+                                          gsub("= T", "<br/>= T") : "<i>N/A</i>"}
+                    </code>
+                </details>
+              </td>
+              <td>
+                #{m[:readWalletTime] ? "#{m[:readWalletTime]} s" : "<i>N/A</i>"}
+              </td>
+              <td>
+                #{m[:getWalletUtxoSnapshotTime] ? "#{m[:getWalletUtxoSnapshotTime]} s" : "<i>N/A</i>"}
+              </td>
+              <td>
+                #{m[:listAddressesTime] ? "#{m[:listAddressesTime]} s" : "<i>N/A</i>"}
+              </td>
+              <td>
+                #{m[:listAssetsTime] ? "#{m[:listAssetsTime]} s" : "<i>N/A</i>"}
+              </td>
+              <td>
+                #{m[:listTransactionsTime] ? "#{m[:listTransactionsTime]} s" : "<i>N/A</i>"}
+              </td>
+              <td>
+              #{m[:listTransactionsLimitedTime] ? "#{m[:listTransactionsLimitedTime]} s" : "<i>N/A</i>"}
+            </td>
+              <td>
+                #{m[:createMigrationPlanTime] ? "#{m[:createMigrationPlanTime]} s" : "<i>N/A</i>"}
+              </td>
+              <td>
+                #{m[:delegationFeeTime] ? "#{m[:delegationFeeTime]} s" : "<i>N/A</i>"}
+              </td>
+              <td>
+              #{m[:selectAssetsTime] ? "#{m[:selectAssetsTime]} s" : "<i>N/A</i>"}
               </td>
             </tr>
           }
@@ -132,7 +202,7 @@ module Helpers
 
     def restoration_graph(dataset, bench, url, filter = [])
       line_chart restoration_dataset(dataset.where(bench_name: bench), filter),
-          title: "<a href='#'>#{bench} #{((url.include? "mainnet") ? "mainnet" : "testnet")}</a>",
+          title: "<a href='#'>#{bench} mainnet</a>",
           ytitle: "Time (s)", xtitle: "Nightbuild no"
     end
 
