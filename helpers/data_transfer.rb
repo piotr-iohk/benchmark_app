@@ -150,11 +150,7 @@ module Helpers
     end #insert_into_db
 
     def find_builds_to_transfer(current_id, list_of_last_ids)
-      list_to_return = []
-        list_of_last_ids.each do |id|
-          return list_to_return if current_id == id
-          list_to_return << id
-        end
+      list_of_last_ids.filter { |id| id > current_id }.reverse
     end
 
     module_function :insert_into_db, :find_builds_to_transfer,
