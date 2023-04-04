@@ -56,6 +56,8 @@ class BenchmarkApp < Sinatra::Base
     builds = DB[:nightly_builds]
     mainnet = DB[:nightly_builds].join(:mainnet_restores_new, nightly_build_id: :nightly_build_id).
                                   where(build_no: build_no)
+    api = DB[:nightly_builds].join(:api_measurements, nightly_build_id: :nightly_build_id).
+                              where(build_no: build_no)
     bk = Buildkite.new
     begin
       jobs = Jobs.get_pipeline_build_jobs bk.get_pipeline_build(build_no)
@@ -71,6 +73,7 @@ class BenchmarkApp < Sinatra::Base
     end
     erb :nightbuild, { :locals => { :builds => builds,
                                     :mainnet => mainnet,
+                                    :api => api,
                                     :svg_url => mainnet_svg,
                                     :plot_url => mainnet_plot } }
   end

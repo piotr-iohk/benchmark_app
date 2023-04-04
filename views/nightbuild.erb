@@ -1,6 +1,7 @@
 <%
   b = builds.where(build_no: params[:id].to_i).first
   m = mainnet.first
+  a = api.first
 %>
 <% if b %>
 <%
@@ -56,6 +57,17 @@
   <%= nighbuild_results_table(mainnet) %>
 <% end %>
 <hr/>
+<br/>
+<% if a %>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col" colspan="2">API measurements</th>
+      </tr>
+    </thead>
+  </table>
+  <%= api_results_table(api) %>
+<% end %>
 
 
 <% else %>
