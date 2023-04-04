@@ -79,7 +79,7 @@ namespace :bk do
     nightly_builds = DB[:nightly_builds]
     last_build_in_db = nightly_builds.order(Sequel.desc(:build_no)).first[:build_no] if nightly_builds.first
     last_builds_from_bk = bk.get_pipline_build_numbers
-    builds = Helpers::DataTransfer.find_builds_to_transfer(last_build_in_db, last_builds_from_bk).reverse
+    builds = Helpers::DataTransfer.find_builds_to_transfer(last_build_in_db, last_builds_from_bk)
     if builds.empty?
       puts "No new build..."
     else
