@@ -117,15 +117,10 @@ describe 'On the Benchmark App', type: :feature do
 
   it "Mainnet restoration graphs" do
     visit '/'
-    click_link "Mainnet"
+    click_link "Restoration"
     expect(page).to have_xpath(is_active "/mainnet-restoration")
   end
-
-  # it "Testnet restoration graphs" do
-  #   visit '/testnet-restoration'
-  #   expect(page).to have_xpath(is_active "/testnet-restoration")
-  # end
-
+  
   it "Database graphs" do
     visit '/'
     click_link "Database"
