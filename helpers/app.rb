@@ -132,7 +132,7 @@ module Helpers
 
     def restoration_graph(dataset, bench, url, filter = [])
       line_chart restoration_dataset(dataset.where(bench_name: bench), filter),
-          title: "<a href='#'>#{bench} #{((url.include? "mainnet") ? "mainnet" : "testnet")}</a>",
+          title: "<a href='#'>#{bench} mainnet</a>",
           ytitle: "Time (s)", xtitle: "Nightbuild no"
     end
 

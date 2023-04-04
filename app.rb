@@ -56,43 +56,27 @@ class BenchmarkApp < Sinatra::Base
     builds = DB[:nightly_builds]
     mainnet = DB[:nightly_builds].join(:mainnet_restores_new, nightly_build_id: :nightly_build_id).
                                   where(build_no: build_no)
-    testnet = DB[:nightly_builds].join(:testnet_restores_new, nightly_build_id: :nightly_build_id).
-                                  where(build_no: build_no)
     bk = Buildkite.new
     begin
       jobs = Jobs.get_pipeline_build_jobs bk.get_pipeline_build(build_no)
       mainnet_svg = bk.get_artifact_download_url build_no,
                     jobs[MAINNET_RESTORE_JOB],
                     "restore-mainnet.svg"
-      testnet_svg = bk.get_artifact_download_url build_no,
-                    jobs[TESTNET_RESTORE_JOB],
-                    "restore-testnet.svg"
       mainnet_plot = bk.get_artifact_download_url build_no,
                     jobs[MAINNET_RESTORE_JOB],
                     "plot.svg"
-      testnet_plot = bk.get_artifact_download_url build_no,
-                    jobs[TESTNET_RESTORE_JOB],
-                    "plot.svg"
     rescue
-      mainnet_svg, testnet_svg, mainnet_plot, testnet_plot = nil
+      mainnet_svg, mainnet_plot = nil
       session[:error] = "Buildkite connection failed..."
     end
     erb :nightbuild, { :locals => { :builds => builds,
-                                    :testnet => testnet,
                                     :mainnet => mainnet,
-                                    :svg_urls => [mainnet_svg, testnet_svg],
-                                    :plot_urls => [mainnet_plot, testnet_plot] } }
+                                    :svg_url => mainnet_svg,
+                                    :plot_url => mainnet_plot } }
   end
 
   get "/mainnet-restoration" do
     dataset = DB[:mainnet_restores_new].
-              join(:nightly_builds, nightly_build_id: :nightly_build_id).
-              order(Sequel.asc(:build_no))
-    erb :restoration_graphs, { :locals => { :dataset => dataset } }
-  end
-
-  get "/testnet-restoration" do
-    dataset = DB[:testnet_restores_new].
               join(:nightly_builds, nightly_build_id: :nightly_build_id).
               order(Sequel.asc(:build_no))
     erb :restoration_graphs, { :locals => { :dataset => dataset } }

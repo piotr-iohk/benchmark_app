@@ -104,21 +104,6 @@ module Helpers
         end
       end
 
-      if options[:skip_testnet]
-        puts "Skipping testnet_restores..."
-      else
-        if res[:testnet_restores]
-          t = res[:testnet_restores]
-          puts " Inserting api results build: #{build_no}"
-          t.each do |result|
-            insert_restoration(db_connection[:testnet_restores_new],
-                               result,
-                               nightly_build_id
-                              )
-          end
-        end
-      end
-
       if options[:skip_latency]
         puts "Skipping latency..."
       else

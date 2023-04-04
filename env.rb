@@ -5,10 +5,7 @@ API_MEASUREMENTS_FILE = "api.txt"
 API_MEASUREMENTS_JOB = "API benchmark"
 
 MAINNET_RESTORE_FILE = "restore-mainnet.txt"
-TESTNET_RESTORE_FILE = "restore-testnet.txt"
-
 MAINNET_RESTORE_JOB = "Restore benchmark - cardano mainnet"
-TESTNET_RESTORE_JOB = "Restore benchmark - cardano testnet"
 
 LATENCY_CATEGORIES = ["+++ Run benchmark - jormungandr",
                       "+++ Run benchmark - shelley"]

@@ -32,9 +32,6 @@ module Helpers
       puts "  Mainnet measuremenets."
       puts db_conn[:mainnet_restores_new].where(nightly_build_id: nb_id).delete
 
-      puts "  Testnet measuremenets."
-      puts db_conn[:testnet_restores_new].where(nightly_build_id: nb_id).delete
-
       puts "  API measuremenets."
       puts db_conn[:api_measurements].where(nightly_build_id: nb_id).delete
 

@@ -41,7 +41,6 @@ describe 'On the Benchmark App', type: :feature do
     DB[:latency_benchmarks].delete
     DB[:latency_categories].delete
     DB[:mainnet_restores_new].delete
-    DB[:testnet_restores_new].delete
     DB[:nightly_builds].delete
   end
 
