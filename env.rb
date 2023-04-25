@@ -23,7 +23,8 @@ LATENCY_BENCHMARKS = ["Non-cached run",
                       "Latencies for 2 fixture wallets with 100 utxos scenario",
                       "Latencies for 2 fixture wallets with 200 utxos scenario",
                       "Latencies for 2 fixture wallets with 500 utxos scenario",
-                      "Latencies for 2 fixture wallets with 1000 utxos scenario"
+                      "Latencies for 2 fixture wallets with 1000 utxos scenario",
+                      "Latencies for 2 fixture wallets with 10000 utxos scenario",
                      ]
 
 LATENCY_MEASUREMENTS = ["listWallets",
